@@ -1,0 +1,17 @@
+﻿@model Pren.Web.Models.Blocks.Di.WidgetBlocks.ShortcutWidgetBlock
+
+<div class="widget-content @(Model.UseBackgroundColor ? "t-signal" : "white")">
+    <h3>
+        @Html.PropertyFor(x => x.Heading)
+    </h3>
+    
+    <div class="widget-body">
+
+        @Html.PropertyFor(x => x.Editor)
+
+        @if (Model.Shortcut != null)
+        {
+            <a class="btn btn-primary shortcut" data-shortcut="@Model.Shortcut" href="#">@Model.ShortcutLinkText <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        }
+    </div>
+</div>

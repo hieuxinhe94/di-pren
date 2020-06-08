@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DIClassLib.BusinessCalendar.BusCalHandler">
+    <Position X="3.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>UCQAEMBAAAIQGAAEAAAgBoSAAAAAAAAAAkgEAASCgBA=</HashCode>
+      <FileName>BusinessCalendar\BusCalHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.Calendar">
+    <Position X="6.25" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessCalendar\Calendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.CompanyEvent">
+    <Position X="0.75" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAgAAIgABAAAAAAAAAAAAAAAAAggAAAAAAAAAA=</HashCode>
+      <FileName>BusinessCalendar\CompanyEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.Subscription">
+    <Position X="6.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAAAgAAEAAAAAAAgCAAAAAAAAAAAgEAAAQQAAAAAA=</HashCode>
+      <FileName>BusinessCalendar\Subscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.Company">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAQAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessCalendar\Company.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.EventInSubs">
+    <Position X="8.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAggAAAAAAAAAA=</HashCode>
+      <FileName>BusinessCalendar\EventInSubs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.BusCalSettings">
+    <Position X="9" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIQEAEAAAAAAAAJgCAAACAAYAAAAAEAAABAAgAAAAJA=</HashCode>
+      <FileName>BusinessCalendar\BusCalSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.Group">
+    <Position X="12" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>BusinessCalendar\Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.BusinessCalendar.TypeSubType">
+    <Position X="12" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAggAAAAAAAAAA=</HashCode>
+      <FileName>BusinessCalendar\TypeSubType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

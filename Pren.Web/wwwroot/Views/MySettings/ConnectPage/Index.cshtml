@@ -1,0 +1,53 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.ConnectPageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (!Model.HideForms)
+{
+
+    <div class="row w-margin-top">
+        <form action="@Url.Action("IdentifyByCode", "ConnectPage")" method="POST">
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Identifiera dig via kod</strong></div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div for="codeinput">Ange koden du har fått i vårt brev</div>
+                            <input type="text" class="form-control" name="code" id="codeinput" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Skicka</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <form action="@Url.Action("SendCode", "ConnectPage")" method="POST">
+            @Html.AntiForgeryToken()
+            <div class="col-md-6">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Saknar du kod?</strong></div>
+                    <div class="panel-body">
+                        <p>Ange ditt kundnummer eller e-postadress och tryck "Skicka" så skickas koden till den mailadress vi har registrerad hos oss.</p>
+                        <div class="form-group">
+                            <div for="emailOrCusnoinput">Ange kundnummer eller e-post</div>
+                            <input type="text" class="form-control" name="emailOrCusno" id="emailOrCusnoinput" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Skicka</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+}
+

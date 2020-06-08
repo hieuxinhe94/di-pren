@@ -1,0 +1,101 @@
+﻿@using EPiServer.Framework.Web.Mvc.Html
+@model Pren.Web.Models.ViewModels.IPageViewModel<Pren.Web.Models.Pages.SitePageData>
+
+<!DOCTYPE html>
+<html lang="@Model.CurrentPage.LanguageBranch">
+<head>
+    <script src="@(Model.Layout.IsMobile ? Model.Layout.OptimizelyMobileScriptSrc : Model.Layout.OptimizelyDesktopScriptSrc)"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/pren/favicon.ico" type="image/x-icon">
+    <title>@Model.CurrentPage.MetaTitle</title>
+
+    <link type="text/css" rel="stylesheet" href="//cloud.webtype.com/css/beb7c34c-665a-4860-b61b-f80a4fa34d80.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    @if (IsSectionDefined("PageSpecificCssIncludes"))
+    {
+        @RenderSection("PageSpecificCssIncludes")
+    }
+
+    @if (IsSectionDefined("PageSpecificJavascriptInHeader"))
+    {
+        @RenderSection("PageSpecificJavascriptInHeader")
+    }
+            
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+        <script src="//cdn.jsdelivr.net/css3pie/2.1.6/PIE.js"></script>
+    <![endif]-->
+    <!--[if lt IE 10]>
+        <link type="text/css" rel="stylesheet" href="~/Static/css/Di/ie.css">
+    <![endif]-->
+
+
+    @Html.RequiredClientResources("Header") @*Enable components to require resources*@
+</head>
+
+<body>
+    @if (IsSectionDefined("PageSpecificGtmDataLayer"))
+    {
+        @RenderSection("PageSpecificGtmDataLayer")
+    }
+    else
+    {
+        <script>
+            dataLayer = [{ 'product': 'MINA SIDOR' }];
+        </script>
+    }
+
+    <script>
+        dataLayer.push({ event: 'pageview' });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-59ZCT9');
+    </script>
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-59ZCT9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager -->
+
+    @Html.RenderEPiServerQuickNavigator()
+    @Html.FullRefreshPropertiesMetaData()
+
+
+    @RenderBody()
+
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer")
+    }
+
+    @if (IsSectionDefined("PageSpecificJavaScriptIncludes"))
+    {
+        @RenderSection("PageSpecificJavaScriptIncludes")
+    }
+
+    <script type="text/javascript">
+                //global stuff like google analytics
+    </script>
+
+    @if (IsSectionDefined("PageSpecificJavaScript"))
+    {
+        @RenderSection("PageSpecificJavaScript")
+    }
+
+    @Html.RequiredClientResources("Footer") @*Enable components to require resources*@
+</body>
+</html>

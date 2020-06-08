@@ -1,0 +1,14 @@
+﻿a.buttonGreen {
+    EditMenuName: Button-Link-Green;
+    border: 2px solid #68ad3b;
+    padding: 5px 25px;
+    border-radius: 5px;
+    color: #333;
+    font-weight: 800;
+    font-family: helvetica;
+}
+
+.bold-text {
+    EditMenuName: Text-Bold;
+    font-weight: 800;
+}

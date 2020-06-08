@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization
+@model Pren.Web.Models.ViewModels.CampaignPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/campaign")
+}
+
+<div id="confirm-area" class="container">
+    <div class="row confirmation-copy">
+        <div class="col-md-6">
+            <div class="confirmation-header">
+                <h1>Hoppsan! Något gick fel.</h1>
+            </div>
+            <div class="confirmation-text">
+                <div class="alert alert-danger">
+                    @Html.Raw(Model.ErrorMessage)
+                </div>
+            </div>
+            <a href="@Url.ContentUrl(Model.CurrentPage.ContentLink)" class="btn btn-lg btn-primary">Tillbaka till kampanjen</a>
+        </div>
+    </div>
+</div>
+
+@section PageSpecificJavaScriptIncludes{
+    @Scripts.Render("~/bundles/js/campaign")
+}
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+        var tracking = new Tracking();
+        tracking.push(tracking.subscibeEvent, '', 'fel vid prenumeration');
+    </script>
+}

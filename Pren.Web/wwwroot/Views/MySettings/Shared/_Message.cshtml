@@ -1,0 +1,8 @@
+﻿@model Pren.Web.Business.Messaging.Message
+           
+@if (Model != null)
+{
+    <div class="message alert @Model.CssClass" role="alert">
+        @Html.Raw(Model.Body)
+    </div>
+}

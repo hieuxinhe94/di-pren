@@ -1,0 +1,542 @@
+﻿@using Pren.Web.Models.Pages.MySettings.Di
+@model Pren.Web.Models.ViewModels.MySettings.Di.ProfileBlockViewModel
+           
+@{
+    var showtempAddressChangeInfoText = false;
+    try
+    {
+        var pageRouteHelper = EPiServer.ServiceLocation.ServiceLocator.Current.GetInstance<EPiServer.Web.Routing.PageRouteHelper>();
+        var currentPage = pageRouteHelper.Page;
+        showtempAddressChangeInfoText = ((MyStartPage) currentPage).TakeTempAddrChangeFee;
+    }
+    catch
+    {
+
+    }
+
+}
+
+
+<div id="profile" class="anchor"></div>
+<div id="profile-area">
+    <div class="container">
+
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 @Html.EditAttributes(x => x.CurrentBlock.Heading)>@Model.CurrentBlock.Heading</h2>
+                        @Html.PropertyFor(x => x.CurrentBlock.Editor)
+                    </div>
+                </div>              
+                
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="myinfoArea" class="white">
+                            <h3>Mina uppgifter</h3>
+                            <div class="margin-b-20 margin-t-20">
+                                <div id="contactArea">
+                                    <div>
+                                        <label for="customerNumber">Kundnummer</label> 
+                                        <div class="control">
+                                            <span id="customerNumber"></span>
+                                        </div>                                        
+                                    </div>
+
+                                    <div id="nameArea">
+                                        <label for="fullname">Namn:</label> 
+                                        <div class="control">
+                                            <span id="fullname"></span>    
+                                        </div>
+                                        
+                                        @*<a href="#" class="togglebtn" title="Ändra namn"> <span class="fa fa-pencil-square-o"></span></a>
+                                        <div class="edit displaynone">
+                                            <form id="nameform">
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="firstName" id="firstNameInput">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="lastName" id="lastNameInput">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <input type="submit" id="saveName" class="btn btn-primary" data-loading-text="Skickar ..." value="Uppdatera" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>*@
+                                    </div>
+
+                                    <div id="phoneArea">
+                                        <label for="phone">Telefonnummer</label> 
+                                        <div class="control">
+                                            <span id="phone"></span>
+                                            <a href="#" class="togglebtn" title="Ändra telefonnummer"> <span class="fa fa-pencil-square-o"></span></a>
+                                        </div>                                        
+
+                                        <div class="edit displaynone">
+                                            <form id="phoneform">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="phone" id="phoneInput" placeholder="Telefonnummer">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <input type="submit" id="savePhone" class="btn btn-primary" data-loading-text="Skickar ..." value="Uppdatera" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div id="emailArea">
+                                        <label for="email">E-post</label> 
+                                        <div class="control">
+                                            <span id="email"></span>
+                                            <a href="#" class="togglebtn" title="Ändra e-postadress"><span class="fa fa-pencil-square-o"></span></a>
+                                        </div>
+
+                                        <div class="edit displaynone">
+                                            <form id="emailform">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="email" id="emailInput" placeholder="E-postadress">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <input type="submit" id="saveEmail" class="btn btn-primary" data-loading-text="Skickar ..." value="Uppdatera" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>                                    
+                                </div>
+
+                                <div id="addressArea">
+                                    <label for="currentAddress">Adress</label>
+                                    <div class="control">
+                                        <span id="currentAddress">
+
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="changePasswordArea">
+                                    <div class="control">
+                                        <a href="@Model.ChangePasswordUrl" target="_blank">Byt lösenord</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="invoiceArea" class="white">
+                            <h3>Faktureringsärenden</h3>
+                            <div id="externalLinks" class="margin-t-20">
+                                <a href="https://www.mvh.bgonline.se/Public.Web/Templates/MandateApplications/FillInMandateApplication.aspx?formRef=790b6972-308b-4321-9028-74ab55bd73e3" target="_blank">Autogiro <span class="fa fa-external-link"></span></a>
+                                <a href="https://my.klarna.com" target="_blank">Klarna <span class="fa fa-external-link"></span></a>
+                            </div>
+
+                            <h4>Mina fakturor och kvitto på betalningar</h4>
+                            <div id="invoices" data-defaulttext="Hämtar fakturor ...">
+                            </div>
+                            <div class="receipt margin-t-20">
+                                <p>
+                                    Behöver du ett underlag på dina betalningar? Här kan du beställa en sammanställning över de betalningar som gjorts för din prenumeration. Sammanställningen skickas digitalt till din mejladress inom 15 dagar efter beställning.
+                                </p>
+                                <p>
+                                    Betalar du via Klarna får vi hänvisa dig till att kontakta dem för kvitto.
+                                </p>
+                                <a id="order-receipt" class="btn btn-primary" href="#contact">Beställ kvitto på betalningar <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+
+                        <div id="eventsArea" class="t-signal">
+                            <h3>Kommande händelser</h3>
+                            <div id="profileEvents"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="subscriptions-info">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Mina prenumerationer</h2>
+                            @Html.PropertyFor(x => x.CurrentBlock.SubscriptionText)
+                            <div id="subscription-tabs"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="row">
+                                        <div class="headings col-md-4">                                            
+                                            <div id="subscription-info">
+                                                <div><label for="subsinfo-id">Prenumerationsnummer</label><br/><span id="subsinfo-id" class="strong"></span></div>
+                                                <div><label for="subsinfo-startdate">Startdatum</label><br /><span id="subsinfo-startdate" class="strong"></span></div>
+                                                <div><label for="subsinfo-enddate">Slutdatum</label><br /><span id="subsinfo-enddate" class="strong"></span></div>
+                                            </div>
+                                            <div>
+                                                <div class="panel-heading active" role="tab" id="infoHeading">
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="true" aria-controls="infoCollapse">
+                                                        <span>Information</span><span class="fa fa-chevron-right"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="panel-heading" role="tab" id="reclaimHeading">
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#reclaimCollapse" aria-expanded="false" aria-controls="reclaimCollapse">
+                                                        Anmäl utebliven tidning <span class="fa fa-chevron-right"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="panel-heading" role="tab" id="sleepHeading">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#sleepCollapse" aria-expanded="false" aria-controls="sleepCollapse">
+                                                        Gör uppehåll i prenumerationen <span class="fa fa-chevron-right"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="panel-heading" role="tab" id="tmpaddressHeading">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#tmpaddressCollapse" aria-expanded="false" aria-controls="tmpaddressCollapse">
+                                                        Gör tillfällig adressändring <span class="fa fa-chevron-right"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="panel-heading" role="tab" id="permaddressHeading">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#permaddressCollapse" aria-expanded="false" aria-controls="permaddressCollapse">
+                                                        Gör permanent adressändring <span class="fa fa-chevron-right"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="panel-heading" role="tab" id="endprenHeading">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#endprenCollapse" aria-expanded="false" aria-controls="endprenCollapse">
+                                                        Avsluta prenumerationen <span class="fa fa-chevron-right"></span>
+                                                    </a>
+                                                </div>
+                                            </div>                                           
+                                        </div>
+                                        <div class="collapsibles col-md-8">
+                                            
+                                            <div id="infoCollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="infoHeading" data-toggle="false">
+                                                <div class="panel-body">
+                                                    @Html.PropertyFor(x => x.CurrentBlock.SubscriptionInfoText)
+                                                </div>
+                                            </div>
+                                            <div id="reclaimCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="reclaimHeading" data-toggle="false">
+                                                <div class="panel-body">
+                                                    <div id="reclaimArea" class="area">
+                                                        <form id="reclaimform">
+                                                            <input type="hidden" name="subscriptionId" id="subscriptionId" />
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div id="reclaim-details" data-defaulttext="Laddar formulär ...">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+
+                                                                    <input type="submit" id="sendReclaim" class="btn btn-primary" data-loading-text="Skickar ..." value="Skicka" />
+
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="sleepCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="sleepHeading" data-toggle="false">
+                                                <div class="panel-body">
+                                                    <div id="sleepArea" class="area">
+                                                        <div id="subsSleeps" class="headingborder" data-defaulttext="Hämtar uppehåll ...">
+
+                                                        </div>
+                                                        <h3 class="sub-header">Skapa nytt uppehåll</h3>
+                                                        <form id="sleepform">
+                                                            <input type="hidden" name="subscriptionId" id="subscriptionId" />
+                                                            <div class="row">
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group">
+                                                                        <label for="fromdate" class="label-heading">Från och med *</label>
+                                                                        <input type="text" class="form-control dateinput" autocomplete="off" name="fromdate">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group">
+                                                                        <label for="todate" class="label-heading">Till och med *</label>
+                                                                        <input type="text" class="form-control dateinput" autocomplete="off" name="todate">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <button type="submit" id="sendSleep" data-loading-text="Skickar ..." class="btn btn-primary">Spara</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="tmpaddressCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tmpaddressHeading" data-toggle="false">
+                                                <div class="panel-body">
+                                                    <div id="tmpAddressArea" class="area">
+                                                        <div id="tmpAddressChanges" class="headingborder" data-defaulttext="Hämtar adressändringar ...">
+
+                                                        </div>
+                                                        <h3 class="sub-header">Skapa ny adressändring</h3>
+                                                        @if (showtempAddressChangeInfoText)
+                                                        {
+                                                            @Html.PropertyFor(x => x.CurrentBlock.TempAddressChangeInfoText)
+                                                        }
+                                                        <div id="tmpAddresses" data-defaulttext="Hämtar tidigare adresser ...">
+
+                                                        </div>
+                                                        <form id="tmpAddressForm">
+                                                            <input type="hidden" name="subscriptionId" id="subscriptionId"/>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div id="cotmp" class="form-group">
+                                                                        <label for="coinputtmp" class="label-heading">CO/Stoppställe</label>
+                                                                        <input type="text" class="form-control" name="co" id="coinputtmp">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div id="streetaddresstmp" class="form-group">
+                                                                        <label for="streetaddresstmpinput" class="label-heading">Gatuadress/Box *</label>
+                                                                        <input type="text" class="form-control" name="streetaddress" id="streetaddresstmpinput">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div id="streetnotmp" class="form-group">
+                                                                        <label for="streetnotmpinput" class="label-heading">Nr</label>
+                                                                        <input type="text" class="form-control" name="streetno" id="streetnotmpinput">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div id="staircasetmp" class="form-group">
+                                                                        <label for="staircasetmpinput" class="label-heading">Uppgång</label>
+                                                                        <input type="text" class="form-control" name="staircase" id="staircasetmpinput">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <div id="stairstmp" class="form-group">
+                                                                        <label for="stairstmpinput" class="label-heading">Trappa</label>
+                                                                        <input type="text" class="form-control" name="stairs" id="stairstmpinput">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div id="staircasetmp" class="form-group">
+                                                                        <label for="apartmentnumbertmpinput" class="label-heading">Lgh nr</label>
+                                                                        <input type="text" class="form-control" name="apartmentnumber" id="apartmentnumbertmpinput">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div id="ziptmp" class="form-group">
+                                                                        <label for="ziptmpinput" class="label-heading">Postnr *</label>
+                                                                        <input type="text" class="form-control" name="zip" id="ziptmpinput">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div id="citytmp" class="form-group">
+                                                                        <label for="citytmpinput" class="label-heading">Ort *</label>
+                                                                        <input type="text" class="form-control" name="city" id="citytmpinput">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div id="fromtmpdate" class="form-group">
+                                                                        <label for="fromdatetmpinput" class="label-heading">Från och med *</label>
+                                                                        <input type="text" class="form-control dateinput" autocomplete="off" name="fromdate" id="fromdatetmpinput">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div id="totmpdate" class="form-group">
+                                                                        <label for="fromdatetmpinput" class="label-heading">Till och med *</label>
+                                                                        <input type="text" class="form-control dateinput" autocomplete="off" name="todate" id="totmpdate">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" id="submitTmpAddressForm" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary pull-right">Spara</button>
+                                                            <div class="label-heading">* obligatoriska fält</div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="permaddressCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="permaddressHeading" data-toggle="false">
+                                                <div class="panel-body">
+                                                    <div id="permAddressChanges" class="headingborder" data-defaulttext="Hämtar permanenta adressändringar ...">
+
+                                                    </div>
+                                                    <h3 class="sub-header">Skapa ny permanent adressändring</h3>
+                                                    <form id="addressform">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div id="co" class="form-group">
+                                                                    <label for="coinput" class="label-heading">CO/Stoppställe</label>
+                                                                    <input type="text" class="form-control" name="co" id="coinput">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div id="streetaddress" class="form-group">
+                                                                    <label for="streetaddressinput" class="label-heading">Gatuadress/Box *</label>
+                                                                    <input type="text" class="form-control" name="streetaddress" id="streetaddressinput">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div id="streetno" class="form-group">
+                                                                    <label for="streetnoinput" class="label-heading">Nr</label>
+                                                                    <input type="text" class="form-control" name="streetno" id="streetnoinput">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div id="staircase" class="form-group">
+                                                                    <label for="staircaseinput" class="label-heading">Uppgång</label>
+                                                                    <input type="text" class="form-control" name="staircase" id="staircaseinput">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <div id="stairs" class="form-group">
+                                                                    <label for="stairsinput" class="label-heading">Trappa</label>
+                                                                    <input type="text" class="form-control" name="stairs" id="stairsinput">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div id="staircase" class="form-group">
+                                                                    <label for="apartmentnumberinput" class="label-heading">Lgh nr</label>
+                                                                    <input type="text" class="form-control" name="apartmentnumber" id="apartmentnumberinput">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div id="zip" class="form-group">
+                                                                    <label for="zipinput" class="label-heading">Postnr *</label>
+                                                                    <input type="text" class="form-control" name="zip" id="zipinput">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <div id="city" class="form-group">
+                                                                    <label for="cityinput" class="label-heading">Ort *</label>
+                                                                    <input type="text" class="form-control" name="city" id="cityinput">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div id="fromdate" class="form-group">
+                                                                    <label for="fromdateinput" class="label-heading">Från och med *</label>
+                                                                    <input type="text" class="form-control dateinput" autocomplete="off" name="fromdate" id="fromdateinput">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" id="submitPermAddressForm" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary pull-right">Spara</button>
+                                                        <div class="label-heading">* obligatoriska fält</div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div id="endprenCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="endprenHeading" data-toggle="false">
+                                                <div class="panel-body">
+                                                    @Html.PropertyFor(x => x.CurrentBlock.EndSubscriptionText)
+
+                                                    <hr />
+
+                                                    <form id="cancelForm" class="form-horizontal w-margin-top" data-sendemail="true" novalidate="novalidate">
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-6">
+                                                                <label for="cancelnameinput" class="label-heading">Namn *</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control" name="name" id="cancelnameinput" value="">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-6">
+                                                                <label for="cancelphoneinput" class="label-heading">Telefonnummer *</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="tel" class="form-control" name="phone" id="cancelphoneinput" value="">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-6">
+                                                                <label for="cancelemailinput" class="label-heading">E-post *</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="email" class="form-control" name="email" id="cancelemailinput" value="">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-6">
+                                                                <label for="cancelcusnoinput" class="label-heading">Kundnummer *</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control" name="customernumber" id="cancelcusnoinput" value="">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-12">
+                                                                <label for="cancelreason" class="label-heading">Vad är anledningen till att du önskar avsluta din prenumeration?</label>
+                                                                <select id="cancelreason" name="reason" class="form-control input-md">
+                                                                    <option>--Välj anledning--</option>
+                                                                    <option>Pris</option>
+                                                                    <option>Jag hinner inte läsa tidningen</option>
+                                                                    <option>Produkten motsvarade inte mina förväntningar</option>
+                                                                    <option>Jag ville bara läsa en artikel</option>
+                                                                    <option>Jag har fått tillgång till Di via min arbetsgivare</option>
+                                                                    <option>Jag har haft problem med leverans av produkten</option>
+                                                                    <option>Övrigt</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-12">
+                                                                <label for="cancelmessageinput" class="label-heading">Meddelande</label>
+                                                                <textarea class="form-control" rows="5" name="message" id="cancelmessageinput"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-6">
+                                                                <div class="label-heading">* Obligatoriska fält</div>
+                                                            </div>
+                                                            <div class="col-sm-6 text-right">
+                                                                <button type="submit" class="btn btn-primary">Skicka</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <div id="cancel-thank-you-message" class="hidden">
+                                                        <p class="alert alert-info">
+                                                            Tack för ditt meddelande! Vi återkommer till dig per mejl för vidare hantering av ärendet.<br /><br />
+                                                            Observera att din prenumeration inte är avslutad förrän du mottagit en bekräftelse per mejl.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+    </div>
+</div>
+

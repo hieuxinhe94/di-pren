@@ -1,0 +1,41 @@
+﻿@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.Blocks.Di.OverviewBlock
+
+<div id="overview" class="anchor"></div>
+<div id="overview-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 @Html.EditAttributes(x => x.Heading)>@Model.Heading</h1>
+                @Html.PropertyFor(x => x.Editor)
+            </div>
+        </div>
+    </div>
+    <div id="widget-area">
+
+        <div id="drag-container" class="container">
+            @Html.PropertyFor(x => x.DashboardContentArea, new { CssClass = "row widget-items", Tag = RenderingConstants.ContentAreaTags.OneThirdWidth })
+        </div>
+
+    </div>
+    @{
+        if (Model.ShowConnectInfo)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="connect">
+                            <h3>I en pappersprenumeration ingår alla digitala tjänster</h3>
+                            <p>
+                                Prenumererar du på papperstidningen har du även full tillgång till Dagens industris digitala tjänser. Allt du behöver göra är att koppla din pappersprenumeration till ett Di-konto.
+                            </p>
+                            <p><a class="btn btn-primary" style="text-decoration:none;" href="https://di.se/koppla" target="_blank">Koppla prenumeration</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        };
+    };
+
+
+</div>

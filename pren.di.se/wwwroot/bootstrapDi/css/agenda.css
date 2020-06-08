@@ -1,0 +1,84 @@
+﻿html {
+min-height: 700px;
+background-color: #29221a;
+background-image: url('/bootstrapDi/img/background.jpg');
+background-repeat: no-repeat;
+background-position: top;
+height: 100%;
+background-size: cover;
+}
+
+body 
+{
+  background-color: transparent; /*#F7EAE4;*/
+}
+.template-centered 
+{
+  text-align: center;
+  color: #3e3e3e;
+}
+.template-left 
+{
+  text-align: left;
+  color: #3e3e3e;
+}
+.template-margin {
+  margin: 24px 12px 24px 12px;
+}
+.template-top-bar 
+{
+  font-weight: bold;
+  margin: 20px 0 0 0;
+  padding: 0;
+  vertical-align: bottom;
+  height: 35px;
+  width: 100%;
+  color: white;
+  background-color: #3e3e3e;
+}
+.template-top-bar-content {
+  margin-left: 6px;
+  line-height: 36px;
+}
+input[type="submit"] {
+  margin-bottom: 6px;
+   min-width: 130px;
+}
+.input-large {
+  min-width: 210px;
+}
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+  background-color: #0d4971 !important;
+  background-image: none !important;
+}
+ .template-bg1 {
+   background-color: #f8eae4;
+   padding-bottom: 28px;
+   padding-top: 8px;
+   min-height: 500px;
+ }
+ .template-bg2 
+ {
+   background-color: #e1d6d0;
+ }
+
+.diwrap
+{
+  background-color: #ffffff;
+  padding: 2px 4px 2px 12px;
+  margin: 24px;
+}
+
+.template-button-wrapper {
+  text-align: right;
+  margin-right: 24px;
+}
+.template-box1 
+{
+  margin: 0 0 2px 0;
+  float: right;
+}
+
+.template-box2 {
+  min-height: 2.2em;
+}

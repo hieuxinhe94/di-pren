@@ -1,0 +1,11 @@
+﻿
+<select class="form-control input-lg margin-b-20">
+    <option value="0">- Välj ämne -</option>
+    <% _.each(topics, function(topic){ %>  
+    <option value="<%= topic.Slug %>"><%= topic.Heading %></option>
+    <% }); %>
+</select>
+
+        
+
+

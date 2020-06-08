@@ -1,0 +1,29 @@
+﻿@model Pren.Web.Models.ViewModels.GiveAwayOfferBlockViewModel
+
+<div class="row code-offer">
+    <div class="col-md-12">
+        <h2>@Html.PropertyFor(model => model.CurrentBlock.Heading)</h2>
+    </div>
+    <div class="col-md-4">
+        @Html.PropertyFor(model => model.CurrentBlock.Instructions)
+        <div class="user-code-container"
+             data-listid="@Model.CodeListId"
+             data-codeinfo="@Model.CurrentBlock.GiveAwayInfo"
+             data-buttontext="@Model.CurrentBlock.ButtonText"
+             data-notavailabletext="@HttpUtility.HtmlEncode(Model.CurrentBlock.GiveAwayNotAvailableText)"
+             data-isgiveaway="true">
+            <div class="code-error alert-danger displaynone">
+                Ett fel uppstod, var god försök senare.
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        <div class="code-offer-img-container" @Html.EditAttributes(x => x.CurrentBlock.Image)>
+            <img src="@Url.ContentUrl(Model.CurrentBlock.Image)" alt="@Model.CurrentBlock.Heading">
+        </div>
+        <div class="terms-text">
+            @Html.PropertyFor(model => model.CurrentBlock.TextBelowImage)
+        </div>
+    </div>
+</div>

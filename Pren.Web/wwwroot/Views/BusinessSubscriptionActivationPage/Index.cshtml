@@ -1,0 +1,119 @@
+﻿@using System.Web.Optimization
+@using EPiServer.Editor
+@model Pren.Web.Models.ViewModels.BusinessSubscriptionActivationPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/businesscampaign")
+}
+
+<div id="confirm-area" class="container">
+    <div class="row confirmation-copy">
+        @if (Model.DisplayErrorMessage)
+        {
+            <div class="col-md-12">
+                <div class="confirmation-header">
+                    <h1>@Model.CurrentPage.NotSuccessfullyActivatedHeading</h1>
+                </div>
+                <div class="confirmation-text">
+                    <div class="alert alert-danger">
+                        @if (Model.InviteExpired)
+                        {
+                            @Model.CurrentPage.NotSuccessfullyActivatedTextInviteExpired
+                        }
+                        else
+                        {
+                            @Model.CurrentPage.NotSuccessfullyActivatedText
+                        }                        
+                    </div>
+                </div>
+            </div>
+        }
+            
+        @if(!Model.DisplayErrorMessage || PageEditing.PageIsInEditMode)
+        {
+            <div class="col-md-12 info-area">
+                <h1>@Model.CurrentPage.ActivationFormHeading</h1>
+                @Html.Raw(@Model.CurrentPage.ActivationFormText != null ? @Model.CurrentPage.ActivationFormText.ToString().Replace("[foretag]", Model.InvitingCompanyName) : string.Empty)
+            </div>
+            <div class="col-md-6">
+                <div class="img-container" @Html.EditAttributes(x => x.CurrentPage.Image)>
+                    <img src="@Url.ContentUrl(Model.CurrentPage.Image)" alt="@Model.CurrentPage.PageName">
+                </div>
+                <div class="offer-heading clearfix">
+                    <strong>@Html.PropertyFor( x => x.CurrentPage.OfferDetailsHeading)</strong>
+                    <span class="price-per-person"></span>
+                </div>
+                @if ((Model.UspTexts != null && Model.UspTexts.Any()) || PageEditing.PageIsInEditMode)
+                {
+                    <ul class="pren-selection-product-list @(PageEditing.PageIsInEditMode ? string.Empty : "displaynone")" @Html.EditAttributes(model => model.CurrentPage.UspProduct)>
+                        @if (Model.UspTexts != null)
+                        {
+                            foreach (var text in Model.UspTexts)
+                            {
+                                <li>@Html.Raw(text)</li>
+                            }
+                        }
+                    </ul>
+                }
+            </div>
+            <div class="col-md-6">
+                <form id="business-subscription-activation-form" action="@Url.Action("PostForm", "BusinessSubscriptionActivationPage")" method="POST">
+                    <input type="text" name="bizsubscriptionid" id="bizsubscriptionidinput" class="hidden" value="@Model.ActivationForm.BizSubscriptionId">
+                    <div id="email" class="form-group">
+                        <label for="email">Din e-post</label>
+                        <input type="email" class="form-control input-lg" name="email" id="emailinput" value="@Model.ActivationForm.Email" readonly="readonly">
+                    </div>
+                    <div id="phone" class="form-group">
+                        <label for="phoneinput">Ditt telefonnummer</label>
+                        <input type="tel" class="form-control input-lg" name="phone" id="phoneinput" value="@Model.ActivationForm.Phone">
+                    </div>
+                    <div id="firstname" class="form-group">
+                        <label for="firstnameinput">Ditt förnamn</label>
+                        <input type="text" class="form-control input-lg" name="firstname" id="firstnameinput" value="@Model.ActivationForm.FirstName">
+                    </div>
+                    <div id="lastname" class="form-group">
+                        <label for="lastnameinput">Ditt efternamn</label>
+                        <input type="text" class="form-control input-lg" name="lastname" id="lastnameinput" value="@Model.ActivationForm.LastName">
+                    </div>
+                    <div class="disclaimer-container">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="termscheck">
+                                <span>
+                                    @Html.Raw(Model.Layout.PrenTermsText)
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="submit-container">
+                        <button type="submit" class="btn btn-lg btn-primary full-width">Läs Dagens industri</button>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
+</div>
+
+@section Footer{
+
+}
+
+@section PageSpecificJavaScriptIncludes
+{
+    @Scripts.Render("~/bundles/js/businessactivation")
+}
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+        // Create a validator object that handles validation on the form
+        var bizActivationFormValidator = new BizActivationFormValidator($("#business-subscription-activation-form"));
+
+        // Create a ActivationStep object that handles event on the form
+        var activationStep = new ActivationStep($("#business-subscription-activation-form"));
+    </script>
+}

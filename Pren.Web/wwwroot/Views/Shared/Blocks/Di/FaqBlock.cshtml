@@ -1,0 +1,26 @@
+﻿@model Pren.Web.Models.Blocks.Di.FaqBlock
+
+<div id="faq" class="anchor"></div>
+<div id="faq-area" @*class="margin-t-20"*@>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 @Html.EditAttributes(x => x.Heading)>@Model.Heading</h2>
+                @Html.PropertyFor(x => x.Editor)
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <label for="faq-topics" class=" label-heading">Vad behöver du hjälp med?</label>
+                        <div id="faq-topics"></div>
+                        <div id="faq-items"></div>
+                        @*<select id="faq-topics" name="Category" class="form-control input-lg margin-b-20">
+                            <option>Utebliven tidning</option>
+                            <option>Sen tidning</option>
+                        </select>*@
+                    </div>
+                </div>
+                @Html.PropertyFor(x => x.EditorBelowDropDown)
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DagensIndustri", "DagensIndustri\DagensIndustri.csproj", "{FF70BC5C-6F51-4383-BF6F-FC99BD045EF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIClassLib", "DIClassLib\DIClassLib.csproj", "{CD83A652-F083-4B4A-9D1D-487D9A7885B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS", "WS\WS.csproj", "{0898A2E9-EAE0-4449-A27F-CB16341781FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF70BC5C-6F51-4383-BF6F-FC99BD045EF9} = {FF70BC5C-6F51-4383-BF6F-FC99BD045EF9}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.201.36.95:8080/tfs/bink
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DagensIndustri\\DagensIndustri.csproj
+		SccProjectName1 = DagensIndustri
+		SccLocalPath1 = DagensIndustri
+		SccProjectUniqueName2 = DIClassLib\\DIClassLib.csproj
+		SccProjectName2 = DIClassLib
+		SccLocalPath2 = DIClassLib
+		SccProjectUniqueName3 = WS\\WS.csproj
+		SccProjectName3 = WS
+		SccLocalPath3 = WS
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF70BC5C-6F51-4383-BF6F-FC99BD045EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF70BC5C-6F51-4383-BF6F-FC99BD045EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF70BC5C-6F51-4383-BF6F-FC99BD045EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF70BC5C-6F51-4383-BF6F-FC99BD045EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD83A652-F083-4B4A-9D1D-487D9A7885B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD83A652-F083-4B4A-9D1D-487D9A7885B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD83A652-F083-4B4A-9D1D-487D9A7885B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD83A652-F083-4B4A-9D1D-487D9A7885B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0898A2E9-EAE0-4449-A27F-CB16341781FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0898A2E9-EAE0-4449-A27F-CB16341781FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0898A2E9-EAE0-4449-A27F-CB16341781FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0898A2E9-EAE0-4449-A27F-CB16341781FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

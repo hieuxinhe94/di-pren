@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="DagensIndustri.Templates.Public.MasterPages.MasterPage" %>
+<%@ Register TagPrefix="di" TagName="Header" Src="~/Templates/Public/Units/Static/Header.ascx" %>
+<%@ Register TagPrefix="di" TagName="Logo" Src="~/Templates/Public/Units/Static/Logo.ascx" %>
+<%@ Register TagPrefix="di" TagName="TopMainMenu" Src="~/Templates/Public/Units/Static/TopMainMenu.ascx" %>
+<%@ Register TagPrefix="di" TagName="TopLogin" Src="~/Templates/Public/Units/Static/TopLoginSso.ascx" %>
+<%@ Register TagPrefix="di" TagName="TopImage" Src="~/Templates/Public/Units/Placeable/TopImage.ascx" %>
+<%@ Register TagPrefix="di" TagName="SidebarBoxList" Src="~/Templates/Public/Units/Placeable/SideBarBoxes/SideBar.ascx" %>
+<%@ Register TagPrefix="di" TagName="Footer" Src="~/Templates/Public/Units/Static/Footer.ascx" %>
+<%--@ Register TagPrefix="di" TagName="Bookshelf" Src="~/Templates/Public/Units/Placeable/Bookshelf.ascx" --%>
+<%@ Register TagPrefix="di" TagName="googleanalytics" Src="~/Templates/Public/Units/Static/GoogleAnalytics.ascx" %>
+<%@ Register TagPrefix="di" TagName="DiGoldMembershipPopup" Src="~/Templates/Public/Units/Placeable/DiGoldMembershipPopup/DiGoldMembershipPopup.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <di:Header runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head> 
+<body id="Body" runat="server">
+    <form id="form1" novalidate="novalidate" runat="server">
+        
+        <asp:ScriptManager ID="ScriptManager" runat="server" />
+        
+        <asp:ContentPlaceHolder ID="FullRegion" runat="server">
+        <div id="wrapper">
+          
+	        <!-- Header -->
+          <asp:PlaceHolder ID="phHeader" runat="server">
+            <div id="header">
+                <!--Logo Image-->
+                <di:Logo runat="server" />
+                <!--//Logo Image-->         
+  	            <asp:ContentPlaceHolder ID="NavigationPlaceHolder" runat="server">
+  	            <!-- Navigation -->
+		        <div id="nav" <%=NavClass %>>
+			        <ul>
+                        <!--Main Menu-->
+                        <di:TopMainMenu runat="server" />
+                        <!--//Main Menu-->
+			        </ul>
+
+                    <!--Login and account-->
+                    <di:TopLogin runat="server" />
+                    <!--//Login and account-->
+		        </div>
+		        <!-- // Navigation -->
+                </asp:ContentPlaceHolder>
+            </div>
+          </asp:PlaceHolder>
+          <!-- // Header -->
+  
+            <asp:ContentPlaceHolder ID="TopContentPlaceHolder" runat="server">
+                <!-- Top image -->
+                <di:TopImage runat="server" />
+                <!-- //Top image -->
+            </asp:ContentPlaceHolder>
+  
+	        <!-- Di.se RSS -->
+            <asp:ContentPlaceHolder ID="RSSPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>            
+	        <!-- // Di.se RSS -->  
+
+            <asp:ContentPlaceHolder ID="HeadingContentPlaceHolder" runat="server">
+            
+            </asp:ContentPlaceHolder>
+
+	        <!-- Content wrapper -->
+	        <div id="content-wrapper" <%= ContentWrapperClass %>>
+                <asp:ContentPlaceHolder ID="WideMainContentPlaceHolder" runat="server">		
+		            
+		            <!-- Content -->
+                        
+                    <div id="content">
+                        <%--<di:Bookshelf ID="BookShelfControl" runat="server" Visible="false" />--%>
+			            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+
+		                </asp:ContentPlaceHolder>
+                    </div>
+                    <!--//Content -->
+		
+		            <!-- Right column -->
+                    <div id="right">
+                        <asp:ContentPlaceHolder ID="RightColumnPlaceHolder" runat="server">
+                            <asp:ContentPlaceHolder ID="PlaceHolderOnTopOfSidebarBoxes" runat="server"></asp:ContentPlaceHolder>
+                            <di:SidebarBoxList ID="SidebarBoxes" runat="server" />	                
+                        </asp:ContentPlaceHolder>            
+                    </div>
+		            <!-- // Right column -->
+		
+                </asp:ContentPlaceHolder>
+
+                <br class="clear" />
+
+	        </div>
+	        <!-- // Content wrapper -->		
+		
+            <!-- Login required popup OBS! Do not change the ID. It is used when searching for a control-->
+            <di:DiGoldMembershipPopup ID="DiGoldMembershipPopup" runat="server" /> <%--Do not remove or change ID from this control. It is used when accessing the control.--%>
+            <!-- // Login required popup -->
+
+        </div>
+        <!-- // Wrapper -->
+
+        <!-- Footer -->
+        <asp:ContentPlaceHolder ID="FooterPlaceHolder" runat="server">
+            <di:Footer ID="ucFooter" runat="server" />
+        </asp:ContentPlaceHolder>
+
+        <script type="text/javascript">    Cufon.now(); </script>
+        </asp:ContentPlaceHolder>
+        <!-- // Footer -->
+        <di:googleanalytics runat="server" />
+    </form>
+    <asp:PlaceHolder runat="server" ID="plhMaintenanceScript" Visible='<%#ConfigurationManager.AppSettings.Get("ShowMaintenanceMessage") == "true" %>'>
+        <script type="text/javascript" src="<%=ResolveUrl("~/Templates/Public/js/maintenanceHandler/maintenanceHandler.js")%>"></script>
+        <script type="text/javascript">
+            maintenanceHandler.init();
+        </script>
+    </asp:PlaceHolder>
+</body>
+</html>

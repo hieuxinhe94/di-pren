@@ -1,0 +1,22 @@
+﻿@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.Blocks.Di.MyCodesBlock
+
+<div id="mycodes" class="anchor"></div>
+<div id="mycodes-area">
+    <div class="container">
+        <div class="row">
+            <div class="largetext col-md-12">
+                <h2>@Model.Heading</h2>
+                @Html.PropertyFor(x => x.Editor)
+            </div>
+        </div>
+    </div>
+    <div id="no-offer-fallback" data-lookfor=".code-offer-container .code-offer" class="displaynone">
+        @*@Html.PropertyFor(x => x.CurrentPage.FallbackText)*@ Fallback
+    </div>
+    <div id="offers-area">
+        <div class="container">
+            @Html.PropertyFor(x => x.CodeOffersContentArea, new { CssClass = "row codeoffer-items", Tag = RenderingConstants.ContentAreaTags.FullWidth })
+        </div>
+    </div>
+</div>

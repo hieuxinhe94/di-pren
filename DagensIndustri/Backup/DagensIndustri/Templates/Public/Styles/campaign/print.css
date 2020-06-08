@@ -1,0 +1,11 @@
+﻿
+
+.hidden{display:none;}
+
+/************************/
+/* AREAS                */
+/************************/
+#header, #image-viewer, #breadcrumb, #right, #footer
+{
+	display: none;
+}

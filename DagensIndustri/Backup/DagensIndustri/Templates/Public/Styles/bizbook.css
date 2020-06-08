@@ -1,0 +1,271 @@
+/* Bizbook section */
+
+/* start layout*/
+
+body.bizbook #image-viewer {
+	margin-bottom: 0;
+}
+
+/* list styles */
+.fiftyfifty-list {
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+	.fiftyfifty-list > li {
+		float: left;
+		width: 50%;
+		line-height: 19px;
+	}
+	
+.top-term-list {}
+	.top-term-list li {line-height: 19px;}
+	.top-term-list li span {
+		display: block;
+	}
+
+/* 3 col list */
+ul.three-col {
+	display: table;
+	width: 100%;
+}
+
+.three-col > li {width: 33%; float: left;}
+
+/* tree list */
+.tree-list, .tree-list ul {
+	border-left: 1px solid #474843;
+}
+	.tree-list a {
+		text-decoration: none;
+	}
+	.tree-list .selected {font-weight: bold; color: #000;}
+	.tree-list li {
+		padding-left: 15px;
+		background: url("../images/elements/tree-list-horizonal-line.png") 0 8px no-repeat;
+	}
+
+/* Top term - the definitions on top */
+table.top-term tr td:first-child {color: inherit; font-weight: normal;}
+
+/* Top Left term - the definitions on top and on the left */
+table.top-left-term {}	
+table.top-left-term thead tr:last-child th {
+	border-bottom: 1px solid #E2DFDF;
+	padding-bottom: 15px;
+	
+}	
+table.top-left-term tbody tr:first-child td {
+	padding-top: 15px;
+	
+}
+
+/* Left term - the definitions on the left side */
+table.left-term {}	
+table.left-term tr th {font-weight: normal;}	
+table.left-term tr th:first-child {font-weight: bold; color: #000;}	
+
+
+/* end layout*/
+
+/* start typo */
+	.bizbook h1 {
+		padding-top: 30px;
+	}
+	.bizbook #content-wrapper > h1 {padding-bottom: 10px;}
+	.bizbook h3 {
+		font-size: 18px; 
+		letter-spacing: -1px;
+		line-height: 25px;
+		padding: 10px 0 0 0;
+	}
+	
+/* end typo */
+
+/* helpers start */
+
+.w50 {
+	width: 50%;
+}
+.w150 {width: 150px;}
+.w300 {width: 300px;}
+
+/* helpers end */
+
+/* company top menu */
+#company-top-menu {
+	margin-top: 10px;
+	float: right;
+	clear: both;
+}
+#company-top-menu > li {
+	float: left;
+	margin-right: 30px;
+}
+#company-top-menu > li:last-child {
+	margin-right: 0;
+} 
+#company-top-menu > li.last {
+	margin-right: 0;
+}
+
+/* main content - overwrite main css */
+#content.full {
+	width: 958px;
+	float: none;
+	overflow: hidden;
+}
+
+#company-main-info {
+	width: 460px;
+	padding: 0 20px 0 0;
+	float: left;
+	margin-bottom: 15px;
+}
+#company-main-info ul > li {
+	line-height: 19px;
+}
+
+.adr {
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+
+.adr p {font-size: 100%;}
+
+/* start company members box */
+#company-members {
+	float: left;
+	width: 460px;
+	height: 535px;
+	background-color: #fff;
+	border: 1px solid #e0dedf;
+	margin-top: 130px;
+}
+
+	#company-members > ul {
+		overflow: auto;
+		height: 495px;
+	}
+
+	#company-members > ul > li {
+		padding: 10px 15px 10px 15px;
+		border-bottom: 1px solid #e0dedf;
+		
+	}
+	#company-members > ul > li.open {
+		background-color: #fee6b6;
+	}
+	
+	#company-members > ul > li.open .extra-info {display: block;}
+	
+	#company-members > ul > li .extra-info {
+		display: none;
+		overflow: hidden;
+		border-top: 1px solid #e0dedf;
+		padding-top: 10px;
+		margin-top: 10px;
+	}
+	#company-members > ul > li.open .extra-info {
+		border-top: 1px solid #e4cfa3;
+	}
+	
+	
+	#company-members > ul > li .extra-info ul {}
+	#company-members > ul > li .extra-info ul li {float: left; width: 50%; min-height: 52px;}
+	#company-members > ul > li .extra-info ul li span {display: block; line-height: 17px;}
+	
+	#company-members > ul > li h3 {
+		font-size: 15px; font-weight: normal; letter-spacing: -1px;
+		overflow: hidden;
+		padding: 0;
+		cursor: pointer;
+		background: url("../images/elements/link-arrows.png") 0 -42px no-repeat;
+		padding: 0 0 0 16px;
+		letter-spacing: 0;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+		
+		
+	}
+	#company-members > ul > li.open h3 {
+		background-position: 0 -67px;
+	}
+	
+		#company-members > ul > li h3 span,
+		#company-members > ul > li h3 a {display: block; width: 50%; float: left; text-decoration: none; }
+		#company-members > ul > li h3 .fn {color: #C8281E;}
+		#company-members > ul > li h3 .title { font-size: 13px; }
+
+/* end company members box */
+
+/* Forms start */
+
+/* .form-box overwrites start */
+
+.bizbook .form-box {padding-bottom: 25px;}
+	.bizbook .form-box .row .x-small {width: 90px;}	
+	.bizbook .form-box .row .small-medium {width: 110px;}
+	.bizbook .form-box .row .medium-large {width: 280px;}
+
+
+	.bizbook .form-box .row .medium.last {width: 155px;}
+
+	.bizbook label.checkbox.center {margin-top: 22px;}
+	.bizbook label.checkbox input {margin-left: 0;}
+
+	.bizbook .form-box h3 {padding: 0;}
+	.bizbook .form-box h3 span {font-size:14px; color: #4c413c; font-weight: normal;}
+
+	.bizbook .form-box .row.text {
+		height: auto;
+		padding-bottom: 0;
+		padding-right: 10px;
+	}
+	.bizbook .form-box .row.text small {color: #948d8a;}
+
+/* .form-box overwrites end */
+
+/* overwrite .button-wrapper border and padding */
+.bizbook .button-wrapper {
+	border-top: 0;
+	padding-top: 0;
+}
+
+/* Three column form style... - label, current and new value - used for update page */
+
+.row.three-col {
+	padding-top: 5px; padding-bottom: 5px;
+}
+	.row.three-col .col {min-height: 1px;}
+	.row.three-col .col1 {
+		width: 140px;
+	}
+		.row.three-col .col1 label,
+		.row.three-col .col span {display: block;line-height: 30px;}
+	.row.three-col .col2 {
+		width: 170px;
+	}
+	.row.three-col .col3 {
+		width: 250px;
+	}
+
+/* Forms end */
+
+
+/** CLEARFIX **/
+.clearFix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0pt;
+	visibility: hidden;
+}
+.clearFix {
+}
+* html .clearFix {
+	height: 1%;
+}
+.clearFix {
+	display: block;
+}

@@ -1,0 +1,83 @@
+﻿@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.IPageViewModel<Pren.Web.Models.Pages.SitePageData>
+@{
+    Layout = "~/Views/Shared/Layouts/_Root.cshtml";
+}
+
+@section PageSpecificCssIncludes{
+    @if (IsSectionDefined("PageSpecificCssIncludes"))
+    {
+        @RenderSection("PageSpecificCssIncludes")
+    }
+}
+
+@section PageSpecificJavascriptInHeader{
+    @if (IsSectionDefined("PageSpecificJavascriptInHeader"))
+    {
+        @RenderSection("PageSpecificJavascriptInHeader")
+    }
+}
+
+@section PageSpecificGtmDataLayer{
+    @if (IsSectionDefined("PageSpecificGtmDataLayer"))
+    {
+        @RenderSection("PageSpecificGtmDataLayer")
+    }
+    else
+    {
+        <script>
+            dataLayer = [{ 'product': 'PREN' }];
+        </script>
+    }
+}
+
+@section TopBarContent
+{
+    @if (Model.Layout.Campaign.ChooseCampaignPage != null)
+    {
+        <div class="top-bar-right">
+            <a href="@Url.ContentUrl(Model.Layout.Campaign.ChooseCampaignPage)">
+                @if (Model.Layout.Campaign.ShowDigitalLink)
+                {
+                    <span class="offer-text">Välj digitalt erbjudande</span><i class="fa fa-play"></i>
+                    <img class="offer-icon-desktop" height="22" src="~/Static/css/img/svgicons/desktop-white.svg" />
+                    <img class="offer-icon-ipad" height="18" src="~/Static/css/img/svgicons/ipad-white.svg" />
+                    <img class="offer-icon-iphone" height="15" src="~/Static/css/img/svgicons/iphone-white.svg" />
+                }
+                else
+                {
+                    <span class="offer-text">Välj papper</span><i class="fa fa-play"></i>
+                    <img class="offer-icon-newspaper" height="22" src="~/Static/css/img/svgicons/newspaper-open-white.svg" />
+                }
+            </a>
+        </div>
+    }
+}
+
+@RenderBody()
+
+@section Footer
+{
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer")
+    }
+    else
+    {
+        @Html.PropertyFor(x => x.Layout.FooterContentArea, new { CssClass = "footer-item", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+    }
+}
+
+@section PageSpecificJavaScriptIncludes{
+    @if (IsSectionDefined("PageSpecificJavaScriptIncludes"))
+    {
+        @RenderSection("PageSpecificJavaScriptIncludes")
+    }
+}
+
+@section PageSpecificJavaScript{
+    @if (IsSectionDefined("PageSpecificJavaScript"))
+    {
+        @RenderSection("PageSpecificJavaScript")
+    }
+}

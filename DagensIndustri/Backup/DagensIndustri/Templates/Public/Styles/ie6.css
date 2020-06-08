@@ -1,0 +1,41 @@
+	.form-nav,
+	.form-nav ul,
+	.form-nav li,
+	.form-nav li a { float: left; }
+
+	button span,
+	.btn span { float: left; }
+
+	.btn:hover {
+		color: #c00;
+		background-position: 100% -50px;
+	}
+	
+		.btn:hover span { background-position: 0 0; }	
+		
+#staff-wrapper ul li { margin: 0 19px 0 0; }		
+
+#wrapper { z-index: 2; }
+
+#footer {
+	margin-top: 0;
+}
+
+#popup .top {
+	top: -90px;
+}
+
+#popup .bottom {
+	bottom: 100px;
+}
+
+#popup-close { top: -60px; }
+
+#popup-content .btn { width: 150px; }
+
+	#nav { right: 20px; }
+
+				#nav ul li.active .subnav ul li a,
+				#nav .subnav ul li a {
+					background-image: none;
+				}

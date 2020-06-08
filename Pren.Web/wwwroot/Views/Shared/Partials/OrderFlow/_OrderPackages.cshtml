@@ -1,0 +1,81 @@
+﻿@model Pren.Web.Models.ViewModels.OrderFlow.OrderFlowViewModel
+
+<div class="row main__package">
+    <div class="main__package-wrapper">
+        
+        @{ var i = 1; }
+        @{ var width = 12 / Model.Packages.Count; }
+        @foreach (var package in Model.Packages)
+        {            
+            <div class="col-xs-12 col-sm-@(width) package-@(i++)">
+                <div class="package package--@package.PackageCssClass">
+                    <div class="package-content-wrapper hidden-xs">
+                        <div class="package__title">@package.Title</div>
+                        @if (string.IsNullOrEmpty(package.ImgUrl))
+                        {
+                            <div class="package__img @package.ImgCssClass"></div>
+                        }
+                        else
+                        {
+                            <div class="package__img @package.ImgCssClass" style="background-image: url(@package.ImgUrl)"></div>
+                        }                        
+                        <div class="package__button">
+                            <a href="@Model.PageUrl/order/@package.Id@Model.QueryString" class="package__button-link">
+                                <div class="link-text">@package.LinkText</div>
+                            </a>
+                        </div>
+                        <div class="package__pricing">
+                            @Html.Raw(package.Price)
+                        </div>
+                    </div>
+                    <a href="@Model.PageUrl/order/@package.Id@Model.QueryString" class="package-content-wrapper visible-xs">
+                        <div class="package__name">@package.Name</div>
+                        <div class="package__title">@package.Title</div>                        
+                        <div class="package__pricing">
+                            @Html.Raw(package.Price)
+                        </div>
+                    </a>                                        
+                    <div class="package-view-all visible-xs">
+                        <a class="package-view-all__link"><span class="text">Visa allt som ingår</span><i class="icon icon-down"></i></a>
+                    </div>
+                    <div class="package-listing">
+                        <div class="package-listing__title">@package.ListTitle</div>
+                        @if (string.IsNullOrEmpty(package.ListDividerTextMobile))
+                        {
+                            <div class="package-listing__divider">@package.ListDividerText</div>
+                        }
+                        else
+                        {
+                            <div class="package-listing__divider visible-xs">@package.ListDividerTextMobile</div>
+                            <ul class="package-listing__detail visible-xs">
+                                @foreach (var item in package.ListItemsMobile)
+                                {
+                                    <li class="package-listing__item">@item</li>
+                                }
+                            </ul>
+                            <div class="package-listing__plus-divider">
+                                <i class="icon-plus"></i>
+                            </div>
+                            <div class="package-listing__plus">@package.ListDividerText</div>
+                        }
+                        <ul class="package-listing__detail">
+                            @foreach (var item in package.ListItems)
+                            {
+                                <li class="package-listing__item">@item</li>
+                            }
+                        </ul>
+                        <ul class="package-listing__detail"></ul>
+                        <div class="package__button visible-xs">
+                            <a href="@Model.PageUrl/order/@package.Id@Model.QueryString" class="package__button-link">
+                                <div class="link-text">@package.LinkText</div>
+                            </a>
+                        </div>
+                        <div class="package__pricing visible-xs">
+                            @Html.Raw(package.Price)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

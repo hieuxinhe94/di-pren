@@ -1,0 +1,1 @@
+window.addEventListener=window.addEventListener||function(a,b){};window.addEventListener("message",function(a){try{(iheight=JSON.parse(decodeURIComponent(a.data)).height)&&$("#splus-subscribe-frame").css("height",iheight+"px")}catch(b){}});$(document).ready(function(){$("#splus-subscribe-frame").parent().css({overflow:"hidden"})});

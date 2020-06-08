@@ -1,0 +1,79 @@
+﻿body {
+	/*background-color: #F7EAE4;*/
+	background-color: #f2f2f2;
+	color: #333;
+	height: 100%;	
+	font-family: 'Arial', Sans-Serif;
+	font-size: 12px;
+	letter-spacing: 0;
+	line-height: 13px;
+}
+
+/* TYPOGRAPHY --------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 { color: #000; }
+
+h1 {
+	margin: 0 0 25px 18px;
+	font-size: 36px;
+	font-weight: bold;
+	line-height: 42px;
+	letter-spacing: -2px;
+}
+
+#content h1 {
+	margin-left: 0;
+}
+
+h2 {
+	font-size: 24px;
+	line-height: 27px;	
+	letter-spacing: -1px;		
+	margin: 0 0 7px 0;
+}
+
+h3 {
+	font-size: 14px;
+	line-height: 23px;
+}
+
+p {
+	font-size: 14px;
+	line-height: 21px;
+	margin: 0 0 21px 0;
+	color: #333;
+}
+
+#wrapper {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	min-height: 100%;
+	width: 978px;
+	padding: 0 6px;
+	margin: 0 auto;
+	background: url(../images/bg-wrapper.png) 0 0 repeat-y;
+}
+
+html * > #wrapper { height: auto; }
+#content-wrapper { padding: 0 19px 220px 19px; width: 940px; }
+	
+	#content {
+		width: 620px;
+		/*float: left; //can not be used on Prenumerationsvillkors-page */
+	}
+	
+body > form { height: 100%; }
+
+#footer {
+		position: relative;
+	z-index: 1;
+	height: 135px;
+	margin: -135px auto 0 auto;
+	width: 978px;
+	background-color: #4c413c;
+}
+
+.standardImgLogo {
+  margin: 0 0 28px 0;
+}

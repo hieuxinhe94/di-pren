@@ -1,0 +1,175 @@
+﻿@using EPiServer
+@using EPiServer.Core
+@using EPiServer.ServiceLocation
+@using Pren.Web.Business.Rendering
+@using Pren.Web.Models.Pages.MySettings
+@using StartPage = Pren.Web.Models.Pages.StartPage
+@model Pren.Web.Models.ViewModels.MySettings.ContactPageViewModel
+           
+@{
+
+    var startChatOnContactSubmit = ServiceLocator.Current.GetInstance<IContentRepository>().Get<StartPage>(ContentReference.StartPage).StartChatOnContactSubmit;
+}
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@if (@Model.HideForm)
+{
+    @Html.PropertyFor(x => x.CurrentPage.FormHiddenBody)
+
+}
+else
+{
+    <form id="contact-form" action="@Url.Action("Send", "ContactPage")" class="form-horizontal w-margin-top" method="POST" enctype="multipart/form-data">
+
+        @Html.AntiForgeryToken()   
+
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="phoneinput" class="label-heading">NAMN *</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control input-lg" name="name" id="nameinput" value="@Model.Name">
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="phoneinput" class="label-heading">TELEFONNUMMER *</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="tel" class="form-control input-lg" name="phone" id="phoneinput" value="@Model.Phone">
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="emailinput" class="label-heading">E-POST *</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="email" class="form-control input-lg" name="email" id="emailinput" value="@Model.Email">
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="cusnoinput" class="label-heading">Kundnummer *</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control input-lg" name="customernumber" id="cusnoinput" value="@(Model.CustomerNumber > 0 ? Model.CustomerNumber.ToString() : string.Empty)">
+            </div>
+        </div>
+        <hr />
+        <div id="di-faq">
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <label for="faq-topics" class=" label-heading">Kategori</label>
+                </div>
+                <div class="col-sm-6">
+                    <select id="faq-topics" name="Category" class="form-control input-lg"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="heading">Finns svaret du söker nedan?</div>
+
+                    <div class="menu">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label for="messageinput" class="label-heading">Ärende *</label>
+                <textarea class="form-control input-lg" rows="5" name="message" id="messageinput"></textarea>
+            </div>
+        </div>
+        <hr />
+        @if (!startChatOnContactSubmit)
+        {
+            
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <input class="shadow-file-field form-control input-lg" type="text" placeholder="Filuppladdning (Max 4 MB)">
+                </div>
+                <div class="col-sm-6">
+                    <input class="btn btn-primary shadow-file-field" type="button" value="Välj fil">
+                    <input id="id_file" type="file" name="Attachment" style="display: block;">
+                </div>
+            </div>
+            <hr />
+        }
+        <div class="form-group">
+            <div class="col-sm-6">
+                <div class="label-heading">* Obligatoriska fält</div>
+            </div>
+            <div class="col-sm-6">
+                <button type="submit" id="submit-form" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary">Skicka fråga</button>
+            </div>        
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                @{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+            </div>
+        </div>
+    </form>
+}
+@if (!Model.Layout.MySettings.IsLoggedIn)
+{
+    @section LeftColumn
+        {
+        <div class="row">
+            @Html.PropertyFor(x => ((MySettingsStartPage) x.Layout.MySettings.StartPage).RightContentArea, new {Tag = RenderingConstants.ContentAreaTags.FullWidth})
+        </div>
+    }
+}
+
+@section PageSpecificJavaScript
+{
+
+    <script type="text/javascript">
+        $("#submit-form").loadingIndicatorLoad(
+            function () {
+                // Only indicate loading if form is valid
+                return ValidationHandler.isValid("form");
+            }
+        );
+
+        var fileAdapter = new FileInputAdapter($("#id_file"), $(".shadow-file-field"));
+    </script>        
+
+    <script type="text/javascript">
+
+        var scroller = new Scroller({
+            scrollOnLoad: true,
+            scrollToThis: $(".message")
+        });
+        
+        var faq = new Faq({
+            topicsElement: $("#faq-topics"),
+            onTopicsLoaded:
+                function(items) {
+                    $.each(items, function(index, item) {
+                        $("<option value='" + item.Slug + "'>" + item.Heading + "</option>").appendTo($("#faq-topics"));
+                    });
+
+                    this.topicsElement.trigger("change");
+                },
+            onTopicsChanged:
+                function(items) {
+                    $("#di-faq .menu a").remove(); //clear list
+
+                    $.each(items, function(index, item) {
+                        $("<a href='" + item.Url + "' target='_blank' class='menu-item'>" + item.Title + "</a>").appendTo($("#di-faq .menu"));
+                    });
+                }
+        });
+
+        faq.populateFaqTopics();
+
+    </script>        
+}

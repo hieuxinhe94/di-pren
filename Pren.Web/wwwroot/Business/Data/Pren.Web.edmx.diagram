@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9fdc543581624d2bb51ffd9b43d918a8" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="PrenWebMiscModel.EmailLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.LogEvent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.LogTable" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.LogTableInfo" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.BusinessSubscriptionPrice" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.Campaign" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.CampaignUspProduct" Width="1.5" PointX="3.375" PointY="7.125" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.CampaignUspProductTextRelation" Width="1.5" PointX="5.625" PointY="6.875" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.CampaignUspText" Width="1.5" PointX="3.375" PointY="10.125" />
+        <AssociationConnector Association="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspProduct" />
+        <AssociationConnector Association="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspText" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.CodePortalCode" Width="1.5" PointX="9.625" PointY="0.875" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.CodePortalList" Width="1.5" PointX="7.375" PointY="1" />
+        <AssociationConnector Association="PrenWebMiscModel.FK_CodePortalList_CodePortalCode" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.PackageRelation" Width="1.5" PointX="8.375" PointY="5.5" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.PackageRelationItem" Width="1.5" PointX="12.875" PointY="5" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.PackageRelationList" Width="1.5" PointX="10.625" PointY="5.25" />
+        <AssociationConnector Association="PrenWebMiscModel.FK_PackageRelationList_PackageRelation" />
+        <AssociationConnector Association="PrenWebMiscModel.FK_PackageRelationItem_PackageRelationList" />
+        <EntityTypeShape EntityType="PrenWebMiscModel.CodePortalGiveAway" Width="1.5" PointX="11.875" PointY="1.25" />
+        <AssociationConnector Association="PrenWebMiscModel.FK_CodePortalGiveAway_CodePortalCode" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

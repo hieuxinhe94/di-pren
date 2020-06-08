@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD83A652-F083-4B4A-9D1D-487D9A7885B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DIClassLib</RootNamespace>
+    <AssemblyName>DIClassLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Addresses\BoxAddress.cs" />
+    <Compile Include="Addresses\StreetAddress.cs" />
+    <Compile Include="Cirix\VariableNameTranslator.cs" />
+    <Compile Include="Addresses\Address.cs" />
+    <Compile Include="Customers\CompanyCustomer.cs" />
+    <Compile Include="Customers\Customer.cs" />
+    <Compile Include="DbHandlers\ApsisDbHandler.cs" />
+    <Compile Include="DbHandlers\CirixDbHandler.cs" />
+<<<<<<< .mine
+    <Compile Include="Customers\Person.cs" />
+    <Compile Include="DbHelpers\Logger.cs" />
+    <Compile Include="DbHelpers\SqlHelper.cs" />
+    <Compile Include="Payment\IPayment.cs" />
+    <Compile Include="Payment\AurigaHandler.cs" />
+=======
+    <Compile Include="Customers\PersonCustomer.cs" />
+    <Compile Include="Invoices\Invoice.cs" />
+    <Compile Include="CardPayment\ICardPayment.cs" />
+    <Compile Include="CardPayment\Auriga.cs" />
+>>>>>>> .r580
+    <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< .mine
+    <Compile Include="Service References\CirixTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+=======
+    <Compile Include="Subscriptions\SubscriberType.cs" />
+>>>>>>> .r580
+    <Compile Include="Subscriptions\Subscription.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+<<<<<<< .mine
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+=======
+>>>>>>> .r580
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\CirixTest\CirixWebService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CirixTest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\CirixWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

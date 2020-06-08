@@ -1,0 +1,86 @@
+﻿@using System.Web.Optimization
+@model Pren.Web.Models.ViewModels.CampaignPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/campaign")
+}
+
+@section PageSpecificJavascriptInHeader
+{
+    @Html.Raw(Model.CurrentPage.ScriptThankyouInHeader)
+}
+
+
+@section PageSpecificGtmDataLayer
+{
+    <script> 
+        dataLayer = [{
+            'product': 'PREN',
+            'order': '@ViewBag.ProductName',
+            'loggedin': @ViewBag.LoggedIn.ToString().ToLower(),
+            'transactionId': '@ViewBag.TransactionId',
+            'transactionTotal': @(ViewBag.TransactionTotal != null ? ViewBag.TransactionTotal.ToString().Replace(",", ".") : 0),
+            'transactionTax': @(ViewBag.TransactionTax != null ? ViewBag.TransactionTax.ToString().Replace(",", ".") : 0),
+            'paymentOption': '@ViewBag.PaymentMethod',
+            'targetGroup': '@ViewBag.TargetGroup',
+            'transactionProducts': [{
+                'sku': '@ViewBag.ProductSku',
+                'name': '@ViewBag.ProductName',
+                'category': '@ViewBag.ProductCategory',
+                'price': @(ViewBag.ProductPrice != null ? ViewBag.ProductPrice.ToString().Replace(",", ".") : 0),
+                'quantity': 1
+            }]
+        }];
+    </script>
+}
+
+@* Used by external tracking script. Do not rename. *@
+<input id="SelectedCampno" type="hidden" value="@Model.SubscriptionForm.CampId"/>
+
+<div id="confirm-area" class="container">    
+
+    @if (Model.SubscriptionForm != null && Model.SelectecedCampaign != null)
+    {
+        <div class="row confirmation-copy">            
+            <div class="col-md-6">
+                <div class="product-image">
+                    <img src="@Url.ContentUrl(Model.SelectecedCampaign.Image)" alt="@Model.SelectecedCampaign.Heading">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="confirmation-header">
+                    <h1>Tack för din beställning</h1>
+                </div>
+                <div class="confirmation-text">
+                    En bekräftelse på din prenumeration av <span class="confirmation-product">@Model.SelectecedCampaign.Heading</span>
+                    har skickats till <a href="#" class="confirmation-mail">@Model.SubscriptionForm.Email</a>.
+                    <br/>
+                    Trevlig läsning
+                    @if (!string.IsNullOrEmpty(ViewBag.CallbackUrl))
+                    {
+                        <br/>                        
+                        <br/>
+                        <p><a href="@ViewBag.CallbackUrl" title="Gå vidare till Di">Gå vidare till di.se</a></p>
+                    }
+                </div>
+            </div>
+        </div>        
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+        </div>
+    }
+</div>
+
+@section PageSpecificJavaScriptIncludes{
+
+    @Html.Raw(Model.CurrentPage.ScriptThankyou)
+    
+}

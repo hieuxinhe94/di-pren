@@ -1,0 +1,1330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{504DDB31-F6C3-4958-A702-965C2E7CC98A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pren.Web</RootNamespace>
+    <AssemblyName>Pren.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\..\DagensIndustri\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\DagensIndustri\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\DagensIndustri\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\DagensIndustri\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>..\..\DagensIndustri\packages\CsvHelper.2.13.2.0\lib\net40-client\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.Core.9.5.1\lib\net45\EPiServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.ApplicationModules, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Framework.9.5.1\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Cms.Shell.UI, Version=9.3.5.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.UI.Core.9.3.5\lib\net45\EPiServer.Cms.Shell.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Configuration, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.Core.9.5.1\lib\net45\EPiServer.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Data, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Framework.9.5.1\lib\net45\EPiServer.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Data.Cache, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Framework.9.5.1\lib\net45\EPiServer.Data.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Enterprise, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.Core.9.5.1\lib\net45\EPiServer.Enterprise.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Events, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Framework.9.5.1\lib\net45\EPiServer.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Framework, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Framework.9.5.1\lib\net45\EPiServer.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.ImageLibrary, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.Core.9.5.1\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Licensing, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Framework.9.5.1\lib\net45\EPiServer.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.LinkAnalyzer, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.Core.9.5.1\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Logging.Log4Net">
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Logging.Log4Net.2.0.0\lib\net45\EPiServer.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Packaging, Version=3.2.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Packaging.3.2.3\lib\net45\EPiServer.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Packaging.CmdAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Packaging.3.2.3\lib\net45\EPiServer.Packaging.CmdAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Packaging.UI, Version=3.2.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Packaging.UI.3.2.3\lib\net45\EPiServer.Packaging.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Search.IndexingService">
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Search.8.0.0\lib\net45\EPiServer.Search.IndexingService.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Shell, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.Framework.9.5.1\lib\net45\EPiServer.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Shell.UI, Version=9.3.5.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.UI.Core.9.3.5\lib\net45\EPiServer.Shell.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.UI, Version=9.3.5.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.UI.Core.9.3.5\lib\net45\EPiServer.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Web.WebControls, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.Core.9.5.1\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.XForms, Version=9.5.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\EPiServer.CMS.Core.9.5.1\lib\net45\EPiServer.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\DagensIndustri\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.5.40416.9020, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\NuGet.Core.2.5.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\..\DagensIndustri\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\..\DagensIndustri\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\DagensIndustri\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\..\DagensIndustri\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ItemGroup>
+    <Compile Include="Business\Address\AddressResult.cs" />
+    <Compile Include="Business\Address\IAddressService.cs" />
+    <Compile Include="Business\Address\IMaskedAddressService.cs" />
+    <Compile Include="Business\Address\MaskedAddresResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Address\MaskedAddressService.cs" />
+    <Compile Include="Business\Address\ParService.cs" />
+    <Compile Include="Business\Attributes\AuthorizeUserAttribute.cs" />
+    <Compile Include="Business\Attributes\AuthorizeCheckAttribute.cs" />
+    <Compile Include="Business\Attributes\NoCacheAttribute.cs" />
+    <Compile Include="Business\BusinessSubscription\IInviteImporter.cs" />
+    <Compile Include="Business\BusinessSubscription\InviteImporter.cs" />
+    <Compile Include="Business\BusinessSubscription\IPriceHandler.cs" />
+    <Compile Include="Business\BusinessSubscription\PriceHandler.cs" />
+    <Compile Include="Business\Cache\CacheKeyInfo.cs" />
+    <Compile Include="Business\Cache\Campaign\Retrievers\CachedCampaignIdentifierRetriver.cs" />
+    <Compile Include="Business\Cache\IObjectCache.cs" />
+    <Compile Include="Business\Cache\ObjectCache.cs" />
+    <Compile Include="Business\Cache\Package\Retrievers\CachedPackageRetriever.cs" />
+    <Compile Include="Business\Cache\Parameters\Retrievers\CachedParametersRetriever.cs" />
+    <Compile Include="Business\Cache\Reclaim\Retrievers\CachedReclaimTypeRetriever.cs" />
+    <Compile Include="Business\Campaign\CampaignConstants.cs" />
+    <Compile Include="Business\Cache\Campaign\Retrievers\CachedCampaignRetriever.cs" />
+    <Compile Include="Business\Campaign\CampaignLayout.cs" />
+    <Compile Include="Business\CodePortal\CodePortalService.cs" />
+    <Compile Include="Business\CodePortal\ICodePortalService.cs" />
+    <Compile Include="Business\Configuration\ISiteSettings.cs" />
+    <Compile Include="Business\Configuration\ISiteConfiguration.cs" />
+    <Compile Include="Business\Configuration\SettingConstants.cs" />
+    <Compile Include="Business\Configuration\SiteSettings.cs" />
+    <Compile Include="Business\Configuration\SiteConfiguration.cs" />
+    <Compile Include="Business\ContentLocator.cs" />
+    <Compile Include="Business\Controllers\ApiReferrerCheck.cs" />
+    <Compile Include="Business\Controllers\ExtendedApiController.cs" />
+    <Compile Include="Business\Controllers\IApiController.cs" />
+    <Compile Include="Business\Controllers\IApiReferrerCheck.cs" />
+    <Compile Include="Business\CustomProperties\MessageTypeSelectionFactory.cs" />
+    <Compile Include="Business\CustomProperties\ReceiveTypeListSelectionFactory.cs" />
+    <Compile Include="Business\CustomProperties\CodePortalListSelectionFactory.cs" />
+    <Compile Include="Business\CustomProperties\SubsKindSelectionFactory.cs" />
+    <Compile Include="Business\CustomProperties\ShortcutSelectionFactory.cs" />
+    <Compile Include="Business\CustomProperties\IconSelectionFactory.cs" />
+    <Compile Include="Business\CustomProperties\MessageSelectionFactory.cs" />
+    <Compile Include="Business\CustomProperties\CampaignUspSelectionFactory.cs" />
+    <Compile Include="Business\CustomTabs.cs" />
+    <Compile Include="Business\DataAccess\BusinessSubscription\EntityBusinessSubscriptionDataHandler.cs" />
+    <Compile Include="Business\DataAccess\BusinessSubscription\IBusinessSubscriptionDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Campaign\Entities\CampaignDataEntity.cs" />
+    <Compile Include="Business\DataAccess\Campaign\EntityCampaignHandler.cs" />
+    <Compile Include="Business\DataAccess\Campaign\ICampaignDataHandler.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\EntityCodePortalGiveAwayDatahandler.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\Entities\CodeEntity.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\Entities\CodeListEntity.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\Entities\GiveAwayEntity.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\EntityCodePortalListDataHandler.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\EntityCodePortalCodeDataHandler.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\ICodePortalCodeDataHandler.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\ICodePortalGiveAwayDatahandler.cs" />
+    <Compile Include="Business\DataAccess\CodePortal\ICodePortalListDataHandler.cs" />
+    <Compile Include="Business\DataAccess\EntityDataAccess.cs" />
+    <Compile Include="Business\DataAccess\EntityDataHandlerBase.cs" />
+    <Compile Include="Business\DataAccess\IDataAccess.cs" />
+    <Compile Include="Business\DataAccess\Logging\Entities\LogEmailEntity.cs" />
+    <Compile Include="Business\DataAccess\Logging\Entities\LogEntity.cs" />
+    <Compile Include="Business\DataAccess\Logging\Entities\LogInfoEntity.cs" />
+    <Compile Include="Business\DataAccess\Logging\EntityLogger.cs" />
+    <Compile Include="Business\DataAccess\Logging\EntityLoggerDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Logging\ILoggerDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Logging\IEmailLogger.cs" />
+    <Compile Include="Business\DataAccess\Logging\EntityEmailLogger.cs" />
+    <Compile Include="Business\DataAccess\Package\EntityPackageRelationItemDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Package\EntityPackageRelationListDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Package\IPackageRelationDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Package\IPackageRelationItemDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Package\IPackageRelationListDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Package\Entities\PackageRelationEntity.cs" />
+    <Compile Include="Business\DataAccess\Package\Entities\PackageRelationItemEntity.cs" />
+    <Compile Include="Business\DataAccess\Package\Entities\PackageRelationListEntity.cs" />
+    <Compile Include="Business\DataAccess\Package\EntityPackageRelationDataHandler.cs" />
+    <Compile Include="Business\DataAccess\Usp\EntityUspHandler.cs" />
+    <Compile Include="Business\DataAccess\Usp\IUspDataHandler.cs" />
+    <Compile Include="Business\Data\BusinessSubscriptionPrice.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\Campaign.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\CampaignUspProduct.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\CampaignUspProductTextRelation.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\CampaignUspText.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\CodePortalCode.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\CodePortalGiveAway.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\CodePortalList.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\EmailLog.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\LogEvent.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\LogTable.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\LogTableInfo.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\PackageRelation.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\PackageRelationItem.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\PackageRelationList.cs">
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\Pren.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pren.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\Pren.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Data\Pren.Web.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pren.Web.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Descriptors\Editor\CampaignUspEditorDescriptor.cs" />
+    <Compile Include="Business\Descriptors\Editor\CodePortalListEditorDescriptor.cs" />
+    <Compile Include="Business\Descriptors\Editor\HideCategoryEditorDescriptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Descriptors\UI\CampaignBlockUIDescriptor.cs" />
+    <Compile Include="Business\Descriptors\UI\ContainerPageUIDescriptor.cs" />
+    <Compile Include="Business\Detection\AntiForgeryValidator.cs" />
+    <Compile Include="Business\Detection\DetectionHandler.cs" />
+    <Compile Include="Business\Detection\IAntiForgeryValidator.cs" />
+    <Compile Include="Business\Detection\IDetectionHandler.cs" />
+    <Compile Include="Business\EpiCompanyServiceContentApi\ContentApi\CompanyServiceContentApiController.cs" />
+    <Compile Include="Business\EpiCompanyServiceContentApi\EpiCompanyServiceContentService.cs" />
+    <Compile Include="Business\EpiCompanyServiceContentApi\Models\Blocks\MessageBlock.cs" />
+    <Compile Include="Business\EpiCompanyServiceContentApi\Models\Pages\CompanyServiceHomePage.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\ContentApi\AlertController.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\ContentApi\CodeController.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\ContentApi\RightColumnTeaserController.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\ContentApi\ContentControllerBase.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\ContentApi\TextController.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\ContentApi\TeaserController.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\EpiSelfServiceContentService.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\Models\Blocks\CodeBlock.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\Models\Blocks\AlertBlock.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\Models\Blocks\RightColumnTeaserBlock.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\Models\Blocks\TeaserBlock.cs" />
+    <Compile Include="Business\EpiSelfServiceContentApi\Models\Pages\SelfServiceHomePage.cs" />
+    <Compile Include="Business\Faq\FaqApi.cs" />
+    <Compile Include="Business\Faq\Models\Items\Item.cs" />
+    <Compile Include="Business\Faq\Models\Topics\Topic.cs" />
+    <Compile Include="Business\Faq\Request\Items\IItems.cs" />
+    <Compile Include="Business\Faq\Request\Items\Items.cs" />
+    <Compile Include="Business\Faq\Request\RequestBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Faq\Request\Topics\ITopics.cs" />
+    <Compile Include="Business\Faq\Request\Topics\Topics.cs" />
+    <Compile Include="Business\Faq\ResponseModels\Item\ItemsResponse.cs" />
+    <Compile Include="Business\Faq\ResponseModels\Topics\Category.cs" />
+    <Compile Include="Business\Faq\ResponseModels\Topics\TopicsResponse.cs" />
+    <Compile Include="Business\GroupNameConstants.cs" />
+    <Compile Include="Business\Initialization\OnPagePublishEventInitializationModule.cs" />
+    <Compile Include="Business\Invoice\ExtendedModels\KayakInvoice.cs" />
+    <Compile Include="Business\Invoice\ExtendedModels\SfInvoice.cs" />
+    <Compile Include="Business\Invoice\IInvoiceFacade.cs" />
+    <Compile Include="Business\Invoice\InvoiceApi.cs" />
+    <Compile Include="Business\Invoice\InvoiceFacade.cs" />
+    <Compile Include="Business\Invoice\ResponseModels\SfInvoiceResponse.cs" />
+    <Compile Include="Business\Mail\IExternalMailTrigger.cs" />
+    <Compile Include="Business\Mail\TriggerExternalMailResult.cs" />
+    <Compile Include="Business\Mail\NeolaneMailTrigger.cs" />
+    <Compile Include="Business\Package\IPackageRelationManager.cs" />
+    <Compile Include="Business\Package\PackageRelationManager.cs" />
+    <Compile Include="Business\Package\PackageRelationTypeEnum.cs" />
+    <Compile Include="Business\Personalization\Criteria\UserAgent\UserAgentCriterion.cs" />
+    <Compile Include="Business\Personalization\Criteria\UserAgent\UserAgentSettings.cs" />
+    <Compile Include="Business\ServicePlus\Models\OrderFlowMessage.cs" />
+    <Compile Include="Business\Student\ResponseModels\StudentResponse.cs" />
+    <Compile Include="Business\Utils\Replace\ReplaceUtil.cs" />
+    <Compile Include="Business\Helpers\IUrlHelper.cs" />
+    <Compile Include="Business\Helpers\UrlConstants.cs" />
+    <Compile Include="Business\Helpers\UrlHelper.cs" />
+    <Compile Include="Business\IModifyLayout.cs" />
+    <Compile Include="Business\Initialization\BundleConfig.cs" />
+    <Compile Include="Business\Initialization\CustomizedRenderingInitialization.cs" />
+    <Compile Include="Business\Initialization\DependencyResolverInitialization.cs" />
+    <Compile Include="Business\Initialization\DisplayRegistryInitialization.cs" />
+    <Compile Include="Business\Initialization\FilterConfig.cs" />
+    <Compile Include="Business\Initialization\TabInitialization.cs" />
+    <Compile Include="Business\Mail\IMailHandler.cs" />
+    <Compile Include="Business\Mail\MailHandler.cs" />
+    <Compile Include="Business\MyPage\AutoWithdrawalPayment.cs" />
+    <Compile Include="Business\Messaging\Message.cs" />
+    <Compile Include="Business\ServicePlus\Logic\Enums.cs" />
+    <Compile Include="Business\ServicePlus\Logic\IServicePlusFacade.cs" />
+    <Compile Include="Business\ServicePlus\Logic\ServicePlus.cs" />
+    <Compile Include="Business\ServicePlus\Logic\ServicePlusFacade.cs" />
+    <Compile Include="Business\ServicePlus\Models\BizSubscriber.cs" />
+    <Compile Include="Business\ServicePlus\Models\BizSubscription.cs" />
+    <Compile Include="Business\ServicePlus\Models\BizSubscriptionCount.cs" />
+    <Compile Include="Business\ServicePlus\Models\BizSubscriptionDefinition.cs" />
+    <Compile Include="Business\ServicePlus\Models\ExternalId.cs" />
+    <Compile Include="Business\ServicePlus\Models\PendingBizSubscriber.cs" />
+    <Compile Include="Business\ServicePlus\Models\Entitlement.cs" />
+    <Compile Include="Business\ServicePlus\Models\User.cs" />
+    <Compile Include="Business\ServicePlus\ServicePlusUtility.cs" />
+    <Compile Include="Business\Session\IPageSpecificSession.cs" />
+    <Compile Include="Business\Session\PageSpecificSession.cs" />
+    <Compile Include="Business\Subscription\ConnectService.cs" />
+    <Compile Include="Business\Subscription\ConnectStatus.cs" />
+    <Compile Include="Business\MyPage\MySettingsLayout.cs" />
+    <Compile Include="Business\PageContextActionFilter.cs" />
+    <Compile Include="Business\PageViewContextFactory.cs" />
+    <Compile Include="Business\Payment\PaymentConstants.cs" />
+    <Compile Include="Business\Rendering\CustomContentAreaRenderer.cs" />
+    <Compile Include="Business\Rendering\ErrorHandlingContentRenderer.cs" />
+    <Compile Include="Business\Rendering\IContainerPage.cs" />
+    <Compile Include="Business\Rendering\ICustomCssInContentArea.cs" />
+    <Compile Include="Business\Rendering\RenderingConstants.cs" />
+    <Compile Include="Business\Rendering\SiteViewEngine.cs" />
+    <Compile Include="Business\Rendering\TemplateCoordinator.cs" />
+    <Compile Include="Business\ServicePlus\IServicePlusHandler.cs" />
+    <Compile Include="Business\ServicePlus\ServicePlusHandler.cs" />
+    <Compile Include="Business\Session\AuthenticatedCheck.cs" />
+    <Compile Include="Business\Session\ISessionData.cs" />
+    <Compile Include="Business\Session\SessionData.cs" />
+    <Compile Include="Business\Session\SessionConstants.cs" />
+    <Compile Include="Business\StructureMapDependencyResolver.cs" />
+    <Compile Include="Business\Student\IStudentHandler.cs" />
+    <Compile Include="Business\Student\StudentHandler.cs" />
+    <Compile Include="Business\Subscription\ISubscriptionService.cs" />
+    <Compile Include="Business\Subscription\IConnectService.cs" />
+    <Compile Include="Business\Subscription\ISubscriptionUser.cs" />
+    <Compile Include="Business\Subscription\Subscriber.cs" />
+    <Compile Include="Business\Subscription\SubscriptionChecker.cs" />
+    <Compile Include="Business\Subscription\SubscriptionService.cs" />
+    <Compile Include="Business\Subscription\SubscriptionUser.cs" />
+    <Compile Include="Business\Utils\Translate\TranslateUtil.cs" />
+    <Compile Include="Business\Validators\CampaignSubsKindValidation.cs" />
+    <Compile Include="Business\Validators\CampaignTrialValidation.cs" />
+    <Compile Include="Business\Validators\CampaignTargetGroupValidation.cs" />
+    <Compile Include="Business\Validators\OnBoardingCampaignPageValidation.cs" />
+    <Compile Include="Business\Validators\OrderFlowCampaignPageValidation.cs" />
+    <Compile Include="Controllers\ApiControllers\MaskedAddressController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\GetBizSubscriberAddressInfoController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\CheckBizSubscriptionController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\GetBizSubscriptionCountController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\GetPendingBizSubscribersController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\GetActiveBizSubscribersController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\DeletePendingBizSubscriberController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\InviteBizSubscriberController.cs" />
+    <Compile Include="Controllers\ApiControllers\BizSubscription\MarkActiveBizSubscriberForRemovalController.cs" />
+    <Compile Include="Controllers\ApiControllers\CodePortal\CodePortalCodeController.cs" />
+    <Compile Include="Controllers\ApiControllers\FaqController.cs" />
+    <Compile Include="Controllers\ApiControllers\MySettings\ContactCustomerServiceController.cs" />
+    <Compile Include="Controllers\ApiControllers\MySettings\LoggingController.cs" />
+    <Compile Include="Controllers\ApiControllers\MySettings\MySettingsApiControllerBase.cs" />
+    <Compile Include="Controllers\ApiControllers\MySettings\SubscriptionController.cs" />
+    <Compile Include="Controllers\ApiControllers\MySettings\ProfileController.cs" />
+    <Compile Include="Controllers\ApiControllers\PostNameController.cs" />
+    <Compile Include="Controllers\ApiControllers\StudentCheckController.cs" />
+    <Compile Include="Controllers\ApiControllers\StartDateController.cs" />
+    <Compile Include="Controllers\ApiControllers\AddressController.cs" />
+    <Compile Include="Controllers\ApiControllers\CampaignController.cs" />
+    <Compile Include="Controllers\ApiControllers\EmailCheckController.cs" />
+    <Compile Include="Controllers\Blocks\Di\ProfileBlockController.cs" />
+    <Compile Include="Controllers\Blocks\Di\ContactBlockController.cs" />
+    <Compile Include="Controllers\BusinessSubscriptionActivationPageController.cs" />
+    <Compile Include="Controllers\CampaignLandingPageController.cs" />
+    <Compile Include="Controllers\CampaignBlockController.cs" />
+    <Compile Include="Controllers\BusinessCampaignPageController.cs" />
+    <Compile Include="Controllers\OnBoardingCampaignPageController.cs" />
+    <Compile Include="Controllers\OrderFlowCampaignPageController.cs" />
+    <Compile Include="Controllers\CampaignPageIframeController.cs" />
+    <Compile Include="Controllers\GiveAwayOfferBlockController.cs" />
+    <Compile Include="Controllers\CodePortalOfferBlockController.cs" />
+    <Compile Include="Controllers\MySettings\CodePortalPageController.cs" />
+    <Compile Include="Controllers\MySettings\Di\MyStartPageController.cs" />
+    <Compile Include="Models\Blocks\GiveAwayOfferBlock.cs" />
+    <Compile Include="Models\Blocks\CodePortalOfferBlock.cs" />
+    <Compile Include="Models\Blocks\Di\BackgroundBlock.cs" />
+    <Compile Include="Models\Blocks\Di\FaqBlock.cs" />
+    <Compile Include="Models\Blocks\Di\ContactBlock.cs" />
+    <Compile Include="Models\Blocks\Di\AnchorBlockData.cs" />
+    <Compile Include="Models\Blocks\Di\MyCodesBlock.cs" />
+    <Compile Include="Models\Blocks\Di\ProfileBlock.cs" />
+    <Compile Include="Models\Blocks\Di\OverviewBlock.cs" />
+    <Compile Include="Models\Blocks\Di\DiMySettingsBlockData.cs" />
+    <Compile Include="Models\Blocks\Di\WidgetBlocks\DateAndTimeWidgetBlock.cs" />
+    <Compile Include="Models\Blocks\Di\WidgetBlocks\ShortcutWidgetBlock.cs" />
+    <Compile Include="Models\Blocks\Di\WidgetBlocks\TextWidgetBlock.cs" />
+    <Compile Include="Models\Blocks\Di\WidgetBlocks\WidgetBlockData.cs" />
+    <Compile Include="Models\CustomForms\CampaignPageOrderFormModel.cs" />
+    <Compile Include="Models\Pages\CampaignLandingPage.cs" />
+    <Compile Include="Models\Pages\MySettings\CodePortalPage.cs" />
+    <Compile Include="Models\Pages\MySettings\Di\MyStartPage.cs" />
+    <Compile Include="Models\Pages\OnBoardingCampaignPage.cs" />
+    <Compile Include="Models\Pages\OrderFlowCampaignPage.cs" />
+    <Compile Include="Models\Partials\OrderFlow\OnboardingParameters.cs" />
+    <Compile Include="Models\Partials\OrderFlow\PackageModel.cs" />
+    <Compile Include="Models\ViewModels\CampaignLandingPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\CampaignPageOrderViewModel.cs" />
+    <Compile Include="Controllers\CampaignPageSplusController.cs" />
+    <Compile Include="Controllers\CampaignPageController.cs" />
+    <Compile Include="Controllers\DefaultPageController.cs" />
+    <Compile Include="Controllers\ImageFileController.cs" />
+    <Compile Include="Controllers\MySettings\AddressChangeControllerBase.cs" />
+    <Compile Include="Controllers\MySettings\BusinessSubscriptionPageController.cs" />
+    <Compile Include="Controllers\MySettings\ContactPageController.cs" />
+    <Compile Include="Controllers\MySettings\ConnectPageController.cs" />
+    <Compile Include="Controllers\MySettings\CancelSubscriptionPageController.cs" />
+    <Compile Include="Controllers\MySettings\ComplaintPageController.cs" />
+    <Compile Include="Controllers\MySettings\InvoicePageController.cs" />
+    <Compile Include="Controllers\MySettings\MySettingsControllerBase.cs" />
+    <Compile Include="Controllers\MySettings\MySettingsPageMenuController.cs" />
+    <Compile Include="Controllers\MySettings\AutowithdrawalPageController.cs" />
+    <Compile Include="Controllers\MySettings\PermanentAddressChangePageController.cs" />
+    <Compile Include="Controllers\MySettings\PersonInfoPageController.cs" />
+    <Compile Include="Controllers\MySettings\SubscriptionSleepPageController.cs" />
+    <Compile Include="Controllers\MySettings\TemporaryAddressChangePageController.cs" />
+    <Compile Include="Controllers\PageControllerBase.cs" />
+    <Compile Include="Controllers\PreviewController.cs" />
+    <Compile Include="Controllers\MySettings\MySettingsStartPageController.cs" />
+    <Compile Include="Controllers\StartPageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Blocks\TextBlock.cs" />
+    <Compile Include="Models\Blocks\CampaignBlock.cs" />
+    <Compile Include="Models\Blocks\CampaignPeriodBlock.cs" />
+    <Compile Include="Models\Blocks\SiteBlockData.cs" />
+    <Compile Include="Models\CustomForms\BusinessSubscriptionActivationFormModel.cs" />
+    <Compile Include="Models\CustomForms\CampaignSubscribeFormModel.cs" />
+    <Compile Include="Models\CustomForms\BusinessCampaignSubscribeFormModel.cs" />
+    <Compile Include="Models\CustomForms\MySettings\SubscriptionSleepFormModel.cs" />
+    <Compile Include="Models\CustomForms\MySettings\AddressFormModel.cs" />
+    <Compile Include="Models\CustomForms\MySettings\PersonInfoFormModel.cs" />
+    <Compile Include="Models\CustomForms\MySettings\StopOrBoxAddressFormModel.cs" />
+    <Compile Include="Models\CustomForms\MySettings\StreetAddressFormModel.cs" />
+    <Compile Include="Models\Media\GenericMedia.cs" />
+    <Compile Include="Models\Media\ImageFile.cs" />
+    <Compile Include="Models\Media\VideoFile.cs" />
+    <Compile Include="Models\Pages\CampaignPageIframe.cs" />
+    <Compile Include="Models\Pages\TextPage.cs" />
+    <Compile Include="Models\Pages\BusinessCampaignPage.cs" />
+    <Compile Include="Models\Pages\BusinessSubscriptionActivationPage.cs" />
+    <Compile Include="Models\Pages\CampaignPageSplus.cs" />
+    <Compile Include="Models\Pages\CampaignPage.cs" />
+    <Compile Include="Models\Pages\ContainerPage.cs" />
+    <Compile Include="Models\Pages\MySettings\BusinessSubscriptionPage.cs" />
+    <Compile Include="Models\Pages\MySettings\ContactPage.cs" />
+    <Compile Include="Models\Pages\MySettings\ConnectPage.cs" />
+    <Compile Include="Models\Pages\MySettings\AutowithdrawalPage.cs" />
+    <Compile Include="Models\Pages\MySettings\CancelSubscriptionPage.cs" />
+    <Compile Include="Models\Pages\MySettings\ComplaintPage.cs" />
+    <Compile Include="Models\Pages\MySettings\MyPageData.cs" />
+    <Compile Include="Models\Pages\MySettings\InvoicePage.cs" />
+    <Compile Include="Models\Pages\MySettings\PermanentAddressChangePage.cs" />
+    <Compile Include="Models\Pages\MySettings\PersonInfoPage.cs" />
+    <Compile Include="Models\Pages\MySettings\SubscriptionSleepPage.cs" />
+    <Compile Include="Models\Pages\MySettings\TemporaryAddressChangePage.cs" />
+    <Compile Include="Models\Pages\SitePageData.cs" />
+    <Compile Include="Models\Pages\MySettings\MySettingsStartPage.cs" />
+    <Compile Include="Models\Pages\StartPage.cs" />
+    <Compile Include="Models\Partials\MySettings\MySettingsPageMenu.cs" />
+    <Compile Include="Models\ViewModels\BusinessSubscriptionActivationPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\CampaignBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\BusinessCampaignPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\GiveAwayOfferBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\CodePortalOfferBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\CampaignScriptViewModel.cs" />
+    <Compile Include="Models\ViewModels\ImageFileViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\BusinessSubscriptionPageViewModel.cs" />
+    <Compile Include="Models\CustomForms\MySettings\ContactPageFormModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\CodePortalPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\ConnectPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\AutowithdrawalPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\ContactPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\Di\ProfileBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\Di\ContactBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\Di\MySettingsViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\InvoicePageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\MySettingsPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\CampaignPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\ContentRenderingErrorModel.cs" />
+    <Compile Include="Models\ViewModels\IPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\LayoutModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\TemporaryAddressChangePageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\PermanentAddressChangePageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\ComplaintPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\SubscriptionSleepPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MySettings\PersonInfoViewModel.cs" />
+    <Compile Include="Models\ViewModels\OnBoardingViewModel.cs" />
+    <Compile Include="Models\ViewModels\OrderFlow\OrderFlowOrderViewModel.cs" />
+    <Compile Include="Models\ViewModels\OrderFlow\OrderFlowViewModel.cs" />
+    <Compile Include="Models\ViewModels\PageViewModel.cs" />
+    <Compile Include="Models\ViewModels\PreviewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AutowithdrawalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PayTransService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\CampaignOverview\CampaignOverview.aspx.cs">
+      <DependentUpon>CampaignOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\CampaignOverview\CampaignOverview.aspx.designer.cs">
+      <DependentUpon>CampaignOverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\CodePortal\CodePortal.aspx.cs">
+      <DependentUpon>CodePortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\CodePortal\CodePortal.aspx.designer.cs">
+      <DependentUpon>CodePortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\CacheManager\CacheManager.aspx.cs">
+      <DependentUpon>CacheManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\CacheManager\CacheManager.aspx.designer.cs">
+      <DependentUpon>CacheManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\ExtraInfoSearch\ExtraInfoSearch.aspx.cs">
+      <DependentUpon>ExtraInfoSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\ExtraInfoSearch\ExtraInfoSearch.aspx.designer.cs">
+      <DependentUpon>ExtraInfoSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\LogSearch\LogSearch.aspx.cs">
+      <DependentUpon>LogSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\LogSearch\LogSearch.aspx.designer.cs">
+      <DependentUpon>LogSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\InfoSearch\InfoSearch.aspx.cs">
+      <DependentUpon>InfoSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\InfoSearch\InfoSearch.aspx.designer.cs">
+      <DependentUpon>InfoSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\PackageRelation\PackageRelation.aspx.cs">
+      <DependentUpon>PackageRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\PackageRelation\PackageRelation.aspx.designer.cs">
+      <DependentUpon>PackageRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\UspAdmin\UspAdmin.aspx.cs">
+      <DependentUpon>UspAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\UspAdmin\UspAdmin.aspx.designer.cs">
+      <DependentUpon>UspAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\MailSearch\MailSearch.aspx.cs">
+      <DependentUpon>MailSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\MailSearch\MailSearch.aspx.designer.cs">
+      <DependentUpon>MailSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Admin\PayTrans\PaymentAdmin.aspx.cs">
+      <DependentUpon>PaymentAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Admin\PayTrans\PaymentAdmin.aspx.designer.cs">
+      <DependentUpon>PaymentAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\DataAccess\Usp\Entities\UspProductEntity.cs" />
+    <Compile Include="Business\DataAccess\Usp\Entities\UspTextEntity.cs" />
+    <Compile Include="Tools\Jobs\PushPayTrans\PushPayTransJob.cs" />
+    <Compile Include="Tools\Reports\CampaignReport.aspx.cs">
+      <DependentUpon>CampaignReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Reports\CampaignReport.aspx.designer.cs">
+      <DependentUpon>CampaignReport.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientResources\Images\ajax-loader.gif" />
+    <Content Include="ClientResources\Images\icons\layoutIcons24x24.png" />
+    <Content Include="ClientResources\Scripts\Editors\CampaignSelector.js" />
+    <Content Include="ClientResources\Scripts\Editors\CampaignSelectorDialog.js" />
+    <Content Include="ClientResources\Scripts\Editors\Templates\CampaignSelectorDialog.html" />
+    <Content Include="ClientResources\Scripts\Editors\Templates\CampaignSelector.html" />
+    <Content Include="ClientResources\Styles\LayoutIcons.css" />
+    <Content Include="ClientResources\Styles\Styles.css" />
+    <Content Include="ErrorPages\404.html" />
+    <Content Include="ErrorPages\failover\index.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="gulpfile.js" />
+    <Content Include="IndexingService\IndexingService.svc" />
+    <Content Include="Resources\LanguageFiles\ContentTypeNames.xml" />
+    <Content Include="Resources\LanguageFiles\Display.xml" />
+    <Content Include="Resources\LanguageFiles\EditorHints.xml" />
+    <Content Include="Resources\LanguageFiles\GroupNames.xml" />
+    <Content Include="Resources\LanguageFiles\PropertyNames.xml" />
+    <Content Include="Resources\LanguageFiles\Di.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\LanguageFiles\Views.xml" />
+    <Content Include="Resources\LanguageFiles\_ReadMe.txt" />
+    <EntityDeploy Include="Business\Data\Pren.Web.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Pren.Web.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Business\Data\Pren.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pren.Web.edmx</DependentUpon>
+      <LastGenOutput>Pren.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Business\Data\Pren.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pren.Web.edmx</DependentUpon>
+      <LastGenOutput>Pren.cs</LastGenOutput>
+    </Content>
+    <Content Include="Business\Data\Pren.Web.edmx.diagram">
+      <DependentUpon>Pren.Web.edmx</DependentUpon>
+    </Content>
+    <Content Include="modules\_protected\Shell\web.config" />
+    <Content Include="modules\_protected\Shell\Shell.zip" />
+    <Content Include="modules\_protected\CMS\web.config" />
+    <Content Include="modules\_protected\CMS\CMS.zip" />
+    <Content Include="modules\_protected\EPiServer.Packaging.UI\web.config" />
+    <Content Include="modules\_protected\EPiServer.Packaging.UI\EPiServer.Packaging.UI.zip" />
+    <Content Include="App_Data\GeoLiteCity.dat" />
+    <Content Include="package.json" />
+    <None Include="Properties\PublishProfiles\Pren.Web2016.pubxml" />
+    <None Include="Service References\AutowithdrawalService\autowithdrawal.wsdl" />
+    <Content Include="Service References\AutowithdrawalService\Pren.Web.AutowithdrawalService.InsertAutoWithdrawalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PayTransService\paytrans.disco" />
+    <None Include="Service References\PayTransService\configuration91.svcinfo" />
+    <None Include="Service References\PayTransService\configuration.svcinfo" />
+    <None Include="Service References\AutowithdrawalService\autowithdrawal.disco" />
+    <None Include="Service References\AutowithdrawalService\configuration91.svcinfo" />
+    <None Include="Service References\AutowithdrawalService\configuration.svcinfo" />
+    <None Include="Service References\AutowithdrawalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\PayTransService\Pren.Web.PayTransService.InsertPayTransResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PayTransService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Static\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Static\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Static\bootstrap\css\bootstrap.css" />
+    <Content Include="Static\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Static\bootstrap\js\bootstrap.js" />
+    <Content Include="Static\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Static\css\businesscampaign.css" />
+    <Content Include="Static\css\businesssubscriptionadmin.css" />
+    <Content Include="Static\css\campaign.css" />
+    <Content Include="Static\css\campaignredirect.css" />
+    <Content Include="Static\css\campaigniframe.css" />
+    <Content Include="Static\css\codeportal.css" />
+    <Content Include="Static\css\Di\ie.css" />
+    <Content Include="Static\css\Di\mysettings.css" />
+    <Content Include="Static\css\editmode.css" />
+    <Content Include="Static\css\editor.css" />
+    <Content Include="Static\css\ie.css" />
+    <Content Include="Static\css\img\action-icon-add-for-delete.png" />
+    <Content Include="Static\css\img\action-icon-delete.png" />
+    <Content Include="Static\css\img\action-icon-reminder.png" />
+    <Content Include="Static\css\img\action-icon-undo-delete.png" />
+    <Content Include="Static\css\img\add-for-delete.png" />
+    <Content Include="Static\css\img\arrows.png" />
+    <Content Include="Static\css\img\delete.png" />
+    <Content Include="Static\css\img\icon-profile.png" />
+    <Content Include="Static\css\img\icon-user%402x.png" />
+    <Content Include="Static\css\img\progress_steps%402x.png" />
+    <Content Include="Static\css\img\progress_steps.png" />
+    <Content Include="Static\css\img\reminder.png" />
+    <Content Include="Static\css\img\svgicons\desktop-black.svg" />
+    <Content Include="Static\css\img\svgicons\desktop-white.svg" />
+    <Content Include="Static\css\img\svgicons\ipad-black.svg" />
+    <Content Include="Static\css\img\svgicons\ipad-white.svg" />
+    <Content Include="Static\css\img\svgicons\iphone-black.svg" />
+    <Content Include="Static\css\img\svgicons\iphone-white.svg" />
+    <Content Include="Static\css\img\svgicons\newspaper-folded-black.svg" />
+    <Content Include="Static\css\img\svgicons\newspaper-folded-white.svg" />
+    <Content Include="Static\css\img\svgicons\newspaper-open-black.svg" />
+    <Content Include="Static\css\img\svgicons\newspaper-open-white.svg" />
+    <Content Include="Static\css\img\undo-delete.png" />
+    <Content Include="Static\css\img\usplogos\di-dimension.png" />
+    <Content Include="Static\css\img\usplogos\di-e-tidning.png" />
+    <Content Include="Static\css\img\usplogos\di-plus.png" />
+    <Content Include="Static\css\img\usplogos\di-weekend.png" />
+    <Content Include="Static\css\img\usplogos\dn-digitalt.png" />
+    <Content Include="Static\css\img\usplogos\dn-prio.png" />
+    <Content Include="Static\css\img\usplogos\dn.png" />
+    <Content Include="Static\css\lib\datepicker3.css" />
+    <Content Include="Static\css\img\icon-calendar%402x.png" />
+    <Content Include="Static\css\img\icon-calendar-green%402x.png" />
+    <Content Include="Static\css\img\icon-green-check%402x.png" />
+    <Content Include="Static\css\img\icon-pen%402x.png" />
+    <Content Include="Static\css\img\icon-red-cross%402x.png" />
+    <Content Include="Static\css\img\icon-right-blue%402x.png" />
+    <Content Include="Static\css\global.css" />
+    <Content Include="Static\css\mypage.css" />
+    <Content Include="Static\css\orderflow\css\screen.css" />
+    <Content Include="Static\css\orderflow\css\style.css" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Black.svg" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Bold.svg" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Regular.svg" />
+    <Content Include="Static\css\orderflow\images\icons\check-usp-large.svg" />
+    <Content Include="Static\css\orderflow\images\icons\check-usp-medium.svg" />
+    <Content Include="Static\css\orderflow\images\icons\check-usp-small.svg" />
+    <Content Include="Static\css\orderflow\images\icons\di-logo-white.png" />
+    <Content Include="Static\css\orderflow\images\icons\down-blue.svg" />
+    <Content Include="Static\css\orderflow\images\icons\down.svg" />
+    <Content Include="Static\css\orderflow\images\icons\external.svg" />
+    <Content Include="Static\css\orderflow\images\icons\plus.svg" />
+    <Content Include="Static\css\orderflow\images\icons\right.svg" />
+    <Content Include="Static\css\orderflow\images\icons\up-blue.svg" />
+    <Content Include="Static\css\orderflow\images\icons\up.svg" />
+    <Content Include="Static\css\orderflow\images\img-dagstidning.png" />
+    <Content Include="Static\css\orderflow\images\img-digitalt.png" />
+    <Content Include="Static\css\orderflow\images\img-helg.png" />
+    <Content Include="Static\img\404_banner.png" />
+    <Content Include="Static\img\ajax-loader.gif" />
+    <Content Include="Static\img\Klarna_Logo.jpg" />
+    <Content Include="Static\img\companyportaltabs.png" />
+    <Content Include="Static\img\di-logo.png" />
+    <Content Include="Static\img\importexempel.png" />
+    <Content Include="Static\img\payment-icons-visa-mc.png" />
+    <Content Include="Static\img\payment-icons%402x.png" />
+    <Content Include="Static\css\img\phone-icon.png" />
+    <Content Include="Static\css\img\pren-selection-arrow%402x.png" />
+    <Content Include="Static\css\img\product-list-inset-shadow.png" />
+    <Content Include="Static\img\top-bar-logo.png" />
+    <Content Include="Static\js\bundles\mysettings-min.js" />
+    <Content Include="Static\js\businessactivation\activation_form_validator.js" />
+    <Content Include="Static\js\businessactivation\form_step_activation.js" />
+    <Content Include="Static\js\businesscampaignadmin\ajax_handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\company-address-handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\delete_active_handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\delete_pending_handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\import_pending_handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\paging_handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\remind_pending_handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\subscriber-data-handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\subscriber_list_handler.js" />
+    <Content Include="Static\js\businesscampaignadmin\subscription-count-handler.js" />
+    <Content Include="Static\js\businesscampaign\biz_offers.js" />
+    <Content Include="Static\js\businesscampaign\biz_subscription_checker.js" />
+    <Content Include="Static\js\businesscampaign\biz_subscription_form_validator.js" />
+    <Content Include="Static\js\businesscampaign\biz_subscription_info_box.js" />
+    <Content Include="Static\js\businesscampaign\company_getter.js" />
+    <Content Include="Static\js\businesscampaign\max-account-replacer.js" />
+    <Content Include="Static\js\businesscampaign\email_checker.js" />
+    <Content Include="Static\js\businesscampaignadmin\invite_handler.js" />
+    <Content Include="Static\js\businesscampaign\form_step_company_registration_number.js" />
+    <Content Include="Static\js\businesscampaign\form_step_company_info.js" />
+    <Content Include="Static\js\businesscampaign\form_step_listener.js" />
+    <Content Include="Static\js\businesscampaign\element_cssclass_modifier.js" />
+    <Content Include="Static\js\businesscampaign\window_resize_eventhandler.js" />
+    <Content Include="Static\js\campaignIframe\campaign.js" />
+    <Content Include="Static\js\codeportal\code_displayer.js" />
+    <Content Include="Static\js\codeportal\code_offer_handler.js" />
+    <Content Include="Static\js\codeportal\get_code_button_generator.js" />
+    <Content Include="Static\js\codeportal\user_code_repository.js" />
+    <Content Include="Static\js\lib\bootstrap.min.js" />
+    <Content Include="Static\js\global\jQueryExtends.js" />
+    <Content Include="Static\js\campaignIframe\slider.js" />
+    <Content Include="Static\js\campaignSPlus\addressHandler.js" />
+    <Content Include="Static\js\campaignSPlus\autoPopulate.js" />
+    <Content Include="Static\js\campaignSPlus\campaignPeriod.js" />
+    <Content Include="Static\js\campaignSPlus\campaignSelectionHandler.js" />
+    <Content Include="Static\js\campaignSPlus\customEventHandler.js" />
+    <Content Include="Static\js\campaignSPlus\debug.js" />
+    <Content Include="Static\js\campaignSPlus\disabler.js" />
+    <Content Include="Static\js\campaignSPlus\elementFactory.js" />
+    <Content Include="Static\js\campaignSPlus\emailChecker.js" />
+    <Content Include="Static\js\campaignSPlus\jQueryExtends.js" />
+    <Content Include="Static\js\campaignSPlus\main.js" />
+    <Content Include="Static\js\campaignSPlus\payment.js" />
+    <Content Include="Static\js\campaignSPlus\postNameHandler.js" />
+    <Content Include="Static\js\campaignSPlus\progressBar.js" />
+    <Content Include="Static\js\campaignSPlus\resizer.js" />
+    <Content Include="Static\js\campaignSPlus\scroller.js" />
+    <Content Include="Static\js\campaignSPlus\selectedCampaign.js" />
+    <Content Include="Static\js\campaignSPlus\sliderHandler.js" />
+    <Content Include="Static\js\campaignSPlus\startDate.js" />
+    <Content Include="Static\js\campaignSPlus\stepActivator.js" />
+    <Content Include="Static\js\campaignSPlus\steps\address.js" />
+    <Content Include="Static\js\campaignSPlus\steps\email.js" />
+    <Content Include="Static\js\campaignSPlus\steps\payment.js" />
+    <Content Include="Static\js\campaignSPlus\steps\phone.js" />
+    <Content Include="Static\js\campaignSPlus\steps\ssn.js" />
+    <Content Include="Static\js\campaignSPlus\stepVisualizer.js" />
+    <Content Include="Static\js\campaignSPlus\studentChecker.js" />
+    <Content Include="Static\js\campaignSPlus\summary.js" />
+    <Content Include="Static\js\campaignSPlus\toggler.js" />
+    <Content Include="Static\js\campaignSPlus\Tracking.js" />
+    <Content Include="Static\js\campaignSPlus\validationHandler.js" />
+    <Content Include="Static\js\campaign\addressHandler.js" />
+    <Content Include="Static\js\campaign\autoPopulate.js" />
+    <Content Include="Static\js\campaign\campaignPeriod.js" />
+    <Content Include="Static\js\campaign\campaignSelectionHandler.js" />
+    <Content Include="Static\js\campaign\debug.js" />
+    <Content Include="Static\js\campaign\disabler.js" />
+    <Content Include="Static\js\campaign\jQueryExtends.js" />
+    <Content Include="Static\js\campaign\postNameHandler.js" />
+    <Content Include="Static\js\campaign\progressBar.js" />
+    <Content Include="Static\js\campaign\resizer.js" />
+    <Content Include="Static\js\campaign\sliderHandler.js" />
+    <Content Include="Static\js\campaign\startDate.js" />
+    <Content Include="Static\js\campaign\stepActivator.js" />
+    <Content Include="Static\js\campaign\stepVisualizer.js" />
+    <Content Include="Static\js\campaign\summary.js" />
+    <Content Include="Static\js\campaign\elementFactory.js" />
+    <Content Include="Static\js\campaign\customEventHandler.js" />
+    <Content Include="Static\js\campaign\emailChecker.js" />
+    <Content Include="Static\js\campaign\main.js" />
+    <Content Include="Static\js\campaign\payment.js" />
+    <Content Include="Static\js\campaign\selectedCampaign.js" />
+    <Content Include="Static\js\campaign\scroller.js" />
+    <Content Include="Static\js\campaign\steps\address.js" />
+    <Content Include="Static\js\campaign\steps\email.js" />
+    <Content Include="Static\js\campaign\steps\payment.js" />
+    <Content Include="Static\js\campaign\steps\phone.js" />
+    <Content Include="Static\js\campaign\steps\ssn.js" />
+    <Content Include="Static\js\campaign\studentChecker.js" />
+    <Content Include="Static\js\campaign\toggler.js" />
+    <Content Include="Static\js\campaign\Tracking.js" />
+    <Content Include="Static\js\campaign\validationHandler.js" />
+    <Content Include="Static\js\businesscampaign\form_step_email.js" />
+    <Content Include="Static\js\global\msieversion.js" />
+    <Content Include="Static\js\global\TabActivatorExtension.js" />
+    <Content Include="Static\js\lib\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Static\js\lib\datepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Static\js\lib\dragend.js" />
+    <Content Include="Static\js\lib\require\plugins\domReady.js" />
+    <Content Include="Static\js\lib\extensions\buttonIndicator.js" />
+    <Content Include="Static\js\lib\extensions\serializeObject.js" />
+    <Content Include="Static\js\lib\iframeResizer.min.js" />
+    <Content Include="Static\js\lib\jquery-1.11.2.min.js" />
+    <Content Include="Static\js\lib\jquery.bxslider.js" />
+    <Content Include="Static\js\lib\jquery.validate.min.js" />
+    <Content Include="Static\js\lib\require\plugins\json.js" />
+    <Content Include="Static\js\lib\require\require.min.js" />
+    <Content Include="Static\js\lib\splus-checkout.js" />
+    <Content Include="Static\js\lib\require\plugins\text.js" />
+    <Content Include="Static\js\lib\tiny-pubsub.js" />
+    <Content Include="Static\js\lib\underscore-min.js" />
+    <Content Include="Static\js\lib\zopim-web-sdk.js" />
+    <Content Include="Static\js\mypage\AddressChange.js" />
+    <Content Include="Static\js\global\ButtonIndicatorExtension.js" />
+    <Content Include="Static\js\global\FileInputAdapter.js" />
+    <Content Include="Static\js\mypage\Faq.js" />
+    <Content Include="Static\js\global\DisplayHandler.js" />
+    <Content Include="Static\js\global\DateHandler.js" />
+    <Content Include="Static\js\global\ConfirmHandler.js" />
+    <Content Include="Static\js\mypage\main.js" />
+    <Content Include="Static\js\global\scroller.js" />
+    <Content Include="Static\js\mypage\ValidationHandler.js" />
+    <Content Include="Static\js\mysettings\app\dom\misc.js" />
+    <Content Include="Static\js\mysettings\app\dom\contactFormDom.js" />
+    <Content Include="Static\js\mysettings\app\faq\dom\faqDom.js" />
+    <Content Include="Static\js\mysettings\app\faq.js" />
+    <Content Include="Static\js\mysettings\app\faq\templates\faqItems.html" />
+    <Content Include="Static\js\mysettings\app\faq\templates\faqTopics.html" />
+    <Content Include="Static\js\mysettings\app\mycodes\templates\giveAwayForm.html" />
+    <Content Include="Static\js\mysettings\app\profile\comingEvents.js" />
+    <Content Include="Static\js\mysettings\app\profile\dom\eventsDom.js" />
+    <Content Include="Static\js\mysettings\app\profile\templates\comingEvents.html" />
+    <Content Include="Static\js\mysettings\app\subscription\permAddress.js" />
+    <Content Include="Static\js\mysettings\functions\ajax.js" />
+    <Content Include="Static\js\mysettings\app\dom\overview.js" />
+    <Content Include="Static\js\mysettings\app\contactForm.js" />
+    <Content Include="Static\js\mysettings\classes\subscriber.js" />
+    <Content Include="Static\js\mysettings\functions\dateAndTime.js" />
+    <Content Include="Static\js\mysettings\functions\load.js" />
+    <Content Include="Static\js\mysettings\functions\mobile.js" />
+    <Content Include="Static\js\mysettings\functions\shortcut.js" />
+    <Content Include="Static\js\mysettings\app\myCodes.js" />
+    <Content Include="Static\js\mysettings\app\mycodes\codeDisplayer.js" />
+    <Content Include="Static\js\mysettings\app\mycodes\dom\mycodesDom.js" />
+    <Content Include="Static\js\mysettings\app\mycodes\codeGetterButtonGenerator.js" />
+    <Content Include="Static\js\mysettings\app\mycodes\codeRepository.js" />
+    <Content Include="Static\js\mysettings\app\profile\dom\profileDom.js" />
+    <Content Include="Static\js\mysettings\app\profile\dom\invoiceDom.js" />
+    <Content Include="Static\js\mysettings\app\profile\invoices.js" />
+    <Content Include="Static\js\mysettings\app\profile\dom\contactDom.js" />
+    <Content Include="Static\js\mysettings\app\dom\tabs.js" />
+    <Content Include="Static\js\mysettings\functions\date.js" />
+    <Content Include="Static\js\mysettings\functions\error.js" />
+    <Content Include="Static\js\mysettings\app\overview.js" />
+    <Content Include="Static\js\mysettings\app\profile\contactInfo.js" />
+    <Content Include="Static\js\mysettings\app\profile\currentAddress.js" />
+    <Content Include="Static\js\mysettings\app\profile.js" />
+    <Content Include="Static\js\mysettings\functions\menu.js" />
+    <Content Include="Static\js\mysettings\app\profile\templates\myInvoices.html" />
+    <Content Include="Static\js\mysettings\app\subscriptions.js" />
+    <Content Include="Static\js\mysettings\app\subscription\dom\subscriptionDom.js" />
+    <Content Include="Static\js\mysettings\app\subscription\templates\reclaimDetails.html" />
+    <Content Include="Static\js\mysettings\app\subscription\tmpAddress.js" />
+    <Content Include="Static\js\mysettings\app\subscription\subsSleep.js" />
+    <Content Include="Static\js\mysettings\app\subscription\reclaim.js" />
+    <Content Include="Static\js\mysettings\app\subscription\activeSubscriptions.js" />
+    <Content Include="Static\js\mysettings\app\subscription\templates\tmpAddresses.html" />
+    <Content Include="Static\js\mysettings\app\subscription\templates\tmpAddressChanges.html" />
+    <Content Include="Static\js\mysettings\app\subscription\templates\subsciptionSleeps.html" />
+    <Content Include="Static\js\mysettings\app\subscription\templates\activeSubsTabs.html" />
+    <Content Include="Static\js\mysettings\app\profile\templates\currentAddress.html" />
+    <Content Include="Static\js\mysettings\app\subscription\templates\permAddressChanges.html" />
+    <Content Include="Static\js\mysettings\functions\tracking.js" />
+    <Content Include="Static\js\orderflow\main.js" />
+    <Content Include="blank.html" />
+    <Content Include="td_redirect.html" />
+    <Content Include="Static\js\mysettings\app.js" />
+    <Content Include="Static\js\mysettings\app\main.js" />
+    <Content Include="Tools\Admin\CampaignOverview\CampaignOverview.aspx" />
+    <Content Include="Tools\Admin\CodePortal\code-file-syntax.png" />
+    <Content Include="Tools\Admin\CodePortal\CodePortal.aspx" />
+    <Content Include="Tools\Admin\CacheManager\CacheManager.aspx" />
+    <Content Include="Tools\Admin\ExtraInfoSearch\ExtraInfoSearch.aspx" />
+    <Content Include="Tools\Admin\LogSearch\LogSearch.aspx" />
+    <Content Include="Tools\Admin\InfoSearch\InfoSearch.aspx" />
+    <Content Include="Tools\Admin\PackageRelation\PackageRelation.aspx" />
+    <Content Include="Tools\Admin\UspAdmin\UspAdmin.aspx" />
+    <Content Include="Tools\Admin\MailSearch\MailSearch.aspx" />
+    <Content Include="Tools\Admin\PayTrans\PaymentAdmin.aspx" />
+    <Content Include="Tools\Reports\CampaignReport.aspx" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="connectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="EPiServerLog.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Layouts\_Root.cshtml" />
+    <Content Include="Views\StartPage\index.cshtml" />
+    <Content Include="Views\CampaignPage\Index.cshtml" />
+    <Content Include="Views\Shared\TemplateError.cshtml" />
+    <Content Include="Views\Preview\Index.cshtml" />
+    <Content Include="Views\Shared\TemplateHint.cshtml" />
+    <Content Include="module.config" />
+    <Content Include="Static\bootstrap\config.json" />
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\CampaignBlock\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\CampaignPeriodBlock.cshtml" />
+    <None Include="Properties\PublishProfiles\Pren.Web.pubxml" />
+    <Content Include="Views\CampaignPage\ThankYou.cshtml" />
+    <Content Include="Views\CampaignPage\Error.cshtml" />
+    <Content Include="Views\Shared\Blocks\TextBlock.cshtml" />
+    <Content Include="Views\MySettings\MySettingsStartPage\Index.cshtml" />
+    <Content Include="Views\Shared\Layouts\_MyPage.cshtml" />
+    <Content Include="Views\MySettings\MySettingsPageMenu\Index.cshtml" />
+    <Content Include="Views\MySettings\TemporaryAddressChangePage\Index.cshtml" />
+    <Content Include="Views\MySettings\AutowithdrawalPage\Index.cshtml" />
+    <Content Include="Views\MySettings\CancelSubscriptionPage\Index.cshtml" />
+    <Content Include="Views\MySettings\ComplaintPage\Index.cshtml" />
+    <Content Include="Views\MySettings\InvoicePage\Index.cshtml" />
+    <Content Include="Views\MySettings\PermanentAddressChangePage\Index.cshtml" />
+    <Content Include="Views\MySettings\PersonInfoPage\Index.cshtml" />
+    <Content Include="Views\MySettings\SubscriptionSleepPage\Index.cshtml" />
+    <Content Include="Views\MySettings\PermanentAddressChangePage\_CurrentAddress.cshtml" />
+    <Content Include="Views\MySettings\Shared\_AddressForm.cshtml" />
+    <Content Include="Views\MySettings\Shared\_Message.cshtml" />
+    <Content Include="Views\MySettings\ConnectPage\Index.cshtml" />
+    <None Include="Service References\PayTransService\paytrans.wsdl" />
+    <Content Include="Views\MySettings\ConnectPage\ConnectExisting.cshtml" />
+    <Content Include="Views\MySettings\ConnectPage\ConnectExistingPren.cshtml" />
+    <Content Include="Views\MySettings\Shared\_Chat.cshtml" />
+    <Content Include="Views\CampaignPageSplus\Error.cshtml" />
+    <Content Include="Views\CampaignPageSplus\Index.cshtml" />
+    <Content Include="Views\CampaignPageSplus\ThankYou.cshtml" />
+    <Content Include="Views\BusinessCampaignPage\Index.cshtml" />
+    <Content Include="Views\MySettings\BusinessSubscriptionPage\Index.cshtml" />
+    <Content Include="Views\BusinessSubscriptionActivationPage\Index.cshtml" />
+    <Content Include="Views\BusinessCampaignPage\Error.cshtml" />
+    <Content Include="Views\BusinessSubscriptionActivationPage\ThankYou.cshtml" />
+    <Content Include="Views\MySettings\BusinessSubscriptionPage\ExpiredSubscription.cshtml" />
+    <Content Include="Views\MySettings\ContactPage\Index.cshtml" />
+    <Content Include="Views\TextPage\Index.cshtml" />
+    <Content Include="Views\ImageFile\Index.cshtml" />
+    <Content Include="Views\CampaignPageIframe\Error.cshtml" />
+    <Content Include="Views\CampaignPageIframe\Index.cshtml" />
+    <Content Include="Views\CampaignPageIframe\Order.cshtml" />
+    <Content Include="Views\CampaignLandingPage\Index.cshtml" />
+    <Content Include="Views\MySettings\CodePortalPage\Index.cshtml" />
+    <Content Include="Views\CodePortalOfferBlock\Index.cshtml" />
+    <Content Include="Views\CodePortalOfferBlock\NoAccess.cshtml" />
+    <Content Include="Views\CodePortalOfferBlock\NoAccessWithFallback.cshtml" />
+    <Content Include="Views\MySettings\Shared\_Heading.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Campaign.cshtml" />
+    <Content Include="Views\CampaignPageIframe\Script.cshtml" />
+    <Content Include="Views\MySettings\Di\MyStartPage\Index.cshtml" />
+    <Content Include="Views\Shared\Layouts\Di\_Root.cshtml" />
+    <Content Include="Views\Shared\Layouts\Di\_MyPage.cshtml" />
+    <Content Include="Views\Shared\Blocks\Di\OverviewBlock.cshtml" />
+    <Content Include="Views\MySettings\Di\ProfileBlock\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\Di\FaqBlock.cshtml" />
+    <Content Include="Views\MySettings\Di\ContactBlock\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\Di\BackgroundBlock.cshtml" />
+    <Content Include="Views\MySettings\Di\MyStartPage\NotLoggedIn.cshtml" />
+    <Content Include="Views\MySettings\InvoicePage\PdfNotFound.cshtml" />
+    <Content Include="Views\BusinessCampaignPage\MailConfirm.cshtml" />
+    <Content Include="Views\MySettings\Di\MyStartPage\PdfNotFound.cshtml" />
+    <Content Include="Views\Shared\Blocks\Di\TextWidgetBlock.cshtml" />
+    <Content Include="Views\Shared\Blocks\Di\ShortcutWidgetBlock.cshtml" />
+    <Content Include="Views\Shared\Blocks\Di\MyCodesBlock.cshtml" />
+    <Content Include="Views\Shared\Blocks\Di\DateAndTimeWidgetBlock.cshtml" />
+    <Content Include="Views\Shared\Layouts\Di\_Page.cshtml" />
+    <Content Include="Views\GiveAwayOfferBlock\Index.cshtml" />
+    <Content Include="Views\GiveAwayOfferBlock\NoAccess.cshtml" />
+    <Content Include="Views\GiveAwayOfferBlock\NoAccessWithFallback.cshtml" />
+    <Content Include="Views\Shared\Partials\_Survey.cshtml" />
+    <Content Include="Views\OrderFlowCampaignPage\Index.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Master.cshtml" />
+    <Content Include="Static\css\orderflow\css\screen.css.map" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Black.eot" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Black.ttf" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Black.woff" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Black.woff2" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Bold.eot" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Bold.ttf" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Bold.woff" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Regular.eot" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Regular.ttf" />
+    <Content Include="Static\css\orderflow\fonts\BentonSans-Regular.woff" />
+    <Content Include="Static\css\orderflow\fonts\HelveticaNeueDeskInterface-Bold.otf" />
+    <Content Include="Static\css\orderflow\fonts\HelveticaNeueDeskInterface-Heavy.otf" />
+    <Content Include="Static\css\orderflow\fonts\HelveticaNeueDeskInterface-Regular.otf" />
+    <Content Include="Static\css\orderflow\fonts\HelveticaNeueDeskInterface-Regular.ttf" />
+    <Content Include="Static\css\orderflow\fonts\HelveticaNeueDeskInterface-Regular.woff" />
+    <Content Include="Views\Shared\Partials\OrderFlow\_OrderPackages.cshtml" />
+    <Content Include="Views\OrderFlowCampaignPage\Order.cshtml" />
+    <Content Include="Views\Shared\Layouts\_OrderFlow.cshtml" />
+    <Content Include="Views\OrderFlowCampaignPage\Script.cshtml" />
+    <Content Include="Views\OnBoardingCampaignPage\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="[Configuration]\Stage\pren\AppSettings.config" />
+    <Content Include="[Configuration]\Stage\pren\EPiServerLog.config" />
+    <Content Include="[Configuration]\Stage\pren\Web.config" />
+    <Content Include="[Configuration]\Stage\Web.config" />
+    <Content Include="[Configuration]\Prod\pren\AppSettings.config" />
+    <Content Include="[Configuration]\Prod\pren\EPiServerLog.config" />
+    <Content Include="[Configuration]\Prod\pren\Web.config" />
+    <Content Include="[Configuration]\Prod\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bn.CompanyService.ContentApi\Bn.CompanyService.ContentApi.csproj">
+      <Project>{4e90175d-8507-4f8d-b5cd-8e52233b5f23}</Project>
+      <Name>Bn.CompanyService.ContentApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bn.SelfService.ContentApi\Bn.SelfService.ContentApi.csproj">
+      <Project>{d68a0aef-971a-4266-9a06-90f9ecd4cbaa}</Project>
+      <Name>Bn.SelfService.ContentApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DagensIndustri\Bn.Subscription\Bn.Subscription.csproj">
+      <Project>{beb8278a-4012-4db3-a368-5ebc16ef3ca9}</Project>
+      <Name>Bn.Subscription</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DagensIndustri\DIClassLib\DIClassLib.csproj">
+      <Project>{cd83a652-f083-4b4a-9d1d-487d9a7885b3}</Project>
+      <Name>DIClassLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Di.ServicePlus\Di.ServicePlus.csproj">
+      <Project>{52a6839f-3f2a-4192-b486-4f706b78c7a4}</Project>
+      <Name>Di.ServicePlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Di.Common\Di.Common.csproj">
+      <Project>{49d851c3-b18d-41ad-9ee9-bd366c5870a5}</Project>
+      <Name>Di.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Di.Subscription.DataAccess\Di.Subscription.DataAccess.csproj">
+      <Project>{f64df6cd-842a-48f4-894f-395469f15398}</Project>
+      <Name>Di.Subscription.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Di.Subscription.Logic\Di.Subscription.Logic.csproj">
+      <Project>{109812e3-c510-41cd-8583-2039849a3b42}</Project>
+      <Name>Di.Subscription.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AutowithdrawalService\" />
+    <WCFMetadataStorage Include="Service References\PayTransService\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties package_1json__JSONSchema="http://json.schemastore.org/package" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

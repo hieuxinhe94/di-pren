@@ -1,0 +1,130 @@
+﻿@using Pren.Web.Models.ViewModels.MySettings
+@model InvoicePageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (Model.Invoices != null && Model.Invoices.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Fakturanr/OCR</th>
+                    <th>Fakturatyp</th>
+                    <th>Förfallodatum</th>
+                    <th>Belopp</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var invoice in Model.Invoices)
+                {
+                    <tr>
+                        <td>@invoice.InvoiceNumber</td>
+                        <td>@DisplayInvoiceType(invoice.InvoiceType)</td>
+                        <td>@DisplayNullableDate(invoice.DueDate)</td>
+                        <td>@DisplayNullableDecimal(invoice.InvoiceAmount, "kr")</td>
+                        <td>
+                            @if (invoice.InvoicePayed)
+                            {
+                                <span class="text-nowrap green">
+                                    <i class='fa fa-check'></i> Betald
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="text-nowrap red">
+                                    <i class="fa fa-times"></i> Obetald
+                                </span>
+                            }
+                        </td>
+                        <td>
+
+                            @if (string.IsNullOrEmpty(invoice.InvoicePathUrl))
+                            {
+                                <span>Fakturan behandlas</span>
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Visa faktura", "ShowInvoice", "InvoicePage",
+                            new
+                            {
+                                customerNumber = Model.CustomerNumber,
+                                invoiceGuid = invoice.InvoiceGuid
+                            },
+                            new
+                            {
+                                target = "_blank"
+                            })
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p><strong>Inga fakturor hittades</strong></p>
+}
+
+<p class="a-underline">
+    Dagens industri samarbetar med Klarna. Via <a href="https://my.klarna.com" target="_blank">Mitt Klarna</a> kan du se alla dina fakturor från dem.<br/>
+    Behöver du komma i kontakt med deras kundservice når du dem <a href="https://www.klarna.com/se/kundservice" target="_blank">här</a>
+</p>
+<p><a href="https://klarna.com" target="_blank"><img src="~/Static/img/Klarna_Logo.jpg" alt="Klarna - simplifying buying" class="img-rounded" /></a></p>
+
+@helper DisplayNullableDecimal(decimal? value, string currencySuffix)
+{
+    if (value == null)
+    {
+        return;
+    }
+
+    @((decimal)value + " " + currencySuffix) 
+}
+
+@helper DisplayNullableDate(DateTime? date)
+{
+    if (date == null)
+    {
+        return;
+    }
+    
+    @(((DateTime)date).ToString("yyyy-MM-dd"))
+}
+
+@helper DisplayInvoiceType(InvoiceType invoiceType)
+{
+    switch (invoiceType)
+    {
+        case InvoiceType.Normal:
+            @("Normal")
+            break;
+        case InvoiceType.EInvoice:
+            @("E-faktura")
+            break;
+        case InvoiceType.Autogiro:
+            @("Autogiro")
+            break;
+        case InvoiceType.Reminder1:
+        case InvoiceType.Reminder2:
+            @("Påminnelse")
+            break;
+        @*case InvoiceType.Reminder2:
+            @("Påminnelse 2")
+            break;*@
+        case InvoiceType.FinalInvoice:
+            @("Slutfaktura")
+            break;
+        case InvoiceType.CreditInvoice:
+            @("Kreditfaktura")
+            break;
+    }
+}

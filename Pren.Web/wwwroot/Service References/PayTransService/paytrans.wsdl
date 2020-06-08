@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.dagensindustri.se/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.dagensindustri.se/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.dagensindustri.se/">
+      <s:element name="InsertPayTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="diPayTransRefNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="merchantId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="currency" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amountInOren" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vatInOren" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentMethod" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="purchaseDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="goodsDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="consumerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="finishDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPayTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertPayTransResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertPayTransSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertPayTrans" />
+  </wsdl:message>
+  <wsdl:message name="InsertPayTransSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertPayTransResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PayTransSoap">
+    <wsdl:operation name="InsertPayTrans">
+      <wsdl:input message="tns:InsertPayTransSoapIn" />
+      <wsdl:output message="tns:InsertPayTransSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PayTransSoap" type="tns:PayTransSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertPayTrans">
+      <soap:operation soapAction="http://ws.dagensindustri.se/InsertPayTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PayTransSoap12" type="tns:PayTransSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertPayTrans">
+      <soap12:operation soapAction="http://ws.dagensindustri.se/InsertPayTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PayTrans">
+    <wsdl:port name="PayTransSoap" binding="tns:PayTransSoap">
+      <soap:address location="http://ws.local/paytrans/paytrans.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PayTransSoap12" binding="tns:PayTransSoap12">
+      <soap12:address location="http://ws.local/paytrans/paytrans.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

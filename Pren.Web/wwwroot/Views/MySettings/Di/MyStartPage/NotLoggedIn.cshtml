@@ -1,0 +1,21 @@
+﻿@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.MySettings.Di.MySettingsViewModel
+           
+@{ Layout = "~/Views/Shared/Layouts/Di/_MyPage.cshtml"; }
+
+@if (ViewBag.Message != null)
+{
+    <div class="container">
+        <div class="alert alert-info">
+            @Html.Raw(ViewBag.Message)
+        </div>
+    </div>
+}
+
+@Html.PropertyFor(x => x.CurrentPage.ContentAreaNotLoggedIn, new
+{
+    CssClass = "row clearmargin contentblocks",
+    Tag = RenderingConstants.ContentAreaTags.FullWidthClear,
+})
+
+

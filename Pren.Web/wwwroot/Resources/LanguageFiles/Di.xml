@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  
+  <language name="English" id="en">
+    <enums>
+      <pren>
+        <web>
+          <business>
+            <personalization>
+              <criteria>
+                <useragent>
+                  <customcompare>
+                    <equal>Contains</equal>
+                    <notequal>Not contains</notequal>
+                  </customcompare>
+                </useragent>
+              </criteria>
+            </personalization>
+          </business>
+        </web>
+      </pren>
+    </enums>
+    <feedback>
+      <ErrMessDenyShortSub>Du kan dessvärre bara prova på en gång per 3-månadersperiod. Enligt våra uppgifter har du redan haft en provperiod. Du kan alltid teckna dig för något av våra &lt;a href='https://pren.di.se/pren/digital-paketering/digitalpaper/'&gt;ordinarie erbjudanden&lt;/a&gt;. Har du några frågor är du varmt välkommen att kontakta &lt;a href='http://www.di.se/kund' target='_blank'&gt;kundtjänst&lt;/a&gt;.</ErrMessDenyShortSub>
+      <ErrMessDenySameSubType>Vi ser att du redan har en aktiv pågående prenumeration och därför har inte denna beställning gått igenom. Har du några frågor är du varmt välkommen att kontakta &lt;a href='https://www.di.se/kund' target='_blank'&gt;kundtjänst&lt;/a&gt;.</ErrMessDenySameSubType>
+      <DisclaimerText>Genom att klicka på "Godkänn köp" accepterar jag betalningsansvar, godkänner prenumerationsvillkoren hos &lt;a href='https://pren.di.se/pren/villkor/prenumerationsvillkor/' target='_blank'&gt;Dagens industri AB&lt;/a&gt; och &lt;a href='https://gdpr.bonniernews.se/personuppgiftspolicy' target='_blank'&gt;Dagens industri AB&lt;/a&gt; personuppgiftspolicy.</DisclaimerText>
+    </feedback>
+    <mail>
+      <TmpAddressChange>
+        &lt;p&gt;Tack, vi har mottagit din tillfälliga adressändring från [fromdate] - [todate] till adress:&lt;/p&gt;
+        &lt;p&gt;[address]&lt;/p&gt;
+        &lt;p&gt;
+        Vid eventuella frågor kontakta vår kundtjänst via chatt på &lt;a href="https://di.se/kund"&gt;di.se/kund.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+        Med vänliga hälsningar&lt;br /&gt;Dagens industri
+        &lt;/p&gt;
+      </TmpAddressChange>
+      <PermAddressChange>
+        &lt;p&gt;Tack, vi har mottagit din permanenta adressändring från [fromdate] till adress:&lt;/p&gt;
+        &lt;p&gt;[address]&lt;/p&gt;
+        &lt;p&gt;
+        Vid eventuella frågor kontakta vår kundtjänst via chatt på &lt;a href="https://di.se/kund"&gt;di.se/kund.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+        Med vänliga hälsningar&lt;br /&gt;Dagens industri
+        &lt;/p&gt;
+      </PermAddressChange>
+      <SubscriptionSleep>
+        &lt;STRONG&gt;Tack, vi har mottagit din anmälan om uppehåll av papperstidningen.&lt;/STRONG&gt;
+        &lt;br&gt;&lt;br&gt;
+        Du vet väl om att du fortfarande har digital tillgång till tidningen under din uppehållsperiod? &lt;a href="https://account.bonnier.news/bip/login?appId=di.se" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;Logga bara in&lt;/A&gt; med din e-postadress och lösenord så kan du läsa alla artiklar och tidningen i sin helhet på di.se. Som inloggad blir upplevelsen bättre och du missar inga viktiga affärsnyheter. Dina ärenden sköter du enkelt på Kundwebben och har du frågor kan du kontakta vår kundtjänst via chatt på &lt;a href="https://www.di.se/kund" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;di.se/kund&lt;/A&gt;.
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href="https://account.bonnier.news/bip/login?appId=di.se"&gt;Logga in för en bättre upplevelse &gt;&gt;&lt;/A&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href="http://www.di.se/appar/" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;Ladda ned Appen&lt;/a&gt;
+        &lt;br&gt;
+        &lt;a href="https://account.bonnier.news/bip/password/forgot-password?appId=di.se" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;Glömt lösenord?&lt;/a&gt;
+      </SubscriptionSleep>
+    </mail>
+  </language>
+  
+  <language name="Swedish" id="sv">
+    <enums>
+      <pren>
+        <web>
+          <business>
+            <personalization>
+              <criteria>
+                <useragent>
+                  <customcompare>
+                    <equal>Contains</equal>
+                    <notequal>Not contains</notequal>
+                  </customcompare>
+                </useragent>
+              </criteria>
+            </personalization>
+          </business>
+        </web>
+      </pren>
+    </enums>
+    <feedback>
+      <ErrMessDenyShortSub>Du kan dessvärre bara prova på en gång per 3-månadersperiod. Enligt våra uppgifter har du redan haft en provperiod. Du kan alltid teckna dig för något av våra &lt;a href='https://pren.di.se/pren/digital-paketering/digitalpaper/'&gt;ordinarie erbjudanden&lt;/a&gt;. Har du några frågor är du varmt välkommen att kontakta &lt;a href='http://www.di.se/kund' target='_blank'&gt;kundtjänst&lt;/a&gt;.</ErrMessDenyShortSub>
+      <ErrMessDenySameSubType>Vi ser att du redan har en aktiv pågående prenumeration och därför har inte denna beställning gått igenom. Har du några frågor är du varmt välkommen att kontakta &lt;a href='https://www.di.se/kund' target='_blank'&gt;kundtjänst&lt;/a&gt;.</ErrMessDenySameSubType>
+      <DisclaimerText>Genom att klicka på "Godkänn köp" accepterar jag betalningsansvar, godkänner prenumerationsvillkoren hos &lt;a href='https://pren.di.se/pren/villkor/prenumerationsvillkor/' target='_blank'&gt;Dagens industri AB&lt;/a&gt; och &lt;a href='https://gdpr.bonniernews.se/personuppgiftspolicy' target='_blank'&gt;Dagens industri AB&lt;/a&gt; personuppgiftspolicy.</DisclaimerText>
+    </feedback>
+    <mail>
+      <TmpAddressChange>
+        &lt;p&gt;Tack, vi har mottagit din tillfälliga adressändring från [fromdate] - [todate] till adress:&lt;/p&gt;
+        &lt;p&gt;[address]&lt;/p&gt;
+        &lt;p&gt;
+        Vid eventuella frågor kontakta vår kundtjänst via chatt på &lt;a href="https://di.se/kund"&gt;di.se/kund.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+        Med vänliga hälsningar&lt;br /&gt;Dagens industri
+        &lt;/p&gt;
+      </TmpAddressChange>
+      <PermAddressChange>
+        &lt;p&gt;Tack, vi har mottagit din permanenta adressändring från [fromdate] till adress:&lt;/p&gt;
+        &lt;p&gt;[address]&lt;/p&gt;
+        &lt;p&gt;
+        Vid eventuella frågor kontakta vår kundtjänst via chatt på &lt;a href="https://di.se/kund"&gt;di.se/kund.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+          Med vänliga hälsningar&lt;br /&gt;Dagens industri
+        &lt;/p&gt;
+      </PermAddressChange>
+      <SubscriptionSleep>
+        &lt;STRONG&gt;Tack, vi har mottagit din anmälan om uppehåll av papperstidningen.&lt;/STRONG&gt;
+        &lt;br&gt;&lt;br&gt;
+        Du vet väl om att du fortfarande har digital tillgång till tidningen under din uppehållsperiod? &lt;a href="https://account.bonnier.news/bip/login?appId=di.se" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;Logga bara in&lt;/A&gt; med din e-postadress och lösenord så kan du läsa alla artiklar och tidningen i sin helhet på di.se. Som inloggad blir upplevelsen bättre och du missar inga viktiga affärsnyheter. Dina ärenden sköter du enkelt på Kundwebben och har du frågor kan du kontakta vår kundtjänst via chatt på &lt;a href="https://www.di.se/kund" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;di.se/kund&lt;/A&gt;.
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href="https://account.bonnier.news/bip/login?appId=di.se"&gt;Logga in för en bättre upplevelse &gt;&gt;&lt;/A&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href="https://www.di.se/appar/" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;Ladda ned Appen&lt;/a&gt;
+        &lt;br&gt;
+        &lt;a href="https://account.bonnier.news/bip/password/forgot-password?appId=di.se" style="color: #000000; text-decoration: none; font-weight: bold;"&gt;Glömt lösenord?&lt;/a&gt;
+      </SubscriptionSleep>
+    </mail>
+  </language>
+  
+</languages>

@@ -1,0 +1,195 @@
+﻿@using System.Web.Optimization
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.MySettings.Di.MySettingsViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/Di/_Root.cshtml";    
+}
+
+@section PageSpecificCssIncludes{
+
+    @Styles.Render("~/bundles/css/mysettings")
+
+    @if (IsSectionDefined("PageSpecificCssIncludes"))
+    {
+        @RenderSection("PageSpecificCssIncludes")
+    }    
+}
+
+@section PageSpecificJavascriptInHeader{
+    
+    @if (Model.IsDebug)
+    {            
+        <script data-main="/static/js/mysettings/app" src="~/Static/js/lib/require/require.min.js"></script>
+    }
+    else
+    {
+        <script data-main="@Scripts.Url("~/bundles/js/mysettings")" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
+    }        
+
+    @if (IsSectionDefined("PageSpecificJavascriptInHeader"))
+    {
+        @RenderSection("PageSpecificJavascriptInHeader")
+    }
+}
+
+<nav id="navcontainer" class="navbar navbar-di navbar-fixed-top">
+        
+    <div id="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 home">
+                    <a href="http://di.se" target="_blank" title="Di">Di.se</a>
+                    @if (Model.BusinessSubscriptionPage != null)
+                    {
+                        <span>|</span> <a href="@(Url.ContentUrl(Model.BusinessSubscriptionPage.ContentLink) + "SwitchSubscriptionType?subscriptionType=business")" title="Företagsportalen">Företagsportalen</a> 
+                    }       
+                </div>
+                <div class="col-xs-10 text-right login">
+                    
+                    @if (!string.IsNullOrEmpty(Model.UserName))
+                    {
+                        <div id="username">
+                            @Model.UserName <span class="fa fa-user"></span>
+                        </div>
+                    }
+
+                    @if (Model.IsLoggedIn)
+                    {
+                        <a href="logout" class="btn btn-primary">Logga ut</a>
+                    }
+                    else
+                    {
+                        <a href="login" class="btn btn-primary">Logga in</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="top-navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-sm-12 col-md-12 col-lg-3">
+                    <a href="http://www.di.se" class="inline-block">
+                        <img height="50" src="~/Static/img/di-logo.png" alt="Di Kundservice" />
+                    </a>
+                    <div class="inline-block v-align-middle">
+                        <h1>Kundservice</h1>
+                    </div>
+                </div>
+                @if (Model.TopMenuItems != null)
+                {
+                    <div class="navbar-header">
+                        <div class="col-xs-2">
+                            <button id="navbar-toggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#di-menu-collapse">
+                                <span class="sr-only">Meny</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+
+                        <div class="collapse navbar-collapse" id="di-menu-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                @foreach (var anchor in Model.TopMenuItems)
+                                {
+                                    <li><a href="#@anchor.Id">@anchor.Name</a></li>
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</nav>
+
+@RenderBody()
+
+<a id="chatbtn" class="btn btn-primary" style="text-decoration: none;" href="#">Starta chatt</a>
+
+<div class="modal fade" id="chat-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <iframe src="https://chattdi.releasy.se/" width="50%" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Footer
+{
+    <footer>
+        <div id="footer" class="container">
+            <div class="row">
+                @if (IsSectionDefined("Footer"))
+                {
+                    @RenderSection("Footer")
+                }
+                else
+                {
+                    
+                    <div id="socialmedia" class="col-sm-2 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-6">
+                                <span><a href="http://www.facebook.com/dagensindustri" title="Dagens industri på facebook" target="_blank"><span class="fa fa-facebook-square"></span></a></span>
+                                <span><a href="http://www.twitter.com/dagensindustri" title="Dagens industri på twitter" target="_blank"><span class="fa fa-twitter-square"></span></a></span>
+                                <span><a href="https://www.instagram.com/dagensindustri" title="Dagens industri på instagram" target="_blank"><span class="fa fa-instagram"></span></a></span>    
+                            </div> 
+
+                            <div class="col-sm-12 col-xs-6">
+                                <span><a href="http://www.di.se/appar" title="Dagens industris appar" target="_blank"><span class="fa fa-android"></span> <span class="fa fa-apple"></span></a></span>
+                            </div>
+                        </div>          
+                    </div>
+                    @Html.PropertyFor(x => x.CurrentPage.ContentAreaFooter, new { CssClass = "footer-items col-sm-10 col-xs-12", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+                }
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-disclaimer">
+                        @if (IsSectionDefined("Copyright"))
+                        {
+                            @RenderSection("Copyright")
+                        }
+                        else
+                        {
+                            @Html.PropertyFor(x => x.CurrentPage.Copyright)
+                        }                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>   
+}
+
+<div id="mobileCheck" class="hidden-xs"></div>
+
+
+@section PageSpecificJavaScriptIncludes{
+
+    @*@Scripts.Render("~/bundles/js/global")*@
+
+    @if (IsSectionDefined("PageSpecificJavaScriptIncludes"))
+    {
+        @RenderSection("PageSpecificJavaScriptIncludes")
+    }
+}
+
+@section PageSpecificJavaScript{
+
+    @if (IsSectionDefined("PageSpecificJavaScript"))
+    {
+        @RenderSection("PageSpecificJavaScript")
+    }
+}

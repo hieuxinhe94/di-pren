@@ -1,0 +1,84 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.Di.ContactBlockViewModel
+
+<div id="contact" class="anchor"></div>
+<div id="contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 @Html.EditAttributes(x => x.CurrentBlock.Heading)>@Model.CurrentBlock.Heading</h2>
+                @Html.PropertyFor(x => x.CurrentBlock.Editor)
+            </div>
+            <div class="col-md-6">
+
+                @if (Model.HideForm)
+                {
+                    @Html.PropertyFor(x => x.CurrentBlock.FormHiddenBody)
+                }
+                else
+                {
+
+                    <form id="contactForm" class="form-horizontal w-margin-top" data-sendemail="@Model.SendEmail.ToString().ToLower()">
+
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label for="phoneinput" class="label-heading">Namn *</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="name" id="contactnameinput" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label for="phoneinput" class="label-heading">Telefonnummer *</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="tel" class="form-control" name="phone" id="contactphoneinput" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label for="emailinput" class="label-heading">E-post *</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="email" class="form-control" name="email" id="contactemailinput" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label for="cusnoinput" class="label-heading">Kundnummer *</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="customernumber" id="contactcusnoinput" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label for="messageinput" class="label-heading" id="contactmessagelabel">Ärende (max 255 tecken)*</label>
+                                <textarea class="form-control" rows="5" name="message" maxlength="255" id="contactmessageinput"></textarea>
+                                <input type="checkbox" name="isreceiptorder" id="receiptorderinput" value="true" class="displaynone" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <div class="label-heading">* Obligatoriska fält</div>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <button id="btn-reset-message" class="btn btn-primary">Rensa</button>
+                                <button type="submit" class="btn btn-primary">Skicka fråga</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="thank-you-message" class="hidden">
+                        @Html.PropertyFor(x => x.CurrentBlock.FormThankYouText)
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

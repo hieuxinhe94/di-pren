@@ -1,0 +1,15 @@
+﻿
+<% if(items.length){%>
+    <select class="form-control" id="temp-addresses" name="TempAddresses" style="margin-bottom: 15px;">
+        <option>Använd tidigare sparad adress</option>
+        <% _.each(items, function(address){ %>
+        <option value="<%= address.Id %>"
+                data-streetaddress="<%= address.StreetAddress %>"
+                data-streetnumber="<%= address.StreetNumber %>"
+                data-zip="<%= address.Zip %>"
+                data-city="<%= address.City %>">
+            <%= address.StreetAddress %> <%= address.StreetNumber %>
+        </option>
+        <% }); %>
+    </select>
+<% } %> 

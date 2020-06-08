@@ -1,0 +1,128 @@
+﻿h1{color:#FFF;}
+
+.clearfix:after, .clearfix:before{display:table; content:" ";}
+.clearfix:after{clear:both;}
+#compwrapper{max-width:100%;width:978px;margin:0 auto;position:relative;padding:0 5px 0 5px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+                     
+#compwrapper ul {list-style:none;margin:0;padding:0;}
+#imagearea{width:100%;}   
+#imagearea img{max-width:100%;}
+        
+#functions {position: absolute;width:100%;z-index:999;}
+#functions img{top:0;left:2%;max-width:18%;position:inherit;}
+#functions ul{top:0;right:10%;position:inherit;}
+#functions li {float:left;margin-right:10px;background-color: #C8281E;padding:10px;color: #FFF;text-transform: uppercase;font-weight:bold;cursor:pointer;}
+                    
+#leftarea, #rightarea
+{
+    width:49%;color:#333333;padding:20px;margin-top:20px;min-height:378px;            
+    background: url("/Templates/Public/Styles/competition/images/bg-block.png") repeat scroll 0 0 transparent;            
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);            
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;            
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */    	        
+}           
+	
+#leftarea{float:left;}		    
+#rightarea{ float:right;}		
+#off{margin:0 auto;margin-top:10px;width:40%;}	    
+	    
+#footerbanners{float:left;clear:left;}
+#footerbanners img{margin-right:20px;/*vertical-align:middle;*/margin-top:20px;}
+	    
+.questionwrapper{margin-bottom:10px;}		 
+.questionwrapper table, .questionwrapper input{margin-top:10px;}  	    
+.questionwrapper table tr{line-height:20px;}  	   
+
+.valsummary{margin-bottom:10px;}
+.valsummary li{color:#333333;line-height: 27px;padding-left: 15px;background:url("/Templates/Public/images/forms/status.png") no-repeat scroll 2px 8px transparent;background-position:-2px -95px;}
+   
+.header{display:block;margin-bottom:10px;font-weight:bold;font-size:24px;line-height:normal;}    
+.header.small{font-size:15px;}
+.error{color:Red !important;clear: left;float: left;margin-top: 10px;}
+.block {display:block !important;}   
+.nomargin{margin:0 !important;}
+.text{margin-bottom: 10px;}   
+.text.small{font-size: 10px;}
+.tip{margin-top:20px;}
+.check{background:url("/Templates/Public/styles/competition/images/check.png") no-repeat scroll 2px 8px transparent;padding:12px 0 0 23px;color:#C8281E;}
+.checkred{background:url("/Templates/Public/styles/competition/images/checkred.png") no-repeat scroll 2px 8px transparent;padding:12px 0 0 23px;color:#C8281E;}
+   
+/*Types*/
+p{font-size:12px;line-height:inherit;margin:0 0 10px;}
+label{margin:0 5px 0 5px;}	
+input[type=radio] {margin:0}    
+input[type=text]
+{        
+    margin-bottom:10px;
+    width:86%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	        	        
+    border: 1px solid #E2DFDF;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) inset;
+    color: #444444;
+    font-family: 'Arial',Sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding:5px 6px;	       
+    
+}	
+.inputwrapper{width:100%;/*display:inline-block;*/}	   
+input[type=text].input50{width:40%;}
+input[type=text].input25{width:17.2%;}
+.optional input[type=text]{background-color: #E2DFDF;margin-right:5%;}
+#topimage{display:none;}
+p.required {
+    background: url("/Templates/Public/images/forms/status.png") no-repeat scroll 2px 8px transparent;
+    color: #60534D;
+    line-height: 25px;
+    float:right;
+    padding: 0 0 0 16px;
+    font-weight:normal;
+}
+	    
+/*Jquery dialog*/
+#aboutdialog img, #rulesdialog img{max-width:100%;}
+#aboutdialog p, #rulesdialog p{max-width:700px;}
+.ui-widget-content{border:none;background:none;}
+.ui-dialog{max-width:100%;border:10px solid #7B7572 !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.ui-dialog-titlebar{background-color:#FFF !important;border:none !important;}
+.hidden{display:none;}
+.ui-dialog-titlebar-close{border:none !important;background:none !important; padding:0 !important;}
+.ui-icon-closethick, .ui-icon-closethick:hover{background:url("/Templates/Public/Styles/competition/images/closebtn.png") no-repeat scroll 0 0 transparent !important;}
+
+
+/*====== Form validation ==========*/
+
+.inputfield input[type="text"]:focus {background-color:#F3F4F4;}            
+.inputfield .status {background: url("/Templates/Public/images/forms/status.png") no-repeat scroll 2px 8px transparent;padding:2%;visibility: visible;}             
+.inputfield.optional .status {background:none;}             
+.inputfield.optional.errorval .status {background: url("/Templates/Public/images/forms/status.png");background-position:-2px -95px;}     
+.inputfield.errorval .status{background-position:-2px -95px;}                        
+.inputfield.okval .status{background-position:0 -44px;}
+
+
+@media screen and (max-width: 640px) {
+    #leftarea, #rightarea{width:100%;min-height:100%;}
+    #rightarea{float:left;}
+    /*#functions ul{left:50%;top:5px;}*/
+    #functions li{background-color:transparent;padding:0;font-size:60%;}
+}
+
+@media screen and (max-width: 980px) 
+{
+    #topimage{display:block;}
+    #showcase{display:none;}
+}

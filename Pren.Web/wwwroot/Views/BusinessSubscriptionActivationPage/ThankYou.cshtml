@@ -1,0 +1,46 @@
+﻿@using System.Web.Optimization
+@model Pren.Web.Models.ViewModels.BusinessSubscriptionActivationPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/businesscampaign")
+}
+
+<div id="confirm-area" class="container">    
+
+    @if (Model.ActivationForm != null)
+    {
+        <div class="row confirmation-copy">            
+            <div class="col-md-6">
+                <div class="confirmation-header">
+                    <h1>@Model.CurrentPage.SuccessfullyActivatedHeading</h1>                    
+                </div>
+                <div class="confirmation-text">
+                    @Html.Raw(@Model.CurrentPage.SuccessfullyActivatedText != null ? @Model.CurrentPage.SuccessfullyActivatedText.ToString().Replace("[email]", Model.ActivationForm.Email) : string.Empty)
+                </div>
+                @if (!string.IsNullOrEmpty(Model.CurrentPage.SuccessfullyActivatedButtonText) &&
+                     Model.CurrentPage.SuccessfullyActivatedButtonLink != null &&
+                     Model.CurrentPage.SuccessfullyActivatedButtonLink.Uri != null)
+                {
+                    <a class="btn btn-primary" href="@Model.CurrentPage.SuccessfullyActivatedButtonLink.Uri.ToString()" title="@Model.CurrentPage.SuccessfullyActivatedButtonText">@Model.CurrentPage.SuccessfullyActivatedButtonText</a>
+                }
+            </div>
+            <div class="col-md-6">
+                <img src="@Url.ContentUrl(Model.CurrentPage.Image)" alt="@Model.CurrentPage.PageName">   
+            </div>
+        </div>        
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+        </div>
+    }
+</div>
+
+@section Footer{
+}

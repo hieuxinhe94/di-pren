@@ -1,0 +1,42 @@
+﻿@using System.Web.Optimization
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.MySettings.CodePortalPageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/codeportal")
+}
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+<div id="no-offer-fallback" data-lookfor=".code-offer-container .code-offer" class="displaynone">
+    @Html.PropertyFor(x => x.CurrentPage.FallbackText)
+</div>
+
+<div class="code-portal displaynone" data-userid="@Model.UserId" data-token="@Model.Token"></div>
+
+@Html.PropertyFor(x => x.CurrentPage.CodePortalOfferContentArea, new { CssClass = "row code-offer-container", Tag = RenderingConstants.ContentAreaTags.FullWidth })
+
+@section PageSpecificJavaScriptIncludes
+{
+    @Scripts.Render("~/bundles/js/codeportal")   
+}
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+
+        var codePortalSettings = $(".code-portal");
+        var userId = codePortalSettings.data("userid");
+        var token = codePortalSettings.data("token");
+        var userCodeRepository = new UserCodeRepository(userId, token);
+        var codeDisplayer = new CodeDisplayer();
+        var getCodeButtonGenerator = new GetCodeButtonGenerator(userCodeRepository, codeDisplayer);
+        var codeOfferHandler = new CodeOfferHandler(userCodeRepository, codeDisplayer, getCodeButtonGenerator, $(".user-code-container"), $("#no-offer-fallback"));
+      
+    </script>
+}

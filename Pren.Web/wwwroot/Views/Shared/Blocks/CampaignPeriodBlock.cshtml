@@ -1,0 +1,36 @@
+﻿@using EPiServer.Editor
+@model Pren.Web.Models.Blocks.CampaignPeriodBlock
+
+@if (PageEditing.PageIsInEditMode ||
+    (!string.IsNullOrEmpty(Model.Period) &&
+    (Model.CampaignAutogiro != null || Model.CampaignCardAndInvoice != null)))
+{
+    <a class="pren-range-button gradient-toggle " href="#"
+       data-campidcardandinvoice="@Model.CampaignCardAndInvoice"
+       data-campidautogiro="@Model.CampaignAutogiro"
+       data-price="@Model.Price"
+       data-totalpricetext="@Model.TotalPrice"
+       data-period="@Model.Period"
+       data-istrial="@Model.IsTrial.ToString().ToLower()"
+       data-istrialfree="@Model.IsTrialFree.ToString().ToLower()"
+       data-hidecardpayment="@Model.HideCardPayment.ToString().ToLower()"
+       data-hideinvoicepayment="@Model.HideInvoicePayment.ToString().ToLower()"
+       data-id="@(Model.CampaignCardAndInvoice + Model.CampaignAutogiro)">@Model.Period</a>
+
+    <table class="summary-table displaynone">
+        @SummaryRow(Model.FirstSummaryText, Model.FirstSummaryPrice)
+        @SummaryRow(Model.SecondSummaryText, Model.SecondSummaryPrice)
+        @SummaryRow(Model.ThirdSummaryText, Model.ThirdSummaryPrice)
+    </table>
+}
+
+@helper SummaryRow(string text, string price)
+{
+    if (!string.IsNullOrEmpty(text) || !string.IsNullOrEmpty(price))
+    {
+        <tr>
+            <td>@text</td>
+            <td class="right">@price</td>
+        </tr>
+    }
+}

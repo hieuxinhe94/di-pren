@@ -1,0 +1,25 @@
+# User-specific files
+*.suo
+*.user
+*.pubxml
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+DagensIndustri/WS/Properties/PublishProfiles/WS.pubxml
+DagensIndustri/WS/Properties/PublishProfiles/WS.pubxml
+DagensIndustri/WS/Properties/PublishProfiles/WS.pubxml
+DagensIndustri/WS/Properties/PublishProfiles/WS.pubxml
+*.pubxml
+/Pren.Web/wwwroot/App_Data
+/DagensIndustri/packages/
+/Pren.Web/wwwroot/node_modules
+/Pren.Web/wwwroot/Static/js/bundles
+.vs
+Pren.Web/wwwroot/License.config

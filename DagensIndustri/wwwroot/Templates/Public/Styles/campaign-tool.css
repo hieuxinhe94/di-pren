@@ -1,0 +1,308 @@
+/* FRAMEWORK ---------------------------------------------------------------- */
+body.campaign-tool {}
+
+body.campaign-tool #image-viewer {
+	margin-bottom: 0;
+}
+	
+body.campaign-tool #content-wrapper {
+	background: url(../images/images-campaign/bg-content-wrapper.png) 0 0 repeat-y;
+	padding-top: 25px;
+}
+	
+	body.campaign-tool #campaign-package {
+		width: 310px;
+		padding: 19px 30px 0 0;		
+		float: left;
+	}
+	
+	body.campaign-tool #content {
+		width: 570px;
+		padding: 0 0 0 0;
+		float: right;	
+	}
+	
+
+body.campaign-tool #footer {
+	height: 110px;
+	margin-top: -110px;
+}
+
+body.campaign-tool #footer .section {
+	height: 80px;
+}
+
+body.campaign-tool #footer .links ul li {
+	font-size: 11px;
+}
+	
+body.campaign-tool #footer .disclaimer {
+	width: 780px;
+}
+
+	body.campaign-tool #footer .disclaimer p {
+		font-size: 11px;
+		line-height: 17px;
+	}
+	
+body.campaign-tool .campaign-intro { margin: 0 0 0 15px; }
+
+body.campaign-tool #content h1 {
+	margin-bottom: 6px;
+	margin-right: 0;	
+}
+
+body.campaign-tool #content h1.big {
+	font-size: 52px;
+	line-height: 60px;
+	margin-bottom: 18px;
+}
+	
+body.campaign-tool #campaign-package h2 {
+	font-size: 24px;
+	line-height: 27px;
+	color: #000;
+	margin: 0;
+	letter-spacing: 0;
+}
+
+body.campaign-tool #content h2 {
+	font-size: 46px;
+	line-height: 47px;
+	color: #c8281e;
+	margin: 0 0 5px 15px;
+	letter-spacing: 0;	
+}
+
+	body.campaign-tool #content h3 {
+		font-size: 24px;
+		line-height: 27px;
+		color: #4c413c;
+		margin: 0 0 10px 15px;
+		letter-spacing: 0;
+		height: 40px;
+	}
+	
+body.campaign-tool #content.campaign-code	h2,
+body.campaign-tool #content.campaign-code	h3 {
+	margin-left: 0;
+}
+
+	body.campaign-tool #content h3.ill-checkbox {
+		padding-left: 40px;
+		background: url(../images/images-campaign/header-checkbox.png) 0 0 no-repeat;
+	}	
+
+
+/* CAMPAIGN PACKAGE --- */	
+
+body.campaign-tool #campaign-package .campaign-paper {
+	border-bottom: 1px solid #d9bfb8;
+	padding: 15px 0 15px 0;
+	display: table;
+	width: 100%;
+}
+
+body.campaign-tool #campaign-package .campaign-paper:last-child { border-bottom: none; }
+body.campaign-tool #campaign-package .campaign-paper.last-child { border-bottom: none; }
+
+	body.campaign-tool #campaign-package .campaign-paper img {
+		float: left;
+		box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);	
+		-webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+	}
+	
+	body.campaign-tool #campaign-package .campaign-paper img.no-shadow {
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;				
+	}
+
+	body.campaign-tool #campaign-package .campaign-paper h3 {
+		font-size: 18px;
+		line-height: 21px;
+		color: #000;
+		margin-left: 100px;
+		padding-top: 5px;
+		letter-spacing: -1px;
+	}
+
+	body.campaign-tool #campaign-package .campaign-paper .date,	
+	body.campaign-tool #campaign-package .campaign-paper p {
+		display: block;
+		font-size: 12px;
+		line-height: 17px;
+		margin-bottom: 0;
+		margin-left: 100px;		
+	}
+	
+	body.campaign-tool #campaign-package .campaign-paper .date {
+		color: #666;
+		margin-bottom: 3px;
+	}
+	
+	body.campaign-tool #campaign-package.small .campaign-paper h3 {
+		font-size: 14px;
+		line-height: 17px;
+		margin-left: 75px;
+		letter-spacing: 0;
+	}
+	
+	body.campaign-tool #campaign-package.small .campaign-paper .date {
+		display: inline;
+		font-weight: normal;
+		margin: 0;
+	}	
+	
+	body.campaign-tool #campaign-package.small .campaign-paper p {
+		font-size: 11px;
+		line-height: 15px;
+		margin-left: 75px;		
+	}	
+
+
+	
+/* FORM --- */
+
+body.campaign-tool .form-nav p.required { left: 397px;}
+
+body.campaign-tool .form-box { padding-bottom: 15px; }
+
+body.campaign-tool .form-box .row {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 55px;
+}
+
+body.campaign-tool .form-box .divider {
+	margin-bottom: 15px;
+	padding-top: 10px;
+}
+
+body.campaign-tool .form-box .section { padding-top: 20px; }
+
+body.campaign-tool .form-box .row .col { width: 270px; }
+
+body.campaign-tool .form-box .row .medium { width: 165px; }
+
+body.campaign-tool .form-box .row .small { width: 105px}
+
+/*body.campaign-tool .form-box label { font-weight: normal; }*/
+
+body.campaign-tool .form-box input.text { width: 215px; }
+
+body.campaign-tool .form-box .medium input.text { width: 110px; }
+
+body.campaign-tool .form-box .status { right: 10px; }
+
+body.campaign-tool .form-box .row-checkbox {
+	height: auto;
+}
+
+body.campaign-tool .form-box .row.radiolist {
+	height: auto;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+	body.campaign-tool .form-box .row.radiolist ul { overflow: hidden }
+
+	body.campaign-tool .form-box .row.radiolist ul li {
+		float: left;
+		margin-right: 20px;
+		border-top: none;
+	}
+	
+	body.campaign-tool .form-box .radiolist ul li label span,
+	body.campaign-tool .form-box .radiolist ul li .label label {
+		padding-left: 2px;
+	}
+	
+body.campaign-tool .creditcards {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}
+
+body.campaign-tool .button-wrapper {
+	border-top: none;
+	height: 40px;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+body.campaign-tool .button-wrapper .btn {
+	font-size: 18px;
+	line-height: 19px;
+	background-position: 100% -250px;
+	padding: 0 19px 0 0;	
+	text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.50);
+}
+
+	body.campaign-tool .button-wrapper .btn span {
+		height: 39px;
+		line-height: 37px;
+		background-position: 0 -200px;		
+		padding: 0 8px 0 27px;
+	}
+
+body.campaign-tool .button-wrapper .btn:hover { background-position: 100% -350px; }
+body.campaign-tool .button-wrapper .btn:hover span { background-position: 0 -300px; }
+
+body.campaign-tool .row .button-wrapper {
+	height: auto;
+	float: left;
+	padding: 12px 0 0 0;
+	margin: 0;
+}
+
+
+.button-wrapper small {
+	float: left;
+	font-size: 12px;
+	line-height: 15px;
+	color: #999;
+	width: 300px;
+}
+
+body.campaign-tool .form-box .row-offer { padding-right: 20px; padding-bottom: 0; overflow: hidden; height: auto; }
+
+	.form-box .row-offer img {
+		float: left;
+		margin: 0 20px 10px 0;
+	}
+
+	.form-box .row-offer .text-content {
+		display: table;
+	}
+	
+	.form-box .row-offer h4 {
+		font-size: 18px;
+		line-height: 21px;
+		border-bottom: none;
+		padding-left: 0;
+	}
+	
+	.form-box .row-offer p {
+		font-size: 14px;
+		line-height: 21px;
+		margin-bottom: 0;
+	}
+	
+body.campaign-tool h4.large {
+	font-size: 18px;
+	line-height: 21px;
+	margin: 0 0 5px 0;
+}
+
+body.campaign-tool ol {
+	list-style: decimal;
+	padding: 0 0 0 22px;
+}
+
+body.campaign-tool ol li {
+	font-size: 14px;
+	line-height: 21px;
+	margin: 0 0 4px 0;
+}

@@ -1,0 +1,7 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.AutowithdrawalPageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }

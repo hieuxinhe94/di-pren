@@ -1,0 +1,231 @@
+﻿
+body {margin: 0px;background-color:#ffe1d8;font-family:Arial,Verdana,Sans-Serif;font-size:13px;line-height:16px;}
+a{color:#000000;text-decoration:none;background-image:none;}
+a:hover{color:#000000;text-decoration:underline;background-image:none;}
+/*Används där det ej är löpande text, i löpande text körs BrodText*/
+.EjBrodText {FONT-WEIGHT: normal;FONT-SIZE: 11px;COLOR: #000000;}
+
+/*****************************************/
+/*************** QD classes **************/
+/*****************************************/
+
+h1 {font-size:1.5em;font-weight:normal;line-height:1.2em;margin:10px 0 11px;}
+h2 {font-size:1.4em;font-weight:normal;line-height:1.2em;margin:0 0 11px;}
+
+/********************/
+/**** Containers ****/
+/********************/
+#ContainerPage{width:800px}
+/*#ContainerLeft{float:left;width:130px;border-top:solid 3px #ffffff;border-right:solid 2px #ffffff;}
+#ContainerMain{float:left;width:475px;margin-top:3px;}*/
+#ContainerLeft{float:left;width:132px;margin-top:2px;}
+#ContainerMain{float:left;width:475px;margin-top:2px;}
+#ContainerMain.wide{width:662px;border:none;}
+#ContainerMain.widefull{width:900px;border:none;}
+#ContainerRight{float:left;}
+#ContainerFooter{margin-top:10px;padding:10px;background:#E2BEB1;clear:both;float:left;width:605px;}
+#ContainerFooter.wide{width:774px;}
+#ContainerFooter .left
+#ContainerFooter .right
+
+/********************/
+/*** Main content ***/
+/********************/
+#MainContentArea{}
+#MainBodyArea{padding:0 10px;}
+#MainBodyArea a{text-decoration:underline;}
+
+/********************/
+/**** HeaderArea ****/
+/********************/
+#HeaderArea .DateArea{text-transform:capitalize;background-color:#cc0000;color:#ffffff;font-size:11px;font-weight:bold;padding:3px 0 3px 0;text-align:center;margin-top:2px;}
+#HeaderArea .logo{background-color:#cc0000;height:55px;}
+#HeaderArea .functions{font-size:11px;font-weight:bold;margin:3px 0 4px 1px;}
+#HeaderArea .functions ul{list-style:none;padding:0;margin:0 0 0 3px;}
+#HeaderArea .functions li{display:inline;padding-right:10px;}
+
+/********************/
+/**** Left menu *****/
+/********************/
+#Menu {background-color:#F8F6F6; font-size:11px;}
+#Menu ul {list-style:none;padding:0;margin:0;}
+#Menu ul li{background-image:url(Images/lightMenuBG2.jpg); background-repeat:no-repeat;line-height:17px;}
+#Menu ul li a, #Menu ul li .selected{padding-left:5px;display:block;}
+#Menu ul li li{background-image:none;}
+#Menu ul li li a, #Menu ul li li .selected{padding-left:15px;color:#D60108;}
+#Menu ul li .selected{color:#FFF !important;}
+#Menu ul li a:hover, #Menu ul li .selected{color:#fff;background-image:url(Images/mediumdarkMenuBG2.jpg);background-repeat:no-repeat;text-decoration:none;}
+
+/********************/
+/**** Gasellerna ****/
+/********************/
+
+/*Gasellcontainers*/
+#GasellContainer{float:left;}
+#GasellAdsContainer{float:left;margin-left:2px;}
+
+/*Common*/
+.ColumnBox {background-color:#FFF;border:1px solid #E2BEB1;width:163px;font-size:11px;margin-bottom:2px;}
+.ColumnBox table{width:163px;}
+.ColumnBox .heading{background-color:#6a0000;height:20px;color:#FFF;padding:0 0 0 5px;text-transform:uppercase;font-weight:bold;}
+.ColumnBox td.link{padding:4px 4px 0 5px;}
+.ColumnBox.puff,.ColumnBox.search,.ColumnBox.movielist,.ColumnBox.adarea{padding-bottom:10px;}
+
+/*Gasellpuff, Gasellfilmslistning*/
+.ColumnBox.puff td.image,.ColumnBox.movielist td.movie{padding:6px 4px 0 5px;}
+
+/*Gasellsök*/
+.ColumnBox.search td.searcharea{padding:0 0 5px 5px;}
+.ColumnBox.search td.selectarea{padding-top:5px;}
+.ColumnBox.search td.selectarea table{height:155px;background:url(Images/GasellernaSverigeProfil.gif);}
+.ColumnBox.search td.selectarea .options{text-align:center;width:140px;}
+.ColumnBox.search td.searcharea input{width:140px;}
+ 
+/*Gasell annonsyta*/
+.ColumnBox.adarea{width:199px;}
+.ColumnBox.adarea table{width:199px;}
+.ColumnBox.adarea td.ad{text-align:center;}
+.ColumnBox.adarea td.ad p,.ColumnBox.adarea td.ad .flasharea{padding:10px 0 0 0;}
+.ColumnBox.adarea td.ad .flasharea {float:left;margin:20px 0 0 20px;background:transparent url(Images/annons.gif) no-repeat scroll 0px 1px;}
+.ColumnBox.adarea.pink{background-color:#FFE1D8;padding-bottom:20px;}
+
+/*Gasell konferenser*/
+.gasellConference{width:100%;}
+.gasellConference td.heading{background-color:#E2BEB1;font-weight:bold;}
+.gasellConference td{padding:4px 0 4px 3px;}
+
+.TblGForm input{width:100px;}
+.TblGForm input.wide{width:215px !important;}
+.TblGForm .radio input{width:15px;}
+
+.freePren{background-color:#FFFFFF;padding:6px;border:2px solid #C5A697;}
+
+/*************************/
+/**** Medarbetarlista ****/
+/*************************/
+
+#employeelist{font-size:11px;float:left;width:400px;}
+.employee{float:left;width:200px;padding:0 0 10px 0;height:77px;}
+.employee img{float:left;padding-right:10px;}    
+.employee a{font-weight:bold;}
+
+/*************************/
+/**** Återförsäljare ****/
+/*************************/
+
+.aftable {margin:0;width:630px;font-size:12px;}        
+.aftable td{font-size:10px;font-family:Verdana,Arial;}        
+.aftable th {background-color:#E2BEB1;color:#000000;text-align:left;}        
+.aftable th h3 {font-size:12px;margin:0;}        
+
+/*************************/
+/**** Bilagor ****/
+/*************************/
+
+#AppendixLeft{float:left;width:475px;border-right:2px solid #FFFFFF;}
+#AppendixLeft .history .EjBrodText{clear:left;padding-top:10px;}
+#AppendixRight{float:left;width:165px;}
+
+.AppendixList {float:left;width:400px;padding-left:75px;}
+.AppendixList.largelist {padding-left:0;}
+.AppendixList.largelist .EjBrodText {padding:5px;}
+.AppendixList.largelist div {float:left;}
+.AppendixList.largelist .link {width:250px;}
+.AppendixList.largelist .date {width:100px;}
+.AppendixList .appendixitem{float:left;width:200px;height:200px;font-weight:bold;}
+
+.ColumnBox.appendix{border:none;background:none;}        
+.ColumnBox.appendix .heading{background-color:#CC0000;text-transform:none;}
+.ColumnBox.appendix .search{background-color:#E2BEB1;}
+.ColumnBox.appendix .search,.ColumnBox.appendix .text{padding:4px 0 4px 4px;}   
+
+/*************************/
+/**** Tidningsarkiv  ****/
+/*************************/
+
+.ArchivePaper{float:left;width:180px;height:275px;margin-right:10px;}
+.ArchivePaper td{padding-left:5px;}
+.ArchivePaperDownload{float:left;width:265px;height:275px;background-color:#fff;}
+
+/*************************/
+/**** Artikelarkiv  ****/
+/*************************/
+.SearchResult{font-size:11px;width:100%;}
+.SearchResult .header th{padding-left:5px;height:25px;font-weight:bold;text-align:left !important; background-color:#E2BEB1;}
+tr.pager span {font-weight:bold;} 
+tr.pager .prev{background:transparent url(Images/BlkArrL.gif) no-repeat scroll 0 4px;padding-left:8px;}
+tr.pager .next{background:transparent url(Images/BlkArrR.gif) no-repeat scroll 31px 4px;padding-right:8px;}
+
+/*************************/
+/* LOGIN PAGE            */
+/*************************/
+.loginArea {width: 100%;}
+.loginArea label {display: block;line-height: 1em;width: 35%;}
+.subArea label{display:inline;margin-left:5px;}
+.subArea a{display:block;font-weight:bold;}
+.subTable a{font-weight:bold;}
+.fwFormTd{width:42%;vertical-align:top;}
+.fwBorderTd{border-left:1px solid #000;padding-left:10px;}
+.fwBorderTd a{text-decoration:underline;}
+
+
+/*************************/
+/* MY PAGE            */
+/*************************/
+
+.actionTable{width:460px;border: 1px solid #E2BEB1;padding:8px;margin-bottom:10px;}
+.settingsTable{border: 1px solid #E2BEB1;width:442px;padding:8px;}
+.infoBox{border:solid 1px #000;background-color:#FFF;padding:5px;margin-bottom:10px;}
+.infoBox.wide{width:350px;}
+
+/*************************/
+/* Subscription          */
+/*************************/
+
+.subscribe input{margin-right:10px;}
+
+/*************************/
+/* PlugIn Appendix       */
+/*************************/
+table.appendixadminlist {width:100%;} 
+table.appendixadminlist th {background-color:#E2BEB1;font-weight:bold;padding:4px 4px 4px 2px;text-align:left;}            
+table.appendixadminlist td {padding:4px 4px 4px 2px;} 
+
+
+
+/********************/
+/***** Various ******/
+/********************/
+.blkArr a{background:transparent url(Images/BlkArrR.gif) no-repeat scroll 0 4px;padding-left:8px;}
+.redArr a{background:transparent url(Images/RedArrR.gif) no-repeat scroll 0 4px;padding-left:8px;}
+.hidden{display:none;}
+.bold, .selected{font-weight:bold;}
+.error, .red{color:Red;}
+.searchbtn{display:none;}
+.evenrow td {background:#FFE1D8 none repeat scroll 0 0;}
+.oddrow td {background:#E2BEB1 none repeat scroll 0 0;}
+.dailypaper{background-color:#FFE1D8;padding:5px 0 0 5px;}
+.artheader{font-size:1.5em;font-weight:normal;line-height:1.2em;margin:0 0 11px;}
+.underline a{text-decoration:underline;}
+img{border:none;}
+hr {border:0;background-color:#E2BEB1;color:#E2BEB1;height:1px;}
+table{border:0;}
+.PdfLink a { background:transparent url(Images/pdf.gif) no-repeat scroll 0 0px; padding-left:20px; padding-top:1px; }
+.white {background:#FFF;}
+
+/* Padding, margin, position classes */
+.paddingT10{padding-top:10px;}
+.paddingB10{padding-bottom:10px;}
+.paddingL10{padding-left:10px;}
+.marginB10{margin-bottom:10px;}
+.marginL10{margin-left:10px;}
+.paddingT10B10{padding-top:10px;padding-bottom:10px;}
+.vtop{vertical-align:top;}
+.alignRight{text-align:right;}
+.alignCenter{text-align:center;}
+.left{float:left;}
+.right{float:right;}
+.center400{margin:40px auto 0;width:400px;}
+.block{display:block;}
+.nowrap{white-space:nowrap;}
+

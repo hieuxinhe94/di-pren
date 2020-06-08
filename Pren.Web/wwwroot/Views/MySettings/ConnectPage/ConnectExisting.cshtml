@@ -1,0 +1,15 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.ConnectPageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+<p>Kundnummer: @Model.CustomerNumberPren<br/>Namn: @Model.CustomerNamePren</p>
+<p><strong>Kopplas till Di-konto:</strong></p>
+<p>Användarnamn: @Model.CustomerEmailServicePlus<br/>Namn: @Model.CustomerNameServicePlus</p>
+
+@Html.ActionLink("Koppla", "Connect", "ConnectPage", null, new
+    {
+        @class = "btn btn-primary"
+    })
+
+
+        

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="English" id="en">
+    <displaychannels>
+      <displaychannel name="mobile">
+        <name>Mobile</name>
+      </displaychannel>
+      <displaychannel name="web">
+        <name>Web</name>
+      </displaychannel>
+    </displaychannels>
+    <displayoptions>
+      <full>100%</full>
+      <fullclear>100% clear</fullclear>
+      <wide>66%</wide>
+      <wideclear>66% clear</wideclear>
+      <narrow>33%</narrow>
+      <narrowclear>33% clear</narrowclear>
+      <half>50%</half>
+      <halfclear>50% clear</halfclear>
+      <sixth>16%</sixth>
+      <sixthclear>16% clear</sixthclear>
+      <quarter>25%</quarter>
+      <quarterclear>25% clear</quarterclear>
+    </displayoptions>
+    <resolutions>
+      <standard>Standard (1366x768)</standard>
+      <ipadhorizontal>iPad horizontal (1024x768)</ipadhorizontal>
+      <iphonevertical>iPhone vertical (320x568)</iphonevertical>
+      <androidvertical>Android vertical (480x800)</androidvertical>
+    </resolutions>
+  </language>
+</languages>

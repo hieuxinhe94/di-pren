@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function setCookie(name, value, expires, path, domain, secure) {
+            var today = new
+            Date();
+            today.setTime(today.getTime());
+            if (expires) {
+                expires = expires * 1000 * 60 * 60 * 24;
+            }
+            var expires_date = new
+            Date(today.getTime() + (expires));
+            document.cookie = name + "=" + escape(value) + ((expires) ?
+                "; expires=" + expires_date.toGMTString() : "") + ((path) ?
+                "; path=" + path : "") + ((domain) ? "; domain=" + domain :
+                "") + ((secure) ? "; secure" : "");
+        }
+
+        function getVar(name) {
+            var get_string = document.location.search;
+            var return_value = '';
+            do {
+                name_index = get_string.indexOf(name + '=');
+                if (name_index != -1) {
+                    get_string = get_string.substr(name_index + name.length + 1,
+                        get_string.length - name_index);
+                    end_of_value = get_string.indexOf('&');
+                    if (end_of_value != -1) {
+                        value = get_string.substr(0, end_of_value);
+                    } else {
+                        value = get_string;
+                    }
+                    if (return_value == '' || value == '') {
+                        return_value += value;
+                    } else {
+                        return_value += ', ' + value;
+                    }
+                }
+            }
+            while (name_index != -1)
+            space = return_value.indexOf('+');
+            while (space != -1) {
+                return_value = return_value.substr(0, space) + ' ' +
+                    return_value.substr(space + 1, return_value.length);
+                space = return_value.indexOf('+');
+            }
+            return return_value;
+        }
+
+        function redirTo() {
+            var strReturn = "";
+            var strHref = document.location.href;
+            if (strHref.indexOf("&url=") > -1) {
+                strReturn = strHref.substr(strHref.indexOf("&url=") + 5);
+            } else {
+                strReturn = "/pren/";
+            }
+            return decodeURIComponent(strReturn);
+        }
+        var mytduid = getVar('tduid');
+        setCookie('TRADEDOUBLER', mytduid, 365);
+        window.location = redirTo();
+    </script>
+</body>
+</html>

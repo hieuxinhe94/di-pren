@@ -1,0 +1,77 @@
+﻿@using Di.Common.Utils.Context
+@using EPiServer.Core
+@using EPiServer.Editor
+
+@model Pren.Web.Models.ViewModels.CampaignBlockViewModel
+@{
+    var priceTagTextDefined = !string.IsNullOrEmpty(Model.CurrentBlock.ImagePriceTag1) ||
+                              !string.IsNullOrEmpty(Model.CurrentBlock.ImagePriceTag2) ||
+                              !string.IsNullOrEmpty(Model.CurrentBlock.ImagePriceTag3);
+
+    var isMobile = HttpContextUtils.IsMobileDevice();
+}
+          
+<div class="pren-selection"
+     data-id="@(((IContent)Model.CurrentBlock).ContentLink.ID)"
+     data-campisdigital="@Model.CurrentBlock.IsDigital.ToString().ToLower()"
+     data-campisstudent="@Model.CurrentBlock.IsStudent.ToString().ToLower()"
+     data-campispaywall="@Model.CurrentBlock.IsPayWall.ToString().ToLower()"
+     data-cardpaytext="@Model.CurrentBlock.GetCardPayText()"
+     data-invoicepaytext="@Model.CurrentBlock.InvoicePayText"
+     data-autogiropaytext="@Model.CurrentBlock.AutogiroPayText">
+
+    <h2 class="pren-selection-title" @Html.EditAttributes(x => x.CurrentBlock.Heading)>@Model.CurrentBlock.Heading</h2>
+    <div class="pren-selection-image-and-text-container">
+        @Html.PropertyFor(model => model.CurrentBlock.TextAboveImage)
+        <div class="pren-selection-img-container" @Html.EditAttributes(x => x.CurrentBlock.Image)>
+            <img src="@Url.ContentUrl(Model.CurrentBlock.Image)" alt="@Model.CurrentBlock.Heading">
+            @if (priceTagTextDefined && !Model.CurrentBlock.HidePriceTagInDesktop)
+            {
+                <div class="price-tag displaynone"><span class="info-text">@Model.CurrentBlock.ImagePriceTag1</span><span class="middle-text">@Model.CurrentBlock.ImagePriceTag2</span><span class="price-text">@Model.CurrentBlock.ImagePriceTag3</span></div>
+            }
+
+        </div>        
+        @Html.PropertyFor(model => model.CurrentBlock.TextBelowImage)
+    </div>
+    <div class="pren-selection-product-copy">
+        @Html.PropertyFor(model => model.CurrentBlock.ProductCopy)        
+    </div>
+    @if (priceTagTextDefined)
+    {
+        <div class="price-tag-text displaynone">@Model.CurrentBlock.ImagePriceTag1 @Model.CurrentBlock.ImagePriceTag2 <span class="price-text">@Model.CurrentBlock.ImagePriceTag3</span></div>
+    }
+    
+
+        <a href="#" class="pren-select button green aboveusps">Välj</a>
+ 
+
+    @if ((Model.UspTexts != null && Model.UspTexts.Any()) || PageEditing.PageIsInEditMode)
+    {
+        <ul class="pren-selection-product-list @(PageEditing.PageIsInEditMode ? string.Empty : "displaynone")" @Html.EditAttributes(model => model.CurrentBlock.UspProduct)>
+            @if (Model.UspTexts != null)
+            {
+                foreach (var text in Model.UspTexts)
+                {
+                    <li><span>@Html.Raw(text)</span></li>
+                }
+            }
+        </ul>
+    }
+    <a href="#" class="expand-link">Se allt som ingår</a>
+    <div class="pren-selection-price">
+        <div class="price-text"></div>
+        <div class="vat-info">ink moms</div>
+    </div>
+    <div class="pren-selection-price-subtext"></div>
+    <div class="pren-range-container">
+        <div class="pren-range-container-title">Välj antal månader</div>
+        <div class="pren-range-buttons">
+            @Html.PropertyFor(model => model.CurrentBlock.FirstCampaignPeriod, new { CssClass = "edit-mode-period" })
+            @Html.PropertyFor(model => model.CurrentBlock.SecondCampaignPeriod, new { CssClass = "edit-mode-period" })
+            @Html.PropertyFor(model => model.CurrentBlock.ThirdCampaignPeriod, new { CssClass = "edit-mode-period" })
+        </div>
+    </div>
+
+        <a href="#" class="pren-select button green belowusps">Välj</a>
+    
+</div>

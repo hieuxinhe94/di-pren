@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{109812E3-C510-41CD-8583-2039849A3B42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Di.Subscription.Logic</RootNamespace>
+    <AssemblyName>Di.Subscription.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DagensIndustri\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\DagensIndustri\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\DagensIndustri\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address\AddressConstants.cs" />
+    <Compile Include="Address\AddressHandler.cs" />
+    <Compile Include="Address\IAddressHandler.cs" />
+    <Compile Include="Address\Modifiers\IPermanentAddressCreator.cs" />
+    <Compile Include="Address\Modifiers\IPermanentAddressRemover.cs" />
+    <Compile Include="Address\Modifiers\ITemporaryAddressCreator.cs" />
+    <Compile Include="Address\Modifiers\ITemporaryAddressChanger.cs" />
+    <Compile Include="Address\Modifiers\ITemporaryAddressRemover.cs" />
+    <Compile Include="Address\Modifiers\PermanentAddressCreator.cs" />
+    <Compile Include="Address\Modifiers\PermanentAddressRemover.cs" />
+    <Compile Include="Address\Modifiers\TemporaryAddressCreator.cs" />
+    <Compile Include="Address\Modifiers\TemporaryAddressChanger.cs" />
+    <Compile Include="Address\Modifiers\TemporaryAddressRemover.cs" />
+    <Compile Include="Address\Retrievers\AddressRetriever.cs" />
+    <Compile Include="Address\Retrievers\IAddressRetriever.cs" />
+    <Compile Include="Address\Types\AddressChange.cs" />
+    <Compile Include="Address\Types\PermanentAddress.cs" />
+    <Compile Include="Address\Types\TemporaryAddress.cs" />
+    <Compile Include="Campaign\CampaignHandler.cs" />
+    <Compile Include="Campaign\ICampaignHandler.cs" />
+    <Compile Include="Campaign\Retrievers\CampaignIdentifierRetriver.cs" />
+    <Compile Include="Campaign\Retrievers\CampaignRetriever.cs" />
+    <Compile Include="Campaign\Retrievers\ICampaignIdentifierRetriver.cs" />
+    <Compile Include="Campaign\Retrievers\ICampaignRetriever.cs" />
+    <Compile Include="Campaign\Types\Campaign.cs" />
+    <Compile Include="Campaign\Types\CampaignIdentifier.cs" />
+    <Compile Include="Customer\CustomerHandler.cs" />
+    <Compile Include="Customer\ICustomerHandler.cs" />
+    <Compile Include="Customer\Modifiers\CustomerPropertyChanger.cs" />
+    <Compile Include="Customer\Modifiers\ICustomerInformationChanger.cs" />
+    <Compile Include="Customer\Modifiers\CustomerInformationChanger.cs" />
+    <Compile Include="Customer\Modifiers\ICustomerPropertyChanger.cs" />
+    <Compile Include="Customer\Retrievers\CustomerRetriever.cs" />
+    <Compile Include="Customer\Retrievers\ICustomerRetriever.cs" />
+    <Compile Include="Customer\Types\Customer.cs" />
+    <Compile Include="Customer\Types\CustomerForUpdate.cs" />
+    <Compile Include="Customer\Types\CustomerProperty.cs" />
+    <Compile Include="ExtraProducts\ExtraProductsHandler.cs" />
+    <Compile Include="ExtraProducts\IExtraProductsHandler.cs" />
+    <Compile Include="ExtraProducts\Retrievers\ExtraProductsRetriever.cs" />
+    <Compile Include="ExtraProducts\Retrievers\IExtraProductsRetriever.cs" />
+    <Compile Include="ExtraProducts\Retrievers\Types\ExtraProduct.cs" />
+    <Compile Include="HolidayStop\HolidayStopConstants.cs" />
+    <Compile Include="HolidayStop\Modifiers\HolidayStopChanger.cs" />
+    <Compile Include="HolidayStop\Modifiers\HolidayStopRemover.cs" />
+    <Compile Include="HolidayStop\Modifiers\IHolidayStopChanger.cs" />
+    <Compile Include="HolidayStop\Modifiers\IHolidayStopRemover.cs" />
+    <Compile Include="HolidayStop\Retrievers\HolidayStopRetriever.cs" />
+    <Compile Include="HolidayStop\Retrievers\IHolidayStopRetriever.cs" />
+    <Compile Include="HolidayStop\Types\HolidayStop.cs" />
+    <Compile Include="HolidayStop\Types\HolidayStopItem.cs" />
+    <Compile Include="Initialization\DependencyResolver.cs" />
+    <Compile Include="Invoice\IInvoiceHandler.cs" />
+    <Compile Include="Invoice\InvoiceHandler.cs" />
+    <Compile Include="Invoice\Retrievers\IInvoiceRetriever.cs" />
+    <Compile Include="Invoice\Retrievers\InvoiceRetriever.cs" />
+    <Compile Include="Invoice\Types\Invoice.cs" />
+    <Compile Include="Package\IPackageHandler.cs" />
+    <Compile Include="Package\PackageHandler.cs" />
+    <Compile Include="Package\Retrievers\IPackageRetriever.cs" />
+    <Compile Include="Package\Retrievers\PackageRetriever.cs" />
+    <Compile Include="Package\Retrievers\PackageRetrieverBase.cs" />
+    <Compile Include="Package\Types\ProductPackage.cs" />
+    <Compile Include="Parameters\IParametersHandler.cs" />
+    <Compile Include="Parameters\Retrievers\ParametersRetrieverBase.cs" />
+    <Compile Include="IssueDate\IIssueDateHandler.cs" />
+    <Compile Include="IssueDate\IssueDateHandler.cs" />
+    <Compile Include="IssueDate\Retrievers\IIssueDateRetriever.cs" />
+    <Compile Include="IssueDate\Retrievers\IssueDateRetriever.cs" />
+    <Compile Include="Parameters\Types\ReceiveType.cs" />
+    <Compile Include="PostName\IPostNameHandler.cs" />
+    <Compile Include="PostName\PostNameHandler.cs" />
+    <Compile Include="PostName\Retrievers\IPostNameRetriever.cs" />
+    <Compile Include="PostName\Retrievers\PostNameRetriever.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicationDays\IPublicationDaysHandler.cs" />
+    <Compile Include="PublicationDays\PublicationDaysHandler.cs" />
+    <Compile Include="PublicationDays\Retrievers\IPublicationDaysRetriever.cs" />
+    <Compile Include="PublicationDays\Retrievers\PublicationDaysRetriever.cs" />
+    <Compile Include="PublicationDays\Types\PublicationDay.cs" />
+    <Compile Include="Reclaim\Retrievers\IReclaimRetriever.cs" />
+    <Compile Include="Reclaim\Retrievers\ReclaimRetriever.cs" />
+    <Compile Include="Reclaim\Types\DeliveryReclaim.cs" />
+    <Compile Include="Reclaim\Modifiers\DeliveryReclaimCreator.cs" />
+    <Compile Include="Reclaim\Modifiers\IDeliveryReclaimCreator.cs" />
+    <Compile Include="Reclaim\IReclaimHandler.cs" />
+    <Compile Include="Reclaim\ReclaimConstants.cs" />
+    <Compile Include="Reclaim\ReclaimHandler.cs" />
+    <Compile Include="Reclaim\Retrievers\IReclaimTypeRetriever.cs" />
+    <Compile Include="Reclaim\Types\Reclaim.cs" />
+    <Compile Include="Reclaim\Types\ReclaimType.cs" />
+    <Compile Include="Reclaim\Retrievers\ReclaimTypeRetriever.cs" />
+    <Compile Include="SubscriptionConstants.cs" />
+    <Compile Include="HolidayStop\IHolidayStopHandler.cs" />
+    <Compile Include="HolidayStop\Modifiers\IHolidayStopCreator.cs" />
+    <Compile Include="HolidayStop\Modifiers\HolidayStopCreator.cs" />
+    <Compile Include="HolidayStop\HolidayStopHandler.cs" />
+    <Compile Include="Subscription\ISubscriptionHandler.cs" />
+    <Compile Include="Subscription\Retrievers\ISubscriptionRetriever.cs" />
+    <Compile Include="Subscription\Retrievers\SubscriptionRetriever.cs" />
+    <Compile Include="Subscription\SubscriptionHandler.cs" />
+    <Compile Include="Subscription\Types\Subscription.cs" />
+    <Compile Include="Parameters\Retrievers\IParametersRetriever.cs" />
+    <Compile Include="Parameters\Retrievers\ParametersRetriever.cs" />
+    <Compile Include="Parameters\ParametersHandler.cs" />
+    <Compile Include="Parameters\Types\TargetGroup.cs" />
+    <Compile Include="Utils\GenericListExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Di.Common\Di.Common.csproj">
+      <Project>{49d851c3-b18d-41ad-9ee9-bd366c5870a5}</Project>
+      <Name>Di.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Di.Subscription.DataAccess\Di.Subscription.DataAccess.csproj">
+      <Project>{f64df6cd-842a-48f4-894f-395469f15398}</Project>
+      <Name>Di.Subscription.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

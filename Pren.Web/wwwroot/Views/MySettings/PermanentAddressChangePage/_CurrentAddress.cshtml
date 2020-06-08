@@ -1,0 +1,73 @@
+﻿@model Di.Subscription.Logic.Customer.Types.Customer 
+
+<div class="heading">Nuvarande adress</div>
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-sm-6">
+            NAMN
+        </div>
+        <div class="col-sm-6">
+            <span>@Model.FullName</span>
+            @*@if (Model.IsCompanyCust)
+            {
+                <span>, @Model.RowText2</span>
+            }*@
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            GATA
+        </div>
+        <div class="col-sm-6">
+            @if (!string.IsNullOrEmpty(Model.AddressStreetName))
+            {
+                @Model.AddressStreetName
+            }
+            @if (!string.IsNullOrEmpty(Model.AddressStreetNumber))
+            {
+                <span>@Model.AddressStreetNumber</span>
+            }
+            @if (!string.IsNullOrEmpty(Model.AddressStairs))
+            {
+                <span>@Model.AddressStairs</span>
+            }
+            @if (!string.IsNullOrEmpty(Model.AddressStairs))
+            {
+                <span>@Model.AddressStairs</span>
+            }
+            @if (!string.IsNullOrEmpty(Model.AddressCareOf))
+            {
+                <br/>
+                <span>Co/Lgh: @Model.AddressCareOf</span>
+            }
+
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            POSTNUMMER
+        </div>
+        <div class="col-sm-6">
+            @if (!string.IsNullOrEmpty(Model.AddressZip))
+            {
+                @Model.AddressZip
+            }
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            POSTORT
+        </div>
+        <div class="col-sm-6">
+            @if (!string.IsNullOrEmpty(Model.AddressCity))
+            {
+                @Model.AddressCity
+            }
+        </div>
+    </div>
+    <hr />
+}

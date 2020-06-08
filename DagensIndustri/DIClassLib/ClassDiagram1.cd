@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DIClassLib.Customers.Customer">
+    <Position X="7" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAEEACIAAAAAAAAAAAAAQAAAAAAAEAEACAAAAA=</HashCode>
+      <FileName>Customers\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.Customers.PersonCustomer">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAg=</HashCode>
+      <FileName>Customers\PersonCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.Customers.CompanyCustomer">
+    <Position X="8" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customers\CompanyCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.CardPayment.Auriga">
+    <Position X="3" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>CardPayment\Auriga.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DIClassLib.Addresses.Address">
+    <Position X="1.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAEBABAAAAAAAEAAA=</HashCode>
+      <FileName>Addresses\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.Subscriptions.Subscription">
+    <Position X="9.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAIAAAIAgAAAAAABAIAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Subscriptions\Subscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.Addresses.StreetAddress">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACACAAAAAAAAAAAAAAAAAAIAEAAABA=</HashCode>
+      <FileName>Addresses\StreetAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.Addresses.BoxAddress">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEIAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Addresses\BoxAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.Invoices.Invoice">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAQBAAAAAAQAAAAAAAAAACA=</HashCode>
+      <FileName>Invoices\Invoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.Subscriptions.SubscriberType">
+    <Position X="4.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAgAAAAAABAAAAAQAAAAAAAEAAAAAQAAAA=</HashCode>
+      <FileName>Subscriptions\SubscriberType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIClassLib.SMS.SmsApsis">
+    <Position X="0.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SMS\SmsApsis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DIClassLib.CardPayment.ICardPayment">
+    <Position X="0.75" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>CardPayment\ICardPayment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

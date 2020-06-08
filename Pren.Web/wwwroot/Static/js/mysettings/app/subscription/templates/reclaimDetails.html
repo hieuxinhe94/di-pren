@@ -1,0 +1,28 @@
+﻿<h3>Gör reklamation</h3>
+<div class="form-group">
+        <label for="daystoreclaim" class="label-heading">Vilken dag vill du reklamera? *</label>
+
+        <% _.each(data.DaysToReclaim, function(day){ %>
+            <div class="checkbox">
+                <label class="<%= day.Disabled ? 'disabled' : 'enabled' %>">
+                    <input type="checkbox" name="daystoreclaim" value="<%= day.Date %>" <%= day.Disabled ? "disabled" : "" %> />
+                    <span>
+                        <%= day.DateFriendly %>
+                    </span>
+                </label>
+            </div>
+        <% }); %>
+    </div>
+
+    <div class="form-group">
+        <label for="SelectReason" class="label-heading">Välj orsak</label>
+        <select id="SelectReason" name="reason" class="form-control">
+            <% _.each(data.ReclaimItems, function(reason){ %>
+            <option value="<%= reason.Value %>"><%= reason.Text %></option>
+            <% }); %>
+        </select>
+    </div>
+
+
+
+

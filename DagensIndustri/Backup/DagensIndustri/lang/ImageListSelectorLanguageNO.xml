@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+	<language name="Norsk" id="NO">
+		<imagelistselector>
+			<propertydisplay>Klikk for å endre link listen. ({0} elementer)</propertydisplay>
+			<missingpagelink>javascript:alert('Siden kunne ikke bli funnet. Vennligst gi beskjed til redaksjonen.');return false;</missingpagelink>
+			<requiredproperty>{0} kan ikke være tomt.</requiredproperty>
+			<clearconfirm>Er du sikker på at du vil fjerne alle linkene i listen?</clearconfirm>
+			<clearbuttontext>Fjern lenker</clearbuttontext>
+			<columnheadings>
+				<pagename>Webadresse</pagename>
+				<moveup>Flytt opp</moveup>
+				<movedown>Flytt ned</movedown>
+				<edit>Rediger</edit>
+				<delete>Slett</delete>
+				<alternatetext>Lenketittel</alternatetext>
+			</columnheadings>
+			<pagetext>
+				<title>Bilde og flash velger</title>
+				<introduction>
+					&lt;p&gt;Dette verktøyet gir deg muligheten til å lage en liste av objekter som inneholder et bilde og en lenke (enten EPiServer eller ekstern).&lt;/p&gt;
+					&lt;p&gt;Dette verktøyet støtter også flash. Når du laster opp et flash objekt må det spesifiseres høyde og bredde.&lt;/p&gt;
+					&lt;p&gt;Bruk knappene nedenfor til å legge til i listen.&lt;/p&gt;
+				</introduction>
+				<testlinktitle>Test</testlinktitle>
+				<addlinkbuttontext>...</addlinkbuttontext>
+				<addlinkedimage>Legg til lenke og bilde</addlinkedimage>
+				<addflash>Legg til flash</addflash>
+				<edit>Rediger</edit>
+			</pagetext>
+			<creatorcommon>
+				<urlheading>Bilde/flash lenke</urlheading>
+			</creatorcommon>
+			<imagecreator>
+				<title>Lenket bildeveiviser</title>
+				<introduction>
+					&lt;p&gt;Dette verktøyet gir deg muligheten til å lage et objekt som inneholder et bilde og en lenke (enten EPiServer eller ekstern)..&lt;/p&gt;
+				</introduction>
+				<heading>Lenke</heading>
+				<addlinkbuttontext>Legg til lenke</addlinkbuttontext>
+				<addimagebuttontext>Legg til bilde</addimagebuttontext>
+				<alttext>Legg til alternativ tekst</alttext>				
+				<editlinkbuttontext>Rediger lenke</editlinkbuttontext>
+				<editimagebuttontext>Rediger bilde</editimagebuttontext>
+			</imagecreator>
+			<flashcreator>
+				<title>Flash veiviser</title>
+				<introduction>
+					Dette verktøyet gir deg mulighet til å laste opp en flash fil, samt spesifisere høyde og bredde. Eventuelle lenker må håndteres innad i flashen.
+				</introduction>
+				<heading>Flash-parametre</heading>
+				<height>Høyde</height>
+				<width>Bredde</width>
+				<addimagebuttontext>Legg til flash</addimagebuttontext>
+				<editlinkbuttontext>Rediger lenke</editlinkbuttontext>
+				<editimagebuttontext>Rediger flash</editimagebuttontext>
+			</flashcreator>
+			<button>
+				<add see="/button/add"></add>
+				<insert>Ok</insert>
+				<cancel>Angre</cancel>
+				<moveupalt>Flytter linken en posisjon opp i listen</moveupalt>
+				<movedownalt>Flytter linken en posisjon ned i listen</movedownalt>
+				<deletealt>Fjerner linken fra listen</deletealt>
+			</button>
+			<errormessage>
+				<notspecified>[Ikke angitt]</notspecified>
+				<imagemissing>Bilde er ikke angitt</imagemissing>
+				<flashmissing>Flash er ikke angitt</flashmissing>
+				<heightwidtmissing>Høyde og bredde må angis for flash</heightwidtmissing>
+				<urlnotspecified>[Url er ikke angitt]</urlnotspecified>
+			</errormessage>
+		</imagelistselector>
+	</language>
+</languages>

@@ -1,0 +1,391 @@
+@using System.Web.Optimization
+@using EPiServer.Editor
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.BusinessCampaignPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{   
+    @Styles.Render("~/bundles/css/businesscampaign")
+	
+	<style>
+	.business-offers li.active a:before {background:none;}
+	</style>
+}
+
+@section PageSpecificGtmDataLayer
+{
+    <script>
+        dataLayer = [{
+            'product': 'PREN',
+            'order': 'Di Företagsportal',
+            'campaignId': '@Model.CampaignId'
+        }];
+    </script>
+}
+
+@section PageSpecificJavascriptInHeader
+{
+    <!-- Eloqua tracking -->
+    <script type="text/javascript">
+        var _elqQ = _elqQ || [];
+        _elqQ.push(['elqSetSiteId', '355424421']);
+        _elqQ.push(['elqTrackPageView']);
+
+        (function () {
+            function async_load() {
+                var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+                s.src = '//img06.en25.com/i/elqCfg.min.js';
+                var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+            }
+            async_load();
+        })();
+    </script>
+    <!-- End Eloqua tracking -->
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+
+                <div class="offer-info clearfix">
+                    <div class="col-md-7">
+                        @*<h1 class="big-heading" @Html.EditAttributes(x => x.CurrentPage.Heading)>
+                            @Model.CurrentPage.Heading
+                        </h1>*@
+                        @Html.PropertyFor(model => model.CurrentPage.BelowHeadingContentArea, new {CssClass = "logo-area row", Tag = "col-lg-4 col-md-4 col-sm-4 col-xs-4"})
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 @Html.EditAttributes(x => x.CurrentPage.InfoHeading)>
+                                    <strong>
+                                        @Model.CurrentPage.InfoHeading
+                                    </strong>
+                                </h2>
+                                @Html.PropertyFor(x => x.CurrentPage.InfoBody)
+                            </div>
+                            @*<div class="img-container col-md-6" @Html.EditAttributes(x => x.CurrentPage.Image)>
+                                <img src="@Url.ContentUrl(Model.CurrentPage.Image)" alt="@Model.CurrentPage.Heading">
+                            </div>*@
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="offer-heading clearfix">
+                            <h3><strong>@Html.PropertyFor(x => x.CurrentPage.OfferHeading) <span class="price-per-person"><span class="price-data"></span></span></strong></h3>
+                        </div>
+
+                        @if ((Model.UspTexts != null && Model.UspTexts.Any()) || PageEditing.PageIsInEditMode)
+                        {
+                            <ul class="pren-selection-product-list @(PageEditing.PageIsInEditMode ? string.Empty : "displaynone")" @Html.EditAttributes(model => model.CurrentPage.UspProduct)>
+                                @if (Model.UspTexts != null)
+                                {
+                                    foreach (var text in Model.UspTexts)
+                                    {
+                                        <li>@Html.Raw(text)</li>
+                                    }
+                                }
+                            </ul>
+                        }
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs business-offers" role="navigation">
+                        
+                        <li role="presentation" class="activee">
+                            <a href="#infotabform" class="infoaction" role="tab" data-toggle="tab">
+                                <strong>3-9 licenser</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa fa-question-circle fa-1-5x pointer offers-explanation" title="Förklaring av erbjudanden" aria-hidden="true" data-toggle="modal" data-target="#offers-info"></i>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="offers-info" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Förklaring av erbjudanden</h4>
+                            </div>
+                            <div class="modal-body">
+                                @Html.PropertyFor(model => model.CurrentPage.HelpBody)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="camptabform">
+                        <div class="col-md-12">
+                            <div class="plate">
+                                <div class="col-md-6">
+                                    <form id="company-campaign-form" action="@Url.Action("PostForm", "BusinessCampaignPage")" method="POST">
+                                        <input type="text" name="bizsubscriptiondefinitionid" id="bizsubscriptiondefinitionidinput" class="hidden" value="@Model.SubscriptionForm.BizSubscriptionDefinitionId">
+                                        <input type="text" name="campaignnumber" id="campaignnumberinput" class="hidden" value="@Model.SubscriptionForm.CampaignNumber">
+                                        <input type="text" name="serviceplususerid" id="serviceplususeridinput" class="hidden" value="@Model.SubscriptionForm.ServicePlusUserId">
+
+                                        <div id="step-email">
+                                            <div id="email" class="form-group">
+                                                <label id="notloggedinemaillabel" for="emailinput">Fyll i din e-postadress</label>
+                                                <label id="loggedinemaillabel" for="emailinput" class="displaynone">Din e-postadress - <a id="logoutlink" href="@Model.LogOutUrl">Logga ut</a></label>
+                                                <input type="email" class="form-control input-lg" name="email" id="emailinput" value="@Model.SubscriptionForm.Email">
+                                            </div>
+                                            <div id="emailexists" class="displaynone">
+                                                <div class="alert alert-danger">
+                                                    <div class="row">
+                                                        <div class="col-sm-9">
+                                                            Din e-postadress finns redan registrerad hos oss.<br /> Var vänlig logga in eller ange en annan e-postadress.
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <a id="loginlink" href="@Model.LoginUrl" class="btn btn-primary">Logga in</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hasbizsubscription" class="displaynone">
+                                                <div class="alert alert-danger">
+                                                    Du har redan en företagsprenumeration på detta konto, <a href="@Url.ContentUrl(Model.CurrentPage.SubscriptionAdminPage)" title="Administrera din företagsprenumeration">Klicka här för att administrera din företagsprenumeration</a>. För närvarande kan man bara ha en företagsprenumeration per konto. <a id="logoutlink" href="@Model.LogOutUrl" title="Logga ut">Logga ut</a> och försök med en annan e-postadress.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="step-company-registration" class="form-group">
+                                            <div id="companyRegistrationNumber">
+                                                <label for="companyregistrationnumberinput">Organisationsnummer</label>
+                                                <input type="text" class="form-control input-lg" name="companyregistrationnumber" id="companyregistrationnumberinput" value="@Model.SubscriptionForm.CompanyRegistrationNumber">
+                                            </div>
+                                            <div id="company-submit-container" class="submit-container">
+                                                <button id="companyregistrationnumber-submit" type="submit" class="btn btn-lg btn-primary full-width">Hämta företagsuppgifter</button>
+                                            </div>
+                                            <div id="nocompanyfound" class="displaynone">
+                                                <div class="alert alert-danger">
+                                                    Vi kunde inte hitta dina företagsuppgifter. Var god fyll i dom manuellt.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="step-info">
+                                            <div id="firstname" class="form-group">
+                                                <label for="firstnameinput">Förnamn</label>
+                                                <input type="text" class="form-control input-lg" name="firstname" id="firstnameinput" value="@Model.SubscriptionForm.FirstName">
+                                            </div>
+                                            <div id="lastname" class="form-group">
+                                                <label for="lastnameinput">Efternamn</label>
+                                                <input type="text" class="form-control input-lg" name="lastname" id="lastnameinput" value="@Model.SubscriptionForm.LastName">
+                                            </div>
+                                            <div id="phone" class="form-group">
+                                                <label for="phoneinput">Telefonnummer</label>
+                                                <input type="tel" class="form-control input-lg" name="phone" id="phoneinput" value="@Model.SubscriptionForm.Phone">
+                                            </div>
+                                            <div id="company" class="form-group">
+                                                <label for="companyinput">Företagsnamn</label>
+                                                <input type="text" class="form-control input-lg" name="company" id="companyinput" value="@Model.SubscriptionForm.Company">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-8">
+                                                    <div id="streetaddress" class="form-group">
+                                                        <label for="streetaddressinput">Fakturaadress</label>
+                                                        <input type="text" class="form-control input-lg" name="streetaddress" id="streetaddressinput" value="@Model.SubscriptionForm.StreetAddress">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4 reset-p-left">
+                                                    <div id="streetno" class="form-group">
+                                                        <label for="streetnoinput">Nummer</label>
+                                                        <input type="text" class="form-control input-lg" name="streetno" id="streetnoinput" value="@Model.SubscriptionForm.StreetNo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-4">
+                                                    <div id="zip" class="form-group">
+                                                        <label for="zipinput">Postnummer</label>
+                                                        <input type="text" class="form-control input-lg" name="zip" id="zipinput" value="@Model.SubscriptionForm.Zip">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-8 reset-p-left">
+                                                    <div id="city" class="form-group">
+                                                        <label for="cityinput">Ort</label>
+                                                        <input type="text" class="form-control input-lg" name="city" id="cityinput" value="@Model.SubscriptionForm.City" readonly="readonly">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="disclaimer-container">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="termscheck">
+                                                        <span>
+                                                            @Html.Raw(Model.Layout.PrenTermsText)
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="submit-container">
+                                                <button type="submit" class="btn btn-lg btn-primary full-width">Beställ</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="email-submit-container" class="submit-container">
+                                        <button id="email-submit" type="submit" class="btn btn-lg btn-primary full-width">Kom igång med ditt företag</button>
+                                    </div>
+                                    <div id="information-box">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="progressbar-container">
+                                                    <div class="first step"><label>Välj ditt paket</label></div>
+                                                    <div class="second step"><label>Registrera företag</label></div>
+                                                    <div class="third step"><label>Bjud in kollegor</label></div>
+                                                    <div class="progressbar"><span class="progress-state"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fact-box">
+                                            <div class="row fact">
+                                                <div class="col-xs-5 fact-heading">Ditt val:</div>
+                                                <div class="col-xs-7 text">Di Digital för <strong><span class="range-info"><span class="min-accounts"></span> <span class="account-delimiter">-</span> <span class="max-accounts"></span> licenser</span></strong></div>
+                                            </div>
+                                            <div class="row fact">
+                                                <div class="col-xs-5 fact-heading">Du betalar:</div>
+                                                <div class="col-xs-7 text"><span class="price-per-person"><span class="price-data"></span></span></div>
+                                            </div>
+                                            <div class="row fact">
+                                                <div class="col-xs-5 fact-heading">Minimidebitering:</div>
+                                                <div class="col-xs-7 text"><span class="min-deb"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="infotabform">
+                        <div class="col-md-12">
+                            <div class="plate">
+                                <div class="col-md-12">
+                                    <form id="company-contact-form" action="@Url.Action("PostContactForm", "BusinessCampaignPage")" method="POST">
+                                        @Html.AntiForgeryToken()
+                                        
+                                        @Html.PropertyFor(model => model.CurrentPage.LicenceContactBody)
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="emailcontactinput">Din e-postadress</label>
+                                                    <input type="email" class="form-control input-lg" name="email" id="emailcontactinput">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phonecontactinput">Ditt telefonnummer</label>
+                                                    <input type="text" class="form-control input-lg" name="phone" id="phonecontactinput">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="companynamecontactinput">Företagsnamn</label>
+                                                    <input type="text" class="form-control input-lg" name="companyname" id="companynamecontactinput">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="titelcontactinput">Titel</label>
+                                                    <input type="text" class="form-control input-lg" name="title" id="titelcontactinput">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="messagecontactinput">Meddelande</label>
+                                                    <textarea rows="5" class="form-control input-lg" style="border: 1px solid #E2BCB7;border-radius: 2px 2px 2px 2px;" name="message" id="messagecontactinput"></textarea>
+                                                </div>
+                                                <div class="submit-container">
+                                                    <button type="submit" class="btn btn-lg btn-primary full-width">Skicka</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </form>
+                                
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Footer{
+    @Html.PropertyFor(model => model.CurrentPage.FooterContentArea, new { CssClass = "footer-item", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+}
+
+@section PageSpecificJavaScriptIncludes
+{
+    @Scripts.Render("~/bundles/js/businesscampaign")
+}
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+
+        //todo: kj hur lösa?
+        CompanyInfoStep.prototype = Object.create(StepListener.prototype);
+        InformationBox.prototype = Object.create(StepListener.prototype);
+
+        //todo: kj samma som ovan
+        InformationBox.prototype.updateOfferInfo = function(selectedOffer) {
+            $(".price-per-person .price-data").text(selectedOffer.price + "kr i månaden/licens");
+            $(".range-info .min-accounts").text(selectedOffer.minAccounts);
+            $(".range-info .max-accounts").text(selectedOffer.maxAccounts);
+            $("#bizsubscriptiondefinitionidinput").val(selectedOffer.id);
+            $("#campaignnumberinput").val(selectedOffer.campaignNumber);
+            $(".min-deb").html(selectedOffer.minAccounts + " personer " + (selectedOffer.price * selectedOffer.minAccounts) + "kr/mån");
+            $.publish('offer-info-updated');
+        }
+
+        // Create EmailChecker object and subscribe to email-input-blurred event
+        var emailChecker = new EmailChecker();
+        emailChecker.subscribe('email-input-blurred');
+
+        // Create CompanyGetter and subscribe to company-reg-nb-submitted event
+        var companyGetter = new CompanyGetter();
+        companyGetter.subscribe('company-reg-nb-submitted');
+
+        // Create BizSubscriptionChecker and subscribe to check-biz-subscription event
+        var bizSubscriptionChecker = new BizSubscriptionChecker();
+        bizSubscriptionChecker.subscribe('check-biz-subscription');
+
+        // Create form step objects
+        var crnStep = new CompanyRegistrationNumberStep($("#step-company-registration"));
+        var infoStep = new CompanyInfoStep($("#step-info"), "company-reg-nb-submitted");
+        var infoBox = new InformationBox($("#information-box"), "email-ok");
+        var emailStep = new EmailStep($("#step-email"), $("#email-submit"));
+
+        // Cache the offers container
+        var businessOfferContainer = $(".business-offers");
+        // Create a BusinessOffers object that adds click event on the offers and fires an event when offer is changed
+        var businessOffers = new BusinessOffers(businessOfferContainer);
+        // Trigger a click on the first offer.
+        businessOfferContainer.find("a").first().trigger("click");
+
+        // Create a validator object that handles validation on the form
+        var bizSubscriptionFormValidator = new BizSubscriptionFormvalidator($("#company-campaign-form"));
+        var bizSubscriptionFormValidator = new BizSubscriptionFormvalidator($("#company-contact-form"));
+
+        $("#company-contact-form").submit(function(e) {            
+            var isValid = $("#company-contact-form").validate().form();
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+
+        var maxAccountReplacer = new MaxAccountReplacer($(".max-accounts"), ".account-delimiter");
+        maxAccountReplacer.subscribe("offer-info-updated");
+
+        var elementCssModifier = new ElementCssClassModifier();
+        elementCssModifier.subscribe($("#progressbar-container"), "email-ok", "", "first-complete");
+        elementCssModifier.subscribe($(".business-offers"), "screenMin800", "nav-tabs", "nav-pills nav-justified");
+        elementCssModifier.subscribe($(".business-offers"), "screenMax800", "nav-pills nav-justified", "nav-tabs");
+
+        elementCssModifier.subscribe($("button, submit"), "email-ok", "disabled", "");
+        elementCssModifier.subscribe($("button, submit"), "email-not-ok", "", "disabled");
+
+        var resizeHandler = new WindowResizeEventHandler();
+        resizeHandler.trigger(800, "screenMin800", "screenMax800");
+    </script>
+}

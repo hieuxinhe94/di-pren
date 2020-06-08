@@ -1,0 +1,57 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = "~/Views/Shared/Layouts/_Master.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/orderflow")    
+}
+
+@section PageSpecificGtmDataLayer
+{
+    @if (IsSectionDefined("PageSpecificGtmDataLayer"))
+    {
+        @RenderSection("PageSpecificGtmDataLayer")
+    }
+    else
+    {
+        <script>
+            dataLayer = [{ 'product': 'PREN' }];
+        </script>
+    }
+}
+
+@section PageSpecificJavascriptInHeader
+{    
+    @if (IsSectionDefined("PageSpecificJavascriptInHeader"))
+        {
+        @RenderSection("PageSpecificJavascriptInHeader")
+    }
+}
+
+<section class="header">
+    <div class="header__content"><a href="http://www.di.se/" class="header__logo"></a></div>
+</section>
+
+@RenderBody()
+
+@section PageSpecificJavaScriptIncludes
+{
+    @Scripts.Render("~/bundles/js/orderflow")
+    
+    @if (IsSectionDefined("PageSpecificJavaScriptIncludes"))
+        {
+        @RenderSection("PageSpecificJavaScriptIncludes")
+    }  
+}
+
+@section PageSpecificJavaScript
+{
+
+    @if (IsSectionDefined("PageSpecificJavaScript"))
+    {
+        @RenderSection("PageSpecificJavaScript")
+    }
+    
+}

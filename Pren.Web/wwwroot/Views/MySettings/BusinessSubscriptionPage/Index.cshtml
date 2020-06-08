@@ -1,0 +1,314 @@
+﻿@using System.Web.Optimization
+@using Pren.Web.Business.Messaging
+@model Pren.Web.Models.ViewModels.MySettings.BusinessSubscriptionPageViewModel
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/businesscampaignadmin")
+}
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (TempData["Message"] != null && ((Message)TempData["Message"]).Type == MessageType.Danger) { return; }
+
+<div class="row">
+    @if (Model.ShowReciept)
+    {
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                Tack för din prenumeration! Nu kan du börja bjuda in din personal.
+            </div>
+        </div>
+    }
+    <div id="subscription-admin-tabs" class="col-md-12" data-active-tab="@Model.ActiveTab">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="#subscribers" aria-controls="home" role="tab" data-toggle="tab">Prenumeranter</a></li>
+            <li role="presentation"><a href="#invites" role="tab" data-toggle="tab">Inbjudningar</a></li>
+        </ul>
+        <i class="fa fa-question-circle fa-1-5x pointer tab-icon" title="Förklaring av flikar" aria-hidden="true" data-toggle="modal" data-target="#tabs-info"></i>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="tabs-info" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Förklaring av flikar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <figure>
+                            @Html.PropertyFor(x => x.CurrentPage.HelpTabsBody)
+
+                            @*<img src="~/Static/img/companyportaltabs.png" alt="Flikarna inbjudningar och prenumeranter" />
+                            <figcaption>
+                                <p class="margin-t-10">
+                                    Under fliken <strong>Inbjudningar</strong> hittar du alla medarbetare som du har bjudit in.
+                                    När medarbetarna har aktiverat sitt konto hittar du dem under <strong>Prenumeranter</strong>.
+                                </p>
+                            </figcaption>*@
+                        </figure>                                               
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tab panes -->
+        <div class="tab-content" id="subscriber-content">
+            <div role="tabpanel" class="tab-pane active" id="subscribers">
+                <div class="row subscriber-heading">
+                    <div class="col-md-4"><strong>Namn</strong></div>
+                    <div class="col-md-4"><strong>E-post</strong></div>
+                    <div class="col-md-3"><strong>Status</strong></div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row subscriber">
+                    <div class="col-md-4 admin">@Model.MasterUser.FirstName @Model.MasterUser.LastName</div>
+                    <div class="col-md-4">@Model.MasterUser.Email</div>
+                    <div class="col-md-2 active">Administratör</div>
+                </div>
+                <div id="active-subscribers">
+                </div>
+                <div id="BtnActivePager" data-skip="0" data-take="10" data-loading-text="Hämtar ..." class="btn btn-primary displaynone">Visa fler</div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="invites">
+                <div class="row subscriber-heading">
+                    <div class="col-md-4"><strong>Namn</strong></div>
+                    <div class="col-md-4"><strong>E-post</strong></div>
+                    <div class="col-md-3"><strong>Status</strong></div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div id="pending-subscribers">
+                </div>
+                <div id="BtnPendingPager" data-skip="0" data-take="10" data-loading-text="Hämtar ..." class="btn btn-primary displaynone">Visa fler</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="heading">
+            Bjud in fler personer
+        </div>
+    </div>
+    <div class="col-md-6 form-group">
+        <form id="invite-by-email" class="customvalidation">
+            <input type="hidden" id="biz-subscription-id" value="@Model.SubscriptionId" />
+            <input type="hidden" id="biz-subscriber-customer-number" value="@Model.BizSubscriberCustomerNumber" />
+            <input type="hidden" id="biz-subscription-account-price-per-month" value="@Model.AccountPricePerMonth" />
+            <input type="hidden" id="biz-subscription-min-number-of-subscribers" value="@Model.MinNumberOfAllowedSubscribers" />
+            <label for="inviteemailinput">Ange e-post till den du vill bjuda in</label>
+            <div id="email-input-container" data-inputcount="1">
+                <input type="email" class="form-control input-lg" name="email" id="inviteemailinput" />
+            </div>
+            <a href="#" id="add-more-emails">Lägg till fler</a>
+            <div id="invite-message" class="alert alert-info displaynone"></div>
+            <button type="submit" class="btn btn-lg btn-primary" id="send-mail-invites" data-loading-text="Skickar ...">Skicka inbjudan</button>
+        </form>
+
+        <div class="heading-line">
+            Eller
+        </div>
+
+        <form id="invite-by-file" action="@Url.Action("ImportFile", "BusinessSubscriptionPage")" method="POST" class="customvalidation" enctype="multipart/form-data">
+            <input type="hidden" id="biz-subscription-id" name="businessSubscriptionId" value="@Model.SubscriptionId" />
+            <label>Importera lista</label>
+            <p>Du kan importera en lista med e-postadresser i <strong>CSV</strong>- eller <strong>TXT-</strong> format. <i class="fa fa-question-circle fa-1-5x pointer" title="Visa exempelfil" aria-hidden="true" data-toggle="modal" data-target="#import-example"></i></p>                       
+            <div class="form-group">
+                <input class="shadow-file-field form-control input-lg" type="text" name="filetoimport" placeholder="Välj fil att importera">
+
+                <input id="id_file" name="inviteFile" type="file" style="display:none;">
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary" id="import-invites" data-loading-text="Importerar fil ...">Importera fil</button>
+        </form>       
+        
+        <!-- Modal -->
+        <div class="modal fade" id="import-example" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Exempelfil för import</h4>
+                    </div>
+                    <div class="modal-body">
+                        @Html.PropertyFor(x => x.CurrentPage.HelpImportBody)
+                        @*<figure>
+                            <img src="~/Static/img/importexempel.png" alt="Exempel på fil för import">
+                            <figcaption>
+                                <p>En e-postadress per rad i txt- eller csv-format.</p>                        
+                            </figcaption>
+                        </figure>*@                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="import-status-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Importerar fil</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="import-message">
+                            <p>Behandlat <strong class="import-count">0</strong> av <strong class="import-total">0</strong> e-postadresser.</p>
+
+                            <div id="ImportProgressbar" class="progressbar" data-maxvalue=""><span class="progress-state"></span></div>
+
+                            <p>Antal importerade adresser är <strong class="import-successfull">0</strong>.</p>
+                            
+                            <div id="import-success" class="displaynone">
+                                <i class="fa fa-check fa-1-5x pointer green" title="Importerade adresser"></i> Följande adresser har bjudits in.
+                                <div id="rows-imported" class="green"></div>
+                            </div>
+
+                            <div id="import-error" class="displaynone">
+                                <i class="fa fa-times fa-1-5x pointer red" title="Felaktiga adresser"></i> Följande adresser kunde inte bjudas in. Kontrollera att e-postadressen är korrekt och inte redan är inbjuden.
+                                <div id="rows-not-imported" class="red"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+
+        <div id="InvitesProgressbar" class="progressbar" data-maxvalue=""><span class="progress-state"></span></div>
+
+        <div>Du har bjudit in <strong><span class="invited-subscriber-count"></span> </strong> @*av <strong><span class="max-accounts">@Model.MaxNumberOfAllowedSubscribers</span></strong>*@ anställda varav <strong><span class="active-subscriber-count"></span></strong> är aktiva.</div>
+        <div class="fact-box">
+            <div class="row fact">
+                <div class="col-xs-4 fact-heading">Ditt val:</div>
+                <div class="col-xs-8 text"><strong>Di Digital</strong> för <strong><span class="min-accounts">@Model.MinNumberOfAllowedSubscribers</span> <span class="account-delimiter">-</span> <span class="max-accounts">@Model.MaxNumberOfAllowedSubscribers</span></strong></div>
+            </div>
+            <div class="row fact">
+                <div class="col-xs-5 fact-heading">Minimidebitering</div>
+                <div class="col-xs-7 text"><strong><span class="min-deb-accounts"></span></strong> personer</div>
+            </div>
+            <div class="row fact">
+                <div class="col-xs-5 fact-heading">Du betalar:</div>
+                <div class="col-xs-7 text"><strong>@Model.AccountPricePerMonth kr/mån</strong> per konto</div>
+            </div>
+            <div class="row fact">
+                <div class="col-xs-5 fact-heading">Totalt:</div>
+                <div class="col-xs-7 text"><strong><span class="total-price"></span> kr/mån</strong></div>
+            </div>
+        </div>
+        <div id="address-info" class="fact-box displaynone">
+            <div class="row fact">
+                <div class="col-xs-12 fact-heading">Dina uppgifter</div>
+            </div>
+            <div class="content"></div>
+        </div>
+    </div>
+</div>
+
+@section PageSpecificJavaScriptIncludes
+{
+    @Scripts.Render("~/bundles/js/businesscampaignadmin")     
+}
+
+@section PageSpecificJavaScript
+{    
+    <script type="text/template" id="subscriber-row">
+        <% _.each(items, function(subscriber){ %>
+            <div class="row subscriber">
+                <div class="col-md-4"><%= subscriber.FirstName %> <%= subscriber.LastName %></div>
+                <div class="col-md-4"><%= subscriber.Email %></div>
+                <% if(subscriber.Active) { %>
+                    <% if(subscriber.Status == "ABORT") { %>
+                        <div class="col-md-2 to-be-removed">Tas bort <%= subscriber.RemovalDateString %></div>
+                    <% } else{ %>
+                        <div class="col-md-2 active">Aktiv</div>
+                    <% } %>  
+                <% } else{ %>
+                    <div class="col-md-2 pending">Väntar på svar</div>
+                <% } %>                      
+                <% if(subscriber.Active) { %>
+                    @*<% if(subscriber.Status != "ABORT") { %>
+                        <div class="col-xs-1 red action">
+                            <a class="remove mark-for-remove" title="Markera för borttagning" href="#" data-email="<%= subscriber.Email %>" data-removeidentifier="<%= subscriber.UserId %>" data-userid="<%= subscriber.UserId %>" data-code="<%= subscriber.Code %>"></a>
+                        </div>
+                    <% } else{ %>
+                        <div class="col-xs-1 red action">
+                            <a class="regret-remove" title="Ångra borttagning" href="#" data-email="<%= subscriber.Email %>" data-removeidentifier="<%= subscriber.UserId %>" data-userid="<%= subscriber.UserId %>" data-code="<%= subscriber.Code %>"></a>
+                        </div>
+                    <% } %>*@  
+                <% } else{ %>
+                    <% if(subscriber.Status != "GUIADDED") { %>
+                        <div class="col-xs-1 red action">
+                            <a class="remove" title="Ta bort" href="#" data-email="<%= subscriber.Email %>" data-removeidentifier="<%= subscriber.Code %>" data-userid="<%= subscriber.UserId %>" data-code="<%= subscriber.Code %>"></a>
+                        </div>
+                        <div class="col-xs-1 red action pull-left">
+                            <a class="remind" title="Påminn" href="#" data-email="<%= subscriber.Email %>" data-code="<%= subscriber.Code %>"></a>
+                        </div>
+                    <% } %> 
+                <% } %>      
+            </div>
+        <% }); %>
+    </script>
+
+    <script type="text/template" id="template-company-info">
+        <div><%= data.FullName %></div>
+        <div><%= data.PhoneWork %></div>
+        <div class="separator-element"><%= data.Email %></div>
+        <div><%= data.CompanyName %></div>
+        <div class="separator-element"><%= data.CompanyNumber %></div>
+        <div><%= data.AddressStreetName + " " + data.AddressStreetNumber %></div>
+        <div><%= data.AddressZip %> <%= data.AddressCity %></div>
+    </script>
+    
+    <script type="text/javascript">
+
+        // Set active tab based on data attribute on tabs container
+        var tabs = $("#subscription-admin-tabs .nav-tabs a");
+        tabs.setTabAsActive($("#subscription-admin-tabs").data("active-tab"));
+
+        String.prototype.endsWith = function(suffix) {
+            return this.indexOf(suffix, this.length - suffix.length) !== -1;
+        };
+
+        var bizSubscriptionId = $("#biz-subscription-id").val();
+
+        var ajaxHandler = new AjaxHandler();
+
+        // Paging 
+        var activePager = new PagingHandler($("#BtnActivePager"), $("#subscribers"), bizSubscriptionId, "biz-active-subscribers-get", "biz-active-subscribers-get-success", "biz-active-list-populated");
+        var pendingPager = new PagingHandler($("#BtnPendingPager"), $("#invites"), bizSubscriptionId, "biz-pending-subscribers-get", "biz-pending-subscribers-get-success", "biz-pending-list-populated");
+        // Invite
+        var inviteHandler = new InviteHandler(ajaxHandler, bizSubscriptionId, pendingPager, tabs, $("#invite-by-email"));
+        // Delete
+        var deletePendingHandler = new DeletePendingHandler(ajaxHandler, bizSubscriptionId, pendingPager);
+        var deleteActiveHandler = new DeleteActiveHandler(ajaxHandler, bizSubscriptionId, activePager);
+        // Remind
+        var remindPendingHandler = new RemindPendingHandler(ajaxHandler, bizSubscriptionId);
+        // Lists
+        var activeSubscriberListhandler = new SubscriberListHandler($("#active-subscribers"), $("#subscriber-row").html(), "biz-active-subscribers-get-success", "biz-active-subscriber-delete", "biz-active-list-populated");
+        var pendingSubscriberListhandler = new SubscriberListHandler($("#pending-subscribers"), $("#subscriber-row").html(), "biz-pending-subscribers-get-success", "biz-pending-subscriber-delete", "biz-pending-list-populated");
+        // Count
+        var bizSubscriptionCountHandler = new BizSubscriptionCountHandler(ajaxHandler, bizSubscriptionId, $(".invited-subscriber-count"), $(".active-subscriber-count"), $(".total-price"), $("#InvitesProgressbar"), $(".min-deb-accounts"), $("#biz-subscription-account-price-per-month").val(), $("#biz-subscription-min-number-of-subscribers").val());
+        // Data
+        var activeSubscribersDataHandler = new SubscriberDataHandler(ajaxHandler, "/api/biz/getactivebizsubscribers/", "biz-active-subscribers-get", "biz-active-subscribers-get-success");
+        var pendingSubscribersDataHandler = new SubscriberDataHandler(ajaxHandler, "/api/biz/getpendingbizsubscribers/", "biz-pending-subscribers-get", "biz-pending-subscribers-get-success");
+
+        activeSubscribersDataHandler.fetch(bizSubscriptionId, activePager.routeParameters);
+        pendingSubscribersDataHandler.fetch(bizSubscriptionId, pendingPager.routeParameters);
+
+        var companyAddressHandler = new CompanyAddressHandler(ajaxHandler, $("#address-info"), $("#biz-subscriber-customer-number").val(), $("#template-company-info").html());
+
+        var maxAccountReplacer = new MaxAccountReplacer($(".max-accounts"), ".account-delimiter");
+
+        $(".heading.not-defined").text('@Html.Raw(Model.CompanyName)');
+
+        var importPendingHandler = new ImportPendingHandler($("#invite-by-file"), $("#id_file"), bizSubscriptionId, tabs, ajaxHandler);
+
+        var fileAdapter = new FileInputAdapter($("#id_file"), $(".shadow-file-field"));
+
+    </script>
+    
+}

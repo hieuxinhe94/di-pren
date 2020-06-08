@@ -1,0 +1,55 @@
+﻿.headerrow {margin-top: 20px; padding: 10px 0;font-size: 1.80em;background-color: #F1D9D3;border: 1px solid #D3B2A1;border-radius: 4px 4px 0 0;}
+.headerrow .heading{ font-weight: 700;text-transform: uppercase;}
+
+.mypagecontainer{padding: 15px 0; border-left: 1px solid #D3B2A1;border-right: 1px solid #D3B2A1;border-bottom: 1px solid #D3B2A1;}
+.mypagecontainer img { max-width: 100%;}
+
+.separator{ color: #D3B2A1;}
+div.heading { font-size: 1.2em;font-weight: 700; border-bottom: 1px solid #D3B2A1;margin: 10px 0;text-transform: uppercase;}
+
+/*****************/
+/***   Menu    ***/
+/*****************/
+.menu-item{border-bottom: 1px solid #D3B2A1;display: block;padding: 10px 15px;position: relative;}
+a.menu-item:focus, a.menu-item:hover, a.menu-item.active {background-color: #F1D9D3; text-decoration: none;}
+
+#subscriptionmenu.menu .heading { margin-bottom: 0;text-indent: -9999px;}
+
+#subscriptionfacts .dates {border-bottom: 1px solid #D3B2A1;padding-bottom: 10px;}
+
+#di-faq .heading { margin-bottom: 0;}
+#di-faq .menu-item { padding-left: 0;}
+#di-faq .readmore { border-bottom: none;color:#C8281E;font-weight: bold;}
+
+/*****************/
+/***  Various  ***/
+/*****************/
+.form-horizontal .label-heading{ padding-top: 12px;}
+.border-bottom{ border-bottom: 1px solid #EBD7CF;content: " ";display: table;width: 100%;}
+hr{margin-bottom: 10px;margin-top: 10px;border: none;height: 1px;color: #EBD7CF;background-color: #EBD7CF; }
+form hr{ margin-bottom: 15px;margin-top: 0;}
+.sub-heading, .label-heading{font-size: 1.2em;text-transform: uppercase;font-weight: normal;}
+.sub-heading { margin-top: 30px;}
+.customerFacts { background-color: #FFFFFF;border: 1px solid #E2BCB7;border-radius: 2px 2px 2px 2px;padding: 5px 15px 15px;}
+#footer .footer-disclaimer{ border: none;margin-top: 0;}
+#current-address, .w-margin-top{ margin-top: 50px;}
+.w-margin-bottom{ margin-bottom: 50px;}
+#chat-area{ margin-bottom: 50px;}
+.no-transform{ text-transform: none;}
+
+@media (max-width: 970px) {
+    .form-horizontal .label-heading{ padding-top: 0;}    
+    .headerrow{ font-size: 1.2em;}
+    .headerrow .heading-sub{ display: block;}
+    .headerrow .separator{ display: none;}
+}
+
+@media (max-width: 770px) {
+    .headerrow { border: none;border-bottom: 1px solid #D3B2A1;border-radius: 0;}
+    .mypagecontainer{border: none; border-bottom: 1px solid #D3B2A1;}
+    #chat-area{ margin-top: 30px;}
+}
+
+
+
+

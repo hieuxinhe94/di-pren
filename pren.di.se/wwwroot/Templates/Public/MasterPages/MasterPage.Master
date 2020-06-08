@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="PrenDiSe.Templates.Public.MasterPages.MasterPage" %>
+<%@Register TagPrefix="di" TagName="Header" src="~/Templates/Public/Units/Static/Header.ascx" %>
+<%@Register TagPrefix="di" TagName="Footer" src="~/Templates/Public/Units/Static/Footer.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <di:Header runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body id="Body" runat="server">
+    <form id="form1" runat="server">
+    <asp:ContentPlaceHolder ID="FullRegion" runat="server">
+      <div id="wrapper">
+          
+        <!-- Header -->
+          <asp:ContentPlaceHolder ID="NavigationPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        <!-- End Header -->
+
+        <asp:ContentPlaceHolder ID="TopContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        
+        <asp:ContentPlaceHolder ID="HeadingContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+         
+        <!-- Content -->
+        <div id="content-wrapper">
+          <asp:ContentPlaceHolder ID="WideMainContentPlaceHolder" runat="server">
+            <div id="content">
+              <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+            </div>
+          </asp:ContentPlaceHolder>
+          <br class="clear" />
+        </div>
+        <!-- End Content -->
+      </div>
+    
+    <!-- Footer -->
+        <asp:ContentPlaceHolder ID="FooterPlaceHolder" runat="server">
+            <di:Footer runat="server" />
+        </asp:ContentPlaceHolder>
+    <!-- End Footer -->
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

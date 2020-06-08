@@ -1,0 +1,16 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.ConnectPageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.ExistingPrenBody)
+
+@Html.ActionLink("Logga in med nuvarande Di-konto", "LogInUser", "ConnectPage", null, new
+    {
+        @class = "btn btn-primary"
+    })
+
+@Html.ActionLink("Skapa nytt Di-konto", "CreateAccount", "ConnectPage", null, new
+    {
+        @class = "btn btn-primary"
+    })
+  

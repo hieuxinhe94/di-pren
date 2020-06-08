@@ -1,0 +1,28 @@
+#header {
+	background: #c8281e url(../images/logo-shadow.png) 50px 0 repeat-y; 
+}
+
+	#header .logo {
+		position: absolute;
+		z-index: 50;
+		top: 0;
+		left: 59px;
+		width: 165px;
+		height: 70px;
+	}
+	
+		#header .logo img {
+			width: 165px;
+			height: 70px;		
+		}
+		
+			#nav > ul > li {
+				background-position: 0 6px;
+			}
+			
+				#nav > ul > li.current { background-color: #a00000; }	
+			
+			
+		#footer .content .links {
+			border-left: none;		
+		}

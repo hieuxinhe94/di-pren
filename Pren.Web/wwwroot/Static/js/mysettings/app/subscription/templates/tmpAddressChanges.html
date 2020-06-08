@@ -1,0 +1,55 @@
+﻿<h3>Kommande tillfälliga adressändringar</h3>
+
+<% if(items.length){%>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Adress</th>
+                <th scope="col">Från och med</th>
+                <th scope="col">Till och med</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% _.each(items, function(addressChange){ %>
+            <tr data-id="<%= addressChange.Id %>">
+                <td><%= addressChange.StreetAddress %> <%= addressChange.StreetNumber %> </td>
+                <td>
+                    <span><%= addressChange.StartDate.substring(0,10) %></span>
+                    <% if(!addressChange.IsOngoing){%>
+                    <input type="text" class="startDate form-control dateinput displaynone" autocomplete="off" data-orgdate="<%= addressChange.StartDate.substring(0,10) %>" value="<%= addressChange.StartDate.substring(0,10) %>" />
+                    <% } else { %>
+                    <input type="text" disabled class="startDate form-control dateinput displaynone" autocomplete="off" data-orgdate="<%= addressChange.StartDate.substring(0,10) %>" value="<%= addressChange.StartDate.substring(0,10) %>" />
+                    <% } %>
+                </td>
+                <td>
+                    <span><%= addressChange.EndDate.substring(0,10) %></span>
+                    <input type="text" class="endDate form-control dateinput displaynone" autocomplete="off" data-orgdate="<%= addressChange.EndDate.substring(0,10) %>" value="<%= addressChange.EndDate.substring(0,10) %>" />
+                </td>
+                <td>
+                    <a href="#" class="editBtn" title="Redigera adress">Redigera</a>
+                    <a href="#" class="saveBtn displaynone" title="Spara adress">Spara</a>
+                    <a href="#" class="undoBtn displaynone" title="Avbryt">Avbryt</a>
+                </td>
+                <td>
+                    <% if(!addressChange.IsOngoing){%>
+                        <a href="#" class="deleteBtn" title="Ta bort adress" data-id="<%= addressChange.Id %>">Ta bort</a>
+                    <% } %>                    
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<% } else { %>
+<em class="text--deemphasized">Du har inga kommande tillfälliga adressändringar</em>
+<% } %>
+
+
+
+
+
+
+

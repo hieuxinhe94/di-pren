@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dagens industri</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="//cloud.webtype.com/css/beb7c34c-665a-4860-b61b-f80a4fa34d80.css">
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+        <script src="//cdn.jsdelivr.net/css3pie/2.1.6/PIE.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body {
+            font-family: 'BentonSans','Helvetica Neue','Helvetica','Arial',sans-serif;
+            background: none repeat scroll 0 0 #f7eae4;
+        }
+
+        a.logo {
+            left: 5px;
+            position: absolute;
+            top: 5px;
+        }
+
+        h1 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .top-bar {
+            background-image: linear-gradient(#b43633, #970f0c);
+            background-image: -ms-linear-gradient(#b43633, #970f0c);
+            background-image: -webkit-linear-gradient(#b43633, #970f0c);
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#b43633', endColorstr='#970f0c');
+            background-size: 100% auto;
+            box-shadow: 0 0 5px #333333;
+            color: #FFF;
+            height: 40px;
+        }
+
+        .top-bar a {
+            color: #FFF;
+        }
+
+        .top-bar .top-bar-wrapper {
+            position: relative;
+        }
+
+        .top-bar .top-bar-wrapper .top-bar-text {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .top-bar .top-bar-wrapper .top-bar-text .phone:before {
+            background: url(/static/css/img/phone-icon.png) no-repeat scroll center center / 12.8px 13.6px rgba(0, 0, 0, 0);
+            content: "";
+            display: inline-block;
+            float: left;
+            height: 12.8px;
+            margin: 12px 8px;
+            width: 13.6px;
+        }
+
+        .top-bar .top-bar-wrapper .top-bar-text .top-bar-text-title {
+            display: inline;
+            font-weight: 900;
+            margin-right: 10px;
+        }
+
+        .top-bar-right {
+            display: block;
+            font-size: 1.2em;
+            height: 40px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 8px 0 0 20px;
+            text-decoration: none;
+        }
+
+        h3 {
+            line-height: 40px;
+        }
+
+        .btn-primary {
+            background: none repeat scroll 0 0 #11568D;
+            border: medium none; /*border-radius: 2px 2px 2px 2px;*/
+            font-weight: 900;
+            font-size: 16px;
+            height: 46px;
+        }
+
+        .btn-primary:hover {
+            background: none repeat scroll 0 0 #1672BB;
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            box-shadow: 0 0 0 2px #0C3A5F inset;
+            outline: medium none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="top-bar-wrapper text-center">
+                    <a class="logo" href="http://www.di.se">
+                        <img height="30" src="data:image/png;base64,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" alt="di.se" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>
+                    <h1>Just nu har vi tekniska problem</h1>
+                    <h3>
+                        Problemet innefattar mina sidor, kundservice och kampanjsidor.<br />
+                        Vi gör vårt bästa för att lösa problemet.<br />
+                        På helger och röda dagar når du oss via chatt mellan klockan 09.00-18.00.<br />
+                        Chatten finner du längst ner i högra hörnet.<br />
+                    </h3>
+                    <a href="http://www.di.se" class="btn btn-primary btn-lg">Tillbaka till di.se</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

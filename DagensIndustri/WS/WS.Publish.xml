@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\_siteRelease" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="DiMobile/images/logga_utan_skugga.png" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/bootstrap/js/bootstrap.min.js" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="bin/DIClassLib.XmlSerializers.dll" publishTime="12/03/2013 15:29:53" />
+    <file relUrl="DiMobile/bootstrap/js/bootstrap.js" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiIpad/StockInfo/Company.ashx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/Start.aspx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiIpad/Master.Master" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiIpad/Images/dise.gif" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/DiMobile.Master" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="bin/WS.dll" publishTime="12/04/2013 14:17:50" />
+    <file relUrl="bin/WS.XmlSerializers.dll" publishTime="12/04/2013 14:17:50" />
+    <file relUrl="bin/WS.pdb" publishTime="12/04/2013 14:17:50" />
+    <file relUrl="DiIpad/RssSmall.aspx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/bootstrap/css/bootstrap-responsive.min.css" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="Misc/Misc.asmx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="bin/DIClassLib.dll" publishTime="12/03/2013 15:29:53" />
+    <file relUrl="DiMobile/bootstrap/css/bootstrap.min.css" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="BonnierDigital/BonnierDigital.asmx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="bin/DIClassLib.pdb" publishTime="12/03/2013 15:29:53" />
+    <file relUrl="DiIpad/Data/DataLatest.xml" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/bootstrap/css/bootstrap-responsive.css" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="Di/Di.asmx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="WineClub/WineClub.asmx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiIpad/RssBig.aspx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/bootstrap/img/glyphicons-halflings-white.png" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/bootstrap/css/bootstrap.css" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="appsettings.config" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="BusinessCalendar/Di-OL.ashx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="Web.config" publishTime="12/04/2013 14:56:10" />
+    <file relUrl="tmp.aspx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/bootstrap/js/jquery-1.10.1.min.js" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="Foretagarna/Foretagarna.asmx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="connectionStrings.config" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiIpad/Css/Style.css" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="ConcurrentUsers/ConsumeProduct.aspx" publishTime="12/04/2013 14:04:27" />
+    <file relUrl="DiIpad/JavaScripts/JsFunctions.js" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="S2/S2.asmx" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiMobile/bootstrap/img/glyphicons-halflings.png" publishTime="10/07/2013 11:01:37" />
+    <file relUrl="DiIpad/Data/DataLatestTmp.xml" publishTime="10/07/2013 11:01:37" />
+  </publishProfile>
+</publishData>

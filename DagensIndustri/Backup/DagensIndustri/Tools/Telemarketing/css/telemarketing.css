@@ -1,0 +1,80 @@
+﻿body {
+  font-family: Verdana, Arial;
+  font-size: 0.8em;
+}
+.wait-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding-top: 5em;
+  background: rgb(252,222,207); /* Fallback */
+  background: rgba(252,222,207,0.7);
+  z-index: 10;
+  text-align: center;
+  display: none;
+}
+#campaignlistContainer, #extendedInputFields, #infoFirstName, #infoLastName {
+  display: none;
+}
+
+.mainTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.5em;
+}
+.mainTable td {
+  vertical-align: text-top;
+  padding: 0.9em;
+  border: 1px solid #F7CFC3;
+  width: 50%;
+}
+.inputfields {
+  width: 100%;
+}
+.inputfields td {
+  border: none;
+  background-color: #F7CFC3;
+}
+.foundcustomers-wrapper {
+  display: none;
+}
+.foundcustomers-wrapper table {
+  border-collapse: collapse;
+}
+.foundcustomers-wrapper td {
+  border: none;
+}
+.tr-pointer {
+  cursor: pointer;
+}
+
+h2 {
+  font-family: Arial, Verdana;
+  font-size: 1.2em;
+}
+.content-container {
+  background-color: #ffe1d8;
+  padding: 0.2em 0.2em 3em 0.2em;
+}
+
+.msg-warning {
+color: red;
+}
+.msg-ok {
+color: green;
+}
+/*.chosen-campaign-info {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: #F2CDC2;
+  border: 1px solid #FABEAC;
+  z-index: 10;
+  padding: 0.5em;
+}*/
+input[readonly] {
+  background-color: #FADCD3;
+  border: 1px solid #F5B9A7;
+}

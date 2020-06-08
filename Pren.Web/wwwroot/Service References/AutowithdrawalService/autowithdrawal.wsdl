@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.dagensindustri.se/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.dagensindustri.se/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.dagensindustri.se/">
+      <s:element name="InsertAutoWithdrawal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aurigaSubsId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cusno" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="subsno" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="campno" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInBatch" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subsEndDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateSaved" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateStopped" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAutoWithdrawalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertAutoWithdrawalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertAutoWithdrawalSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertAutoWithdrawal" />
+  </wsdl:message>
+  <wsdl:message name="InsertAutoWithdrawalSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertAutoWithdrawalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutowithdrawalSoap">
+    <wsdl:operation name="InsertAutoWithdrawal">
+      <wsdl:input message="tns:InsertAutoWithdrawalSoapIn" />
+      <wsdl:output message="tns:InsertAutoWithdrawalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutowithdrawalSoap" type="tns:AutowithdrawalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertAutoWithdrawal">
+      <soap:operation soapAction="http://ws.dagensindustri.se/InsertAutoWithdrawal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutowithdrawalSoap12" type="tns:AutowithdrawalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertAutoWithdrawal">
+      <soap12:operation soapAction="http://ws.dagensindustri.se/InsertAutoWithdrawal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Autowithdrawal">
+    <wsdl:port name="AutowithdrawalSoap" binding="tns:AutowithdrawalSoap">
+      <soap:address location="http://ws.local/autowithdrawal/autowithdrawal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutowithdrawalSoap12" binding="tns:AutowithdrawalSoap12">
+      <soap12:address location="http://ws.local/autowithdrawal/autowithdrawal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

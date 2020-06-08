@@ -1,0 +1,83 @@
+﻿body {margin: 0px;background-color:#ffe1d8;font-family:Arial,Verdana,Sans-Serif;font-size:13px;line-height:16px;}
+a{color:#000000;text-decoration:none;background-image:none;}
+a:hover{color:#000000;text-decoration:underline;background-image:none;}
+
+/********************/
+/**** Gasellerna ****/
+/********************/
+
+/*Gasellcontainers*/
+#GasellContainer{float:left;}
+#GasellAdsContainer{float:left;margin-left:2px;}
+
+/*Common*/
+.ColumnBox {background-color:#FFF;border:1px solid #E2BEB1;width:163px;font-size:11px;margin-bottom:2px;}
+.ColumnBox table{width:163px;}
+.ColumnBox .heading{background-color:#6a0000;height:20px;color:#FFF;padding:0 0 0 5px;text-transform:uppercase;font-weight:bold;}
+.ColumnBox td.link{padding:4px 4px 0 5px;}
+.ColumnBox.puff,.ColumnBox.search,.ColumnBox.movielist,.ColumnBox.adarea{padding-bottom:10px;}
+
+/*Gasellpuff, Gasellfilmslistning*/
+.ColumnBox.puff td.image,.ColumnBox.movielist td.movie{padding:6px 4px 0 5px;}
+
+/*Gasellsök*/
+.ColumnBox.search td.searcharea{padding:0 0 5px 5px;}
+.ColumnBox.search td.selectarea{padding-top:5px;}
+.ColumnBox.search td.selectarea table{height:155px;background:url(gasellimages/GasellernaSverigeProfil.gif);}
+.ColumnBox.search td.selectarea .options{text-align:center;width:140px;}
+.ColumnBox.search td.searcharea input{width:140px;}
+ 
+/*Gasell annonsyta*/
+.ColumnBox.adarea{width:199px;}
+.ColumnBox.adarea table{width:199px;}
+.ColumnBox.adarea td.ad{text-align:center;}
+.ColumnBox.adarea td.ad p,.ColumnBox.adarea td.ad .flasharea{padding:10px 0 0 0;}
+.ColumnBox.adarea td.ad .flasharea {float:left;margin:20px 0 0 20px;background:transparent url(gasellimages/annons.gif) no-repeat scroll 0px 1px;}
+.ColumnBox.adarea.pink{background-color:#FFE1D8;padding-bottom:20px;}
+
+/*Gasell konferenser*/
+.gasellConference{width:100%;}
+.gasellConference td.heading{background-color:#E2BEB1;font-weight:bold;}
+.gasellConference td{padding:4px 0 4px 3px;}
+
+.TblGForm input{width:100px;}
+.TblGForm input.wide{width:215px !important;}
+.TblGForm .radio input{width:15px;}
+
+.freePren{background-color:#FFFFFF;padding:6px;border:2px solid #C5A697;}
+
+/********************/
+/***** Various ******/
+/********************/
+.blkArr a{background:transparent url(Images/BlkArrR.gif) no-repeat scroll 0 4px;padding-left:8px;}
+.redArr a{background:transparent url(Images/RedArrR.gif) no-repeat scroll 0 4px;padding-left:8px;}
+.hidden{display:none;}
+.bold, .selected{font-weight:bold;}
+.error, .red{color:Red;}
+.searchbtn{display:none;}
+.evenrow td {background:#FFE1D8 none repeat scroll 0 0;}
+.oddrow td {background:#E2BEB1 none repeat scroll 0 0;}
+.dailypaper{background-color:#FFE1D8;padding:5px 0 0 5px;}
+.artheader{font-size:1.5em;font-weight:normal;line-height:1.2em;margin:0 0 11px;}
+.underline a{text-decoration:underline;}
+img{border:none;}
+hr {border:0;background-color:#E2BEB1;color:#E2BEB1;height:1px;}
+table{border:0;}
+.PdfLink a { background:transparent url(Images/pdf.gif) no-repeat scroll 0 0px; padding-left:20px; padding-top:1px; }
+.white {background:#FFF;}
+
+/* Padding, margin, position classes */
+.paddingT10{padding-top:10px;}
+.paddingB10{padding-bottom:10px;}
+.paddingL10{padding-left:10px;}
+.marginB10{margin-bottom:10px;}
+.marginL10{margin-left:10px;}
+.paddingT10B10{padding-top:10px;padding-bottom:10px;}
+.vtop{vertical-align:top;}
+.alignRight{text-align:right;}
+.alignCenter{text-align:center;}
+.left{float:left;}
+.right{float:right;}
+.center400{margin:40px auto 0;width:400px;}
+.block{display:block;}
+.nowrap{white-space:nowrap;}

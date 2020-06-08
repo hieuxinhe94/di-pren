@@ -1,0 +1,122 @@
+﻿@using System.Web.Optimization
+@using EPiServer.Core
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.IPageViewModel<Pren.Web.Models.Pages.SitePageData>
+@{
+    Layout = "~/Views/Shared/Layouts/_Root.cshtml";
+}
+
+@section PageSpecificCssIncludes{
+
+    @Styles.Render("~/bundles/css/mypage")
+
+    @if (IsSectionDefined("PageSpecificCssIncludes"))
+    {
+        @RenderSection("PageSpecificCssIncludes")
+    }
+}
+
+@section PageSpecificJavascriptInHeader{
+    @if (IsSectionDefined("PageSpecificJavascriptInHeader"))
+    {
+        @RenderSection("PageSpecificJavascriptInHeader")
+    }
+}
+ @section PageSpecificGtmDataLayer{
+    @if (IsSectionDefined("PageSpecificGtmDataLayer"))
+    {
+        @RenderSection("PageSpecificGtmDataLayer")
+    }
+    else
+    {
+        <script>
+            dataLayer = [{ 'product': 'PREN' }];
+        </script>
+    }
+}
+
+@section TopBarContent
+{
+                    @if (Model.Layout.MySettings.IsLoggedIn)
+                    {
+                        <a class="login" href="@Model.Layout.MySettings.LogOutUrl">Logga ut</a>
+                    }
+                    else
+                    {
+                        <a class="login" href="@Model.Layout.MySettings.LogInUrl">Logga in</a>
+                    }
+}
+
+    <div class="container">
+        <div class="row headerrow">
+            <div class="col-sm-8">
+                @if (Model.Layout.MySettings.IsLoggedIn && !string.IsNullOrEmpty(Model.Layout.MySettings.UserName))
+                {
+                    <span class="heading">@Model.Layout.MySettings.UserName</span> <span class="separator">|</span> <span class="heading-sub">Mina sidor</span>
+                }
+                else
+                {
+                    <span class="heading not-defined">Kundservice</span>
+                }
+            </div>
+            <div class="col-sm-4">
+                <a href="http://kundtjanst.di.se/" class="" target="_blank">Frågor och svar</a>
+            </div>
+        </div>
+        <div class="row mypagecontainer">
+            <div class="col-sm-4">
+
+                @if (IsSectionDefined("LeftColumn"))
+                {
+                    @RenderSection("LeftColumn")
+                }
+
+                @if (Model.Layout.MySettings.IsLoggedIn)
+                {
+                    Html.RenderAction("Index", "MySettingsPageMenu", new { startPageReference = ContentReference.StartPage, currentPageReference = Model.CurrentPage.ContentLink });
+                }
+
+            </div>
+            <div class="col-sm-8">
+                @{ Html.RenderPartial("~/Views/MySettings/Shared/_Heading.cshtml", Model.CurrentPage, new ViewDataDictionary()); }
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+@section Footer
+{
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer")
+    }
+    else
+    {
+            @Html.PropertyFor(x => x.Layout.MySettings.FooterContentArea, new { CssClass = "footer-item", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+    }
+}
+
+@section PageSpecificJavaScriptIncludes{
+
+    @Scripts.Render("~/bundles/js/mypage")
+
+    @if (IsSectionDefined("PageSpecificJavaScriptIncludes"))
+    {
+        @RenderSection("PageSpecificJavaScriptIncludes")
+    }
+}
+
+@section PageSpecificJavaScript{
+
+    <script type="text/javascript">
+        var validationHandler = new ValidationHandler("form");
+        validationHandler.init();
+
+        var confirmHandler = new ConfirmHandler($(".delete"), "click");
+    </script>
+
+    @if (IsSectionDefined("PageSpecificJavaScript"))
+    {
+        @RenderSection("PageSpecificJavaScript")
+    }
+}

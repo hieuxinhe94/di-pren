@@ -1,0 +1,30 @@
+﻿<div class="campaignselectordialog">
+    <div data-dojo-type="dijit.form.TextBox" data-dojo-attach-point="txtSelectedCampaign" class="hidden"></div>
+    <span class="heading">Filtrera kampanjer:</span>  
+    <div class="dijitReset dijitInputField dijitInputContainer dijitInline epi-resourceInputContainer">
+        <div data-dojo-type="dijit.form.TextBox" data-dojo-attach-point="txtFilterCampaigns" class="filter-textbox dijit dijitReset dijitInline dijitLeft dijitTextBox dijitValidationTextBox"></div>
+        <span data-dojo-type="dijit.form.Button" data-dojo-attach-point="btnUpdateCampaigns" data-dojo-props="label:'Uppdatera kampanjlista'" class="dijit dijitReset dijitInline dijitButton"></span>
+    </div>
+    <div data-dojo-attach-point="campaignContainer" id="campaignContainer">
+        <div class="loading-campaigns">
+            <span>Laddar kampanjer</span>
+            <img src="/ClientResources/Images/ajax-loader.gif" alt="loading" />   
+        </div>             
+    </div>
+    <span class="heading">Vald kampanj:</span>  
+    <div data-dojo-attach-point="selectedCampaignContainer" id="selectedCampaign">        
+    </div>
+
+    <style type="text/css">
+        .campaignselectordialog .hidden{ display: none;}
+        .campaignselectordialog .heading{ display: block; padding: 0 0 3px;}
+        .campaignselectordialog .filter-textbox{width:50%}
+        .campaignselectordialog .epi-resourceInputContainer{ width: 100%;}
+        .campaignselectordialog .dijitButton{ float: right;}
+        .campaignselectordialog #campaignContainer {border : solid 1px #999; border-radius: 5px; background : #f1f1f1; padding : 10px; width : 96.2%; height : 200px; overflow : auto;margin: 10px 0;}
+        .campaignselectordialog #campaignContainer .campaign-item {border : solid 1px #999; margin: 5px 0;padding: 5px;cursor: pointer;background-color: #fff;}
+        .campaignselectordialog #campaignContainer .campaign-item.selected {background : #58595b ;color: #fff;}
+        .campaignselectordialog #campaignContainer .loading-campaigns{ text-align: center;}
+        .campaignselectordialog #campaignContainer .loading-campaigns span { display: block;padding: 10px;}
+    </style>
+</div>

@@ -1,0 +1,68 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.PersonInfoViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+<form id="person-info-form" class="form-horizontal" action="@Url.Action("PostForm", "PersonInfoPage")" method="POST">
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group">
+            <div class="col-sm-6">
+                <label for="emailinput" class="label-heading">E-POST *</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="email" class="form-control input-lg" name="email" id="emailinput" value="@Model.PersonInfoForm.Email">
+            </div>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <label for="phoneinput" class="label-heading">TELEFONNUMMER *</label>
+        </div>                                        
+        <div class="col-sm-6">
+            <input type="tel" class="form-control input-lg" name="phone" id="phoneinput" value="@Model.PersonInfoForm.Phone">
+        </div>        
+    </div>
+    <hr/>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <div class="label-heading">* Obligatoriska fält</div>
+        </div>
+        <div class="col-sm-6">
+            <button type="submit" id="submit-form" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary">Spara</button>        
+        </div>
+    </div>    
+    
+    
+
+</form>
+
+
+<div class="w-margin-top">
+    <div class="heading">Digitalt konto</div>
+    
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="username" class="label-heading">Användarnamn</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="email" class="form-control input-lg" name="username" id="username" readonly="readonly" value="@Model.ServicePlusEmail">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label class="label-heading">Lösenord</label>
+            </div>
+            <div class="col-sm-6">
+                <div class="label-heading no-transform">
+                    <a href="@Model.ServicePlusChangePasswordUrl" target="_blank">Byt lösenord</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

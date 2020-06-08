@@ -1,0 +1,82 @@
+﻿@model Pren.Web.Models.CustomForms.MySettings.AddressFormModel
+           
+<div id="address-form" >
+    <form id="address-street-form" action="@Url.Action("CreateAddress", new { sid = Model.SubscriptionNumber })" method="POST">
+        @Html.AntiForgeryToken()                    
+        <div class="row">
+            <div class="col-md-12">
+                <div id="co" class="form-group">
+                    <label for="coinput" class="label-heading">C/O</label>
+                    <input type="text" class="form-control input-lg" name="co" id="coinput" value="@Model.StreetAddressForm.Co">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="streetaddress" class="form-group">
+                    <label for="streetaddressinput" class="label-heading">Gatuadress/Stoppställe eller Box *</label>
+                    <input type="text" class="form-control input-lg" name="streetaddress" id="streetaddressinput" value="@Model.StreetAddressForm.StreetAddress">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="streetno" class="form-group">
+                    <label for="streetnoinput" class="label-heading">Nr</label>
+                    <input type="text" class="form-control input-lg" name="streetno" id="streetnoinput" value="@Model.StreetAddressForm.StreetNo">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="staircase" class="form-group">
+                    <label for="staircaseinput" class="label-heading">Uppgång</label>
+                    <input type="text" class="form-control input-lg" name="staircase" id="staircaseinput" value="@Model.StreetAddressForm.StairCase">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div id="stairs" class="form-group">
+                    <label for="stairsinput" class="label-heading">Trappa</label>
+                    <input type="text" class="form-control input-lg" name="stairs" id="stairsinput" value="@Model.StreetAddressForm.Stairs">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div id="staircase" class="form-group">
+                    <label for="apartmentnumberinput" class="label-heading">Lgh nr</label>
+                    <input type="text" class="form-control input-lg" name="apartmentnumber" id="apartmentnumberinput" value="@Model.StreetAddressForm.ApartmentNumber">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="zip" class="form-group">
+                    <label for="zipinput" class="label-heading">Postnummer *</label>
+                    <input type="text" class="form-control input-lg" name="zip" id="zipinput" value="@Model.StreetAddressForm.Zip">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div id="city" class="form-group">
+                    <label for="cityinput" class="label-heading">Ort *</label>
+                    <input type="text" class="form-control input-lg" name="city" id="cityinput" value="@Model.StreetAddressForm.City">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="fromdate" class="form-group">
+                    <label for="fromdateinput" class="label-heading">Från och med *</label>
+                    <input type="text" class="form-control input-lg dateinput" name="fromdate" id="fromdateinput" value="@(Model.StreetAddressForm.FromDate != DateTime.MinValue ? Model.StreetAddressForm.FromDate.ToString("yyyy-MM-dd") : string.Empty)">
+                </div>
+            </div>
+            @if (!Model.HideToDates)
+            {
+                <div class="col-md-6">
+                    <div id="todate" class="form-group">
+                        <label for="todateinput" class="label-heading">Till och med *</label>
+                        <input type="text" class="form-control input-lg dateinput" name="todate" id="todateinput" value="@(Model.StreetAddressForm.ToDate != DateTime.MinValue ? Model.StreetAddressForm.ToDate.ToString("yyyy-MM-dd") : string.Empty)">
+                    </div>
+                </div>
+            }
+        </div>
+        <button type="submit" id="submit-form" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary pull-right">Spara</button>
+        <div class="label-heading">* obligatoriska fält</div>
+    </form>
+</div>
+
+

@@ -1,0 +1,16 @@
+﻿@using EPiServer.Editor
+@model Pren.Web.Models.ViewModels.CodePortalOfferBlockViewModel
+
+<div class="row code-offer">
+    <div class="col-md-12">
+        @if (Model.CurrentBlock.FallbackImage != null || PageEditing.PageIsInEditMode)
+        {
+            <div class="code-offer-img-container" @Html.EditAttributes(x => x.CurrentBlock.FallbackImage)>
+                <img src="@Url.ContentUrl(Model.CurrentBlock.FallbackImage)" alt="@Model.CurrentBlock.Heading">
+            </div>
+        }
+        <div class="terms-text fallback">
+            @Html.PropertyFor(model => model.CurrentBlock.FallbackTextBelowImage)
+        </div>
+    </div>
+</div>

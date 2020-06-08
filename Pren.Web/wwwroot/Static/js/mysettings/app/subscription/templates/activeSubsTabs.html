@@ -1,0 +1,15 @@
+﻿<nav class="navbar navbar-di">
+
+    <ul class="nav navbar-nav" role="tablist">
+
+        <% _.each(items, function(subscription){ %>        
+        <li role="presentation">
+            <a href="#" data-subsno="<%= subscription.subscriptionNumber %>" data-generation="<%= subscription.generationNumber %>" role="tab" data-toggle="tab">
+                <%= subscription.productName %>
+            </a>
+        </li>
+        <% }); %>
+
+    </ul>
+</nav>
+

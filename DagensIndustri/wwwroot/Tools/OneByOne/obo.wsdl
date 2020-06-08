@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+	targetNamespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:apachesoap="http://xml.apache.org/xml-soap"
+	xmlns:impl="http://obo.par.se/jboss-net/services/DocumentFactory"
+	xmlns:intf="http://obo.par.se/jboss-net/services/DocumentFactory"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tns1="http://net.jboss.org/jmx"
+	xmlns:tns2="http://extranet.par.se/obows"
+	xmlns:tns3="http://obo.net.par.se"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<schema targetNamespace="http://net.jboss.org/jmx"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+			<complexType name="ObjectNameType">
+			
+				<simpleContent>
+					<extension base="xsd:string" />
+				</simpleContent>
+			</complexType>
+		</schema>
+		<schema targetNamespace="http://extranet.par.se/obows"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+			<complexType name="RequestParameter">
+				<sequence>
+					<element name="name" nillable="true"
+						type="xsd:string" />
+					<element name="value" nillable="true"
+						type="xsd:string" />
+				</sequence>
+			</complexType>
+		</schema>
+		<schema targetNamespace="http://obo.net.par.se"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+			<complexType name="DocumentException">
+				<sequence />
+			</complexType>
+		</schema>
+		<schema
+			targetNamespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+			<complexType name="ArrayOf_tns2_RequestParameter">
+				<complexContent>
+					<restriction base="soapenc:Array">
+						<attribute ref="soapenc:arrayType"
+							wsdl:arrayType="tns2:RequestParameter[]" />
+					</restriction>
+				</complexContent>
+			</complexType>
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="getDocumentResponse">
+		<wsdl:part name="getDocumentReturn" type="xsd:string" />
+	</wsdl:message>
+	<wsdl:message name="getSchemaResponse">
+		<wsdl:part name="getSchemaReturn" type="xsd:string" />
+	</wsdl:message>
+	<wsdl:message name="getDocumentTypeResponse">
+		<wsdl:part name="getDocumentTypeReturn" type="xsd:string" />
+	</wsdl:message>
+	<wsdl:message name="getDocumentTypeRequest">
+		<wsdl:part name="name" type="xsd:string" />
+	</wsdl:message>
+	<wsdl:message name="DocumentException">
+		<wsdl:part name="fault" type="tns3:DocumentException" />
+	</wsdl:message>
+	<wsdl:message name="getSchemaRequest">
+		<wsdl:part name="documentName" type="xsd:string" />
+	</wsdl:message>
+	<wsdl:message name="getDocumentRequest">
+		<wsdl:part name="name" type="xsd:string" />
+		<wsdl:part name="params"
+			type="impl:ArrayOf_tns2_RequestParameter" />
+	</wsdl:message>
+	<wsdl:portType name="DocumentFactory">
+		<wsdl:operation name="getSchema"
+			parameterOrder="documentName">
+			<wsdl:input message="impl:getSchemaRequest"
+				name="getSchemaRequest" />
+			<wsdl:output message="impl:getSchemaResponse"
+				name="getSchemaResponse" />
+			<wsdl:fault message="impl:DocumentException"
+				name="DocumentException" />
+		</wsdl:operation>
+		<wsdl:operation name="getDocument"
+			parameterOrder="name params">
+			<wsdl:input message="impl:getDocumentRequest"
+				name="getDocumentRequest" />
+			<wsdl:output message="impl:getDocumentResponse"
+				name="getDocumentResponse" />
+			<wsdl:fault message="impl:DocumentException"
+				name="DocumentException" />
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentType" parameterOrder="name">
+			<wsdl:input message="impl:getDocumentTypeRequest"
+				name="getDocumentTypeRequest" />
+			<wsdl:output message="impl:getDocumentTypeResponse"
+				name="getDocumentTypeResponse" />
+			<wsdl:fault message="impl:DocumentException"
+				name="DocumentException" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DocumentFactorySoapBinding"
+		type="impl:DocumentFactory">
+		<wsdlsoap:binding style="rpc"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getSchema">
+			<wsdlsoap:operation soapAction="DocumentFactory" />
+			<wsdl:input name="getSchemaRequest">
+				<wsdlsoap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:input>
+			<wsdl:output name="getSchemaResponse">
+				<wsdlsoap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:output>
+			<wsdl:fault name="DocumentException">
+				<wsdlsoap:fault name="foo"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getDocument">
+			<wsdlsoap:operation soapAction="DocumentFactory" />
+			<wsdl:input name="getDocumentRequest">
+				<wsdlsoap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:input>
+			<wsdl:output name="getDocumentResponse">
+				<wsdlsoap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:output>
+			<wsdl:fault name="DocumentException">
+				<wsdlsoap:fault  name="foo"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentType">
+			<wsdlsoap:operation soapAction="DocumentFactory" />
+			<wsdl:input name="getDocumentTypeRequest">
+				<wsdlsoap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:input>
+			<wsdl:output name="getDocumentTypeResponse">
+				<wsdlsoap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:output>
+			<wsdl:fault name="DocumentException">
+				<wsdlsoap:fault name="foo" 
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://obo.par.se/jboss-net/services/DocumentFactory"
+					use="encoded" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DocumentFactoryService">
+		<wsdl:port binding="impl:DocumentFactorySoapBinding"
+			name="DocumentFactory">
+			<wsdlsoap:address
+				location="http://obo.par.se/jboss-net/services/DocumentFactory" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

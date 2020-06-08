@@ -1,0 +1,84 @@
+﻿@using System.Globalization
+@using Pren.Web.Business.Subscription
+@model Pren.Web.Models.Partials.MySettings.MySettingsPageMenu
+           
+<nav class="navbar navbar-di">
+    
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#di-menu-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="di-menu-collapse">
+
+<div id="subscriptionfacts" class="w-margin-bottom">
+           
+    @if (Model.SubscriptionMenuItems != null)
+    {
+        <div class="heading">Dina prenumerationer</div>
+
+        <ul class="nav nav-tabs" role="tablist">        
+            @if (Model.IsPrivateSubscriber)
+            {
+                <li role="presentation" class="@(Model.SelectedSubscriptionType.Equals(SubscriptionType.Private) ? "active" : "" )">
+                    <a href="SwitchSubscriptionType/?subscriptionType=private">Privat</a>
+                </li>
+            }
+            @if (Model.IsBusinessAdminSubscriber)
+            {
+                <li role="presentation" class="@(Model.SelectedSubscriptionType.Equals(SubscriptionType.Business) ? "active" : "" )">
+                    <a href="SwitchSubscriptionType/?subscriptionType=business">Företag</a>
+                </li>
+            }
+        </ul>
+        
+        foreach (var subscriptionMenuItem in Model.SubscriptionMenuItems)
+        {
+            <div class="sub-heading">@subscriptionMenuItem.SubscriptionItem.ProductName</div>
+            <div class="dates">
+                <span>@subscriptionMenuItem.StartDate</span>
+                <span>- @subscriptionMenuItem.EndDate</span>
+            </div>
+            <div class="menu">
+                @foreach (var page in subscriptionMenuItem.Pages)
+                {
+                    <a href="@(Url.ContentUrl(page.ContentLink))?sid=@subscriptionMenuItem.SubscriptionItem.SubscriptionNumber" class="menu-item @(page.ContentLink.Equals(Model.CurrentPageReference) && subscriptionMenuItem.SubscriptionItem.SubscriptionNumber.ToString(CultureInfo.InvariantCulture).Equals(Request.QueryString["sid"]) ? "active" : "")">@page.Name</a>
+                }
+            </div>
+         }
+    }
+
+</div>    
+
+<div class="customerFacts">
+    <div class="heading">Dina uppgifter</div>
+    <div><strong>Kundnummer:</strong> @(string.IsNullOrEmpty(Model.CustomerNumber) ? "Ej identifierad" : (Model.CustomerNumber == "0" ? "" : Model.CustomerNumber))</div>
+    @if (Model.SelectedSubscriptionType == SubscriptionType.Business && Model.CustomerNumber == "0")
+    {
+        <p>Vi behandlar fortfarande din prenumeration och du kommer snart få ett kundnummer</p>
+    }
+    <div><strong>Di-konto:</strong> @(string.IsNullOrEmpty(Model.ServicePlusEmail) ? "Ej inloggad" : Model.ServicePlusEmail)</div>
+</div>   
+
+
+    <div id="subscriptionmenu" class="menu w-margin-bottom">
+        <div class="heading">Meny</div>
+        @if (Model.MenuPages != null && Model.MenuPages.Any())
+        {
+            foreach (var page in Model.MenuPages)
+            {
+                <a href="@Url.ContentUrl(page.ContentLink)" class="menu-item @( page.ContentLink.Equals(Model.CurrentPageReference) ? "active" : "" )">@page.Name</a>
+            }
+        }        
+        <a href="@Model.ChangePasswordUrl?appId=di.se&lc=sv" class="menu-item" target="_blank">Byt lösenord</a>
+        
+    </div>
+   
+
+    </div>
+    
+</nav>

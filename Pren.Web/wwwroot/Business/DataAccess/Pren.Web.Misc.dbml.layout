@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Pren.Web.Misc">
+  <DataContextMoniker Name="/Pren_Web_MiscDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9febad01-47eb-4f58-9abd-75cae3cf20ac" absoluteBounds="0.875, 2.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/Pren_Web_MiscDataContext/CampaignUspProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e1136b1-e14c-4d9d-964c-0bf6887bd508" absoluteBounds="0.89000000000000012, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ecd4389-c98f-4f1c-9473-faabfafbf879" absoluteBounds="0.875, 4.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/Pren_Web_MiscDataContext/CampaignUspProductTextRelation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0672cce-4de9-43bf-803e-716a81e7d783" absoluteBounds="0.89000000000000012, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 3.94399251302083); (1.875 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Pren_Web_MiscDataContext/CampaignUspProduct/CampaignUspProduct_CampaignUspProductTextRelation" />
+      <nodes>
+        <classShapeMoniker Id="9febad01-47eb-4f58-9abd-75cae3cf20ac" />
+        <classShapeMoniker Id="1ecd4389-c98f-4f1c-9473-faabfafbf879" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="63836349-5069-4b96-8e27-74a76cfe1987" absoluteBounds="0.875, 6, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/Pren_Web_MiscDataContext/CampaignUspText" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1a0fa6d-ed98-4622-80d2-41dec58f1d3b" absoluteBounds="0.89000000000000012, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 6); (1.875 : 5.56899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Pren_Web_MiscDataContext/CampaignUspText/CampaignUspText_CampaignUspProductTextRelation" />
+      <nodes>
+        <classShapeMoniker Id="63836349-5069-4b96-8e27-74a76cfe1987" />
+        <classShapeMoniker Id="1ecd4389-c98f-4f1c-9473-faabfafbf879" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

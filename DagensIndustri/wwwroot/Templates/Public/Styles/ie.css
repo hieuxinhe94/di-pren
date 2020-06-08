@@ -1,0 +1,24 @@
+#search-results > ul.papers-inserts > li img,
+ul.previous-editions li img,
+ul.read-online li img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=-145, Color='#666666')";
+}
+
+.form-box.login .request-form .cover { -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; }
+
+#header .form-login .form label.checkbox span {
+	position: relative;
+	top: -2px;
+	padding-left: 0;
+}
+
+.form-box.login label.checkbox span
+.form-box.login span.checkbox label,
+.form-box .searchlist ul li span.checkbox label {
+	position: relative;
+	top: -2px;
+}
+
+#content .my-calendar { background-position: -50px 0; }
+
+	#nav .subnav ul li.banner { margin-bottom: -3px; }

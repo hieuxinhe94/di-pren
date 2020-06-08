@@ -1,0 +1,19 @@
+#header .form-login .form label.checkbox input {
+  float: left;
+  position: relative;
+  top: -4px;
+}
+
+body.campaign-tool #campaign-package .campaign-paper img,
+ul.previous-editions li img,
+ul.read-online li img {
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=145, Color='#666666');
+}
+
+body.campaign-tool #campaign-package .campaign-paper img.no-shadow {
+	filter: none;
+}
+
+.form-box.login .request-form .cover { filter: alpha(opacity=70); }
+
+.pagination ul { margin: 0 0 0 10px; }

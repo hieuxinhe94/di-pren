@@ -1,0 +1,72 @@
+﻿@using System.Web.Optimization
+@using EPiServer.Editor
+
+@using Pren.Web.Business.Rendering
+
+@model Pren.Web.Models.ViewModels.CampaignPageOrderViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificJavascriptInHeader
+{
+    @Html.Raw(Model.CurrentPage.ScriptLoadInHeader)
+}
+
+@section PageSpecificCssIncludes
+{   
+    @Styles.Render("~/bundles/css/campaigniframe")    
+}
+
+<div class="container">
+    <div class="row hidden-sm hidden-xs">
+        <div class="text-center">
+            <h1 @Html.EditAttributes(x => x.CurrentPage.Heading)>
+                @Model.CurrentPage.Heading
+            </h1>
+        </div>
+    </div>
+</div>
+<form id="form" action="@Url.Action("Order", "CampaignPageIframe")" method="POST">
+    @Html.AntiForgeryToken()
+
+    <div class="container slider">
+        <div class="row">
+            <div class="slider-container">
+                @Html.PropertyFor(x => x.CurrentPage.CampaignContentArea, new { CssClass = "pren-select-container", Tag = RenderingConstants.ContentAreaTags.OneThirdWidth })
+                <div id="slider-direction">
+                    <div id="slider-next"></div>
+                    <div id="slider-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+           
+    <input type="text" name="targetgroup" id="targetgroupinput" class="hidden" value="@Model.TargetGroup">
+    <input type="text" name="callback" id="callbackinput" class="hidden" value="@Model.Callback">
+    <input type="text" name="offerorigin" id="offerorigininput" class="hidden" value="@Model.OfferOrigin">
+    <input type="text" name="saleschannel" id="saleschannelinput" class="hidden" value="@Model.SalesChannel">
+    <input type="text" name="appid" id="appidinput" class="hidden" value="@Model.AppId">
+    <input type="text" name="campaigncontentid" id="campaigncontentidinput" class="hidden" >
+</form>
+
+
+@section PageSpecificJavaScriptIncludes{
+    
+    @Scripts.Render("~/bundles/js/businesscampaigniframe")
+
+}
+
+@section PageSpecificJavaScript
+{
+    @Html.Raw(Model.CurrentPage.ScriptLoad)
+
+    <script type="text/javascript">
+            
+        var campaign = new Campaign($(".pren-selection"), $(".pren-select"), ".pren-selection-product-list");
+        campaign.setUpElements();
+
+        var slider = new Slider($(".pren-selection"), $(".pren-select-container"), 990);
+                   
+    </script>
+}

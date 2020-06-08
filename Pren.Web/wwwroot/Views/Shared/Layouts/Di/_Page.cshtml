@@ -1,0 +1,111 @@
+﻿@using System.Web.Optimization
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.IPageViewModel<Pren.Web.Models.Pages.SitePageData>
+@{
+    Layout = "~/Views/Shared/Layouts/Di/_Root.cshtml";    
+}
+
+@section PageSpecificCssIncludes{
+
+    @Styles.Render("~/bundles/css/mysettings")
+
+    @if (IsSectionDefined("PageSpecificCssIncludes"))
+    {
+        @RenderSection("PageSpecificCssIncludes")
+    }    
+}
+
+@section PageSpecificJavascriptInHeader{       
+
+    @if (IsSectionDefined("PageSpecificJavascriptInHeader"))
+    {
+        @RenderSection("PageSpecificJavascriptInHeader")
+    }
+}
+
+<nav id="navcontainer" class="navbar navbar-di navbar-fixed-top">
+        
+    <div id="top-navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-sm-12 col-md-12 col-lg-3">
+                    <a href="@Url.ContentUrl(Model.CurrentPage.ContentLink)" class="inline-block">
+                        <img height="50" src="~/Static/img/di-logo.png" alt="Di Kundservice" />
+                    </a>
+                    <div class="inline-block v-align-middle">
+                        <h1>Kundservice</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+@RenderBody()
+
+@section Footer
+{
+    <footer>
+        <div id="footer" class="container">
+            <div class="row">
+                @if (IsSectionDefined("Footer"))
+                {
+                    @RenderSection("Footer")
+                }
+                else
+                {
+                    
+                    <div id="socialmedia" class="col-sm-2 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-6">
+                                <span><a href="http://www.facebook.com/dagensindustri" title="Dagens industri på facebook" target="_blank"><span class="fa fa-facebook-square"></span></a></span>
+                                <span><a href="http://www.twitter.com/dagensindustri" title="Dagens industri på twitter" target="_blank"><span class="fa fa-twitter-square"></span></a></span>
+                                <span><a href="https://www.instagram.com/dagensindustri" title="Dagens industri på instagram" target="_blank"><span class="fa fa-instagram"></span></a></span>    
+                            </div> 
+
+                            <div class="col-sm-12 col-xs-6">
+                                <span><a href="http://www.di.se/appar" title="Dagens industris appar" target="_blank"><span class="fa fa-android"></span> <span class="fa fa-apple"></span></a></span>
+                            </div>
+                        </div>          
+                    </div>
+                    @Html.PropertyFor(x => x.Layout.FooterContentArea, new { CssClass = "footer-items col-sm-10 col-xs-12", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+                }
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-disclaimer">
+                        @if (IsSectionDefined("Copyright"))
+                        {
+                            @RenderSection("Copyright")
+                        }
+                        else
+                        {
+                            @Html.PropertyFor(x => x.Layout.Copyright)
+                        }                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>   
+}
+
+<div id="mobileCheck" class="hidden-xs"></div>
+
+
+@section PageSpecificJavaScriptIncludes{
+
+    @*@Scripts.Render("~/bundles/js/global")*@
+
+    @if (IsSectionDefined("PageSpecificJavaScriptIncludes"))
+    {
+        @RenderSection("PageSpecificJavaScriptIncludes")
+    }
+}
+
+@section PageSpecificJavaScript{
+
+    @if (IsSectionDefined("PageSpecificJavaScript"))
+    {
+        @RenderSection("PageSpecificJavaScript")
+    }
+}

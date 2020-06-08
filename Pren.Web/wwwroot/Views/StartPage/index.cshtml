@@ -1,0 +1,47 @@
+﻿@using EPiServer
+@using EPiServer.Core
+@using EPiServer.DataAbstraction
+@using EPiServer.Filters
+@using EPiServer.ServiceLocation
+@model Pren.Web.Models.ViewModels.PageViewModel<Pren.Web.Models.Pages.StartPage>
+
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+
+    //temp code
+    var pagetypeCriteria = new PropertyCriteria
+    {
+        Condition = CompareCondition.Equal,
+        Name = "PageTypeID",
+        Type = PropertyDataType.PageType,
+        Value = ServiceLocator.Current.GetInstance<IContentTypeRepository>().Load("CampaignPage").ID.ToString(),
+        Required = true
+    };
+    var criterias = new PropertyCriteriaCollection
+    {
+        pagetypeCriteria
+    };
+    var campaignPages = ServiceLocator.Current.GetInstance<IPageCriteriaQueryService>().FindPagesWithCriteria(ContentReference.StartPage, criterias);
+}
+
+@section PageSpecificCssIncludes
+{
+    <link href="~/Static/css/campaign.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul>
+                @foreach (var campaignPage in campaignPages)
+                {
+                    <li>
+                        <h3>
+                            @Html.PageLink(campaignPage.PageLink)
+                        </h3>                       
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

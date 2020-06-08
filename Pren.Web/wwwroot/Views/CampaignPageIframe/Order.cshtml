@@ -1,0 +1,107 @@
+﻿@using System.Web.Optimization
+@model Pren.Web.Models.ViewModels.CampaignPageOrderViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/campaigniframe")
+}
+
+@section PageSpecificGtmDataLayer
+{
+    <script type="text/javascript">
+        dataLayer = [{
+            'product': 'PREN',
+            'order': '@Model.SelectedCampaign.Heading',
+            'targetGroup': '@Model.TargetGroup'
+        }];
+
+        var pushNotificationToDL = function (message) {
+            dataLayer.push(message);
+        };
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message"; // Listen to message from child window
+        eventer(messageEvent, function (e) {
+            try {
+                var message = eval('(' + e.data + ')');
+                if (message.origin == 'S+' || message.eventInfo.origin == "S+") {
+                    pushNotificationToDL(message);
+                }
+            } catch (e) { }
+        }, false);
+    </script>
+}
+
+<div class="container">
+    <div class="row hidden-sm hidden-xs">
+        <div class="text-center">
+            <h1>
+                @Model.SelectedCampaign.Heading
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="plate clearfix">
+            <div class="col-md-6">
+
+                <form style="display: none;" target="splus-subscribe-frame" method="post" action="@Model.IframeUrl" id="subscribe-input-form">
+
+                    @foreach (var keyValuePair in Model.Parameters)
+                    {
+                        <input type="hidden" name="@keyValuePair.Key" value="@keyValuePair.Value" />
+                    }
+
+                </form>
+
+                <iframe id="splus-subscribe-frame" src="#" name="splus-subscribe-frame" scrolling="yes"></iframe>
+
+            </div>
+            <div class="col-md-6">
+                <img src="@Url.ContentUrl(Model.SelectedCampaign.Image)" alt="@Model.SelectedCampaign.Heading" class="max100" />
+                @if ((Model.UspTexts != null && Model.UspTexts.Any()))
+                {
+                    <ul class="pren-selection-product-list">
+                        @if (Model.UspTexts != null)
+                        {
+                            foreach (var text in Model.UspTexts)
+                            {
+                                <li>@Html.Raw(text)</li>
+                            }
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section PageSpecificJavaScriptIncludes{
+
+    @Scripts.Render("~/bundles/js/businesscampaigniframe")
+
+}
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+        // Submit the form and show iframe
+        $("#subscribe-input-form").submit();
+        $("#splus-subscribe-frame").show();
+
+        var isOldIE = (navigator.userAgent.indexOf("MSIE") !== -1); // Detect IE10 and below
+        $('#splus-subscribe-frame').iFrameResize({
+            checkOrigin: false,
+            log: false,
+            heightCalculationMethod: isOldIE ? 'max' : 'lowestElement',
+            minHeight: 200
+        });
+    </script>
+}

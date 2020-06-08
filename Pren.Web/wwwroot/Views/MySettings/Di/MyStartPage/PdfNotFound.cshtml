@@ -1,0 +1,24 @@
+﻿@using System.Web.Optimization
+@model Pren.Web.Models.ViewModels.MySettings.Di.MySettingsViewModel
+
+
+@{ Layout = "~/Views/Shared/Layouts/Di/_MyPage.cshtml"; }
+
+@section PageSpecificCssIncludes{
+
+    @Styles.Render("~/bundles/css/global")
+    <link type="text/css" rel="stylesheet" href="/Static/css/Di/mysettings.css">
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" >
+            <p class="text30">
+                <span class="fa fa-file-pdf-o"> Fakturan kan inte visas</span>
+            </p>
+            <p>Din faktura kan inte visas för tillfället, vänligen testa igen. </p>
+            <p>Om problemet kvarstår, kontakta kundtjänst på telefonnummer 08-573 651 00.</p>
+        </div>
+    </div>
+</div>
+

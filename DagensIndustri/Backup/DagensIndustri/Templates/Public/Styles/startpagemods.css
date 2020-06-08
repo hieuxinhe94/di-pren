@@ -1,0 +1,7 @@
+﻿#image-viewer .nav,
+#image-viewer .nav ul 
+{
+    display:none;
+}
+
+#image-viewer.hasnav { margin-bottom: 0px; }

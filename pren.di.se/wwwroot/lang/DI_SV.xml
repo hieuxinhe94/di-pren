@@ -1,0 +1,1317 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="svenska" id="sv">
+    <common>
+      <dagensindustri>Dagens industri</dagensindustri>
+      <download>Ladda ner</download>
+      <change>Ändra</change>
+      <save>Spara</save>
+      <moreinfo>Mer info</moreinfo>
+      <readmore>Läs mer</readmore>
+      <read>Läs</read>
+      <requiredinformation>= obligatoriska uppgifter</requiredinformation>
+      <yes>Ja</yes>
+      <no>Nej</no>
+      <active>Aktiv</active>
+      <notactive>Ej aktivt</notactive>
+      <from>Från</from>
+      <to>Till</to>
+      <delete>Ta bort</delete>
+      <cancel>Avbryt</cancel>
+      <send>Skicka</send>
+      <close>Stäng</close>
+      <show>Visa</show>
+      <search>Sök</search>
+      <continue>Gå vidare</continue>
+      <back>Tillbaka</back>
+      <print>Skriv ut</print>
+      <by>Av</by>
+      <swedishcurrency>kr</swedishcurrency>
+      <buy>Köp</buy>
+      <order>Beställ</order>
+      <apply>Anmäl</apply>
+      <sendingform>Formuläret skickas...</sendingform>
+      <user>
+        <name>Namn</name>
+        <firstname>Förnamn</firstname>
+        <lastname>Efternamn</lastname>
+        <emailaddress>E-postadress</emailaddress>
+        <personalemailaddress>Personlig e-postadress</personalemailaddress>
+        <phone>Telefon</phone>
+        <mobilephone>Mobil</mobilephone>
+        <phonedaytime>Telefon dagtid</phonedaytime>
+        <mobiletelephone>Mobiltelefon</mobiletelephone>
+        <socialsecurity>Födelsedatum</socialsecurity>
+        <socialsecuritynumberformat>Födelsedatum &lt;i&gt;(ÅÅÅÅMMDD)&lt;/i&gt;</socialsecuritynumberformat>
+        <birthno>Personnummer</birthno>
+        <birthnoformat>Personnummer &lt;i&gt;(ÅÅMMDDXXXX)&lt;/i&gt;</birthnoformat>
+      </user>
+      <address>
+        <careof>C/O</careof>
+        <street>Gata</street>
+        <streetaddress>Gatuadress</streetaddress>
+        <number>Nr</number>
+        <staircase>Uppgång</staircase>
+        <stairs>Tr</stairs>
+        <apartmentnumber>Lgh nr</apartmentnumber>
+        <zip>Postnummer</zip>
+        <city>Ort</city>
+        <postalplace>Stoppställe/Postbox</postalplace>
+        <postalplaceorbox>Stoppställe eller Box</postalplaceorbox>
+        <attention>Attention</attention>
+      </address>
+      <company>
+        <company>Företag</company>
+        <companyno>Org. nr.</companyno>
+        <companynoformat>Org. nr. &lt;i&gt;(ÅÅMMDDXXXX)&lt;/i&gt;</companynoformat>
+        <formatforcompanyno>Format för orgnr: ÅÅMMDDXXXX</formatforcompanyno>
+      </company>
+      <message>
+        <onlypren>Sidan endast tillgänglig för prenumeranter</onlypren>
+        <nocusno>Sidan är inte tillgänglig eftersom du saknar ett giltigt kundnummer. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</nocusno>
+        <thankyouorder>Tack för din beställning. Din beställning kommer att skickas till den angivna adressen.</thankyouorder>
+        <alreadyreceivedoffer>Du har redan beställt {0}.</alreadyreceivedoffer>
+        <tempreceiveoffer>Tyvärr har ett problem upstått. För att beställa {0} måste du kontakta vår kundtjänst på &lt;a href="mailto:pren@di.se"&gt;pren@di.se&lt;/a&gt; så hjälper vi dig. &lt;br&gt; &lt;br&gt; Mvh Dagens industri</tempreceiveoffer>
+        <noteligiblebleforoffer>Tyvärr går det inte att ta del av erbjudandet från denna dator. Anledningen kan vara att du sitter på en arbetsplats som har autoinlogg till dagensindustri.se. Kontakta istället vår kundtjänst på &lt;a href="mailto:pren@di.se"&gt;pren@di.se&lt;/a&gt; så hjälper vi dig. &lt;br&gt; &lt;br&gt; Mvh Dagens industri</noteligiblebleforoffer>
+        <loginforpromotionaloffer>Du måste &lt;a href="{0}" &gt;logga in&lt;/a&gt; för att kunna beställa {1}. Har du inte dina uppgifter vänligen kontakta vår kundtjänst på tel 08-573 651 00.</loginforpromotionaloffer>
+        <loginforservice>Du behöver logga in för att få tillgång till tjänsten.</loginforservice>
+        <digold>
+          <nocusno>Tyvärr saknar vi några uppgifter i din prenumeration för att kunna aktivera Di Guld. Ring oss så hjälper vi dig att få tillgång till alla tjänster och erbjudanden. Kundtjänst: 08-573 651 00.</nocusno>
+          <automaticmembership>När du tecknar din prenumeration på Dagens Industri blir du automatiskt DI Guld-medlem och får tillgång till alla våra smarta tjänster med affärsnytta och berikande upplevelser. Här kan du läsa &lt;a href="{0}" target="_blank" &gt;medlemsvillkoren&lt;/a&gt;</automaticmembership>
+        </digold>
+      </message>
+      <errors>
+        <error>Ett fel uppstod. Var vänlig och försök igen.</error>
+        <errorcustomerservice>Något gick fel. Var vänlig och försök igen eller kontakta vår kundtjänst på tel 08-573 651 00.</errorcustomerservice>
+        <errorcamp>Ett fel uppstod när kampanjen skulle läsas in. Var vänlig kontakta vår kundtjänst på tel 08-573 651 00.</errorcamp>
+      </errors>
+      <validation>
+        <namerequired>Du måste ange namn</namerequired>
+        <usernamerequired>Du måste ange användarnamn</usernamerequired>
+        <emailrequired>Du måste ange en giltig e-postadress</emailrequired>
+        <passwordrequired>Du måste fylla i ett lösenord</passwordrequired>
+        <oldpasswordrequired>Du måste ange ditt gamla lösenord</oldpasswordrequired>
+        <newpasswordrequired>Du måste ange ditt nya lösenord</newpasswordrequired>
+        <confirmationpasswordrequired>Du måste bekräfta ditt nya lösenord</confirmationpasswordrequired>
+        <streetaddressrequired>Du måste ange en gatuadress</streetaddressrequired>
+        <streetnumberrequired>Du måste ange ett gatunummer</streetnumberrequired>
+        <cityrequired>Du måste ange en ort</cityrequired>
+        <postalplaceorboxrequired>Du måste ange ett postställe eller en box</postalplaceorboxrequired>
+        <zipcoderequired>Du måste ange ett giltigt postnummer &lt;i&gt;(XXXXX)&lt;/i&gt;</zipcoderequired>
+        <firstnamerequired>Du måste ange ett förnamn</firstnamerequired>
+        <lastnamerequired>Du måste ange ett efternamn</lastnamerequired>
+        <phonenumberrequired>Du måste ange ett giltigt telefonnummer</phonenumberrequired>
+        <mobilephonenumberrequired>Du måste ange ett giltigt mobilnummer</mobilephonenumberrequired>
+        <socialsecuritynumberrequired>Du måste ange ett giltigt födelsedatum</socialsecuritynumberrequired>
+        <birthnorequired>Du måste ange ett giltigt personnummer</birthnorequired>
+        <companynumberrequired>Du måste ange ett giltigt organisationsnummer</companynumberrequired>
+        <agreementoftermsrequired>Du måste godkänna medlemsvillkoren</agreementoftermsrequired>
+        <formdownloadrequired>Du måste ha laddat hem blanketten</formdownloadrequired>
+        <toomanycharacters>Du har angett för många tecken</toomanycharacters>
+        <companyrequired>Du måste ange ett företag</companyrequired>
+      </validation>
+      <forms>
+        <requiredinformation>= obligatoriska uppgifter</requiredinformation>
+        <name>Namn</name>
+        <name.message>Fyll i ett namn</name.message>
+        <firstname>Förnamn</firstname>
+        <firstname.message>Fyll i ett förnamn</firstname.message>
+        <lastname>Efternamn</lastname>
+        <lastname.message>Fyll i ett efternamn</lastname.message>
+        <message>Meddelande</message>
+        <mail>E-post</mail>
+        <mail.message>E-postadressen är ogiltig</mail.message>
+        <phone>Telefon</phone>
+        <phone.message>Fyll i ett telefonnummer</phone.message>
+        <next>Gå vidare</next>
+        <message>
+          <success>Tack för din anmälan.</success>
+        </message>
+      </forms>
+    </common>
+    <promotionaloffer>
+      <validation>
+        <missingdata>Du måste ange namn, gatuadress, postnummer och ort.</missingdata>
+      </validation>
+    </promotionaloffer>
+    <subscription>
+      <newsubscription>Ny prenumeration</newsubscription>      
+      <matrix>
+        <typeofpaper>
+          <dipremium>Di Premium</dipremium>
+          <di>Dagens industri</di>
+          <directdebit>Di via Autogiro</directdebit>
+          <diweekend>Di Helg</diweekend>
+          <diplus>Di digital</diplus>
+        </typeofpaper>
+        <choosesubscription>Välj prenumerationspaket</choosesubscription>
+        <digold>Di Guld*</digold>
+        <exvat>(ex. moms)</exvat>
+        <currencysign>:-</currencysign>
+        <permonth>/mån</permonth>
+        <includingservices>Nedanstående tjänster ingår i Di Guld</includingservices>
+        <digoldterms>* Villkor för Di Guld</digoldterms>
+      </matrix>
+      <subscriberdetails>
+        <fillyourdetails>Fyll i dina uppgifter</fillyourdetails>
+        <emailforpasswordsent>Hit skickas ditt lösenord till DI på nätet.</emailforpasswordsent>
+        <wanttopaywith>Jag vill betala med</wanttopaywith>
+      </subscriberdetails>
+      <paymentmethod>
+        <invoice>Faktura</invoice>
+        <invoiceanotheraddressee>Faktura, annan betalare</invoiceanotheraddressee>
+        <cardpayment>Kort</cardpayment>
+        <directdebit>Autogiro</directdebit>
+        <acceptedcreditcards>Vi accepterar: MasterCard, Visa och American Express</acceptedcreditcards>
+      </paymentmethod>
+      <directdebit>
+        <havedownloadedform>Ja, jag har laddat hem &lt;a href="{0}" target=&quot;_blank&quot;&gt;medgivandeblanketten&lt;/a&gt; för autogiro</havedownloadedform>
+        <howhandlepersonalinfo>Så behandlar vi dina personuppgifter</howhandlepersonalinfo>
+      </directdebit>
+      <anotherinvoiceaddressee>
+        <invoicerecipientpayer>Fakturamottagare/betalare</invoicerecipientpayer>
+      </anotherinvoiceaddressee>
+      <message>
+        <cannotconfirmpersonalsubscription>Vi kan inte bekräfta att detta är en personlig prenumeration vilket man måste ha för att kunna bli en Di Guld medlem. Var god kontakta kundtjänst på 08-573 651 00 eller &lt;a href="mailto:pren@di.se"&gt;pren@di.se&lt;/a&gt;.</cannotconfirmpersonalsubscription>
+        <unsuccessfulcardpayment>Köpet kunde inte genomföras. Var god kontakta din bank.</unsuccessfulcardpayment>
+      </message>
+      <email>
+        <subscriber>Prenumerant</subscriber>
+        <payer>Fakturamottagare</payer>
+        <subscriptionpayer>Person som ska betala prenumerationen</subscriptionpayer>
+        <username>Användarnamn</username>
+        <haspostalplaceaddress>Har angett stoppställe/postbox</haspostalplaceaddress>
+        <cirixname1>sName1 i Cirix</cirixname1>
+        <cirixname2>sName2 i Cirix</cirixname2>
+        <cirixstreet2>sStreet2 i Cirix</cirixstreet2>
+        <cirixsocialsecurityno>Personnummer/organisationsnummer i Cirix</cirixsocialsecurityno>
+        <subscriptiondetails>Prenumerationsdetaljer</subscriptiondetails>
+        <typeofsubscription>Vald prenumeration</typeofsubscription>
+        <paymentmethod>Vald betalningstyp</paymentmethod>
+        <subscriptionno>Prenumerationsnummer</subscriptionno>
+      </email>
+      <landingpage>
+        <welcome>Välkommen som prenumerant!</welcome>
+        <firstpaperdate>Ditt första nummer av Dagens industri kommer &lt;strong&gt;{0}&lt;/strong&gt;.</firstpaperdate>
+      </landingpage>
+    </subscription>
+    <buscal>
+      <regevs>Ordinarie händelser</regevs>
+      <activities>Aktiviteter</activities>
+      <compnames>Företagsnamn (Endast börsnoterade)</compnames>
+      <searchresult>Sökresultat</searchresult>
+      <searchresultdetails>Din sökning resulterade i 0 företag.</searchresultdetails>
+      <upcomingevs>Kommande aktiviteter</upcomingevs>
+      <regevs>Ordinarie händelser</regevs>
+      <linktocal>Länk till din kalender</linktocal>
+      <showlinktocal>Visa länk till Kalender</showlinktocal>
+      <servicenotavailable>Efterfrågad information kan inte hämtas från extern leverantör för tillfället. Var god försök igen. Vänligen kontakta kundtjänst om problemet kvarstår.</servicenotavailable>
+    </buscal>
+    <confroom>
+      <selectdate>Önskad dag (YYYY-MM-DD)</selectdate>
+      <selectdatemess>Du måste ange ett datum</selectdatemess>
+      <selecttime>Önskad tid (HH:MM)</selecttime>
+      <selecttimemess>Klockslaget är ogiltigt</selecttimemess>
+      <numhours>Antal timmar</numhours>
+      <numhoursmess>Fyll i antal timmar</numhoursmess>
+      <numpers>Antal personer</numpers>
+      <numpersmess>Fyll i antal personer</numpersmess>
+      <tabconf>Boka möteslokal</tabconf>
+      <tablounge>Lounge-erbjudande</tablounge>
+      <yourloungecode>Din lounge-kod</yourloungecode>
+      <mailsent>Din bokningsförfrågan har skickats</mailsent>
+      <showinmap>Visa på karta</showinmap>
+    </confroom>
+    <digold>
+      <digoldmembership>Di Guld medlemskap</digoldmembership>
+      <becomedigoldmember>Bli medlem i Di Guld</becomedigoldmember>
+      <readacceptedterms>Jag har läst och godkänt &lt;a href="{0}" onclick="window.open(this.href, '{1}', 'toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, copyhistory=yes, resizable=yes'); return false" &gt;medlemsvillkoren&lt;/a&gt;</readacceptedterms>
+      <supplyadditionaldetails>Du är snart medlem i Di Guld</supplyadditionaldetails>
+      <missingsubscriptionsdetails>Vi saknar några uppgifter i din prenumeration. Ring oss och vi hjälper dig gärna att få tillgång till alla tjänster och erbjudanden.&lt;br&gt;Kundtjänst: 08-573 651 00</missingsubscriptionsdetails>
+      <missingsubscriptionsdetails2>Vi lyckades inte verifiera att du uppfyller kriterierna för att bli medlem i Di Guld.&lt;br&gt;Kontakta vår kundtjänst på tel 08-573 651 00 som gärna hjälper dig med din anmälan och eventuella frågor.</missingsubscriptionsdetails2>
+      <subscriberhasnotpersonalsubscription>Prenumerant med kundnummer {0} vill gå med i Di Guld men har inte en personlig prenumeration.</subscriberhasnotpersonalsubscription>
+    </digold>
+    <mysettings>
+      <personal>
+        <personalinfo>Personuppgifter</personalinfo>
+        <username>
+          <title>Användarnamn</title>
+          <description>Ändra ditt nuvarande användarnamn för att logga in</description>
+          <currentusername>Nuvarande användarnamn</currentusername>
+          <newusername>Nytt användarnamn</newusername>
+        </username>
+        <emailaddress>
+          <title>E-postadress</title>
+          <description>Ändra din nuvarande E-Postadress</description>
+          <currentemailaddress>Nuvarande e-postadress</currentemailaddress>
+          <newemailaddress>Ny e-postadress</newemailaddress>
+        </emailaddress>
+        <password>
+          <title>Ditt lösenord</title>
+          <description>Skapa nytt lösenord än ditt nuvarande</description>
+          <oldpassword>Ditt gamla lösenord</oldpassword>
+          <newpassword>Ditt nya lösenord</newpassword>
+          <newpasswordconfirmation>Bekräfta nytt lösenord</newpasswordconfirmation>
+        </password>
+        <digold>
+          <title>Di Guld medlemskap</title>
+          <description>Gratis medlemskap i Di Guld - För prenumeranter</description>
+          <activeingold>Aktiv i Di Guld</activeingold>
+          <becomedigoldmember>Bli medlem i Di Guld</becomedigoldmember>
+          <enddigoldmembership>Avsluta Di Guld medlemskap</enddigoldmembership>
+        </digold>
+
+      </personal>
+      <subscription>
+        <subscriptioninfo>Adressändring/uppehåll</subscriptioninfo>
+        <fromdateformat>Från &lt;i&gt;(YYYY-MM-DD)&lt;/i&gt;</fromdateformat>
+        <todateformat>Till &lt;i&gt;(YYYY-MM-DD)&lt;/i&gt;</todateformat>
+        <registered>Dina uppgifter har registrerats</registered>
+        <holidaystop>
+          <title>Tillfälligt uppehåll</title>
+          <description>Här kan du registrera tillfälligt uppehåll</description>
+          <plannedholidaystops>Inplanerade uppehåll</plannedholidaystops>
+          <messagefillfromdate>Fyll i ett datum då uppehållet ska börja gälla</messagefillfromdate>
+          <messagefilltodate>Fyll i ett datum då uppehållet ska sluta gälla</messagefilltodate>
+        </holidaystop>
+        <temporaryaddress>
+          <title>Tillfällig adressändring</title>
+          <description>Här kan du registrera tillfällig adressändring</description>
+          <infoanothercountry>Var god kontakta kundtjänst för tillfällig adressändring utanför Sverige</infoanothercountry>
+          <previousaddresses>Tidigare tillfälliga adresser</previousaddresses>
+          <tempaddresses>Mina tillfälliga adressändringar</tempaddresses>
+          <address>Adress</address>
+          <chooseaddress>Välj adress</chooseaddress>
+          <createnewaddress>[Skapa ny adress]</createnewaddress>
+        </temporaryaddress>
+        <permanentaddress>
+          <title>Permanent adressändring</title>
+          <description>Här kan du registrera permanent adressändring</description>
+          <infoanothercountry>Var god kontakta kundtjänst för permanent adressändring utanför Sverige</infoanothercountry>
+          <registered>Din adressändring har registrerats</registered>
+        </permanentaddress>
+        <address>
+          <messagefillfromdate>Fyll i ett datum då adressändringen ska börja gälla</messagefillfromdate>
+          <messagefilltodate>Fyll i ett datum då adressändringen ska sluta gälla</messagefilltodate>
+        </address>
+        <support>
+          <title>Kundservice</title>
+          <description>För frågor gällande din prenumeration</description>
+        </support>
+      </subscription>
+      <invoice>
+        <invoiceoverview>Fakturaöversikt</invoiceoverview>
+        <invoicetitle>Faktura</invoicetitle>
+        <description>Här har du möjlighet att betala din prenumeration med konto/kredit kort.</description>
+        <paid>Betald</paid>
+        <unpaid>Obetald</unpaid>
+        <nounpaid>Du har inga obetalda fakturor</nounpaid>
+        <invoicelist>
+          <price>Pris</price>
+          <priceandvat>{0} kr varav moms {1} kr</priceandvat>
+          <period>Period</period>
+          <newspaperaddressee>Tidningsmottagare</newspaperaddressee>
+          <invoiceaddressee>Fakturamottagare</invoiceaddressee>
+          <pay>Betala</pay>
+          <address>
+            <name>Namn:</name>
+            <address>Adress:</address>
+            <careof>C/O:</careof>
+            <zipcode>Postnummer:</zipcode>
+            <city>Ort:</city>
+          </address>
+        </invoicelist>
+      </invoice>
+      <currentsubscriptions>
+        <title>Prenumerationer</title>
+        <diplus>
+          <title>Dagens industri i läsplatta via autodragning på kontokort</title>
+          <description>Avsluta prenumeration</description>
+          <endsubscription>Avsluta prenumeration</endsubscription>
+          <cancelsuccessmessage>Din prenumeration har avslutats</cancelsuccessmessage>
+          <suspendedmessage>Din prenumeration avslutas {0}. Inga fler autodragningar kommer att göras på kontokortet.</suspendedmessage>
+        </diplus>
+        
+        <diy>
+          <title>DiY prenumeration</title>
+          <description>Avsluta din DiY prenumeration</description>
+          <endsubscription>Avsluta DiY prenumeration</endsubscription>
+          <cancelsuccessmessage>Din DiY prenumeration avslutas {0}</cancelsuccessmessage>
+          <successmessage>Din DiY prenumeration är avslutad</successmessage>
+          <suspendedmessage>Din prenumeration avslutas {0}</suspendedmessage>
+        </diy>
+      </currentsubscriptions>
+      <errors>
+        <error>Ett fel uppstod. Var vänlig och försök igen.</error>
+        <errorcustomerservice>Något gick fel! Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</errorcustomerservice>
+        <needlogin>För att kunna hantera din prenumeration, måste du vara inloggad. Det gör du enklast uppe i högra hörnet.</needlogin>
+        <username>
+          <usernameexists>Vald användarnamn existerar redan</usernameexists>
+          <invalidcharacters>Du har angett ogiltiga tecken i användarnamnet</invalidcharacters>
+        </username>
+        <email>
+          <invalidformat>Du har angett ogiltig e-postadress</invalidformat>
+        </email>
+        <password>
+          <oldpasswordmismatch>Det gamla lösenord du angav stämmer inte</oldpasswordmismatch>
+          <newpasswordmismatch>Det bekräfade lösenorder stämmer inte överens med ditt nya lösenord</newpasswordmismatch>
+          <passwordmatchusername>Du får inte ha samma lösenord som användarnamn</passwordmatchusername>
+          <passwordtooshort>Ditt nya lösenord måste bestå av minst 6 tecken</passwordtooshort>
+        </password>
+        <subscription>
+          <delete>Du kan endast ta bort poster som är minst en vecka framåt i tiden</delete>
+          <date>Fråndatum måste vara mellan {0} och {1}</date>
+          <existing>Vald period är redan registrerad</existing>
+          <noconfirm>En bekräftelse kunde inte skickas eftersom du inte har registrerat någon e-postadress</noconfirm>
+          <dateformat>Ogiltigt datumformat</dateformat>
+          <validfrom>Den valda adressen är giltig from</validfrom>
+          <noaddress>Du måste välja en adress eller skapa en ny</noaddress>
+        </subscription>
+      </errors>
+    </mysettings>
+    <mysettings2>
+      <errorpagenotvalid>Ett tekniskt fel uppstod. Kontrollera att fälten är korrekt formaterade och försök igen.</errorpagenotvalid>
+      <errordateinterval>{0} måste vara mellan {1} och {2}</errordateinterval>
+      <notloggedin>Du måste vara inloggad som prenumerant för att se denna sida.</notloggedin>
+    </mysettings2>
+    <shop>
+      <price>Pris</price>
+      <buy>Köp</buy>
+      <paywith>Betala med</paywith>
+      <creditcard>Kort</creditcard>
+      <invoice>Faktura</invoice>
+      <quantity>st</quantity>
+      <moreinformation>Mer information</moreinformation>
+      <publisher>Förlag</publisher>
+      <format>Bandtyp</format>
+      <language>Språk</language>
+      <datepublished>Utgiven</datepublished>
+      <isbn>ISBN</isbn>
+    </shop>
+    <gasell>
+      <price>Pris</price>
+      <SEK>kr *</SEK>
+      <exmoms>*ex moms</exmoms>
+      <book>Boka</book>
+      <apply>Anmäl</apply>
+      <paywith>Betala med</paywith>
+      <creditcard>Kort</creditcard>
+      <invoice>Faktura</invoice>
+      <discountcode>Rabattkod</discountcode>
+      <nextbutton>Gå vidare</nextbutton>
+      <backbutton>Tillbaka</backbutton>
+      <gasell>Gasell</gasell>
+      <flow>
+        <forms>
+          <firstname>Förnamn</firstname>
+          <firstname.message>Fyll i ett förnamn</firstname.message>
+          <lastname>Efternamn</lastname>
+          <lastname.message>Fyll i ett efternamn</lastname.message>
+          <mail>E-post</mail>
+          <mail.message>E-postadressen är ogiltig</mail.message>
+          <phone>Telefon</phone>
+          <phone.message>Fyll i ett telefonnummer</phone.message>
+          <company>Företag</company>
+          <company.message>Fyll i företag</company.message>
+          <title>Befattning</title>
+          <title.message>Fyll i din befattning</title.message>
+          <address>Gatuadress</address>
+          <address.message>Fyll i en gatuadress</address.message>
+          <addressnumber>Nr</addressnumber>
+          <addressnumber.message>Fyll i ett gatunummer</addressnumber.message>
+          <zip>Postnummer</zip>
+          <zip.message>Postnumret är ogiltigt</zip.message>
+          <city>Ort</city>
+          <city.message>Fyll i en ort</city.message>
+          <gasellcompany>Gasellföretag</gasellcompany>
+          <gasellcompanystrong>&lt;strong&gt;Gasellf&#246;retag&lt;/strong&gt;</gasellcompanystrong>
+          <branch>Bransch</branch>
+          <employeesnumber>Antal anställda</employeesnumber>
+          <orgnr>Org. nr. <i>(XXXXXX-XXXX)</i></orgnr>
+          <orgnr.message>Org. nr. måste vara i formen XXXXXX-XXXX</orgnr.message>
+          <invoiceaddress>Fakturaadress</invoiceaddress>
+          <invoiceaddress.message>Fyll i en fakturaadress</invoiceaddress.message>
+          <invoicereference>Fakturareferens</invoicereference>
+          <invoicereference.message>Fyll i en fakturareferens</invoicereference.message>
+          <discountcode.message>Du måste fylla i en rabattkod</discountcode.message>
+        </forms>
+        <text>
+          <ticket>biljett</ticket>
+          <tickets>biljetter</tickets>
+          <quantity>st</quantity>
+          <to>till</to>
+          <totalprice>Totalt pris:</totalprice>
+          <sek>kr</sek>
+          <withouttaxes>ex moms.</withouttaxes>
+          <registeredparticipants>Anmälda deltagare</registeredparticipants>
+          <welcomeconfirmation>Varmt välkommen till DI Gasell i</welcomeconfirmation>
+        </text>
+        <sidebar>
+          <step1.text>Registrera deltagare</step1.text>
+          <step2.text>Bekräfta beställning</step2.text>
+          <step3.text>Betala</step3.text>
+          <step4.text>Kvitto</step4.text>
+          <step>Steg</step>
+          <of>av</of>
+          <step1>1</step1>
+          <step2>2</step2>
+          <step3>3</step3>
+          <step4>4</step4>
+          <totalsteps>4</totalsteps>
+        </sidebar>
+      </flow>
+      <mail>
+        <confirmation>
+          <subject>Välkommen till DI Gasell i {0}</subject>
+          <body>
+            &lt;b&gt;Varmt välkommen till DI Gasell i {0}, {1},  kl {2}&lt;/b&gt; &lt;br/&gt;
+            Pris: {3} kr ex moms – betalat med {4}. &lt;br/&gt; &lt;br/&gt;
+            Denna bekräftelse avser: &lt;br/&gt; {5} &lt;br/&gt;
+            Anmälan är bindande men kan överlåtas till en kollega.&lt;br/&gt; &lt;br/&gt;
+            Tack för din anmälan! &lt;br/&gt; &lt;br/&gt;
+            &lt;b&gt;Med vänlig hälsning &lt;/b&gt; &lt;br/&gt;
+            &lt;b&gt;Di Gasell&lt;/b&gt; &lt;br/&gt; &lt;br/&gt;
+            Vänligen kontakta oss via &lt;a href="mailto:gasell@di.se"&gt;gasell@di.se&lt;/a&gt; om ni har frågor.
+          </body>
+        </confirmation>
+      </mail>
+    </gasell>
+    <dilogin>
+      <username>Användarnamn</username>
+      <password>Lösenord</password>
+      <rememberme>Kom ihåg mig</rememberme>
+      <login>Logga in</login>
+      <logout>Logga ut</logout>
+      <forgotpassword>Glömt lösenord</forgotpassword>
+      <remembermy>Jag kommer ihåg min:</remembermy>
+      <email>E-postadress</email>
+      <customernumber>Kundnummer</customernumber>
+      <rememberis>Det är:</rememberis>
+      <forgottenyourlogin>Glömt dina inloggningsuppgifter?</forgottenyourlogin>
+      <noworry>Ingen fara. Vi kan skicka uppgifterna till den epostadress som finns registrerad hos oss.</noworry>
+      <sendmyinfo>Skicka mig mina uppgifter</sendmyinfo>
+      <contactcustomerservice>Om du inte vet vilken e-postadress, kundnummer eller användarnamn du har så ber vi dig kontakta kundtjänst på 08-573 651 00 eller &lt;a href="mailto:pren@di.se"&gt;pren@di.se&lt;/a&gt;.</contactcustomerservice>
+      <forgotpassword>
+        <mail>
+          <subject>Påminnelse av dina kontouppgifter</subject>
+          <body>Du har via dagensindustri.se begärt att få ditt användarnamn och lösenord skickat till dig.[nl]Här är ditt användarnamn och lösenord:[nl]- Användarnamn: {0}[nl]- Lösenord: {1}[nl][nl]Med vänlig hälsning[nl]Dagens industri</body>
+        </mail>
+        <sendpasswordconfirmtext>Dina uppgifter har nu skickats till den registrerade e-postadressen!</sendpasswordconfirmtext>
+        <error>Just nu kan vi inte skicka ditt lösenord. Försök igen senare.</error>
+      </forgotpassword>
+      <error>
+        <rememberwhatrequired>Du måste fylla i vad det är i rätt format</rememberwhatrequired>
+        <loginfail>Inloggningen misslyckades. Lösenord eller användarnamn stämde inte. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</loginfail>
+      </error>
+      <loggedin>
+        <myaccount>Mitt konto</myaccount>
+      </loggedin>
+    </dilogin>
+    <digoldpopup>
+      <forsubscribers>För prenumeranter</forsubscribers>
+      <becomemember>Bli medlem</becomemember>
+      <becomesubscriber>Bli prenumerant</becomesubscriber>
+    </digoldpopup>
+    <onlinepapers>
+      <previousnumbers>Tidigare utgåvor</previousnumbers>
+      <tomorrowspaper>Morgondagens tidning</tomorrowspaper>
+      <read>Läs</read>
+      <countdownday>Nästa utgåva om {0} dagar, {1} timmar, {2} minuter</countdownday>
+      <countdownhour>Nästa utgåva om {0} timmar, {1} minuter</countdownhour>
+      <exclusive>Exklusivt för Di Guld medlemmar</exclusive>
+    </onlinepapers>
+    <contactcompany>
+      <common>
+        <companyname>Företagsnamn</companyname>
+        <deliveryaddress>Utdelningsadress</deliveryaddress>
+        <city>Ort</city>
+        <visitoraddress>Besöksadress</visitoraddress>
+        <firstname>Förnamn</firstname>
+        <lastname>Efternamn</lastname>
+        <phonenumber>Telefonnummer</phonenumber>
+        <email>E-post</email>
+        <informationprovider>Uppgiftslämnare</informationprovider>        
+        <send>Skicka</send>
+        <requiredinformation>Obligatorisk uppgift</requiredinformation>
+        <invalidformat>Ogiltigt format</invalidformat>
+      </common>
+      <addcompany>
+        <add>Lägg till företag</add>
+        <organizationnumber>Org. nr.</organizationnumber>
+        <zipcode>Postnr</zipcode>
+        <notsameasdeliveryaddress>(Om ej samma som utdelningsadress/postnr/ort)</notsameasdeliveryaddress>
+        <streetaddress>Gatuadress</streetaddress>
+        <contactinformation>Kontaktinformation</contactinformation>        
+        <fax>Fax</fax>
+        <addupdatedecisionmaker>Lägg till eller uppdatera beslutsfattare</addupdatedecisionmaker>        
+        <positions>Befattningar</positions>
+        <changes>Ändringar du vill göra</changes>
+      </addcompany>
+      <updatecompany>
+        <updatecompanyinfo>Ändra uppgifter om ditt företag</updatecompanyinfo>
+        <currentinformation>Nuvarande uppgift</currentinformation>
+        <changeto>Ändra till</changeto>
+        <careof>C/O</careof>
+        <addressdifference>OBS! Besöksadressens postnummer och postort skiljer sig ofta från utdelningsadressens. Används t ex vid paketutdelning.</addressdifference>
+        <zipcode>Postnummer</zipcode>
+        <fax>Faxnummer</fax>
+        <homepage>Hemsida</homepage>
+        <changecomment>Kommentar till ändringen</changecomment>
+        <commentexplanation>Här kan du göra förtydliganden, förklara eller kommentera din ändring. Din kommentar läses av redaktionen i samband med att de verifierar dina nya uppgifter.</commentexplanation>
+        <informationproviderinfo>Fyll i ditt namn och minst ett av fälten e-postadress / telnr (gärna båda!) så att redaktionen kan nå dig för eventuella klarlägganden / kompletteringar.</informationproviderinfo>
+      </updatecompany>
+      <email>
+        <subject>Ändringar på Bizbook</subject>
+        <companyname>FöretagsNamn:</companyname>
+        <organizationnumber>Organistations-nr:</organizationnumber>
+        <careof>C/O</careof>
+        <address>Adress:</address>
+        <zipcode>Postnr:</zipcode>
+        <city>Ort:</city>
+        <visitoraddress>Besöksadress:</visitoraddress>
+        <visitorzipcode>Besökspostnr:</visitorzipcode>
+        <visitorcity>Besöksort:</visitorcity>
+        <companyemail>Företagsemail:</companyemail>
+        <companyphone>Företagstelefon:</companyphone>
+        <companyfax>Företagsfax:</companyfax>
+        <homepage>Hemsida:</homepage>
+        <decisionmakerfirstname>Beslutsfattare förnamn:</decisionmakerfirstname>
+        <decisionmakerlastname>Beslutsfattare efternamn:</decisionmakerlastname>
+        <positions>Befattningar:</positions>
+        <mainposition>Huvudbefattning:</mainposition>
+        <otherpositions>Övriga befattningar:</otherpositions>
+        <decisionmakeremail>Beslutsfattare epost:</decisionmakeremail>
+        <decisionmakerphone>Beslutsfattare telefon:</decisionmakerphone>
+        <changestobedone>Ändringar uppgiftslämnare vill göra:</changestobedone>
+        <informationproviderfirstname>Uppgiftslämnare förnamn:</informationproviderfirstname>
+        <informationproviderlastname>Uppgiftslämnare efternamn:</informationproviderlastname>
+        <informationprovideremail>Uppgiftslämnare epost:</informationprovideremail>
+        <informationproviderphone>Uppgiftslämnare telefon:</informationproviderphone>
+        <failedtosendemail>Misslyckades att skicka iväg e-posten. Var god försök senare.</failedtosendemail>
+        <mailsentconfirmation>En e-post med dina uppgifter har skickats till redaktionen.</mailsentconfirmation>
+      </email>
+    </contactcompany>
+    <contactcompanysearch>
+      <search>
+        <searchsimple>Enkel sökning</searchsimple>
+        <name>Förnamn, Efternamn</name>
+        <company>Företag, Orgnr, Telnr</company>
+        <address>Adress, Ort, Postnr</address>
+        <searchresult>
+          <showsearchresult>Visar resultat &lt;span class="b"&gt;{0} - {1}&lt;/span&gt; av {2}</showsearchresult>
+          <phone>Tel: </phone>
+          <telephonecentral>Tel (växel): </telephonecentral>
+          <type>Typ:</type>
+          <showinmap>Visa på karta</showinmap>
+          <noreturn>Hittade inga företag/beslutsfattare</noreturn>
+        </searchresult>
+        <servicenotavailable>Efterfrågad information kan inte hämtas från extern leverantör för tillfället. Var god försök igen. Vänligen kontakta kundtjänst om problemet kvarstår.</servicenotavailable>
+      </search>
+      <companydetails>
+        <updatecompanydetails>Uppdatera företagsinformation</updatecompanydetails>
+        <backtosearchresult>Tillbaka till sökresultaten</backtosearchresult>
+        <details>
+          <phone>Tel:</phone>
+          <fax>Fax:</fax>
+          <email>E-post:</email>
+          <webaddress>Web:</webaddress>
+          <visitaddress>Besöksadress:</visitaddress>
+          <postaladdress>Postadress:</postaladdress>
+          <municipality>Kommun:</municipality>
+          <county>Län:</county>
+          <region>A-region:</region>
+          <showinmap>Visa på karta</showinmap>
+        </details>
+        <organisation>
+          <organisation>Enheten</organisation>
+          <worksitetype>Enhetstyp:</worksitetype>
+          <organisationid>EnhetsID:</organisationid>
+          <officialworksitenumber>Arbetsställenr:</officialworksitenumber>
+          <numberofemployees>Antal anställda:</numberofemployees>
+        </organisation>
+        <company>
+          <company>Företaget</company>
+          <legalname>Juridiskt namn:</legalname>
+          <legalform>Juridisk form:</legalform>
+          <companynumber>Organisationsnummer:</companynumber>
+          <numberofemployees>Antal anställda:</numberofemployees>
+          <numberofofficeemployees>Antal kontorsanställda:</numberofofficeemployees>
+          <sharecapital>Aktiekapital:</sharecapital>
+          <turnover>Omsättning:</turnover>
+          <numberofworksites>Antal arbetsställen:</numberofworksites>
+          <detailsnotshown>[visas ej]</detailsnotshown>
+        </company>
+        <decisionmaker>
+          <title>Beslutsfattare</title>
+          <position>Befattning:</position>
+          <otherposition>Övriga befattningar:</otherposition>
+        </decisionmaker>
+        <companybusiness>
+          <business>Verksamhet</business>
+          <businessasccordingtopar>Verksamhet enligt PAR</businessasccordingtopar>
+          <status>Status:</status>
+          <headquarters>Säte:</headquarters>
+          <registrationdatecompany>Registreringsdatum företag:</registrationdatecompany>
+          <vat>Moms:</vat>
+          <registrationdatecompanyname>Registreringsdatum företagsnamn:</registrationdatecompanyname>
+          <employer>Arbetsgivare:</employer>
+          <classftax>F-skatt:</classftax>
+          <businessedscription>Verksamhetsbeskrivning:</businessedscription>
+          <authorizedsignatory>Firmatecknare:</authorizedsignatory>
+          <auditorscomment>Revisionsanmärkning/Kommentar:</auditorscomment>
+          <board>Styrelse</board>
+          <name>Namn</name>
+          <function>Funktion</function>
+          <socialsecuritynumber>Personnummer</socialsecuritynumber>
+          <admittance>Tillträde</admittance>
+          <othercompanyinfo>Övriga företagsuppgifter</othercompanyinfo>
+          <noinfo>i.u.</noinfo>
+          <bicompanies>
+            <bicompanies>Bifirmor:</bicompanies>
+            <hasnobicompanies>Företaget har inga bifirmor</hasnobicompanies>
+            <name>Bifirma namn</name>
+            <businessdescription>Bifirma verksamhetsbeskrivning</businessdescription>
+            <registrationdate>Bifirma registreringsdatum</registrationdate>
+          </bicompanies>
+        </companybusiness>
+        <companyfinancialdetails>
+          <financialdetails>Ekonomisk information</financialdetails>
+          <financialdetailsaboutcompany>Ekonomisk information om företaget</financialdetailsaboutcompany>
+          <annualaccountingstart>Bokslutsperiodens start</annualaccountingstart>
+          <annualaccountingend>Bokslutsperiodens slut</annualaccountingend>
+          <numberofemployees>Antal anställda</numberofemployees>
+          <sharecapital>Aktiekapital</sharecapital>
+          <netsales>Nettoomsättning</netsales>
+          <changeinnetsales>Nettomsättningsförändring %</changeinnetsales>
+          <profitafterfinanceincomeandexpense>Resultat efter finansnetto</profitafterfinanceincomeandexpense>
+          <profitlossfortheyear2>Årets resultat</profitlossfortheyear2>
+          <totalequityandliabilities>Summa tillgångar	</totalequityandliabilities>
+          <profitmargin>Vinstmarginal</profitmargin>
+          <returnonequity>Avkastning på totalt kapital</returnonequity>
+          <quickratio>Kassalikviditet</quickratio>
+          <equityassetsratio>Soliditet</equityassetsratio>
+          <totalequity>Eget kapital</totalequity>
+          <totalliabilities>Skulder</totalliabilities>
+          </companyfinancialdetails>
+      </companydetails>
+    </contactcompanysearch>
+    <wineclub>
+      <form>
+        <firstname>Förnamn</firstname>
+        <firstname.message>Fyll i ett förnamn</firstname.message>
+        <lastname>Efternamn</lastname>
+        <lastname.message>Fyll i ett efternamn</lastname.message>
+        <mail>E-post</mail>
+        <mail.message>E-postadressen är ogiltig</mail.message>
+        <phone>Telefon</phone>
+        <phone.message>Telefonnummret är ogiltig.</phone.message>
+        <next>Gå vidare</next>
+        <over20>Jag är över 20 år</over20>
+        <over20required>Du behöver bekräfta att du är över 20 år</over20required>
+      </form>
+      <mail>
+        <customer>
+          <subject>Tack för din intresse</subject>
+          <body>Hej {0},&lt;br&gt; &lt;br&gt;
+            Vi har tagit emot ditt mejl och inom de närmaste dagarna kommer du att bli uppringd av en vinrådgivare från Dagens industris Vinklubb som kan ge dig mer information.&lt;br&gt;
+            Du kan även besöka Vinklubbens hemsida på &lt;a href=&quot;http://www.divinklubb.se&quot;&gt;www.divinklubb.se&lt;/a&gt; och läsa mer om Vinklubben och våra viner.&lt;br&gt;&lt;br&gt;
+            Hälsningar,&lt;br&gt;
+            Di Guld
+          </body>
+        </customer>
+        <antipodes>
+          <subject>Di Vinklubb intresseanmälan - {0} {1}.</subject>
+          <body>Di Vinklubb intresseanmälan - {0} {1}</body>
+        </antipodes>
+      </mail>
+      <message>
+        <success>Tack för din intresseanmälan.</success>
+        <error>Ett fel uppstod. Var vänlig och försök igen.</error>
+      </message>
+      <servicenotavailable>Efterfrågad information kan inte hämtas från extern leverantör för tillfället. Var god försök igen. Vänligen kontakta kundtjänst om problemet kvarstår.</servicenotavailable>
+    </wineclub>
+    <conference>
+      <current>Nuvarande konferenser</current>
+      <more>Fler konferenser</more>
+      <forms>
+        <common>
+          <name>Namn</name>
+          <name.message>Fyll i ett namn</name.message>
+          <firstname>Förnamn</firstname>
+          <firstname.message>Fyll i ett förnamn</firstname.message>
+          <lastname>Efternamn</lastname>
+          <lastname.message>Fyll i ett efternamn</lastname.message>
+          <message>Meddelande</message>
+          <mail>E-post</mail>
+          <mail.message>E-postadressen är ogiltig</mail.message>
+          <phone>Telefon</phone>
+          <phone.message>Fyll i ett telefonnummer</phone.message>
+          <next>Gå vidare</next>
+        </common>
+        <registration>
+          <company>Företag</company>
+          <company.message>Fyll i företag</company.message>
+          <title>Befattning</title>
+          <title.message>Fyll i din befattning</title.message>
+          <orgnr>
+            Org. nr. <i>(XXXXXX-XXXX)</i>
+          </orgnr>
+          <orgnr.message>Org. nr. måste vara i formen XXXXXX-XXXX</orgnr.message>
+          <invoiceaddress>Fakturaadress</invoiceaddress>
+          <invoiceaddress.message>Fyll i en fakturaadress</invoiceaddress.message>
+          <invoicereference>Fakturareferens</invoicereference>
+          <invoicereference.message>Fyll i en fakturareferens</invoicereference.message>
+          <zip>Postnummer</zip>
+          <zip.message>Postnumret är ogiltigt</zip.message>
+          <city>Ort</city>
+          <city.message>Fyll i en ort</city.message>
+          <code>Kod</code>
+          <information>Hur fick du information om konferensen?</information>
+          <information.channels>
+            <channel0>-- Välj informationskanal --</channel0>
+            <channel1>Annons i Dagens industri</channel1>
+            <channel2>E-post</channel2>
+            <channel3>Jag blev uppringd</channel3>
+            <channel4>Konferens hemsida</channel4>
+            <channel5>Di Guld</channel5>
+            <channel6>Via en kollega</channel6>
+            <channel7>Annan sätt</channel7>
+          </information.channels>
+        </registration>
+        <groupregistration>
+          <more>Är ni flera som vill gå?</more>
+          <info>
+            Fyll i formuläret nedan eller kontakta Jessica Olsson, &lt;a href=&quot;mailto:jessica.olsson@di.se&quot;&gt;jessica.olsson@di.se&lt;/a&gt;  08-573 650 17.
+        </info>
+        </groupregistration>
+        <pdf>
+          <text>Fyll i formuläret nedan så kommer pdf-broschyren att skickas till dig via e-post</text>
+          <nopdfmessage>Tyvärr finns det ingen pdf broschyr för denna konferens</nopdfmessage>
+        </pdf>
+        <tabs>
+          <registration>Anmälan</registration>
+          <groupregistration>Gruppanmälan</groupregistration>
+          <pdfform>PDF-broschyr</pdfform>
+        </tabs>
+      </forms>
+      <mail>
+        <groupregistration>
+          <customer>
+            <subject>Bekräftelse på din förfrågan till {0}</subject>
+            <body>Hej {0},[nl]Här är din bekräftelse på förfrågan till {1} [nl]Vänliga hälsningar,[nl]Di Konferens</body>
+          </customer>
+          <di>
+            <subject>Förfrågan till {0} från {1} {2}</subject>
+            <body>Förfrågan till {0} från {1} {2}</body>
+          </di>
+        </groupregistration>
+        <pdf>
+          <subject>PDF-broschyr för {0}</subject>
+          <body>Hej {0},[nl]PDF-broschyren för {1} är bifogad.[nl]Vänliga hälsningar,[nl]Di Konferens</body>
+        </pdf>
+        <welcome>
+          <body>&lt;b&gt;Tack för din anmälan!&lt;/b&gt;[nl]Du är nu anmäld till vår konferens {0}.[nl][nl]&lt;b&gt;Avbokningspolicy&lt;/b&gt;[nl]Vi tillämpar 14 dagars avbokningspolicy. Det innebär att vid avbokning måste vi ha din avanmälan senast 14 dagar innan konferensen. Sker inte avbokningen i tid debiterar vi er hela konferensavgiften.[nl][nl]</body>
+        </welcome>
+        <confirm>
+          <subject>Bekräftelse på din anmälan till {0}</subject>
+          <bodyold>Hej {0},[nl]Här är din bekräftelse på anmälan till {1}.[nl]Dag: {2}[nl]Seminarier: {3}[nl]Pris: {4} kr inklusive moms.[nl]Mvh[nl]Di Konferens</bodyold>
+          <body>Hej {0},[nl][nl]Här är din bekräftelse på anmälan till {1}.[nl][nl]Dina val:[nl] {2}[nl]Mvh[nl]Di Konferens[nl]konferens@di.se[nl]</body>
+          <bodynochoices>Hej {0},[nl][nl]Här är din bekräftelse på anmälan till {1}.[nl][nl]Vänliga hälsningar,[nl]Di Konferens[nl]</bodynochoices>
+        </confirm>
+        <footer>&lt;br&gt;Vänliga hälsningar,&lt;br&gt;Di Konferens</footer>
+      </mail>
+      <success>
+        <registration>Tack för din anmälan. En bekräftelse har skickats</registration>
+        <groupregistration>Tack för din anmälan. En bekräftelse har skickats</groupregistration>
+        <pdf>PDF-broschyren har nu skickats till e-postadressen</pdf>
+      </success>
+      <errors>
+        <error>Ett fel uppstod. Var vänlig och försök igen</error>
+        <registration>
+          <error>Du måste välja en aktivitet för varje evenemang</error>
+        </registration>
+      </errors>
+    </conference>
+    <vendors>
+      <label>
+        Välj en ort i listan nedan för att se försäljningställen av Dagens industri.
+      </label>
+    </vendors>
+    <appendix>
+      <searchalllink>Alla bilagor</searchalllink>
+      <sizesuffix>mb</sizesuffix>
+      <error>Just nu går det inte att visa bilagor. Försök igen lite senare.</error>
+    </appendix>
+    <archive>
+      <toarchive>Till arkivet</toarchive>
+      <paper>
+        <datesearch>
+          <searchondate>Sök på datum</searchondate>
+          <publicationdate>Utgivningsdatum &lt;i&gt;(YYYY-MM-DD)&lt;/i&gt;</publicationdate>
+          <enterdate>Fyll i ett datum.</enterdate>
+          <searchondatedescription>Till höger visas tidningen för valt datum.</searchondatedescription>
+        </datesearch>
+      </paper>
+      <article>
+        <textsearch>
+          <searchontext>Artikelsök</searchontext>
+          <searchfor>Sök efter:</searchfor>
+          <showsearchresult>Sökresultat &lt;span class="n"&gt; Visar &lt;b&gt;{0} - {1}&lt;/b&gt; av {2} träffar&lt;/span&gt;</showsearchresult>
+          <nohits>Inga artiklar sökkriteriet '{0}' hittades</nohits>
+          <published>Publicerat:</published>
+        </textsearch>
+      </article>
+    </archive>
+    <sms>
+      <read>Så här läser du dagens tidning</read>
+      <subscriber>&lt;b&gt;Prenumerant:&lt;/b&gt; &lt;br&gt;Logga in så har du tillgång till dagens tidning samt alla utgåvor i vårt arkiv.</subscriber>
+      <nosubscriber>&lt;b&gt;Ej prenumerant:&lt;/b&gt; &lt;br&gt;Om du inte är prenumerant har du möjlighet att köpa en tillfällig inloggning under 24h för att läsa Dagens industri online. Du betalar via SMS och priset är 30 kr.</nosubscriber>
+      <loggedin>loggat in.</loggedin>
+      <pdfnumber>1. Skriv ett SMS med texten: PDF</pdfnumber>
+      <sendsms>2. Skicka ditt SMS till nummer: 72115</sendsms>
+      <username>&lt;b&gt;Anv&#228;darnamn:&lt;/b&gt; {0}</username>
+      <password>&lt;b&gt;L&#246;senord:&lt;/b&gt; {0}</password>
+      <timeout>Mer än tre minuter har passerat. Om du skickat sms:et kan något fel uppstått. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</timeout>
+      <error>Hämtning av data misslyckades. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</error>
+    </sms>
+    <campaigns>
+      <form>
+        <firstname>Förnamn:*</firstname>
+        <lastname>Efternamn:*</lastname>
+        <company>Företag:</company>
+        <address>Adress:</address>
+        <zip>Postnummer:</zip>
+        <city>Ort:</city>
+        <phone>Telefonnummer:</phone>
+        <email>E-post:*</email>
+        <subscription>Prenumerationsuppgifter:*</subscription>
+        <acceptedcards>Vi accepterar betalning med följande kort:</acceptedcards>
+      </form>
+      <tabs>
+        <street>Gata</street>
+        <co>C/O-adress</co>
+        <box>Stoppställe/Postbox</box>
+      </tabs>
+      <campform>
+        <invitefirstname>Ditt förnamn:*</invitefirstname>
+        <invitelastname>Ditt efternamn:*</invitelastname>
+        <firstname>Förnamn:*</firstname>
+        <lastname>Efternamn:*</lastname>
+        <company>Företag:</company>
+        <attention>Attention:</attention>
+        <streetname>Gatuadress:*</streetname>
+        <streetno>Nr:*</streetno>
+        <co>C/O:*</co>
+        <entrance>Uppgång:</entrance>
+        <stairs>Tr:</stairs>
+        <apartment>Lgh nr:</apartment>
+        <box>Postbox:</box>
+        <zip>Postnr:*</zip>
+        <city>Ort:*</city>
+        <phone>Mobiltelefon:*</phone>
+        <birthno>Personnummer (ååmmddxxxx):*</birthno>
+        <orgno>Organisationsnummer:</orgno>
+        <email>E-post:*</email>
+        <stopbox>Stoppställe eller Box:*</stopbox>
+        <stopboxno>Nr:*</stopboxno>
+        <offers>Välj erbjudande *</offers>
+      </campform>
+      <choose>
+        <offercode>--Välj erbjudandekod--</offercode>
+        <product>--Välj produkt--</product>
+        <type>--Välj kampanjtyp--</type>
+        <targetgroup>--Välj målgrupp--</targetgroup>
+      </choose>
+      <various>
+        <progress>Vänligen vänta.</progress>
+        <pay>Jag vill betala med:</pay>
+        <pul>Så behandlar vi dina personuppgifter</pul>
+        <prenterms>Prenumerationsvillkor</prenterms>
+        <comment>Skriv kommentar</comment>
+        <diimagealt>Dagens industri</diimagealt>
+        <weekendimagealt>DI Weekend</weekendimagealt>
+        <dimensionimagealt>DI Dimension</dimensionimagealt>
+        <thankyou>&lt;h2&gt;Tack för din beställning!&lt;/h2&gt;</thankyou>
+      </various>
+      <thankyou>
+        <completeautogiroheading>Nästan klart</completeautogiroheading>
+        <completeautogiro>Tack för din beställning</completeautogiro>
+        <completenotautogiroheading>Tack för din beställning</completenotautogiroheading>
+        <completenotautogiro>Tack för din beställning</completenotautogiro>
+
+      </thankyou>
+      <errors>
+        <offercodeexisting>Erbjudandekoden kan inte tas bort för den används av befintlig kampanj</offercodeexisting>
+        <targetgroupexisting>Målgruppen kan inte tas bort för den används av befintlig kampanj</targetgroupexisting>
+        <description>Du måste ange beskrivning</description>
+        <amount>Du måste ange belopp</amount>
+        <amountint>Belopp måste vara ett heltal</amountint>
+        <alreadyincirix_old>Vi har tyvärr inte kunnat registrera dina adressuppgifter korrekt. Vänligen kontakta kundtjänst på tel 08-573 651 00 så hjälper vi dig.</alreadyincirix_old>
+        <alreadyincirix>Vi har redan dina uppgifter registrerade i vårt system. Kontakta kundtjänst på telefonnummer 08-573 651 00 så hjälper vi dig.</alreadyincirix>
+        <alreadyincirixpayed>Vi har redan dina uppgifter registrerade i vårt system. Vi kommer att kontakta dig för att reda ut problemet.</alreadyincirixpayed>
+        <contactus>Tyvärr har ett fel uppstått. För att ta del av erbjudande måste du kontakta vår kundtjänst på tel 08-573 651 00 så hjälper vi dig gärna.</contactus>
+      </errors>
+    </campaigns>
+    <mail>
+      <error>Det uppstod ett fel när mailet skulle skickas. Var vänlig och försök igen.</error>      
+      <sendarticle>
+        <heading>Skicka artikeln till en kollega</heading>
+        <recipientemailheading>Mottagarens e-postadress:*</recipientemailheading>
+        <emailheading>Din e-postadress:*</emailheading>
+        <messageheading>Skriv en hälsning nedan:</messageheading>
+      </sendarticle>
+    </mail>
+    <articlesearch>
+      <readarticle>
+        <error>Artikeln kan inte visas pga ett tekniskt fel</error>
+      </readarticle>
+      <mail>
+        <subject>Intressant artikel på di.se</subject>
+        <body>Hej! {0} rekommenderar den här artikeln på di.se:[nl][nl]{1}[nl][nl]{2}</body>
+        <message>Artikeln är skickad</message>
+      </mail>
+    </articlesearch>
+    <payinvoice>
+      <search>Sök faktura</search>
+      <customernumber>Kundnummer:</customernumber>
+      <getinvoice>Hämta faktura</getinvoice>
+      <searchresult>Sökresultat</searchresult>
+      <showresult>Visar &lt;b&gt;{0} - {1}&lt;/b&gt; av {2} träffar</showresult>
+      <noinvoicesfound>Inga fakturor hittades</noinvoicesfound>
+      <invoicenumber>Fakturanummer:</invoicenumber>
+      <priceandvat>{0} kr varav moms {1} kr</priceandvat>
+      <topay>Att betala:</topay>
+      <pay>Betala</pay>
+      <unsuccessfulcardpayment>Köpet kunde inte genomföras. Var god kontakta din bank.</unsuccessfulcardpayment>
+      <receipt>Kvitto</receipt>
+    </payinvoice>
+    <various>
+      <validators>
+        <format>Ej giltigt format</format>
+        <mandatory>Obligatorisk uppgift</mandatory>
+        <date>Ogiltigt datumformat</date>
+      </validators>
+      <errors>
+        <error>Ett fel uppstod. Var vänlig och försök igen</error>
+      </errors>
+      <mandatorytext>*)Obligatoriska uppgifter</mandatorytext>
+      <ettanmissing>Ettan saknas</ettanmissing>
+      <back>&amp;laquo; Tillbaka</back>
+      <close>[X] Stäng</close>
+      <downloadtodayspaper>Ladda ner dagens tidning som PDF</downloadtodayspaper>
+      <diselinktext>di.se</diselinktext>
+      <onlypren>Sidan endast tillgänglig för prenumeranter</onlypren>
+      <nocusno>Sidan är inte tillgänglig eftersom du saknar ett giltigt kundnummer. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</nocusno>
+    </various>
+    <mba>
+      <form>
+        <firstname>Förnamn</firstname>
+        <firstname.message>Fyll i ett förnamn</firstname.message>
+        <lastname>Efternamn</lastname>
+        <lastname.message>Fyll i ett efternamn</lastname.message>
+        <message>Meddelande</message>
+        <mail>E-post</mail>
+        <mail.message>E-postadressen är ogiltig</mail.message>
+        <mobile>Mobil</mobile>
+        <mobile.message>Fyll i ett mobilnummer</mobile.message>
+        <company>Företag</company>
+        <company.message>Fyll i företag</company.message>
+        <title>Befattning</title>
+        <title.message>Fyll i din befattning</title.message>
+        <address>Adress</address>
+        <address.message>Fyll i en adress</address.message>
+        <zip>Postnummer</zip>
+        <zip.message>Postnumret är ogiltigt</zip.message>
+        <city>Ort</city>
+        <city.message>Fyll i en ort</city.message>
+        <linkedin>Länk till profil på LinkedIn</linkedin>
+        <personalnumber>Personnummer</personalnumber>
+        <personalnumber.message>Fyll i din personnummer</personalnumber.message>
+        <birthdate>Födelsedatum</birthdate>
+        <birthdate.message>Fyll i ditt födelsedatum</birthdate.message>
+        <academiceducation>Typ av akademisk utbildning</academiceducation>
+        <academiceducation.message>Fyll i typ av akademisk utbildning</academiceducation.message>
+        <academicpoints>Antal akademiska poäng</academicpoints>
+        <academicpoints.message>Fyll i antal akademiska poäng</academicpoints.message>
+        <englishlevel>Nivå på engelska &lt;i&gt;(1=låg 5=hög)&lt;/i&gt;</englishlevel>
+        <workyears>Antal arbetsår efter examen</workyears>
+        <workyears.message>Fyll i antal arbetsår efter examen</workyears.message>
+        <motivation>Motivering &lt;i&gt;(Max 2000 tecken)&lt;/i&gt;</motivation>
+        <nomination>Egen ansökan ELLER nominering</nomination>
+        <send>Skicka</send>
+      </form>
+      <message>
+        <success>Tack för din ansökan.</success>
+        <error>Ett fel uppstod. Var vänlig och försök igen.</error>
+      </message>
+      <mail>
+        <recommendation>
+          <subject>Tack för din nominering av {0} {1}</subject>
+          <body>
+            Hej, &lt;br&gt;
+            Tack för att du har nominerat {0} {1}. Det är tack vare ditt medlemskap i Di Guld som {2} får chansen att söka stipendiet för en MBA Executive Format på Handelshögskolan i Stockholm. Ansökan kommer nu att granskas och vi återkommer till kandidaterna i början av juli. &lt;br&gt; &lt;br&gt;
+            Med vänlig hälsning &lt;br&gt;
+            Dagens industri
+          </body>
+        </recommendation>
+        <nominee>
+          <subject>Du har blivit nominerad till Dagens industris MBA{0}</subject>
+          <body>
+            Hej, &lt;br&gt;
+            Du har blivit nominerad till stipendiet för en MBA Executive Format på Handelshögskolan i Stockholm och vi bekräftar att vi har fått din ansökan. Ansökan kommer nu att granskas och vi återkommer till kandidaterna i början av juli.&lt;br&gt; &lt;br&gt;
+            Du kan läsa mer om SSE MBA Executive Format på http://www.hhs.se/Education/MBA/SSEMBA/Pages/default.aspx &lt;br&gt; &lt;br&gt;
+            Med vänlig hälsning &lt;br&gt;
+            Dagens industri
+          </body>
+        </nominee>
+        <digold.nominee>
+          <subject>Tack för din ansökan till Dagens industris MBA</subject>
+          <body>
+            Hej, &lt;br&gt;
+            Vi bekräftar att vi har fått din ansökan till stipendiet för en MBA Executive Format på Handelshögskolan i Stockholm. Det är tack vare ditt medlemskap i Di Guld som du får chansen att söka detta stipendium. Ansökan kommer nu att granskas och vi återkommer till kandidaterna i början av juli. &lt;br&gt; &lt;br&gt;
+            Du kan läsa mer om SSE MBA Executive Format på http://www.hhs.se/Education/MBA/SSEMBA/Pages/default.aspx &lt;br&gt; &lt;br&gt;
+            Med vänlig hälsning &lt;br&gt;
+            Dagens industri
+          </body>
+        </digold.nominee>
+        <utbildning.se>
+          <subject>Dagens industri - MBA</subject>
+          <body>
+            {0} {1} har sökt stipendiet. Härmed skickar vi ansökan.
+          </body>
+        </utbildning.se>
+      </mail>
+    </mba>
+    <dicampaign>
+      <readacceptedterms>Jag vill bli medlem i Di Guld och har läst och godkänt &lt;a href="{0}" onclick="window.open(this.href, '{1}', 'toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, copyhistory=yes, resizable=yes'); return false" &gt;medlemsvillkoren&lt;/a&gt;</readacceptedterms>
+      <tabs>
+        <street>Gata</street>
+        <box>Stoppställe/Postbox</box>
+        <otherpayer>Fakturamottagare</otherpayer>
+        <directdebitotherpayer>Autogirobetalare</directdebitotherpayer>
+      </tabs>
+      <forms>
+        <mandatoryinformation>= obligatoriska uppgifter</mandatoryinformation>
+        <firstname>Förnamn</firstname>
+        <firstname.message>Fyll i ett förnamn</firstname.message>
+        <lastname>Efternamn</lastname>
+        <lastname.message>Fyll i ett efternamn</lastname.message>
+        <careof>C/O</careof>
+        <company>Företag</company>
+        <street>Gatuadress</street>
+        <street.message>Fyll i en gatuadress</street.message>
+        <streetnumber>Nr</streetnumber>
+        <streetnumber.message>Fyll i nummer</streetnumber.message>
+        <entrance>Uppgång</entrance>
+        <floor>Tr</floor>
+        <flatnumber>Lgh nr</flatnumber>
+        <zip>Postnummer</zip>
+        <zip.message>Postnumret är ogiltigt</zip.message>
+        <city>Ort</city>
+        <city.message>Fyll i en ort</city.message>
+        <mobile>Mobiltelefon</mobile>
+        <mobile.message>Telefonnumret är ogiltig</mobile.message>
+        <email>Personlig e-postadress</email>
+        <email.message>E-postadressen är ogiltig</email.message>
+        <postbox>Stoppställe eller Box</postbox>
+        <postbox.message>Fyll i stoppställe eller box</postbox.message>
+        <orgnumber>Org.nr</orgnumber>
+        <orgnumber.message>Du måste ange ett giltigt organisationsnummer</orgnumber.message>
+        <attention>Attention</attention>
+        <codeform>
+          <heading>Fyll i din personliga kod nedan och ta del av erbjudandet.</heading>
+          <personalcode>Personlig kod</personalcode>
+          <personalcode.message>Du måste fylla i din kod</personalcode.message>
+        </codeform>
+        <next>Gå vidare</next>
+        <send>Skicka</send>
+        <studentverification>&lt;br&gt;Vi kan tyvärr inte verifiera att du är heltidsstudent. Verifiering görs via CSN:s register för studiestöd.&lt;br&gt;Om du är heltidsstudent: skicka uppgifterna ovan samt ett studieintyg till &lt;a href='mailto:pren@di.se'&gt;pren@di.se&lt;/a&gt; så hjälper vi dig.</studentverification>
+        <socialsecurityerror>&lt;br&gt;Ange födelsedatum</socialsecurityerror>
+      </forms>
+      <directdebit>
+        <header>Autogiro</header>
+        <checkboxtext>Ja, jag har laddat hem &lt;a href='http://dagensindustri.se/Documents/Medgivande_Autogiro_Privat.pdf' target='_blank'&gt;medgivandeblanketten&lt;/a&gt; för autogiro</checkboxtext>
+        <aboutform>Om medgivandeblanketten</aboutform>
+        <terms>
+          Erbjudandet gäller ett år och betalning sker via autogiro. Klicka på länken för att ladda hem medgivandeblanketten 
+          i PDF format. Fyll i alla uppgifter och godkänn villkoren. Returnera blanketten till: Dagens industri, att: Kundtjänst, 
+          113 90 Stockholm. Du binder dig till en 12 månaders prenumeration med en 3 månaders uppsägningstid. Om vi ej erhållit 
+          ditt och bankens medgivande inom 7 dagar kommer betalning ske via faktura med betalningstid 20 dagar.
+          &lt;br /&gt;&lt;br /&gt;
+          För att läsa blanketten behöver du en PDF-läsare. Om du inte har det kan du ladda ner en gratis
+          &lt;a href="http://get.adobe.com/se/reader/" target="_blank"&gt;här&lt;/a&gt;
+        </terms>
+        <personalinfo>
+          "För att underlätta god service och korrekt administration/leverans av din prenumeration använder vi oss av modern
+          informationsteknik för behandling av de uppgifter du lämnar oss. Personuppgifter som du lämnar oss vid
+          prenumerationstillfället, eller som medlem i di.se behandlas av oss för administration och fullgörelse av
+          prenumerationsåtagandet, för vidatagande av åtgärder som du begärt före och efter tecknande av prenumeration.
+          &lt;br /&gt;&lt;br /&gt;
+          Dagens Industri säljer inte, och lämnar inte ut, personuppgifter om sina prenumeranter till företag utanför Bonnier AB.
+          Däremot kan du som prenumerant bli erbjuden varor eller tjänster från oss eller andra företag inom Bonnier AB.
+          Personuppgifterna kan komma att kompletteras genom inhämtning från privata och offentliga register vid t ex uppdatering
+          av adressuppgifter.
+          &lt;br /&gt;&lt;br /&gt;
+          Önskar du inte ta del av ev erbjudanden kan du skicka ett email till pren@di.se eller faxa till 08-573 652 20. Du kan
+          också ringa vår kundtjänst på tel 08-573 651 00.
+          &lt;br /&gt;&lt;br /&gt;
+          Du är välkommen att ta del av de personuppgifter vi har om dig, och vid behov begära rättelse, genom att inkomma med en
+          skriftlig, av dig egenhändigt undertecknad, begäran till PUL-ansvarig, Dagens Industri, 113 90 Stockholm".
+        </personalinfo>
+      </directdebit>
+      <campaignsidebar>
+        <readmore>Läs mer</readmore>
+      </campaignsidebar>
+    </dicampaign>
+    <freeplussubs>
+      <clickhere>Klicka här för att få Dagens industri gratis i din läsplatta hela sommaren.</clickhere>
+      <contactus>Tyvärr har ett fel uppstått. För att ta del av erbjudande måste du kontakta vår kundtjänst på tel 08-573 651 00 så hjälper vi dig gärna.</contactus>
+      <alreadyapplied>Enligt vårt prenumerationssytem har du redan ansökt om detta erbjudande. Var god kontakta kundtjänst på tel 08-573 651 00 vid frågor.</alreadyapplied>
+      <thankyou>Tack, vi aktiverar nu din prenumeration gratis hela sommaren. Har du sedan tidigare ett Di-konto loggar du in med befintligt användarnamn och lösenord. Är du ny läsplatteläsare kommer du att få ett mejl med dina inloggningsuppgifter.&lt;br&gt;Trevlig sommarläsning!</thankyou>
+    </freeplussubs>
+    <signup>
+      <price>Pris</price>
+      <SEK>kr</SEK>
+      <st>st</st>
+      <exmoms>*ex moms</exmoms>
+      <book>Boka</book>
+      <apply>Anmäl</apply>
+      <paywith>Betala med</paywith>
+      <creditcard>Kort</creditcard>
+      <invoice>Faktura</invoice>
+      <discountcode>Rabattkod</discountcode>
+      <nextbutton>Nästa</nextbutton>
+      <backbutton>Tillbaka</backbutton>
+      <gasell>Gasell</gasell>
+      <flow>
+        <forms>
+          <firstname>Förnamn</firstname>
+          <firstname.message>Fyll i ett förnamn</firstname.message>
+          <lastname>Efternamn</lastname>
+          <lastname.message>Fyll i ett efternamn</lastname.message>
+          <mail>E-post</mail>
+          <mail.message>E-postadressen är ogiltig</mail.message>
+          <phone>Telefon</phone>
+          <phone.message>Fyll i ett telefonnummer</phone.message>
+          <company>Företag</company>
+          <company.message>Fyll i företag</company.message>
+          <title>Befattning</title>
+          <title.message>Fyll i din befattning</title.message>
+          <address>Gatuadress</address>
+          <address.message>Fyll i en gatuadress</address.message>
+          <addressnumber>Nr</addressnumber>
+          <addressnumber.message>Fyll i ett gatunummer</addressnumber.message>
+          <zip>Postnummer</zip>
+          <zip.message>Postnumret är ogiltigt</zip.message>
+          <city>Ort</city>
+          <city.message>Fyll i en ort</city.message>
+          <gasellcompany>Gasellföretag</gasellcompany>
+          <gasellcompanystrong>&lt;strong&gt;Gasellf&#246;retag&lt;/strong&gt;</gasellcompanystrong>
+          <branch>Bransch</branch>
+          <employeesnumber>Antal anställda</employeesnumber>
+          <orgnr>
+            Org. nr. <i>(XXXXXX-XXXX)</i>
+          </orgnr>
+          <orgnr.message>Org. nr. måste vara i formen XXXXXX-XXXX</orgnr.message>
+          <invoiceaddress>Fakturaadress</invoiceaddress>
+          <invoiceaddress.message>Fyll i en fakturaadress</invoiceaddress.message>
+          <invoicereference>Fakturareferens</invoicereference>
+          <invoicereference.message>Fyll i en fakturareferens</invoicereference.message>
+          <discountcode.message>Du måste fylla i en rabattkod</discountcode.message>
+        </forms>
+        <text>
+          <ticket>biljett</ticket>
+          <tickets>biljetter</tickets>
+          <quantity>st</quantity>
+          <to>till</to>
+          <totalprice>Totalt pris:</totalprice>
+          <sek>kr</sek>
+          <withouttaxes>ex moms.</withouttaxes>
+          <registeredparticipants>Anmälda deltagare</registeredparticipants>
+          <welcomeconfirmation>Varmt välkommen till DI Gasell i</welcomeconfirmation>
+        </text>
+        <sidebar>
+          <step1.text>Registrera deltagare</step1.text>
+          <step2.text>Bekräfta beställning</step2.text>
+          <step3.text>Betala</step3.text>
+          <step4.text>Kvitto</step4.text>
+          <step>Steg</step>
+          <of>av</of>
+          <step1>1</step1>
+          <step2>2</step2>
+          <step3>3</step3>
+          <step4>4</step4>
+          <totalsteps>4</totalsteps>
+        </sidebar>
+      </flow>
+      <mail>
+        <confirmation>
+          <subject>Välkommen till DI Gasell i {0}</subject>
+          <body>
+            &lt;b&gt;Varmt välkommen till DI Gasell i {0}, {1},  kl {2}&lt;/b&gt; &lt;br/&gt;
+            Pris: {3} kr ex moms – betalat med {4}. &lt;br/&gt; &lt;br/&gt;
+            Anmälan är bindande men kan överlåtas till en kollega.&lt;br/&gt; &lt;br/&gt;
+            Tack för din anmälan! &lt;br/&gt; &lt;br/&gt;
+            &lt;b&gt;Med vänlig hälsning &lt;/b&gt; &lt;br/&gt;
+            &lt;b&gt;Di Gasell&lt;/b&gt; &lt;br/&gt; &lt;br/&gt;
+            Vänligen kontakta oss via &lt;a href="mailto:gasell@di.se"&gt;gasell@di.se&lt;/a&gt; om ni har frågor.
+          </body>
+        </confirmation>
+      </mail>
+    </signup>
+    <signupgoldfriend>
+      <fullybooked>Evenemanget är tyvärr fullbokat.</fullybooked>
+      <bookingone>Fyll i bokningsformuläret här:</bookingone>
+      <bookingfriends>Fyll i bokningsformuläret och anmäl ditt sällskap här:</bookingfriends>
+      <thanks>Tack för din beställning!</thanks>
+      <mailsent>Ett bekräftelsemejl har skickats till din e-postadress</mailsent>
+      <error>Ett teknisk fel uppstod. Vänligen kontakta vår kundtjänst på tel 08-573 651 00 så hjälper vi dig.</error>
+      <dimail>no-reply@di.se</dimail>
+      <bookingconf>Bokningsbekräftelse</bookingconf>
+      <mailend>&lt;br&gt;&lt;br&gt;Varmt välkommen!&lt;br&gt;Dagens industri</mailend>
+      <confpers>Vi bekräftar att följande personer är anmälda:</confpers>
+    </signupgoldfriend>
+    <camptip>
+      <noaccesstext>Endast identifierade användare tillåts se denna sida</noaccesstext>
+      <notipsleft>Du har redan utnyttjat dina tre gåvor. Har du frågor så kontakta kundtjänst på tel 08-573 651 00.</notipsleft>
+      <thankyou>&lt;h2&gt;Tack! Vi vidarebefordrar din gåva och önskar dig en god avslutning på året.&lt;/h2&gt;</thankyou>
+      <tipmail>Tips om Di-erbjudande&lt;br&gt;&lt;br&gt;[#Till erbjudandet!#]&lt;br&gt;&lt;br&gt;Med vänlig hälsning&lt;br&gt;Dagens industri</tipmail>
+      <error>Ett tekniskt fel uppstod. Var god försök igen eller kontakta vår kundtjänst.</error>
+      <mailheadtip1>vill tipsa dig om ett Di-erbjudande</mailheadtip1>
+      <mailheadtip2>Tips om Di-erbjudande</mailheadtip2>
+      <tipformheaderone>Ange uppgifter för den person du vill tipsa</tipformheaderone>
+      <tipformheaderseveral>Ange uppgifter för de personer du vill tipsa</tipformheaderseveral>
+    </camptip>
+    <promofferjoingold>
+      <error>Ett tekniskt fel uppstod. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</error>
+      <custnotfound>Kunddata hittas ej. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</custnotfound>
+      <usedoffer>Du tycks tyvärr redan utnyttjat erbjudandet. Vid frågor vänligen kontakta vår kundtjänst på tel 08-573 651 00.</usedoffer>
+      <loginforpromotionaloffer>För att beställa {0} behöver du vara inloggad.&lt;br&gt;&lt;a href="{1}" &gt;Klicka här&lt;/a&gt; för att logga in.</loginforpromotionaloffer>
+    </promofferjoingold>
+    <withfriendsjoingold>
+      <headerfriends>&lt;p&gt;Bokningsuppgifter för ditt sällskap:&lt;/p&gt;</headerfriends>
+      <goldformheader>Uppgifter för Di Guld och din bokning</goldformheader>
+      <bookingone>Fyll i bokningsformuläret:</bookingone>
+      <bookingfriends>Fyll i bokningsformuläret för dig och ditt sällskap:</bookingfriends>
+      <fullybooked>Evenemanget är tyvärr fullbokat.</fullybooked>
+      <error>Ett tekniskt fel uppstod. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</error>
+      <custnotfound>Kunddata hittas ej. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</custnotfound>
+      <usedoffer>Erbjudandet är redan utnyttjat. Vid frågor vänligen kontakta vår kundtjänst på tel 08-573 651 00.</usedoffer>
+      <loginforpromotionaloffer>För att anmäla dig behöver du vara inloggad som prenumerant.&lt;br&gt;&lt;a href="{0}" &gt;Klicka här&lt;/a&gt; för att logga in.</loginforpromotionaloffer>
+      <thanks>Tack för din beställning!</thanks>
+      <mailsent>Ett bekräftelsemejl har skickats till din e-postadress</mailsent>
+      <error>Ett teknisk fel uppstod. Vänligen kontakta vår kundtjänst på tel 08-573 651 00 så hjälper vi dig.</error>
+      <dimail>no-reply@di.se</dimail>
+      <bookingconf>Bokningsbekräftelse</bookingconf>
+      <mailend>&lt;br&gt;&lt;br&gt;Varmt välkommen!&lt;br&gt;&lt;br&gt;Dagens industri</mailend>
+      <confpers>Vi bekräftar att följande personer är anmälda:</confpers>
+    </withfriendsjoingold>
+    <apsisSubsList>
+      <nolistid>Apsis list id måste anges</nolistid>
+      <notloggedin>För att prenumerera behöver du vara inloggad.&lt;br&gt;&lt;a href="{0}" &gt;Klicka här&lt;/a&gt; för att logga in eller för att ta reda på dina uppgifter.</notloggedin>
+      <subsadded>Tack! Du prenumererar nu på tjänsten. Nästa fredag skickar vi ditt första sms med Per Styregårds personliga favoritviner.</subsadded>
+      <subsremoved>Din prenumeration har avslutats</subsremoved>
+      <error>Ett tekniskt fel uppstod. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</error>
+    </apsisSubsList>
+  </language>
+</languages>

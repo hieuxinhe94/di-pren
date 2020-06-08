@@ -1,0 +1,90 @@
+﻿/** General styles ******************************************************/
+
+body
+{
+  font-family: Verdana;
+  background-color: white;
+}
+
+.mg00 { margin: 0px; }
+
+
+/** Article styles ******************************************************/
+
+.artnavigator
+{
+  font-size: 10px;
+  padding-left: 15px;
+}
+
+.artnavigator a:link, .artnavigator a:visited
+{
+  text-decoration: none;
+  color: black;
+}
+.artnavigator a:hover
+{
+  text-decoration: underline;
+}
+
+.artheader { font-size: 21px; font-weight: bold; padding-left: 8px; }
+.artbody   { font-size: 12px; padding: 10px; line-height: 15px; }
+
+
+/** Page styles *********************************************************/
+
+.overlay table
+{
+  background-color: gray;
+  cursor: pointer; cursor: hand;
+  filter: alpha(opacity=20);
+  -moz-opacity:0.2;
+}
+
+.overlays table
+{
+  background-color: #CC3300;
+  cursor: pointer; cursor: hand;
+  filter: alpha(opacity=30);
+  -moz-opacity:0.3;
+}
+
+.popuptable
+{
+  border: 1px solid black;
+}
+
+.popupheader
+{
+  background-color: #DEC7BB;
+  font-family: Verdana;
+  font-size: 8pt;
+  font-weight: bold;
+  line-height: 13px;
+  color: black;
+  filter: alpha(Opacity=100, FinishOpacity=100, Style=2, StartX=0, StartY=0, FinishX=0, FinishY=0);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.popupabstract
+{
+  background-color: #FEEDE4;
+  font-family: Verdana;
+  font-size: 8pt;
+  color: black;
+  filter: alpha(Opacity=100, FinishOpacity=100, Style=2, StartX=0, StartY=0, FinishX=0, FinishY=0);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.popupfooter
+{
+  background-color: #F0D9CD;
+  border-top: 1px solid black;
+  font-family: Verdana;
+  font-size: 8pt;
+  color: black;
+  text-align: center;
+  filter: alpha(Opacity=100, FinishOpacity=100, Style=2, StartX=0, StartY=0, FinishX=0, FinishY=0);
+}

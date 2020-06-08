@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <language name="Svenska" id="SV">
+    <imagelistselector>
+      <propertydisplay>Click to view {0} selected items</propertydisplay>
+      <missingpagelink>javascript:alert('The page could not be found. Please advise the web master.');return false;</missingpagelink>
+      <requiredproperty>{0} cannot be empty.</requiredproperty>
+      <clearconfirm>Are you sure you want to clear the selected links?</clearconfirm>
+      <clearbuttontext>Clear Links</clearbuttontext>
+      <columnheadings>
+        <type>Type</type>
+        <pagename>Url</pagename>
+        <moveup>Move Up</moveup>
+        <movedown>Move Down</movedown>
+        <edit>Edit</edit>
+        <delete>Delete</delete>
+        <alternatetext>Link title</alternatetext>
+      </columnheadings>
+      <pagetext>
+        <title>Image List And Flash Selection</title>
+        <introduction>
+          &lt;p&gt;This control allows you to create a list of objects consist of an image and a link (either EPiServer or external). &lt;/p&gt;
+          &lt;p&gt;This control also supports adding flash objects. When uploading a flash object, you need to specify the height and width.&lt;/p&gt;
+          &lt;p&gt;Use the buttons below to add new pair (image and a link), or a flash object.&lt;/p&gt;
+        </introduction>
+        <testlinktitle>Test</testlinktitle>
+        <addlinkbuttontext>...</addlinkbuttontext>
+        <addlinkedimage>Add linked image</addlinkedimage>
+        <addflash>Add flash</addflash>
+        <errormessage>Please specify both Image and Page Link!</errormessage>
+        <edit>Edit</edit>
+      </pagetext>
+      <creatorcommon>
+        <urlheading>Resource Url</urlheading>
+      </creatorcommon>
+      <imagecreator>
+        <title>Linked Image Wizard</title>
+        <introduction>
+          This control allows you to create an object consist of an image and a link to the either EPServer page or external website.
+        </introduction>
+        <heading>Link</heading>
+        <addlinkbuttontext> Select link </addlinkbuttontext>
+        <addimagebuttontext>Select image</addimagebuttontext>
+        <alttext>Alternative text</alttext>
+        <editlinkbuttontext>Edit link</editlinkbuttontext>
+        <editimagebuttontext>Edit picture</editimagebuttontext>
+      </imagecreator>
+      <flashcreator>
+        <title>Flash Resource Wizard</title>
+        <introduction>
+          This control allows you to upload a flash object, and specify its height and width. Any links need to be handled inside the flash itself.
+        </introduction>
+        <heading>Flash settings</heading>
+        <addimagebuttontext>Add flash</addimagebuttontext>
+        <height>Height</height>
+        <width>Width</width>
+        <addimagebuttontext>Add flash</addimagebuttontext>
+        <editlinkbuttontext>Edit lenke</editlinkbuttontext>
+        <editimagebuttontext>Edit flash</editimagebuttontext>
+      </flashcreator>
+      <button>
+        <add>Add</add>
+        <insert>Update</insert>
+        <cancel>Cancel</cancel>
+        <moveupalt>Moves the object up one position in the list</moveupalt>
+        <movedownalt>Moves the object down one position in the list</movedownalt>
+        <deletealt>Removes the object from the list</deletealt>
+      </button>
+      <errormessage>
+        <notspecified>[Not specified]</notspecified>
+        <imagemissing>Image has not been specified</imagemissing>
+        <flashmissing>Flash object not specified</flashmissing>
+        <heightwidtmissing>Height and Width must be specified for a flash resource</heightwidtmissing>
+        <urlnotspecified>[Url not specified]</urlnotspecified>
+      </errormessage>
+    </imagelistselector>
+  </language>
+</languages>

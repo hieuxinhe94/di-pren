@@ -1,0 +1,73 @@
+﻿@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.MySettings.Di.MySettingsViewModel
+           
+@{ Layout = "~/Views/Shared/Layouts/Di/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.ContentArea, new
+{
+    CssClass = "row clearmargin contentblocks",
+    Tag = RenderingConstants.ContentAreaTags.FullWidthClear,
+})
+
+<div class="modal fade" id="forbidden-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Meddelande</h4>
+            </div>
+            <div class="modal-body">
+                <p>Du har varit inaktiv en längre tid och behöver ladda om sidan.</p>
+                <a href="@Url.ContentUrl(Model.CurrentPage.ContentLink)" class="btn btn-lg btn-primary">Ladda om sidan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="error-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Tekniskt fel</h4>
+            </div>
+            <div class="modal-body">
+                <p>Ett tekniskt fel har uppstått, vänligen ladda om sidan.</p>
+                <a href="@Url.ContentUrl(Model.CurrentPage.ContentLink)" class="btn btn-lg btn-primary">Ladda om sidan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="feedback-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Meddelande</h4>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="modal-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="load-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4>Dina uppgifter hämtas ...</h4>
+                <img src="~/Static/img/ajax-loader.gif" alt="Dina uppgifter hämtas"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="anchor" value="@Model.Anchor"/>

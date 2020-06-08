@@ -1,0 +1,49 @@
+﻿<h3>Kommande uppehåll</h3>
+
+<% if(items.length){%>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Från och med</th>
+                <th>Till och med</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% _.each(items, function(sleep){ %>
+            <tr data-id="<%= sleep.Id %>">
+                <td>
+                    <span><%= sleep.StartDate.substring(0,10) %></span>
+                    <% if(!sleep.IsOngoing){%>
+                    <input type="text" class="startDate form-control dateinput displaynone" autocomplete="off" data-orgdate="<%= sleep.StartDate.substring(0,10) %>" value="<%= sleep.StartDate.substring(0,10) %>" />
+                    <% } else { %>
+                    <input type="text" disabled class="startDate form-control dateinput displaynone" autocomplete="off" data-orgdate="<%= sleep.StartDate.substring(0,10) %>" value="<%= sleep.StartDate.substring(0,10) %>" />
+                    <% } %>
+                </td>
+                <td>
+                    <span><%= sleep.EndDate.substring(0,10) %></span>
+                    <input type="text" class="endDate form-control dateinput displaynone" autocomplete="off" data-orgdate="<%= sleep.EndDate.substring(0,10) %>" value="<%= sleep.EndDate.substring(0,10) %>" />
+                </td>
+                <td>
+                    <a href="#" class="editBtn" title="Redigera uppehåll">Redigera</a>
+                    <a href="#" class="saveBtn displaynone" title="Spara uppehåll">Spara</a>
+                    <a href="#" class="undoBtn displaynone" title="Avbryt">Avbryt</a>
+                </td>
+                <td>
+                    <% if(!sleep.IsOngoing){%>
+                    <a href="#" class="deleteBtn" title="Ta bort uppehåll" data-startdate="<%= sleep.StartDate.substring(0,10) %>" data-enddate="<%= sleep.EndDate.substring(0,10) %>">Ta bort</a>
+                    <% } %>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<% } else { %>
+<em class="text--deemphasized">Du har inga kommande uppehåll</em>
+<% } %>
+
+
+

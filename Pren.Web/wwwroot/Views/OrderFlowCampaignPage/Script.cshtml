@@ -1,0 +1,16 @@
+﻿@model Pren.Web.Models.ViewModels.CampaignScriptViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Model.Title</title>
+    @Html.Raw(Model.ScriptHead)
+</head>
+    <body>
+        <input type="hidden" id="confirmation-mail" class="confirmation-mail" value="@Model.Email" />
+        <input type="hidden" id="order-number" value="@Model.OrderNumber" />
+        <input type="hidden" id="order-amount" value="@Model.OrderAmount" />
+        @Html.Raw(Model.ScriptBody)
+    </body>
+</html>

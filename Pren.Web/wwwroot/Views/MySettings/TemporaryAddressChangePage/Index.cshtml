@@ -1,0 +1,113 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.TemporaryAddressChangePageViewModel
+           
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (Model.FutureTempAddresses != null && Model.FutureTempAddresses.Any())
+{
+    <div class="w-margin-top">
+        <div class="heading">Framtida tillfälliga adresser</div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Adress</th>
+                    <th scope="col">Från och med</th>
+                    <th scope="col">Till och med</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var address in Model.FutureTempAddresses)
+                {
+                    <tr>
+                        <td>@address.StreetAddress @address.StreetNumber</td>
+                        <td>@address.StartDate.ToString("yyyy-MM-dd")</td>
+                        <td>@address.EndDate.ToString("yyyy-MM-dd")</td>
+                        <td>
+                            @if (!address.IsOngoing)
+                            {
+                                @Html.ActionLink("Radera", "DeleteAddress", "TemporaryAddressChangePage", new { addressId = address.Id, sid = Model.AddressForm.SubscriptionNumber }, new { @class = "delete-address-link" })
+                            }                            
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+<button class="btn btn-primary" id="show-address-form" title="Nytt uppehåll" data-targetevent="show" data-targetselector="#tmpchange-form">Ny adressändring</button>
+
+
+<div id="tmpchange-form" class="displaynone w-margin-top">
+
+    <div class="heading">Ny tillfällig adressändring</div>
+    <div class="row">
+        <div class="col-md-6">
+            @Html.DropDownList("TempAddresses", Model.TempAddresses, new { @class = "form-control", id = "temp-addresses" })
+        </div>
+        <div class="col-md-6">
+            eller <a href="#" id="new-temporary-address">Skapa ny adress</a>
+        </div>
+    </div>
+
+    <div id="address-form-w"  class="w-margin-top displaynone">
+        @{ Html.RenderPartial("~/Views/MySettings/Shared/_AddressForm.cshtml", Model.AddressForm); }
+    </div>
+</div>
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+        
+        $("#show-address-form").display({
+            event: "click",
+            callback: function () { $("#show-address-form").hide(); }
+        });
+
+        var scroller = new Scroller({
+            scrollOnLoad: true,
+            scrollToThis: $(".message")
+        });
+
+        // Set up client objects
+        var addressList = new AddressList($(".future-address"));
+        var addressDropDown = new AddressDropDown($("#temp-addresses"));
+        var addressForm = new AddressForm($("#address-form"));
+        var addressFormWrapper = $("#address-form-w");
+        var addressFormInitButton = new AddressFormInitButton($('#new-temporary-address'));
+        var addressData = new AddressData();
+        var dateHandler = new DateHandler($(".dateinput"), '@Model.EarliestChangeDate.ToString("yyyy-MM-dd")');
+        
+        // Initiate the addressList - will set up click events on delete buttons
+        addressList.init();
+
+        // Initiate datepickers
+        dateHandler.init();
+
+        // Subscribe to addressDropdownChange event - is fired when a value is selected in the address dropdown  
+        $(document).on('addressDropdownChange', function (evt, addressId) {
+            // Clear all inputs in the address form
+            addressForm.clearForm();
+
+            // Get address data and populate the form with it
+            addressData.get('@Url.Action("GetTempAddress", "TemporaryAddressChangePage")', addressId, function (address) {                
+                addressForm.populate(address);
+                addressFormWrapper.show();
+            });            
+        });
+
+        // Subscribe to initAddressFormClick - is fired when the "Skapa ny address" link is clicked
+        $(document).on("initAddressFormClick", function () {
+            // Reset dropdown to index 0
+            addressDropDown.setSelectedIndex(0);
+
+            // Clear and show the address form
+            addressForm.clearForm();
+            addressFormWrapper.show();
+        });
+    </script>
+}

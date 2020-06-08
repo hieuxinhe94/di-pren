@@ -1,0 +1,87 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.PermanentAddressChangePageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+<div class="w-margin-top">
+    @{
+        if (Model.Subscriber != null)
+        {
+            Html.RenderPartial("~/Views/MySettings/PermanentAddressChangePage/_CurrentAddress.cshtml", Model.Subscriber.SelectedSubscription.KayakCustomer);
+        }
+    }
+</div>
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (Model.FuturePermAddresses != null && Model.FuturePermAddresses.Any())
+{
+    <div class="w-margin-top">
+        <div class="heading">Framtida permanent adress</div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Adress</th>
+                    <th scope="col">Från och med</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var address in Model.FuturePermAddresses)
+                {
+                    <tr>
+                        <td>@address.Street1</td>
+                        <td>@address.StartDate.ToString("yyyy-MM-dd")</td>
+                        <td>
+                            @Html.ActionLink("Redigera", "EditAddress", "PermanentAddressChangePage", null, null)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Radera", "DeleteAddress", "PermanentAddressChangePage", 
+                                null, 
+                                new
+                                {
+                                    @class = "delete", 
+                                    data_confirm = "Är du säker på att du vill radera adressen?"
+                                })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (!string.IsNullOrEmpty(Model.AddressForm.StreetAddressForm.StreetAddress))
+        {
+            Html.RenderPartial("~/Views/MySettings/Shared/_AddressForm.cshtml", Model.AddressForm);
+        }
+    </div>
+}
+else
+{
+    <button class="btn btn-primary" id="show-address-form" title="Ny permanent adress" data-targetevent="show" data-targetselector="#permanent-address">Ny permanent adress</button>   
+
+    <div id="permanent-address" class="w-margin-top displaynone">
+        <div class="heading">NY PERMANENT ADRESS</div>
+        @{ Html.RenderPartial("~/Views/MySettings/Shared/_AddressForm.cshtml", Model.AddressForm); }
+    </div>
+}
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+        var dateHandler = new DateHandler($(".dateinput"), '@Model.EarliestChangeDate.ToString("yyyy-MM-dd")');
+        dateHandler.init();
+
+        $("#show-address-form").display({
+            event: "click",
+            callback: function () { $("#show-address-form").hide(); }
+        });
+
+        var scroller = new Scroller({
+            scrollOnLoad: true,
+            scrollToThis: $(".message")
+        });
+
+    </script>
+}

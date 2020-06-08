@@ -1,0 +1,54 @@
+﻿
+<% if(invoices.length){%>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Fakturanr/OCR</th>
+                    <th>Förfallodatum</th>
+                    <th>Belopp</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% _.each(invoices, function(invoice){ %>
+                <tr>
+                    <td><%= invoice.InvoiceNumber %></td>
+                    <td>
+                        <% if(invoice.DueDate) {%> 
+                            <span><%= invoice.DueDate.substring(0,10) %></span>
+                        <% } %>
+                    </td>
+                    <td><%= invoice.InvoiceAmount %> kr</td>
+                    <td>
+                        <% if(invoice.InvoicePayed){%>
+                            <span class="green">
+                                <i class='fa fa-check'></i> 
+                            </span>
+                        <% } else { %>
+                            <span class="red">
+                                <i class="fa fa-times"></i>
+                            </span>
+                        <% } %>  
+                    </td>
+                    <td>
+                        <% if(invoice.InvoiceGuid != null){%>
+                        <a href="pdf/<%= customerNumber %>/<%= invoice.InvoiceGuid %>" target="_blank">Visa</a>
+                        <% } else { %>
+                            <span>Fakturan behandlas</span>
+                        <% } %>  
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+<% } else { %>
+    <p><em>Du har inga fakturor</em></p>
+<% } %>   
+
+
+
+

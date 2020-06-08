@@ -1,0 +1,35 @@
+﻿@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.PageViewModel<Pren.Web.Models.Pages.TextPage>
+@{
+    Layout = "~/Views/Shared/Layouts/_Root.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    <link href="~/Static/css/global.css" rel="stylesheet" />
+}
+
+<div class="container container-text">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 @Html.EditAttributes(x => x.CurrentPage.Heading)>
+                @(Model.CurrentPage.Heading ?? Model.CurrentPage.PageName)
+            </h1>
+
+            @Html.PropertyFor(x => x.CurrentPage.MainBody)
+        </div>
+    </div>
+</div>
+
+@if (Model.CurrentPage.FooterContentArea != null)
+{
+    @section Footer{
+        @Html.PropertyFor(model => model.CurrentPage.FooterContentArea, new {CssClass = "footer-item", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth})
+    }
+}
+else
+{
+    @section Footer{
+        @Html.PropertyFor(model => model.Layout.MySettings.FooterContentArea, new { CssClass = "footer-item", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+    }
+}

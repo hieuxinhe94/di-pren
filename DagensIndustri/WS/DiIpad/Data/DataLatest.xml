@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Parameters:-->
+<!--top: Number of top-articles (from di.se) to return.-->
+<!--latest: Number of latest articles (from di.se) to return.-->
+<!--artids: Commaseparated list of id's for articles to return.-->
+<!--text: Include text in articles (0/1).-->
+<!--teaser: Include teaser text for articles (0/1).-->
+<!--artcomments: Include number of article comments (0/1).-->
+<!--comments: Include comments in XML (0/1).-->
+<!--dtd: Include reference to DTD (0/1).-->
+<!--features: Include feature teasers instead main teasers (0/1)-->
+<NewsML>
+  <NewsEnvelope>
+    <DateAndTime>20120214T152907+0100</DateAndTime>
+    <CommentsConfiguration>
+      <CommentOnHourRegular>7</CommentOnHourRegular>
+      <CommentOffHourRegular>24</CommentOffHourRegular>
+      <CommentOnHourWeekend>7</CommentOnHourWeekend>
+      <CommentOffHourWeekend>18</CommentOffHourWeekend>
+    </CommentsConfiguration>
+  </NewsEnvelope>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T152721+0100</DateId>
+        <NewsItemId>259157</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T152721+0100:259157:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T152721+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T152721+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>Kommentar: Många hinder kvar för Grekland</HeadLine>
+              <byline>
+                <person>Viktor Munkhammar</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Greklands ekonomi krympte med 7 procent under det fjärde kvartalet. Det är en påminnelse om att landet har en lång väg att vandra. Även om trojkan går med på ett nytt lån väntar ett oklart läge efter vårens val.</block>
+              <block>BNP-raset i Grekland accelererar. Efter att ha minskat med 5 procent i årstakt under det tredje kvartalet i fjol, krympte ekonomin med 7 procent under det fjärde. Det visar preliminära siffror. Det branta fallet är en påminnelse om att söndagens omröstning i parlamentet om nya åtstramningar knappast var det sista hindret på vägen mot en återhämtning.
+Till att börja med var parlamentets ja bara det första av tre villkor som den så kallade trojkan, bestående av IMF, ECB och EU, ställt för att gå med ett nytt nödlån. Grekland måste också hitta ytterligare besparingar på 325 miljoner euro, motsvarande 2,9 miljarder kronor, och dessutom ska partierna i regeringskoalitionen förbinda sig att följa uppgörelsen också efter de val som ska hållas i april. Detta ska, åtminstone på papperet, ske före onsdagens möte med EMU:s finansministrar.
+Om det ändå blir ett nytt nödlån, vilket mycket trots allt talar för, finns åtminstone två stora frågetecken till.
+För det första är det tveksamt om pengarna kommer att räcka för att täcka Greklands finansieringsbehov tills landets ekonomi är på fötter. Hittills har landet mest stramat åt men inte genomfört särskilt många reformer som förbättrar tillväxtpotentialen. Det är ett recept för fortsatt recession.
+För det andra väntar parlamentsval i Grekland i april. Även om de två stora partierna i dagens regeringskoalition, högerpartiet ND och socialdemokratiska Pasok, förbinder sig att även efter valet hålla fast vid det senaste åtstramningspaketet (det minsta, högerextrema Laos, vägrar, vilket trojkan verkar ha överseende med) kommer parlamentet med största sannolikhet att ha en helt annan sammansättning efter valet.
+Får man tro opinionsmätningarna är det långt ifrån självklart att ND och Pasok, som dessutom är de traditionella ärkefienderna i grekisk politik, tillsammans får majoritet. Pasok har enligt opinionsmätningar så lite som 8 procent i väljarstöd medan kommunistpartiet ligger kring 15 procent. Det innebär att Grekland om två månader kan ha ett parlament som blankt avfärdar åtstramningspolitiken.
+Vad som händer då är oklart. Vad som är klart är att söndagens ja i Aten inte på något sätt garanterar att Grekland kommer att vara kvar i EMU.</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T151728+0100</DateId>
+        <NewsItemId>259173</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T151728+0100:259173:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T151728+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T151728+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>EU varnar Sverige</HeadLine>
+              <byline>
+                <person>Nyhetsbyrån Direkt</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">EU-kommissionen startar fördjupad granskning av Sverige och elva andra EU-länder av stora makroekonomiska obalanser.</block>
+              <block>Det tillkännagav kommissionen i ett pressmeddelande på tisdagen.
+Faran för Sverige är ökad skuldsättning bland hushållen, "som nu är på höga nivåer trots en inbromsning av kredittillväxten".
+"Detta speglar en mycket snabb ökning av huspriser under de senaste 15 åren, som bara har börjat stabiliseras nyligen", skrev kommissionen.
+De övriga elva länderna är Belgien, Bulgarien, Cypern, Danmark, Finland, Frankrike, Italien, Slovenien, Spanien, Storbritannien och Ungern.</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T151639+0100</DateId>
+        <NewsItemId>259172</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T151639+0100:259172:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="2" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T151639+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T151639+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>USA-börser: Boeing och detaljhandel i fokus</HeadLine>
+              <byline>
+                <person>Nyhetsbyrån Direkt</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Terminerna för de ledande amerikanska börsindexen var svagt ned inför tisdagens öppning.</block>
+              <block>Sentimentet tyngdes på marginalen av att försäljningen i amerikansk detaljhandel steg något mindre än väntat i januari. Boeing steg i förhandeln efter att ha fått en stororder.
+Kring klockan 14.55 var marsterminerna för Dow Jones, Nasdaq och S&amp;amp;P 500 mellan 0,2 och 0,3 procent lägre.
+Boeing steg 1,1 procent sedan det fått en order på 230 flygplan från PT Lion Mentari Airlines med ett ordervärde på 22,4 miljarder dollar, flygplantillverkarens största order av kommersiella plan hittills i såväl antal som värde.
+Apple, som på måndagen nådde ny rekordhögsta kurs på drygt 500 dollar, kan hamna i fokus även under tisdagens handelssession sedan nyhetsbyrån Dow Jones rapporterat att bolaget testar en ny mindre bordsdator med en skärm runt 8 inch. Apple var 0,1 procent upp inför tisdagens handel.
+I ett fullspäckat rapportflöde hittades Goodyear 5,2 procent lägre på en lägre vinst än väntat samt meddelat att den globala däckindustrin väntas växa i långsammare takt till följd av "fortsatt försvagning på flera marknader".
+Avon Products, som är verksamt inom direktförsäljning av smink och konkurrent till Oriflame, redovisade ett resultat som inte nådde upp till analytikernas förväntningar och bolagets aktie tappade nära 5 procent i förhandeln.
+Michael Kors slog förväntningarna såväl rörande resultat som försäljning samt gav positiva utlåtanden kring nuvarande kvartal. Aktien avancerade 17 procent inför öppning.
+Detaljhandelns försäljning i USA steg enbart med 0,4 procent i januari, jämfört med i december, väntat var +0,8 procent. En svagare försäljning av bilar än väntat tyngde.
+Ford backade 0,5 procent medan General Motors var 0,9 procent lägre i förhandeln, från att ha noterats upp inför att datan över detaljhandelsförsäljningen inkom vid 14.30.
+För detaljhandeln exklusive bilar steg försäljningen 0,7 procent, väntat var +0,5 procent.
+På räntemarknaden hade amerikansk tioårig statspappersränta tickat ned 3 punkter till 1,95 procent.</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T145141+0100</DateId>
+        <NewsItemId>259141</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T145141+0100:259141:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T145141+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T145348+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>Schibsted tar över Prisjakt</HeadLine>
+              <byline>
+                <person>Carl-Johan Lejland</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Den norska mediejätten Schibsted utnyttjar bolagets option och ökar ägandet i prisjämförelsesajten prisjakt.nu till 96 procent. Grundarna Jonas Bonde och Franz Hänel sitter nöjda kvar med 2 procent var av aktierna.</block>
+              <block>Schibsted ökar innehavet i&amp;nbsp;Prisjakt, bolaget bakom prisjämförelsesajten prisjakt.nu, till 96 procent. Den norska mediejätten utnyttjar en option från en affär 2006 då Schibsted köpte 70 procent av aktierna av grundarna Jonas Bonde och Franz Hänel.
+”Men jag kommer kvarstå som vd, det ingår i uppgörelsen”, säger vd Jonas Bonde, som startade prisjaktprojektet i sin källare för tolv år sedan.
+Han och Franz Hänel behåller 2 procent var av aktierna i företaget.
+”Jag tycker det här är ruskigt roligt och skulle jag lämna hade jag sålt alla aktier”, säger Jonas Bonde.
+Hur mycket pengar har ni sålt bolaget för?"Det finns en tystnadspliktsklausul i avtalet så det kan jag tyvärr inte kommentera. Men vi är väldigt nöjda.”
+Med ett stort företag i ryggen hoppas Jonas Bonde på en snabbare expansionstakt.
+”Vi kommer att satsa på fler länder i ett högre tempo. Det finns ett antal marknader och vi hoppas på att presentera nästa land i maj.”
+Förutom den svenska sajten har Prisjakt, med 45 anställda,&amp;nbsp;även sajter i Norge och Nya Zeeland. I den senaste årsredovisningen, från 2010, framgår att bolaget ökade omsättningen från 39 till 53,5 miljoner kronor och att nettovinsten för 2010 blev 12,7 Mkr. Enligt bolaget blev både omsättning och vinst högre under 2011.</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T143244+0100</DateId>
+        <NewsItemId>259170</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T143244+0100:259170:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T143244+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T143415+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>Oväntat dåligt drag i USA:s butiker</HeadLine>
+              <byline>
+                <person>Nyhetsbyrån Direkt</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Detaljhandelns försäljning i USA steg 0,4 procent i januari, jämfört med månaden före.</block>
+              <block>Analytiker hade räknat med att försäljningen skulle ha stigit med 0,8 procent jämfört med föregående månad, enligt Bloomberg News sammanställning.
+För detaljhandeln exklusive bilar steg försäljningen 0,7 procent, analytikerna hade väntat att den skulle ha stigit 0,5 procent.
+Samtidigt visade ny statistik att de amerikanska importpriserna steg med 0,3 procent i januari, jämfört med månaden före. Jämfört med samma månad året före steg priserna med 7,1 procent. Båda siffrorna var i linje med förväntningarna.
+Exklusive olja var importpriserna oförändrade jämfört med föregående månad. </block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T141426+0100</DateId>
+        <NewsItemId>259150</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T141426+0100:259150:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T141426+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T141426+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>Robyns skivbolag ökar takten</HeadLine>
+              <byline>
+                <person>Cathrine Hofbauer</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Trots två nomineringar blev den svenska popstjärnan Robyn utan Grammy när den amerikanska galan gick av stapeln i helgen. Men artistens bolag rullar på - skivbolagets omsättning mer än trefaldigas och vinsten ökar.</block>
+              <block>Popstjärnan Robin Carlsson, även känd som Robyn, hade i år återigen chans på en amerikansk Grammy. Hon var nämligen nominerad för bästa dans- och electronica-album för skivan Body talk pt 3, samt i kategorin bästa danslåt för låten Call your girlfriend. På måndagsnatten stod det dock klart att Robyn blev utan pris.&amp;nbsp;
+Den svenska popstjärnan behöver dock inte hänga läpp för det. Hennes koncern går nämligen helt okej.
+Båda dotterbolagen, skivbolaget Konichiwa Records och produktionsbolaget Friday Music, går med vinst. Skivbolagets nettoresultat landar på nästan 1,9 miljoner kronor för det brutna räkenskapsåret 2010/2011. Det kan jämföras med en vinst på bara 77.000 kronor året innan.
+Konichiwa Records omsättning mångdubblades, från ungefär 3,4 miljoner kronor 2009/2010 till nästan 12 miljoner kronor i den senaste årsredovisningen. Även produktionskostnaderna drog dock iväg något. 
+Kvar i skivbolagets kassa finns hela 5 miljoner kronor.
+Bolaget ger ut Robyns skivor och gynnas med säkerhet av det prestigefulla amerikanska magasinet Rolling Stone utsåg skivan Body Talk till en av 2010 års viktigaste album.
+Produktionsbolaget når en något blygsammare vinst på 325.000 kronor. Det är en klar minskning från året innan då nettoresultatet uppgick i dryga miljonen. Friday Musics kassa fortsätter dock att öka. I produktionsbolagets balansräkning finns nästan 7,2 miljoner kronor redovisade under posten kassa och bank.
+Produktionsbolaget Friday Music är även det bolag som betalar ut Robin Carlsson lön. Drygt en halv miljon kronor betalas ut till styrelse och vd – vilket bör betyda Robyn själv eftersom hon är både vd och enda ordinarie styrelseledamot i bolaget. Dessutom redovisas ytterligare en dryg halv miljon kronor som pensionskostnader.
+I moderbolaget Robin Carlsson AB finns mest kostnader, men tack vare&amp;nbsp;en utdelning från Friday Music på 500.000 kronor lyckas även detta bolag visa en vinst, som landar på drygt 480.000 kronor. Moderbolaget delar i sin tur ut 200.000 kronor i aktieutdelning till ägaren Robin Carlsson.
+Robyns USA-satsning rullar på. Innan jul gjorde hon ett bejublat framträdande i det amerikanska tv-programmet Saturday Night Live. Hon har dessutom gästat Jay Lenos pratshow och hyllas av den amerikanska sångerskan Katy Perry som hon även turnerat ihop med.</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T140028+0100</DateId>
+        <NewsItemId>259167</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T140028+0100:259167:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T140028+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T141134+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>Wolf stoppar Swedbank-bonusar</HeadLine>
+              <byline>
+                <person>Robert Pletzin</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Swedbank spenderade flera hundra miljoner på bonusar under det gångna året. Men nu väntar kärvare tider för rörliga ersättningar till de anställda. </block>
+              <block>Under 2011 betalade Swedbank ut 230 miljoner kronor i rörliga ersättningar till de anställda.
+Trots att det rör sig om flera hundra miljoner är det nästan hälften av bankens bonusnota året dessförinnan.
+Nu skruvar vd Michael Wolf åt bonuskranarna ytterligare, precis som vd-kollegan Annika Falkengren på SEB.
+”Vi ska minska antalet anställda som har rätt till rörlig ersättning med en tredjedel”, säger Swedbankchefen till di.se på tisdagen.
+Från och med nästa år kommer bara de anställda som är ”intäktsgenererande” att ha rätt till en rörlig ersättning.
+”Det kan gälla både inom stora företag och asset management. Men inga stabspersoner eller icke intäktsgenererande anställda”, säger Michael Wolf.
+Swedbanks anställda går inte helt lottlösa från en möjlig rörlig ersättning på sin lön. Michael Wolf hänvisar till bankens vinstdelningsystem, Eken.
+Annika Falkengren hävdade att hon tagit intryck av diskussionerna om höga ersättningar inom banksektorn. Det var ett skäl till att hon och Michael Wolf nu går hand i hand.
+”Även vi har välkomnat den diskussionen”, säger Michael Wolf.
+Michael Wolf kvalar själv i kategorin icke intäktsgenerande anställd. Swebanks vd har därför bara fast lön, men däremot en premiebaserad pension.
+Håll koll - anmäl dig till di.se:s nyhetsbrev här!</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T134100+0100</DateId>
+        <NewsItemId>259161</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T134100+0100:259161:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T134100+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T134100+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>Schweiziska försvaret sågar Gripen</HeadLine>
+              <byline>
+                <person>Robert Pletzin</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Gripen klarade inte testerna på en enda punkt. Den slutsatsen drog det schweiziska flygvapnet i en hemlig utvärdering som har läckt ut i media. Tillverkaren Saab är fåordig om kritiken, men förhandlingen med Schweiz om jätteordern fortsätter. </block>
+              <block>”Självklart har vi sett att rapporten finns ute och har noterat den. Jag kan säga att det schweiziska beslutet att gå vidare med Saab och Gripen ändå har gjorts av en regering som har täckt många aspekter”, säger Marie Karlsson, pressinformatör på Saab.
+Men i rapporten från 2009 har flygvapnet&amp;nbsp;hållit sig till flygaspekterna. Utvärderingen av Gripen och de andra planen som var med i upphandlingen, däribland franska Rafale, ska ha gjorts under 2008.
+Reuters hänvisar till söndagens webbutgåva i Sonntagszeitung. Där står det att planet inte nådde minimikraven inom något av de sex områdena som testades.
+Inom det för alplandet centrala området luftpolisuppdrag fick det svenska planet till exempel 5,33 på en tiogradig skala, medan Eurofighter fick 6,48 och Rafale 6,98. Minimikravet var 6 skriver Reuters.
+I media konstateras också att den schweiziske försvarsministern under den presskonferens som hölls i november om Gripenbeslutet sade att flygplanet uppfyllde landets alla militära krav.
+Saabs företrädare vill inte gå in på innehållet i rapporten. Men Maria Karlsson säger att utvärderingen gjordes i ett tidigt skede och att Schweiz valde att gå vidare med Gripen av typen E-F.
+Frågan om det är en annan typ än den som flygvapnet testade avböjer Maria Karlsson att besvara.
+”Men det finns inget som säger att Gripen inte skulle vara operationellt dugligt för det. Gripen används av fem olika flygvapen runt om i världen”, säger Saabs pressinformatör.
+Saab har visserligen fått grönt ljus från Schweiz om valet av Gripen framför konkurrenterna. Men än återstår mycket förhandlande, däribland om priset.
+Hur har uppgifterna påverkat förhandlingarna med Schweiz?”Jag kan inte kommentera förhandlingar och processen. Men vi har en bra dialog. De har täckt upp många aspekter som finns för att köpa ett stridsflygplan”, säger Marie Karlsson.
+Saabs representant citeras i Schweizisk media att han är beredd att pruta. Vad säger du om det?”Vi sitter i förhandlingar just t och det är väldigt många aspekter om vad som kommer att ingå i ett totalt paket. Där ingår pris, infrastruktur och själva produktionen. Priset har vi inte kommenterat och kommer att kommentera”, säger Marie Karlsson.
+Vad kan du säga om tidsplanen?”Det får förhandlingarna komma fram till”, säger Marie Karlsson.
+Det har nyligen kommit uppgifter om att Brasilien har valt Rafale och inte Gripen. Hur ser ni på det?”Det är information som vi bara har sett i media. Vi har inte fått någon indikation på att något skulle vara klart i Brasilien. Vi känner att vi har ett bra erbjudande. Processen fortgår som den har gjort”, säger Marie Karlsson.
+Även i fransk media, som noga bevakar det franska jaktflygplanet Rafales ställning i olika upphandlingar, konstateras det att den svenske konkurrenten inte har lyckats fullt ut i testerna.
+Den franska ekonomitidningen Les Echos återger hela rapporten på sin hemsida för den som vill för läsare som vill förkovra sig i detaljerna. Här kan du läsa den.</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T133957+0100</DateId>
+        <NewsItemId>259166</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T133957+0100:259166:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="2" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T133957+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T133957+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>Stockholmsbörsen: Tyska siffror lyfter börsen</HeadLine>
+              <byline>
+                <person>Nyhetsbyrån Direkt</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Stockholmsbörsen letade sig över noll i ett förbättrat risksentiment sedan tyska ZEW-index överträffat förväntningarna och såväl Spanien som Italien lyckats finansiera sig till lägre räntor än tidigare, trots nattens kreditbetygssänkning från Moody´s.</block>
+              <block>Klockan 13.30 var OMXS30 0,5 procent högre till noteringen 1.079. Omsättningen var 5,2 miljarder kronor på Stockholmsbörsen. I Europa noterades DAX och Euro Stoxx 50 0,4 procent upp medan CAC 40 och FTSE 100 steg 0,2 procent.
+I Stockholm tickade Swedbank A upp 2,4 procent till 108:10 kronor sedan bankens rörelseresultat överträffat förväntningarna under det fjärde kvartalet 2011.
+"Justerat för engångsposter är rapporten ganska mycket i linje med förväntningarna. Det positiva är däremot att kostnadsmålet är betydligt bättre än förväntat", säger Andreas Håkansson på Exane BNP Paribas till Nyhetsbyrån Direkt.
+SEB A var samtidigt 0,7 procent upp medan SHB A, som rapporterar på onsdagen, steg 1,6 procent. Nordea noterades däremot ned 0,3 procent.
+2011 års surdegar Nobia och Lindab var 2,9 respektive 5,5 procent högre efter något sämre resultat än analytiker förväntat sig i SME Direkts prognosenkät. SEB Enskilda hittades som stor nettoköpare i Nobia medan Morgan Stanley och Handelsbanken var de största aktörerna på köpsidan i Lindab.
+Indutrade lyfte 5,9 procent efter att ebita- resultatet hamnade 14 procent bättre än väntat i SME Direkts prognos.
+Studsvik avancerade närmare 6 procent på rapport.
+Hemtex redovisade det första positiva resultatet på tre år och aktien tickade upp 5,0 procent till 7:35 kronor.
+Merrill Lynch har sänkt rekommendationen på Lundin Petroleum till neutral, från köp. Aktien var 0,6 procent ned.
+SSAB A och Boliden backade 1,1 och 0,9 procent.
+MTG B var största förlorare inom OMXS30 med en nedgång på 2,2 procent. Medieinvesteringarna via Sveriges Mediebyråers medlemmar låg i januari 2012 7,3 procent lägre än motsvarande månad året innan som var "en rekordstark månad". Nedgången förstärktes dessutom av det mycket osäkra ekonomiska läget.
+Exane BNP Paribas har sänkt rekommendationen på Rezidor till underperform och aktien var 4,1 procent lägre.
+Swedbank har höjt rekommendationen för Hakon Invest till neutral, från minska. Banken har dragit upp Haldex till köp, från neutral. Aktierna var 1,8 och 3,9 procent högre.
+Bioteknik hade en tung utveckling. Karo Bio rasade 65 procent till 42 öre medan Bioinvent tappade 12,3 procent.
+Karo Bio meddelade på tisdagsmorgonen att det pågående fas 3-programmet med blodfettsmedicinen eprotirome avbryts efter att en djurstudie visat oönskade effekter vid långtidsexponering. Således kommer en planerad avknoppning av bolagets prekliniska verksamhet inte att genomföras.
+Bioinvent ska genomföra en nyemission med företrädesrätt för bolagets aktieägare på 105 miljoner kronor.
+Under förmiddagen visade tyska ZEW-index för februari en uppgång till +5,4, jämfört med -21,6 föregående månad. Väntat var ett sentimentsindex på -11,8 enligt Bloomberg News.
+Trots att Moody´s under natten sänkte Spaniens kreditbetyg till A3 från A1, med negativa utsikter, och Italien från A2 till A3 med negativa utsikter kunde båda länderna på tisdagen finansiera sig billigare, jämfört med vid motsvarande auktioner i januari.
+Spaniens sålde växlar för totalt 5,45 miljarder euro, nära maxbeloppet medan Italien sålde två-, tre- och femåriga obligationer för totalt 6 miljarder euro, vilket var maxbelopp.
+Från USA kommer under eftermiddagen detaljhandel i januari. Marsterminerna för de tre ledande amerikanska börsindexen var vid halv två samtliga 0,1 procent högre. Malcolm Svensson Rothmaier +46 8 5191 7914 Nyhetsbyrån Direkt</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+  <NewsItem>
+    <Identification>
+      <!--DateId is official date of publish.-->
+      <!--NewsItemId is article id.-->
+      <!--RevisionId starts at 1.-->
+      <NewsIdentifier>
+        <ProviderId>di.se</ProviderId>
+        <DateId>20120214T133702+0100</DateId>
+        <NewsItemId>259165</NewsItemId>
+        <RevisionId Update="N" PreviousRevision="0">1</RevisionId>
+        <PublicIdentifier>urn:newsml:di.se:20120214T133702+0100:259165:1</PublicIdentifier>
+        <CommentsStatus>enabled</CommentsStatus>
+      </NewsIdentifier>
+    </Identification>
+    <Property FormalName="ArticleType" Value="0" />
+    <!--FirstCreated is time of first publish.-->
+    <!--ThisRevisionCreated is time of last update.-->
+    <!--Status is always Published.-->
+    <NewsManagement>
+      <NewsItemType FormalName="News" />
+      <FirstCreated>20120214T133702+0100</FirstCreated>
+      <ThisRevisionCreated>20120214T133702+0100</ThisRevisionCreated>
+      <Status FormalName="Published" />
+    </NewsManagement>
+    <NewsComponent>
+      <ContentItem>
+        <nitf>
+          <body>
+            <body.head>
+              <HeadLine>USA:s småföretagare mer positiva</HeadLine>
+              <byline>
+                <person>Nyhetsbyrån Direkt</person>
+              </byline>
+            </body.head>
+            <body.content>
+              <block lede="true">Det ekonomiska förtroendet bland amerikanska småföretag förbättrades marginellt i januari jämfört med föregående månad.</block>
+              <block>Det visar ett index från NFIB, National Federation of Individual Business, på tisdagen, enligt Bloomberg News.
+NFIB:s index steg till 93,9 i januari från 93,8 föregående månad. Enligt Bloomberg News enkät räknade analytiker med en uppgång till 95,0.
+"Ekonomin kommer att fortsätta att krypa fram. 'Hanka sig fram' verkar vara den bästa beskrivningen för att karaktärisera första halvan av året", sade William Dunkelberg, chefekonom på NFIB, i en kommentar.</block>
+            </body.content>
+          </body>
+        </nitf>
+      </ContentItem>
+    </NewsComponent>
+  </NewsItem>
+</NewsML>

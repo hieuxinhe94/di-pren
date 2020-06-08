@@ -1,0 +1,35 @@
+﻿body 
+{
+  background-color: #f7eae4;/* #ffebde;*/
+}
+    
+.ui-widget-content {
+  top: 10px !important;
+  left: 0 !important;
+}    
+
+#wrapper 
+{
+  width: 90%;
+  margin: 0 auto;
+  background: none;
+}
+    
+#content-wrapper {
+  width: 100%;
+  float: none;
+  padding: 0;
+}
+#content {
+  width: 100%;
+  float: none;
+}
+
+.editions-mobile > div 
+{
+  /*border: 1px solid #deb887;*/
+  width: 110px;
+  float: left;
+  margin: 0 6px 14px 10px;
+  padding: 6px;
+}

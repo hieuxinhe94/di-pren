@@ -1,0 +1,41 @@
+﻿#footer > .content > .section > p
+{
+    margin: 0px; 
+    padding: 0px;
+}
+
+#footer .content .support > p > strong
+{
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    line-height: normal;
+}
+
+#footer .content .advertising > p > strong.header 
+{
+	display: block;
+	width: 280px;
+	font-size: 22px;
+	line-height: 25px;
+	margin: 0 0 7px 0;
+}
+
+.infobox img.logo { margin: 0 8px 3px 0; }
+.infobox img.logo-wide { margin: 0 0 3px 0; display: block; }
+
+#content ul.read-online li .img-wrapper,
+#content ul.read-online li img,
+#content ul.read-online li h2,
+#content ul.read-online li .img-wrapper,
+#content ul.previous-editions li p.date,
+#content ul.read-online li p.date
+{ cursor: default; }
+
+
+#page-preferences.form-box .info 
+{
+    font-style:italic;
+    font-size:11px;
+}	
+
+/*#shop-top .moms { font-size: 10px; color: Gray; padding-top: 40px; }*/

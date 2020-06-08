@@ -1,0 +1,62 @@
+﻿.SubsNextBtn     { text-align:right; margin-top:20px; }
+.TextBlockSpacer { margin-top:10px; margin-bottom:5px; }
+.HiddenDiv       { visibility:hidden; display:none; }
+.SpaceBottom     { margin-bottom:5px; }
+.PdfLink a       { background:transparent url(https://sec.di.se/Bilder/pdf_icon_14x14.gif) no-repeat scroll 0 0px; padding-left:20px; padding-top:1px; }
+.ErrorText       { color:Red; }
+.TextBoxStd      { width:150px; margin-right:10px; margin-bottom:5px; }
+.TextBoxNoBotmarg { width:150px; margin-right:10px; }
+.PeriodText     {  color:#A01400; font-size:11px; line-height:15px; }
+.PeriodTextBig  { color:#A01400; font-size:16px; line-height:22px; font-weight:bold; }
+.Header         { font-size:14px; line-height:20px; font-weight:bold; }
+.HeaderBig      { font-size:20px; line-height:28px; font-weight:bold; }
+
+.Indent         { margin-left:25px; }
+.HeaderRBL		{ margin-bottom:3px; margin-left:9px; }
+
+.DottedDivider  { border-bottom:dotted; height:1px; }
+.SpaceBottomBig { margin-bottom:10px; }
+
+.InfoBox         { background-color:Transparent; border:3px; padding:7px 10px 10px 10px; border-color:#dec7bb; border-style:solid; }
+.InfoBox.White   { background-color:#ffffff; }
+
+
+
+.Test			{ font-family:Comic Sans MS; }
+.Test.Red		{ color:Red; }
+.Fattie			{ font-weight:bold; }
+
+/*************************/
+/* Campaign      */
+/*************************/
+
+#EventArea{background:none repeat scroll 0 0 #FFFFFF;margin:0 auto;padding-bottom:2em;width:846px; }
+
+#CampaignBody {background-color:#FFF;}
+#CampaignArea{margin:10px auto;width:950px;}
+#CampaignArea .infoBox {margin-bottom:0;border:solid 1px #d3d3d3;}
+#CampaignHeader{}
+#CampaignMainArea {float:left;background-color:#F5E0C5;border:solid 1px #d3d3d3;}
+
+#CampaignFormArea{float:left;width:364px;}
+#CampaignFormArea .invite{padding:10px 10px 0;}
+#CampaignFormArea .invite .inviteform{margin-top:10px;}
+#CampaignFormArea .offercodes {font-size:12px;padding:10px 10px 0; }
+#CampaignFormArea .formtable {font-size:11px;margin: 0 0 0 8px; }
+#CampaignImageArea{float:left;background-color:#FFF;width:584px; min-height:550px;}
+/*#CampaignFooter{clear:left;border-top:solid 1px #E2BEB1;min-height:50px;padding:10px;background-image:url('/templates/di/styles/images/di.gif');background-repeat:no-repeat;background-position:99% 5px;background-color:#CC0000;color:#FFF;}*/
+#CampaignFooter{clear:left;min-height:50px;padding:10px 0 0 0;background-image:url('/templates/di/styles/images/bottom_shadow.jpg');}
+
+#progress {margin:0 auto;}
+a.redbutton, a.redbutton:visited {background:url("Images/knapp.png") repeat scroll 0 0 transparent;border:medium none;color:#FFFFFF;display:inline-block;font-size:18px;height:32px;line-height:32px;width:404px;}
+.bggrey{background-color:#F9f8f8;}
+
+#tabs2 {padding: 0;margin: 0;list-style-type: none;}
+#tabs2 li {padding: 0;margin: 0;float: left;border-bottom: 1px solid #D3D3D3;}
+#tabs2 li a {height: 32px;text-indent:-9999px;overflow:hidden;display: block;}
+#tabs2 li a.street {width: 86px;background: url(/templates/di/styles/images/flik_gata_normal.jpg) no-repeat;}
+#tabs2 li a.street:hover, #tabs2 li a.streetactive {width: 86px;background: url(/templates/di/styles/images/flik_gata_red.jpg) no-repeat;}
+#tabs2 li a.co {width: 98px;background: url(/templates/di/styles/images/flik_co_normal.jpg) no-repeat;}
+#tabs2 li a.co:hover, #tabs2 li a.coactive {width: 98px;background: url(/templates/di/styles/images/flik_co_red.jpg) no-repeat;}
+#tabs2 li a.box {width: 180px;background: url(/templates/di/styles/images/flik_box_normal.jpg) no-repeat;}
+#tabs2 li a.box:hover, #tabs2 li a.boxactive {width: 180px;background: url(/templates/di/styles/images/flik_box_red.jpg) no-repeat;}

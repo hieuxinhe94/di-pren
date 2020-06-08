@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <language name="English" id="sv">
+    <contenttypes>
+      <containerpage>
+        <name>Sidbehållare</name>
+        <description>Används för att gruppera sidor i sidträdet</description>
+      </containerpage>
+      <startpage>
+        <name>Startsida</name>
+        <description>Webbplatsens startsida</description>
+      </startpage>
+      <campaignpage>
+        <name>Kampanjsida</name>
+        <description>Kampanjsida</description>
+      </campaignpage>
+      <imagefile>
+        <name>Image</name>
+        <description>Used for image files (BMP, GIF, ICO, JPEG, PNG)</description>
+      </imagefile>
+      <videofile>
+        <name>Video</name>
+        <description>Used for video files (FLV, MP4, WEBM)</description>
+      </videofile>
+      <genericmedia>
+        <name>Generic File</name>
+        <description>Used for media which doesn't have a specific content type</description>
+      </genericmedia>
+    </contenttypes>
+  </language>
+  <language name="English" id="en">
+    <contenttypes>
+      <containerpage>
+        <name>Container Page</name>
+        <description>Used to logically group pages in the content tree</description>
+      </containerpage>
+      <startpage>
+        <name>Start Page</name>
+        <description>The home page of the website</description>
+      </startpage>
+      <campaignpage>
+        <name>Campaign page</name>
+        <description>Campaign page</description>
+      </campaignpage>
+      <imagefile>
+        <name>Image</name>
+        <description>Used for image files (BMP, GIF, ICO, JPEG, PNG)</description>
+      </imagefile>
+      <videofile>
+        <name>Video</name>
+        <description>Used for video files (FLV, MP4, WEBM)</description>
+      </videofile>
+      <genericmedia>
+        <name>Generic File</name>
+        <description>Used for media which doesn't have a specific content type</description>
+      </genericmedia>
+    </contenttypes>
+  </language>
+</languages>

@@ -1,0 +1,62 @@
+﻿@using Pren.Web.Business.Messaging
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.MySettings.MySettingsPageViewModel
+
+@{
+    Layout = "~/Views/Shared/Layouts/_MyPage.cshtml";
+}
+    
+@if (Model.CurrentPage.MessageBody != null)
+{
+    Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", new Message(Model.CurrentPage.MessageBody.ToString(), (MessageType)int.Parse(Model.CurrentPage.MessageTheme ?? "0")), new ViewDataDictionary()); 
+}
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)      
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (!Model.Layout.MySettings.IsLoggedIn)
+{
+    <div class="w-margin-top">
+        <div class="heading">Logga in på ditt Di-konto</div>
+        @Html.PropertyFor(x => x.CurrentPage.LoginBody)
+        <a class="btn btn-primary" href="@Model.Layout.MySettings.LogInUrl">Logga in</a>
+        <a class="btn btn-primary" href="@Model.Layout.MySettings.CreateAccountUrl">Skapa konto</a>       
+    </div>
+
+    @section LeftColumn
+    {
+        <div class="row">
+            @Html.PropertyFor(x => x.CurrentPage.RightContentArea, new { Tag = RenderingConstants.ContentAreaTags.FullWidth })
+        </div>
+    }
+}
+
+<div id="di-faq" class="w-margin-top w-margin-bottom">
+    <div class="heading">Frågor och svar</div>
+    <div class="menu">
+        <a href="http://kundtjanst.di.se/" target="_blank" class="menu-item readmore">Fler frågor och svar</a>
+    </div>
+</div>
+
+@Html.PropertyFor(x => x.CurrentPage.SecondaryBody)
+
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+
+        var faq = new Faq({
+            onItemsLoaded:
+                function(items) {
+                    $.each(items, function(index, item) {
+                        $("<a href='" + item.Url + "' target='_blank' class='menu-item'>" + item.Title + "</a>").insertBefore($("#di-faq .menu .readmore"));
+                    });
+                }
+        });
+
+        faq.populateFaqItems();
+
+    </script>
+}
+

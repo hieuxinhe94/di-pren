@@ -1,0 +1,2 @@
+//>>built
+define("epi/patch/dijit/form/_Spinner",["dojo/_base/lang","dijit/form/_Spinner"],function(_1,_2){var _3=_2.prototype._mouseWheeled;_1.mixin(_2.prototype,{_mouseWheeled:function(_4){if(!this.get("focused")){return;}return _3.apply(this,arguments);}});_2.prototype._mouseWheeled.nom="_mouseWheeled";});

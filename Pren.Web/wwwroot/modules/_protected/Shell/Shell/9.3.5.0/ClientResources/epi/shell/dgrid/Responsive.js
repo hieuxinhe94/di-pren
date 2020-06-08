@@ -1,0 +1,2 @@
+//>>built
+define("epi/shell/dgrid/Responsive",["dojo/_base/declare","dojo/dom-class"],function(_1,_2){return _1([],{currentResponsiveClass:"",responsiveMap:null,resize:function(){this.inherited(arguments);var _3=Infinity,_4=this.domNode.clientWidth,_5="",_6=this.responsiveMap;if(_6){Object.keys(_6).forEach(function(_7){var _8=_6[_7];if(_4<=_8&&_8<_3){_3=_8;_5=_7;}});_2.replace(this.domNode,_5,this.currentResponsiveClass);this.currentResponsiveClass=_5;}}});});

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Pren.Web.Misc" Class="Pren_Web_MiscDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DIW2Y3MKX1\SQLSERVERSTD2012;Initial Catalog=Pren.Web.Misc;Integrated Security=False;User ID=PrenUser;MultipleActiveResultSets=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PrenWebMisc" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CampaignUspProduct" Member="CampaignUspProducts">
+    <Type Name="CampaignUspProduct">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="CampaignUspProduct_CampaignUspProductTextRelation" Member="CampaignUspProductTextRelations" ThisKey="Id" OtherKey="fkUspProductId" Type="CampaignUspProductTextRelation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CampaignUspProductTextRelation" Member="CampaignUspProductTextRelations">
+    <Type Name="CampaignUspProductTextRelation">
+      <Column Name="fkUspProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkUspTextId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CampaignUspProduct_CampaignUspProductTextRelation" Member="CampaignUspProduct" ThisKey="fkUspProductId" OtherKey="Id" Type="CampaignUspProduct" IsForeignKey="true" />
+      <Association Name="CampaignUspText_CampaignUspProductTextRelation" Member="CampaignUspText" ThisKey="fkUspTextId" OtherKey="Id" Type="CampaignUspText" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CampaignUspText" Member="CampaignUspTexts">
+    <Type Name="CampaignUspText">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="CampaignUspText_CampaignUspProductTextRelation" Member="CampaignUspProductTextRelations" ThisKey="Id" OtherKey="fkUspTextId" Type="CampaignUspProductTextRelation" />
+    </Type>
+  </Table>
+</Database>

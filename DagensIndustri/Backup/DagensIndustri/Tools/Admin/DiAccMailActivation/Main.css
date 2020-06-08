@@ -1,0 +1,138 @@
+﻿body
+{
+}
+
+.ddl
+{
+    margin: 6px;
+    width: 160px;
+    margin-left: 47px;
+    margin-bottom: 0px;
+}
+
+#ddlSubsLen_Mons
+{
+    height: 200px;
+    width: 160px;
+    margin-top: 5px;
+    margin-right: 13px;
+}
+
+.ddlDiv
+{
+    width: 40%;
+}
+
+.dateBoxDiv
+{
+    width: 40%;
+    margin: 0px;
+    float: left;
+}
+
+.tableDiv
+{
+    float: left;
+    width: 100%;
+    margin-bottom: 2%;
+    border-top: solid;
+    padding-top: 2%;
+}
+
+.tableContent
+{
+    font-weight: bold;
+    background-color: #f3f3e6;
+    width: 400px;
+}
+
+.gridviewDiv
+{
+    width: 100%;
+    overflow: auto;
+}
+
+.searchContainerDiv
+{
+    float: left;
+    width: 90%;
+    margin-bottom: 3%;
+}
+
+.contentWrapper
+{
+    margin: 50px;
+    background-color: #f2f1ed;
+    border: solid;
+    min-height: 800px;
+    padding: 5%;
+    padding-top: 2%;
+}
+
+.headerDiv
+{
+    font-family: Calibri;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+#lblDate
+{
+    font-weight: bolder;
+}
+
+.btnReset
+{
+    margin-top: 7px;
+    margin-left: 47px;
+}
+
+#btnExport
+{
+    float: left;
+}
+
+.btnSearch
+{
+    font-weight: bold;
+    margin-left: 47px;
+    height: 45px;
+}
+
+input[type=submit]
+{
+    width: 160px;
+}
+
+@media only screen and (max-width: 1440px)
+{
+    .ddl
+    {
+        margin: 6px;
+        width: 160px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+    .btnSearch
+    {
+        font-weight: bold;
+        margin-left: 0px;
+        height: 45px;
+    }
+
+    .btnReset
+    {
+        margin-top: 7px;
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 768px)
+{
+    .tableContent
+    {
+        font-weight: bold;
+        background-color: #f3f3e6;
+        width: 150px;
+    }
+}

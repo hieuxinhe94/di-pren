@@ -1,0 +1,54 @@
+﻿
+@using System.Web.Optimization
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.CampaignLandingPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{   
+    @Styles.Render("~/bundles/css/diglobal")
+}
+
+<div class="container">    
+    <div class="row">
+        <div class="text-center">
+            <h1 @Html.EditAttributes(x => x.CurrentPage.Heading)>
+                @Model.CurrentPage.Heading
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container container-text">
+    <div class="row">
+        <div class="col-md-8 center-block">
+            @Html.PropertyFor(x => x.CurrentPage.MainBody)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 center-block">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="margin-b-10" alt="@Model.CurrentPage.ButtonLeftText" src="@Url.ContentUrl(Model.CurrentPage.ImageLeft)" @Html.EditAttributes(x => x.CurrentPage.ImageLeft) />
+                    <a class="btn btn-lg btn-success strong full-width margin-b-10" href="@Url.ContentUrl(Model.ButtonLeftUrl)" @Html.EditAttributes(x => x.CurrentPage.ButtonLeftText)>
+                        @Model.CurrentPage.ButtonLeftText
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <img class="margin-b-10" alt="@Model.CurrentPage.ButtonRightText" src="@Url.ContentUrl(Model.CurrentPage.ImageRight)" @Html.EditAttributes(x => x.CurrentPage.ImageRight) />
+                    <a class="btn btn-lg btn-success strong full-width margin-b-10" href="@Url.ContentUrl(Model.ButtonRightUrl)" @Html.EditAttributes(x => x.CurrentPage.ButtonRightText)>
+                        @Model.CurrentPage.ButtonRightText
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if(Model.CurrentPage.FooterContentArea != null){
+    @section Footer{
+        @Html.PropertyFor(model => model.CurrentPage.FooterContentArea, new { CssClass = "footer-item", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+    }
+}

@@ -1,0 +1,10 @@
+{
+	"version": "1.0.0",
+	"name": "Pren.Web",
+	"private": true,
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "requirejs": "2.2.0",
+    "gulp-replace": "0.5.4"
+  }
+}

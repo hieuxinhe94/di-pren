@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD83A652-F083-4B4A-9D1D-487D9A7885B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DIClassLib</RootNamespace>
+    <AssemblyName>DIClassLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPiServer, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\EPiServer\EPiServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.BaseLibrary, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\EPiServer\EPiServer.BaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Antipodes\WineItem.cs" />
+    <Compile Include="BonnierDigital\BonDigHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\BonDigMisc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\Entitlement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\ExternalIds.cs" />
+    <Compile Include="BonnierDigital\Import.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\KeyVal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\RequestHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\SearchUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\Token.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BonnierDigital\User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessCalendar\BusCalHandler.cs" />
+    <Compile Include="BusinessCalendar\Calendar.cs" />
+    <Compile Include="BusinessCalendar\CompanysInJsHandler.cs" />
+    <Compile Include="Campaign\CampaignHelper.cs" />
+    <Compile Include="Campaign\CampaignInfo.cs" />
+    <Compile Include="CardPayment\Autowithdrawal\AutowithdrawalHandler.cs" />
+    <Compile Include="CardPayment\Autowithdrawal\Awd.cs" />
+    <Compile Include="CardPayment\Autowithdrawal\Invoice.cs" />
+    <Compile Include="CardPayment\CardPaymentDataHolder.cs" />
+    <Compile Include="CardPayment\Nets\NetsCardPayPrepare.cs" />
+    <Compile Include="CardPayment\Nets\NetsCardPayReturn.cs" />
+    <Compile Include="CardPayment\Nets\NetsRecurringPayment.cs" />
+    <Compile Include="CardPayment\Nets\ProcessSale.cs" />
+    <Compile Include="CardPayment\Nets\QueryPayment.cs" />
+    <Compile Include="CardPayment\PriceCalculator.cs" />
+    <Compile Include="Cirix\VariableNameTranslator.cs" />
+    <Compile Include="BusinessCalendar\CompanyEvent.cs" />
+    <Compile Include="BusinessCalendar\Company.cs" />
+    <Compile Include="Competition\CompetitionUtility.cs" />
+    <Compile Include="Contest\ContentQuestion.cs" />
+    <Compile Include="Contest\ContestQuestionAlternative.cs" />
+    <Compile Include="DbHandlers\BusCalDbHandler.cs" />
+    <Compile Include="DbHandlers\CirixWrappers\CirixProdWrapper.cs" />
+    <Compile Include="DbHandlers\CirixWrappers\CirixTestWrapper.cs" />
+    <Compile Include="DbHandlers\CirixWrappers\ICirix.cs" />
+    <Compile Include="DbHandlers\ContestDbHandler.cs" />
+    <Compile Include="DbHandlers\EnumIssue.cs" />
+    <Compile Include="DbHandlers\ISubscriptionHandler.cs" />
+    <Compile Include="DbHandlers\KayakHandler.cs" />
+    <Compile Include="DbHandlers\KayakWrappers\IKayak.cs" />
+    <Compile Include="DbHandlers\KayakWrappers\KayakServiceProdWrapper.cs" />
+    <Compile Include="DbHandlers\KayakWrappers\KayakServiceTestWrapper.cs" />
+    <Compile Include="DbHandlers\MailSenderDbHandler.cs" />
+    <Compile Include="DbHandlers\MdbDbHandler.cs" />
+    <Compile Include="DbHandlers\MembershipDbHandler.cs" />
+    <Compile Include="DbHandlers\MsSqlHandler.cs" />
+    <Compile Include="DbHandlers\StringPair.cs" />
+    <Compile Include="DbHandlers\SubscriptionController.cs" />
+    <Compile Include="DbHelpers\DbHelpMethods.cs" />
+    <Compile Include="DbHelpers\Logger.cs" />
+    <Compile Include="DbHelpers\SqlHelper.cs" />
+    <Compile Include="DocTrackr\DocTrackrUtil.cs" />
+    <Compile Include="EPiJobs\Apsis\ApsisFields.cs" />
+    <Compile Include="EPiJobs\Apsis\ApsisSharedMethods.cs" />
+    <Compile Include="EPiJobs\Apsis\ApsisWsHandler.cs" />
+    <Compile Include="EPiJobs\Apsis\ApsisBatch.cs" />
+    <Compile Include="EPiJobs\Apsis\ApsisCustomer.cs" />
+    <Compile Include="BusinessCalendar\EventInSubs.cs" />
+    <Compile Include="BusinessCalendar\Group.cs" />
+    <Compile Include="EPiJobs\EpiDataForExternalUse\ConferenceEpiData.cs" />
+    <Compile Include="EPiJobs\EpiDataForExternalUse\ConferenceEpiDataInput.cs" />
+    <Compile Include="EPiJobs\SyncSubs\Customer.cs" />
+    <Compile Include="EPiJobs\SyncSubs\Subscription.cs" />
+    <Compile Include="EPiJobs\SyncSubs\SyncSubsHandler.cs" />
+    <Compile Include="GoldMember\GoldMemberHandler.cs" />
+    <Compile Include="GoldMember\GoldRuleEnforcer.cs" />
+    <Compile Include="Invoices\Invoice.cs" />
+    <Compile Include="Antipodes\AntipodesWinesHandler.cs" />
+    <Compile Include="Kayak\PackageProduct.cs" />
+    <Compile Include="Kayak\PackageProducts.cs" />
+    <Compile Include="Kayak\Product.cs" />
+    <Compile Include="Kayak\ProductPackage.cs" />
+    <Compile Include="Kayak\ProductPackages.cs" />
+    <Compile Include="Mdb\CustomerDecline.cs" />
+    <Compile Include="Membership\AutoLoginByIPHTTPModule.cs" />
+    <Compile Include="Membership\AutoLoginByIPSettings.cs" />
+    <Compile Include="Membership\DiMembershipProvider.cs" />
+    <Compile Include="Membership\DiRoleHandler.cs" />
+    <Compile Include="Membership\DiRoleProvider.cs" />
+    <Compile Include="Membership\MembershipFunctions.cs" />
+    <Compile Include="Membership\MembershipSettings.cs" />
+    <Compile Include="Misc\AddCustsToCirixReturn.cs" />
+    <Compile Include="Misc\AddressDataHolder.cs" />
+    <Compile Include="Misc\CampaignUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\ConferenceExposer.cs" />
+    <Compile Include="Misc\CustomerPropertyHandler.cs" />
+    <Compile Include="Misc\DefinitionFile.cs" />
+    <Compile Include="Misc\Detection.cs" />
+    <Compile Include="Misc\FtpHelper.cs" />
+    <Compile Include="Misc\GoogleAnalyticsHelper.cs" />
+    <Compile Include="Misc\IssueUtil.cs" />
+    <Compile Include="Misc\LoginUtil.cs" />
+    <Compile Include="Misc\MiscFunctions.cs" />
+    <Compile Include="Misc\OfferCode.cs" />
+    <Compile Include="Misc\Serializer.cs" />
+    <Compile Include="Misc\Settings.cs" />
+    <Compile Include="Misc\ValidationError.cs" />
+    <Compile Include="OneByOne\Obo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Security\EncryptDecrypt.cs" />
+    <Compile Include="Service References\ApsisWs\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessCalendar\BusCalSettings.cs" />
+    <Compile Include="BusinessCalendar\Subscription.cs" />
+    <Compile Include="Service References\ApsisWs_v3\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CirixTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Cirix\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KayakProd\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KayakTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceVerifier\ServiceVerifier.cs" />
+    <Compile Include="ServiceVerifier\ServiceVerifierStatus.cs" />
+    <Compile Include="SignUp\SignUpPerson.cs" />
+    <Compile Include="SingleSignOn\SsoLoginHandler.cs" />
+    <Compile Include="SingleSignOn\SsoConnectRow.cs" />
+    <Compile Include="StudentVerification\StudentVerifier.cs" />
+    <Compile Include="Subscriptions\AddCustAndSub\AddCustAndSubHandler.cs" />
+    <Compile Include="Subscriptions\AddCustAndSub\AddCustAndSubReturnObject.cs" />
+    <Compile Include="Subscriptions\AddCustAndSub\ExistingCustHelper.cs" />
+    <Compile Include="Subscriptions\AddCustAndSub\Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Subscriptions\AddCustAndSub\Payer.cs" />
+    <Compile Include="Subscriptions\AddCustAndSub\Subscriber.cs" />
+    <Compile Include="Subscriptions\CirixMappers\AddressMap.cs" />
+    <Compile Include="Subscriptions\DiPlus\DiPlusCampaigns.cs" />
+    <Compile Include="Subscriptions\DiPlus\DiPlusSubscription.cs" />
+    <Compile Include="Subscriptions\DiPlus\DiPlusSubscriptionType.cs" />
+    <Compile Include="Subscriptions\DiPlus\DiPlusSubsSteps.cs" />
+    <Compile Include="Subscriptions\CirixMappers\SubsSleepsCirixMap.cs" />
+    <Compile Include="Subscriptions\PaymentMethod.cs" />
+    <Compile Include="Subscriptions\Person.cs" />
+    <Compile Include="CardPayment\Autowithdrawal\RenewalSubscription.cs" />
+    <Compile Include="Subscriptions\SubscriberType.cs" />
+    <Compile Include="BusinessCalendar\TypeSubType.cs" />
+    <Compile Include="Subscriptions\Subscription.cs" />
+    <Compile Include="Subscriptions\CirixMappers\SubscriptionCirixMap.cs" />
+    <Compile Include="Subscriptions\SubscriptionType.cs" />
+    <Compile Include="Subscriptions\SubscriptionUser2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web References\OboWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Wine\IsoWeek.cs" />
+    <Compile Include="Wine\SystembolagetImport.cs" />
+    <Compile Include="Wine\WineHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <!--<SubType>Designer</SubType>-->
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BusinessCalendar\ClassDiagramBusCal.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="OneByOne\obo.wsdl" />
+    <None Include="Service References\ApsisWs\anp.wsdl" />
+    <None Include="Service References\ApsisWs\DIClassLib.ApsisWs.DetailedNewsletterResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs\DIClassLib.ApsisWs.NewsletterFilterResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs\DIClassLib.ApsisWs.OptOutAllResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs\DIClassLib.ApsisWs.RoiResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs\DIClassLib.ApsisWs.TransactionBounceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.DetailedNewsletterResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.NewsletterFilterResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.RoiResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.SmsMassMessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.SmsSingleMessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.TriggerResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.TriggerSubscriberBouncesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.TriggerSubscriberClicksResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\DIClassLib.ApsisWs_v3.TriggerSubscriberViewsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ApsisWs_v3\externalapiservice.wsdl" />
+    <None Include="Service References\CirixTest\CirixWebService1.wsdl" />
+    <None Include="Service References\Cirix\CirixWebService11.wsdl" />
+    <None Include="Service References\KayakProd\DIClassLib.KayakProd.IdentificationResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KayakProd\DIClassLib.KayakProd.UpdateResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KayakProd\KayakWebservice.wsdl" />
+    <None Include="Service References\KayakTest\DIClassLib.KayakTest.IdentificationResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KayakTest\DIClassLib.KayakTest.UpdateResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KayakTest\KayakWebservice.wsdl" />
+    <None Include="System.Data.DataSet.datasource" />
+    <None Include="Web References\OboWebReference\obo.wsdl" />
+    <None Include="Web References\OboWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Conference\" />
+    <Folder Include="Config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--<WCFMetadata Include="Service References\" />-->
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs\anp.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ApsisWs_v3\" />
+    <WCFMetadataStorage Include="Service References\CirixTest\" />
+    <WCFMetadataStorage Include="Service References\Cirix\" />
+    <WCFMetadataStorage Include="Service References\KayakProd\" />
+    <WCFMetadataStorage Include="Service References\KayakTest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Cirix\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Cirix\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Cirix\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\svn\DagensIndustri\WebEpi_v2\Trunk\DagensIndustri_v2\DIClassLib\OneByOne\obo.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\OboWebReference\</RelPath>
+      <UpdateFromURL>C:\svn\DagensIndustri\WebEpi_v2\Trunk\DagensIndustri_v2\DIClassLib\OneByOne\obo.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DIClassLib_OboWebReference_DocumentFactoryService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CirixTest\CirixWebService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Cirix\CirixWebService11.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs_v3\externalapiservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs_v3\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs_v3\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ApsisWs_v3\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakTest\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakTest\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakTest\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakProd\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakProd\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakProd\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakProd\KayakWebservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KayakTest\KayakWebservice.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

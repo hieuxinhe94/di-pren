@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49D851C3-B18D-41AD-9EE9-BD366C5870A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Di.Common</RootNamespace>
+    <AssemblyName>Di.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DagensIndustri\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DagensIndustri\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\IObjectCache.cs" />
+    <Compile Include="Cache\ObjectCache.cs" />
+    <Compile Include="Conversion\Attributes\QueryStringAttribute.cs" />
+    <Compile Include="Conversion\Attributes\DataSetAttribute.cs" />
+    <Compile Include="Conversion\CachedPropertyUtilities.cs" />
+    <Compile Include="Conversion\DataSetUtilities.cs" />
+    <Compile Include="Conversion\IDataSetUtilites.cs" />
+    <Compile Include="Conversion\IObjectConverter.cs" />
+    <Compile Include="Conversion\IPropertyUtilities.cs" />
+    <Compile Include="Conversion\ObjectConverter.cs" />
+    <Compile Include="Conversion\PropertyUtilities.cs" />
+    <Compile Include="Conversion\Types\IDataSetObject.cs" />
+    <Compile Include="Conversion\Types\IQueryStringObject.cs" />
+    <Compile Include="EndPointBehaviours\MessageInspector.cs" />
+    <Compile Include="EndPointBehaviours\RequestInspectorBehavior.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Log4NetLogger.cs" />
+    <Compile Include="Logging\Loggable.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Encryption\RijndaelCryptographyService.cs" />
+    <Compile Include="Security\Encryption\ICryptographyService.cs" />
+    <Compile Include="Utils\Authentication\AuthenticationUtil.cs" />
+    <Compile Include="Utils\ByteArray\ByteArrayUtils.cs" />
+    <Compile Include="Utils\Context\UserContext.cs" />
+    <Compile Include="Utils\DateTimeUtils.cs" />
+    <Compile Include="Utils\Context\HttpContextUtils.cs" />
+    <Compile Include="Utils\EncryptUtil.cs" />
+    <Compile Include="Utils\File\FileUtils.cs" />
+    <Compile Include="Utils\DecimalUtils.cs" />
+    <Compile Include="Utils\JsonUtils.cs" />
+    <Compile Include="Utils\Long\LongUtils.cs" />
+    <Compile Include="Utils\PhoneNumberUtils.cs" />
+    <Compile Include="Utils\SingleOrArrayConverter.cs" />
+    <Compile Include="Utils\Url\UrlUtils.cs" />
+    <Compile Include="Utils\VatUtil.cs" />
+    <Compile Include="WebRequests\IRequestService.cs" />
+    <Compile Include="WebRequests\RequestMethodEnum.cs" />
+    <Compile Include="WebRequests\RequestService.cs" />
+    <Compile Include="WebRequests\RequestVerb.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

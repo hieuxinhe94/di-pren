@@ -1,0 +1,29 @@
+﻿@using System.Web.Optimization
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.BusinessCampaignPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/businesscampaign")
+}
+
+<div id="confirm-area" class="container">
+    <div class="row confirmation-copy">
+        <div class="col-md-6">
+            <div class="confirmation-header">
+                <h1>Meddelandet är skickat</h1>
+            </div>
+            <div class="confirmation-text">                
+                @Html.Raw(Model.CurrentPage.LicenceMailConfirmBody)                
+            </div>
+            <a href="@Url.ContentUrl(Model.CurrentPage.ContentLink)" class="btn btn-lg btn-primary">Tillbaka till kampanjen</a>
+        </div>
+    </div>
+</div>
+
+@section Footer{
+    @Html.PropertyFor(model => model.CurrentPage.FooterContentArea, new { CssClass = "footer-item", Tag = RenderingConstants.ContentAreaTags.OneSixthWidth })
+}

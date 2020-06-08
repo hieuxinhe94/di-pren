@@ -1,0 +1,24 @@
+﻿@using Pren.Web.Business.CustomProperties
+@model Pren.Web.Models.Blocks.Di.WidgetBlocks.TextWidgetBlock
+@{
+    var iconCssClass = Icon.IconCssClass((Icon.IconType) int.Parse(Model.IconType ?? "0"));
+}
+<div class="widget-content @(Model.UseBackgroundColor ? "t-signal" : "white")">
+    @if (!string.IsNullOrEmpty(iconCssClass))
+    {
+        <span class="@iconCssClass"></span>
+    }
+    <h3>
+        @Html.PropertyFor(x => x.Heading)
+    </h3>
+
+    <div class="widget-body">
+
+        @Html.PropertyFor(x => x.Editor)
+
+        @if (Model.Link != null && !Model.Link.IsEmpty() && !string.IsNullOrEmpty(Model.LinkText))
+        {
+            <a class="btn btn-primary" target="@(Model.OpenLinkInNewTab ? "_blank" : "_self")" href="@Url.ContentUrl(Model.Link)">@Model.LinkText <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        }
+    </div>
+</div>

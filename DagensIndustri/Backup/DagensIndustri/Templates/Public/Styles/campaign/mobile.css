@@ -1,0 +1,73 @@
+﻿body
+{
+    background-color:#ffefe6;
+    margin:0px;
+    padding-left:20px;
+    font-family:Verdana, Arial, Sans-Serif;
+    font-size:1.1em;
+    line-height:1.3em;
+}
+
+td
+{
+    font-size:0.9em;
+    line-height:1.2em;
+}
+
+a
+{
+    color:Blue;
+    text-decoration:underline; 
+}
+
+h1
+{
+    font-size:1.4em;
+    line-height:1.2em;
+}
+
+.err
+{
+    color:Red;    
+}
+
+.row
+{
+    clear:both;
+    display:table;
+}
+
+.wrapper
+{
+    width:100%;
+}
+
+
+.col1
+{
+    width:100px;
+    float:left;
+    text-align:left;
+}
+
+
+.col2
+{
+    position:relative;
+    overflow:hidden;
+    width:270px;
+    float:left;
+    padding-bottom:20px;
+}
+
+
+.formTextBox
+{
+    width:240px;
+    font-size:1.1em;
+}
+
+.btn
+{
+    font-size:1.7em;
+}

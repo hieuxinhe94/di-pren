@@ -1,0 +1,124 @@
+﻿@model Pren.Web.Models.ViewModels.OnBoardingViewModel
+
+@{
+    Layout = "~/Views/Shared/Layouts/_OrderFlow.cshtml";
+}
+
+<div class="onboarding container package-detail">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 package-detail__wrapper">
+            <div class="package @Model.Package.PackageCssClass">
+                <div class="package-content-wrapper js-package-expand">
+                    <div class="package__name">@Model.Package.Name</div>
+                    <div class="package__title">@Model.Package.Title</div>
+                    <div class="package__img package__img--helg hidden-xs" style="background-image: url(@Model.Package.ImgUrl)"></div>
+                </div>
+                <div class="package-listing">
+                    <div class="package-listing__title">@Model.Package.ListTitle</div>
+                    @if (string.IsNullOrEmpty(Model.Package.ListDividerTextMobile))
+                    {
+                    <div class="package-listing__divider">@Model.Package.ListDividerText</div>
+                    }
+                    else
+                    {
+                    <div class="package-listing__divider">@Model.Package.ListDividerTextMobile</div>
+                    <ul class="package-listing__detail package-listing__detail--base">
+                        @foreach (var item in Model.Package.ListItemsMobile)
+                            {
+                            <li class="package-listing__item">@item</li>
+                            }
+                    </ul>
+                    <div class="package-listing__plus-divider"><i class="icon-plus"></i></div>
+                    <div class="package-listing__plus">@Model.Package.ListDividerText</div>
+                    }
+
+                    <ul class="package-listing__detail">
+                        @foreach (var item in Model.Package.ListItems)
+                        {
+                        <li class="package-listing__item">@item</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 package-detail__iframe">
+
+            @if (Model.CurrentPage.HideIframeText != null)
+            {
+                <div class="detail_iframe">
+                    <div class="hide_iframe_text">
+                        @Model.CurrentPage.HideIframeText
+                    </div>                    
+                </div>
+            }
+            else
+            {
+                <div class="detail_iframe">
+                    <img src="@Url.ContentUrl(Model.CurrentPage.CompanyImage)" alt="@Model.CurrentPage.PageName">
+
+                    <form style="display: none;" target="splus-subscribe-frame" method="post" action="@Model.IframeUrl" id="subscribe-input-form">
+
+                        @foreach (var keyValuePair in Model.Parameters)
+                        {
+                            <input type="hidden" name="@keyValuePair.Key" value="@keyValuePair.Value" />
+                        }
+
+                    </form>
+
+                    <iframe id="splus-subscribe-frame" src="~/blank.html" name="splus-subscribe-frame" scrolling="no"></iframe>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+        // Submit the form and show iframe
+        $("#subscribe-input-form").submit();
+        $("#splus-subscribe-frame").show();
+
+        var isOldIE = (navigator.userAgent.indexOf("MSIE") !== -1); // Detect IE10 and below
+        $('#splus-subscribe-frame').iFrameResize({
+            checkOrigin: false,
+            log: false,
+            heightCalculationMethod: isOldIE ? 'max' : 'documentElementOffset',
+            minHeight: 200
+        });
+
+        // Listen to events from iframe
+        var OnMessage = function (evt) {
+            var data = evt.data;
+            try {
+                if (typeof data == 'string') {
+                    console.log(data);
+                    data = JSON.parse(data);
+                    var callbackUrl = encodeURIComponent("@Model.CallbackUrl");
+
+                    if (data.eventName === 'login') {
+                        window.top.location.href = "@Model.BaseUrl?appId=di.se&lc=sv&callback=" + callbackUrl;
+                    } else if (data.eventName === 'loginAndOpen') {
+                        window.top.location.href = "@Model.BaseUrl?appId=di.se&lc=sv&callback=" + encodeURIComponent("http://www.di.se");
+                    } else if (data.eventName === 'logout') {
+                        window.top.location.href = "@(Model.BaseUrl)logout?appId=di.se&callback=" + callbackUrl;
+                    } else if (data.eventName === 'open') {
+                        window.top.location.href = "http://www.di.se";
+                    }
+                }
+            } catch (e) {
+            }
+        };
+
+        if (window.addEventListener) {  // all browsers except IE before version 9
+            window.addEventListener("message", OnMessage, false);
+        } else {
+            if (window.attachEvent) {   // IE before version 9
+                window.attachEvent("onmessage", OnMessage);
+            }
+        }
+
+    </script>
+}

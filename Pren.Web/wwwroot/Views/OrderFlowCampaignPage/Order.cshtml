@@ -1,0 +1,153 @@
+﻿@model Pren.Web.Models.ViewModels.OrderFlow.OrderFlowOrderViewModel
+
+@{
+    Layout = "~/Views/Shared/Layouts/_OrderFlow.cshtml";
+}
+
+@section PageSpecificGtmDataLayer
+{
+    <script type="text/javascript">
+        dataLayer = [{
+            'product': 'PREN',
+            'order': '@Model.Package.Name',
+            'targetGroup': '@Model.TargetGroup'
+        }];
+
+        var pushNotificationToDL = function (message) {
+            dataLayer.push(message);
+        };
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message"; // Listen to message from child window
+        eventer(messageEvent, function (e) {
+            try {
+                var message = eval('(' + e.data + ')');
+                if (message.origin == 'S+' || message.eventInfo.origin == "S+") {
+                    pushNotificationToDL(message);
+                }
+            } catch (e) { }
+        }, false);
+    </script>
+}
+
+<div class="container package-detail">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 package-detail__wrapper">
+            <div class="package @Model.Package.PackageCssClass">
+                <div class="package-content-wrapper js-package-expand">
+                    <div class="package__name">@Model.Package.Name</div>
+                    <div class="package__title">@Model.Package.Title</div>
+                    <div class="package__img package__img--helg hidden-xs" style="background-image: url(@Model.Package.ImgUrl)"></div>
+                </div>
+                <div class="package-listing">
+                    <div class="package-listing__title">@Model.Package.ListTitle</div>
+                    @if (string.IsNullOrEmpty(Model.Package.ListDividerTextMobile))
+                    {
+                        <div class="package-listing__divider">@Model.Package.ListDividerText</div>
+                    }
+                    else
+                    {
+                        <div class="package-listing__divider">@Model.Package.ListDividerTextMobile</div>
+                        <ul class="package-listing__detail package-listing__detail--base">
+                            @foreach (var item in Model.Package.ListItemsMobile)
+                            {
+                                <li class="package-listing__item">@item</li>
+                            }
+                        </ul>
+                        <div class="package-listing__plus-divider"><i class="icon-plus"></i></div>
+                        <div class="package-listing__plus">@Model.Package.ListDividerText</div>
+                    }
+
+                    <ul class="package-listing__detail">
+                        @foreach (var item in Model.Package.ListItems)
+                        {
+                            <li class="package-listing__item">@item</li>
+                        }
+                    </ul>
+                    @if (Model.Package.BottomText != null)
+                    {
+                        <div class="package-listing__subtext">
+                            @Model.Package.BottomText
+                        </div>
+                    }
+                </div>
+            </div>
+            @if (!Model.HideChangePackageBtn)
+            {
+                <div class="package-button"><a class="package-button__link" href="../@Model.QueryString"><span class="text">Byt paket</span></a></div>
+            }
+            @if (Model.CurrentPage.CompanyPortalUrl != null)
+            {
+                <div class="package-detail__discount hidden-xs">
+                    <a href="@Model.CurrentPage.CompanyPortalUrl" class="discount-button">
+                        <div class="discount-button__content"> <span class="text">Volymrabatt för företag</span><i class="external-icon"></i></div>
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="col-xs-12 col-sm-8 package-detail__iframe">
+
+            <form style="display: none;" target="splus-subscribe-frame" method="post" action="@Model.IframeUrl" id="subscribe-input-form">
+
+                @foreach (var keyValuePair in Model.Parameters)
+                {
+                    <input type="hidden" name="@keyValuePair.Key" value="@keyValuePair.Value" />
+                }
+
+            </form>
+
+            <iframe id="splus-subscribe-frame" src="~/blank.html" name="splus-subscribe-frame" scrolling="no"></iframe>
+        </div>
+    </div>
+    @if (Model.CurrentPage.CompanyPortalUrl != null)
+    {
+        <div class="row visible-xs">
+            <div class="col-xs-12 package-detail__discount">
+                <a href="@Model.CurrentPage.CompanyPortalUrl" class="discount-button">
+                    <div class="discount-button__content">
+                        <span class="text">Volymrabatt för företag</span><i class="external-icon"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+        // Submit the form and show iframe
+        $("#subscribe-input-form").submit();
+        $("#splus-subscribe-frame").show();
+
+        var isOldIE = (navigator.userAgent.indexOf("MSIE") !== -1); // Detect IE10 and below
+        $('#splus-subscribe-frame').iFrameResize({
+            checkOrigin: false,
+            log: false,
+            heightCalculationMethod: isOldIE ? 'max' : 'lowestElement',
+            minHeight: 200
+        });
+
+        var registerEventHandler = function (obj, evt, func) {
+            if ('addEventListener' in window) {
+                obj.addEventListener(evt, func, false);
+            } else if ('attachEvent' in window) {//IE
+                obj.attachEvent('on' + evt, func);
+            }
+        }
+
+        var startOverOrderFlow = function (event) {
+            try {
+                if (typeof event.data === 'string') {
+                    if (event.data.indexOf('[startOver]') == 0) {
+                        window.location.reload();
+                        return;
+                    }
+                }
+            } catch (e) {
+            }
+        }
+        registerEventHandler(window, 'message', startOverOrderFlow);
+
+    </script>
+}

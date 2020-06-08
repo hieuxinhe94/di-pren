@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{757E6299-92E3-4537-A755-FA271B4E41DA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrenDiSe</RootNamespace>
+    <AssemblyName>PrenDiSe</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ElektroPost.Licensing, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\ElektroPost.Licensing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.ApplicationModules, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.ApplicationModules.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.BaseLibrary, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.BaseLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Cms.Shell.UI, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Cms.Shell.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Configuration, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Data, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Data.Cache, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Data.Cache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Enterprise, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Enterprise.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Events, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Events.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Framework, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.ImageLibrary, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.ImageLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Implementation, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Implementation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Legacy4, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Legacy4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Licensing, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Licensing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.LinkAnalyzer, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.LinkAnalyzer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Log.Analyzers, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Log.Analyzers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Log.Core, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Log.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Lucene, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Lucene.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Scheduler, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Scheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Scheduler.WKTL, Version=5.1.422.4, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Scheduler.WKTL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Shell, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Shell.UI, Version=6.2.267.1, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Shell.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.UI, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Web.WebControls, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.Web.WebControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.WebDav">
+      <HintPath>..\References\EPiServer.WebDav.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.WebParts, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.WebParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.WorkflowFoundation, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.WorkflowFoundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.XForms, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.XmlRpc, Version=6.1.379.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EPiServer.XmlRpc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Web.Services3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=2009.22.10.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System.ComponentModel.Composition.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.DataVisualization">
+      <HintPath>..\References\System.Web.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrapDi\css\agenda.css" />
+    <Content Include="bootstrapDi\css\bootstrap-responsive.css" />
+    <Content Include="bootstrapDi\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrapDi\css\bootstrap.css" />
+    <Content Include="bootstrapDi\css\bootstrap.min.css" />
+    <Content Include="bootstrapDi\css\datepicker.css" />
+    <Content Include="bootstrapDi\css\shared.css" />
+    <Content Include="bootstrapDi\css\tpn.css" />
+    <Content Include="bootstrapDi\img\ajax-loader.gif" />
+    <Content Include="bootstrapDi\img\ajax-loader2.gif" />
+    <Content Include="bootstrapDi\img\background.jpg" />
+    <Content Include="bootstrapDi\img\check-mini-grey.png" />
+    <Content Include="bootstrapDi\img\check-mini-pink.png" />
+    <Content Include="bootstrapDi\img\checkbox-checked_24x24.png" />
+    <Content Include="bootstrapDi\img\checkbox_24x24.png" />
+    <Content Include="bootstrapDi\img\Di-small.jpg" />
+    <Content Include="bootstrapDi\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrapDi\img\glyphicons-halflings.png" />
+    <Content Include="bootstrapDi\img\test\checkbox-checked.png" />
+    <Content Include="bootstrapDi\img\test\checkbox-unchecked.png" />
+    <Content Include="bootstrapDi\img\test\leftstep2.png" />
+    <Content Include="bootstrapDi\img\test\leftstep2_1.png" />
+    <Content Include="bootstrapDi\img\test\leftstep2_2.png" />
+    <Content Include="bootstrapDi\img\test\pren99.png" />
+    <Content Include="bootstrapDi\img\test\toppbild.png" />
+    <Content Include="bootstrapDi\js\bootstrap-datepicker.js" />
+    <Content Include="bootstrapDi\js\bootstrap.js" />
+    <Content Include="bootstrapDi\js\bootstrap.min.js" />
+    <Content Include="bootstrapDi\js\jquery.1.9.1.js" />
+    <Content Include="bootstrapDi\js\selectivizr-min.js" />
+    <Content Include="bootstrapDi\js\validation.js" />
+    <Content Include="c-components\fonts\font-awesome\f99a231e.fontawesome-webfont.svg" />
+    <Content Include="c-components\fonts\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="c-components\fonts\glyphicons\0a5c48c6.glyphicons-halflings-regular.svg" />
+    <Content Include="c-components\fonts\glyphicons\glyphicons-halflings-regular.svg" />
+    <Content Include="c-components\images\borja_har.png" />
+    <Content Include="c-components\images\green%402x.png" />
+    <Content Include="c-components\images\green.png" />
+    <Content Include="c-components\scripts\05025d63.jquery.plugins.js" />
+    <Content Include="c-components\scripts\34ad1adc.jquery.js" />
+    <Content Include="c-components\scripts\main.js" />
+    <Content Include="c-components\scripts\vendor\8bbb86ce.bootstrap.js" />
+    <Content Include="c-components\scripts\vendor\bootstrap.js" />
+    <Content Include="c-components\scripts\vendor\bootstrapie9.js" />
+    <Content Include="c-components\scripts\vendor\f7f27360.modernizr.js" />
+    <Content Include="c-components\scripts\vendor\respond.js" />
+    <Content Include="c-components\styles\green%402x.png" />
+    <Content Include="c-components\styles\green.png" />
+    <Content Include="c-components\styles\main.css" />
+    <Content Include="c-components\styles\vendor.css" />
+    <Content Include="checkalive.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="global.asax" />
+    <Content Include="kcookie.aspx" />
+    <Content Include="lang\contentChannelText.xml" />
+    <Content Include="lang\DI_EN.xml" />
+    <Content Include="lang\DI_SV.xml" />
+    <Content Include="lang\languageDA.xml" />
+    <Content Include="lang\languageDE.xml" />
+    <Content Include="lang\languageEN.xml" />
+    <Content Include="lang\languageES.xml" />
+    <Content Include="lang\languageFI.xml" />
+    <Content Include="lang\languageFR.xml" />
+    <Content Include="lang\languageJA.xml" />
+    <Content Include="lang\languageNL.xml" />
+    <Content Include="lang\languageNO.xml" />
+    <Content Include="lang\languagePT.xml" />
+    <Content Include="lang\languageSV.xml" />
+    <Content Include="lang\languageZH.xml" />
+    <Content Include="lang\Lang_OnlineCenter_DA.xml" />
+    <Content Include="lang\Lang_OnlineCenter_DE.xml" />
+    <Content Include="lang\Lang_OnlineCenter_EN.xml" />
+    <Content Include="lang\Lang_OnlineCenter_ES.xml" />
+    <Content Include="lang\Lang_OnlineCenter_FI.xml" />
+    <Content Include="lang\Lang_OnlineCenter_FR.xml" />
+    <Content Include="lang\Lang_OnlineCenter_JA.xml" />
+    <Content Include="lang\Lang_OnlineCenter_NL.xml" />
+    <Content Include="lang\Lang_OnlineCenter_NO.xml" />
+    <Content Include="lang\Lang_OnlineCenter_PT.xml" />
+    <Content Include="lang\Lang_OnlineCenter_SV.xml" />
+    <Content Include="lang\Lang_OnlineCenter_ZH.xml" />
+    <Content Include="lang\newtext.xml" />
+    <Content Include="lang\newtext_OnlineCenter.xml" />
+    <Content Include="lang\newtext_OnlineCenter_sent_to_translation.xml" />
+    <Content Include="lang\newtext_sent_to_translation.xml" />
+    <Content Include="lang\OnlineCenter_DA.xml" />
+    <Content Include="lang\OnlineCenter_DE.xml" />
+    <Content Include="lang\OnlineCenter_EN.xml" />
+    <Content Include="lang\OnlineCenter_ES.xml" />
+    <Content Include="lang\OnlineCenter_FI.xml" />
+    <Content Include="lang\OnlineCenter_FR.xml" />
+    <Content Include="lang\OnlineCenter_JA.xml" />
+    <Content Include="lang\OnlineCenter_NL.xml" />
+    <Content Include="lang\OnlineCenter_NO.xml" />
+    <Content Include="lang\OnlineCenter_PT.xml" />
+    <Content Include="lang\OnlineCenter_SV.xml" />
+    <Content Include="lang\OnlineCenter_ZH.xml" />
+    <Content Include="lang\tinyMCE.da.lang.xml" />
+    <Content Include="lang\tinyMCE.de.lang.xml" />
+    <Content Include="lang\tinyMCE.en.lang.xml" />
+    <Content Include="lang\tinyMCE.es.lang.xml" />
+    <Content Include="lang\tinyMCE.fi.lang.xml" />
+    <Content Include="lang\tinyMCE.fr.lang.xml" />
+    <Content Include="lang\tinyMCE.ja.lang.xml" />
+    <Content Include="lang\tinyMCE.nl.lang.xml" />
+    <Content Include="lang\tinyMCE.no.lang.xml" />
+    <Content Include="lang\tinyMCE.pt.lang.xml" />
+    <Content Include="lang\tinyMCE.sv.lang.xml" />
+    <Content Include="lang\tinyMCE.zh.lang.xml" />
+    <Content Include="lang\workflowFoundation.xml" />
+    <Content Include="lang\workflowFoundation_DA.xml" />
+    <Content Include="lang\workflowFoundation_DE.xml" />
+    <Content Include="lang\workflowFoundation_EN.xml" />
+    <Content Include="lang\workflowFoundation_ES.xml" />
+    <Content Include="lang\workflowFoundation_FI.xml" />
+    <Content Include="lang\workflowFoundation_FR.xml" />
+    <Content Include="lang\workflowFoundation_JA.xml" />
+    <Content Include="lang\workflowFoundation_NL.xml" />
+    <Content Include="lang\workflowFoundation_NO.xml" />
+    <Content Include="lang\workflowFoundation_PT.xml" />
+    <Content Include="lang\workflowFoundation_SV.xml" />
+    <Content Include="lang\workflowFoundation_ZH.xml" />
+    <Content Include="Templates\Public\Images\bg-wrapper.png" />
+    <Content Include="Templates\Public\js\maintenanceHandler\maintenanceHandler.js" />
+    <Content Include="Templates\Public\Pages\Common\Standardpage.aspx" />
+    <Content Include="Templates\Public\Images\di_logo_refl.png" />
+    <Content Include="Templates\Public\Images\forms\status.png" />
+    <Content Include="Templates\Public\Images\ills\creditcards.png" />
+    <Content Include="Templates\Public\Images\logo.png" />
+    <Content Include="Templates\Public\js\jquery-1.11.0.min.js" />
+    <Content Include="Templates\Public\Pages\CampaignTemplates\CampaignPaper\Campaign.aspx" />
+    <Content Include="Templates\Public\Pages\CampaignTemplates\CampaignPaper\CampaignPaperList.aspx" />
+    <Content Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\Campaign.aspx" />
+    <Content Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\Header.ascx" />
+    <Content Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\README.txt" />
+    <Content Include="Templates\Public\Pages\CampaignTemplates\CampaignDigital\Campaign.aspx" />
+    <Content Include="Templates\Public\Pages\Empty.aspx" />
+    <Content Include="Templates\Public\Styles\shared.css" />
+    <Content Include="Templates\Public\Units\CampaignTemplates\AddThisFieldset.ascx" />
+    <Content Include="Templates\Public\Units\CampaignTemplates\CampaignForm.ascx" />
+    <Content Include="Templates\Public\Units\CampaignTemplates\CampaignHeader.ascx" />
+    <Content Include="Templates\Public\Units\CampaignTemplates\CampaignPaperSideBar.ascx" />
+    <Content Include="Templates\Public\Units\Static\Footer.ascx" />
+    <Content Include="Templates\Public\Units\Static\GoogleAnalytics.ascx" />
+    <Content Include="Templates\Public\Units\Static\Header.ascx" />
+    <Content Include="Tools\Properties\TypeControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="checkalive.aspx.cs">
+      <DependentUpon>checkalive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="checkalive.aspx.designer.cs">
+      <DependentUpon>checkalive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="global.asax.cs">
+      <DependentUpon>global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="kcookie.aspx.cs">
+      <DependentUpon>kcookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kcookie.aspx.designer.cs">
+      <DependentUpon>kcookie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\js\maintenanceHandler\MailService.ashx.cs">
+      <DependentUpon>MailService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\Common\Standardpage.aspx.cs">
+      <DependentUpon>Standardpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\Common\Standardpage.aspx.designer.cs">
+      <DependentUpon>Standardpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\MasterPages\C-Campaign.Master.cs">
+      <DependentUpon>C-Campaign.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\MasterPages\C-Campaign.Master.designer.cs">
+      <DependentUpon>C-Campaign.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\MasterPages\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\MasterPages\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaper\Campaign.aspx.cs">
+      <DependentUpon>Campaign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaper\Campaign.aspx.designer.cs">
+      <DependentUpon>Campaign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaper\CampaignPaperList.aspx.cs">
+      <DependentUpon>CampaignPaperList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaper\CampaignPaperList.aspx.designer.cs">
+      <DependentUpon>CampaignPaperList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\Campaign.aspx.cs">
+      <DependentUpon>Campaign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\Campaign.aspx.designer.cs">
+      <DependentUpon>Campaign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\GetJson.ashx.cs">
+      <DependentUpon>GetJson.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignDigital\Campaign.aspx.cs">
+      <DependentUpon>Campaign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\CampaignTemplates\CampaignDigital\Campaign.aspx.designer.cs">
+      <DependentUpon>Campaign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\Empty.aspx.cs">
+      <DependentUpon>Empty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Pages\Empty.aspx.designer.cs">
+      <DependentUpon>Empty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\AddThisFieldset.ascx.cs">
+      <DependentUpon>AddThisFieldset.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\AddThisFieldset.ascx.designer.cs">
+      <DependentUpon>AddThisFieldset.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\CampaignForm.ascx.cs">
+      <DependentUpon>CampaignForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\CampaignForm.ascx.designer.cs">
+      <DependentUpon>CampaignForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\CampaignHeader.ascx.cs">
+      <DependentUpon>CampaignHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\CampaignHeader.ascx.designer.cs">
+      <DependentUpon>CampaignHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\CampaignPaperSideBar.ascx.cs">
+      <DependentUpon>CampaignPaperSideBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Units\CampaignTemplates\CampaignPaperSideBar.ascx.designer.cs">
+      <DependentUpon>CampaignPaperSideBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Units\ServicePlusUserOutputWrapper.cs" />
+    <Compile Include="Templates\Public\Units\Static\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Units\Static\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Units\Static\GoogleAnalytics.ascx.cs">
+      <DependentUpon>GoogleAnalytics.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Units\Static\GoogleAnalytics.ascx.designer.cs">
+      <DependentUpon>GoogleAnalytics.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Public\Units\Static\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Public\Units\Static\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Campaign\CampaignExtensions.cs" />
+    <Compile Include="Tools\Campaign\CampaignUser.cs" />
+    <Compile Include="Tools\Campaign\OfferCode.cs" />
+    <Compile Include="Tools\Campaign\UserFields.cs" />
+    <Compile Include="Tools\Classes\EPiFunctions.cs" />
+    <Compile Include="Tools\Classes\WebControls\DiLinkCollection.cs" />
+    <Compile Include="Tools\Properties\PropertyCampaignProductList.cs" />
+    <Compile Include="Tools\Properties\PropertyDivider.cs" />
+    <Compile Include="Tools\Properties\TypeControl.ascx.cs">
+      <DependentUpon>TypeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Properties\TypeControl.ascx.designer.cs">
+      <DependentUpon>TypeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\OneByOne\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="connectionStrings.config" />
+    <Content Include="episerver.config" />
+    <Content Include="EPiServerFramework.config" />
+    <Content Include="EPiServerLog.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Public\MasterPages\C-Campaign.Master" />
+    <Content Include="Templates\Public\Pages\CampaignTemplates\CampaignPaperPrototyp\GetJson.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="c-components\fonts\font-awesome\5cb1bed8.fontawesome-webfont.ttf" />
+    <None Include="c-components\fonts\font-awesome\8275e3c2.FontAwesome.otf" />
+    <None Include="c-components\fonts\font-awesome\cd409bca.fontawesome-webfont.eot" />
+    <None Include="c-components\fonts\font-awesome\f5316d2e.fontawesome-webfont.woff" />
+    <None Include="c-components\fonts\font-awesome\fontawesome-webfont.eot" />
+    <None Include="c-components\fonts\font-awesome\fontawesome-webfont.ttf" />
+    <None Include="c-components\fonts\font-awesome\fontawesome-webfont.woff" />
+    <None Include="c-components\fonts\font-awesome\FontAwesome.otf" />
+    <None Include="c-components\fonts\glyphicons\2ad0632b.glyphicons-halflings-regular.eot" />
+    <None Include="c-components\fonts\glyphicons\4dab103b.glyphicons-halflings-regular.ttf" />
+    <None Include="c-components\fonts\glyphicons\a0537a78.glyphicons-halflings-regular.woff" />
+    <None Include="c-components\fonts\glyphicons\glyphicons-halflings-regular.eot" />
+    <None Include="c-components\fonts\glyphicons\glyphicons-halflings-regular.ttf" />
+    <None Include="c-components\fonts\glyphicons\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\LokaltDebug.pubxml" />
+    <None Include="Properties\PublishProfiles\LokaltRelease.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Templates\Public\MasterPages\MasterPage.Master" />
+    <Content Include="Templates\Public\js\maintenanceHandler\MailService.ashx" />
+    <None Include="Tools\OneByOne\obo.wsdl" />
+    <None Include="Web References\OneByOne\obo.wsdl" />
+    <None Include="Web References\OneByOne\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://lokalpren.di.se/Tools/OneByOne/obo.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\OneByOne\</RelPath>
+      <UpdateFromURL>http://lokalpren.di.se/Tools/OneByOne/obo.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>pren_di_se_OneByOne_DocumentFactoryService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DagensIndustri\DIClassLib\DIClassLib.csproj">
+      <Project>{CD83A652-F083-4B4A-9D1D-487D9A7885B3}</Project>
+      <Name>DIClassLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://lokalpren.di.se</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

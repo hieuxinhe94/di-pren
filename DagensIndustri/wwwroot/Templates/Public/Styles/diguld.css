@@ -1,0 +1,36 @@
+#header {
+	background: #3c3c32 url(../images/gold-logo-shadow.png) 50px 0 repeat-y; 
+}
+
+	#header .logo {
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 59px;
+		width: 145px;
+		height: 129px;
+	}
+	
+		#header .logo img {
+			width: 145px;
+			height: 129px;
+		}
+		
+			#nav > ul > li {
+				background-position: -500px 6px ;
+			}				
+			
+				#nav > ul > li.current { background-color: #636359; }
+				
+.subscription-welcome {
+	background-color: #636359;
+	background: url(../images/placeholders/top-welcome.jpg) 0 0 no-repeat;	
+	height: 245px;
+	padding-top: 140px;	
+}
+
+.subscription-welcome p {
+	font-size: 18px;
+	line-height: 23px;
+	border: none;
+}

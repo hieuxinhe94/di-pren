@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PrenWebMiscModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BusinessSubscriptionPrice">
+          <Key>
+            <PropertyRef Name="ExternalProductCode" />
+          </Key>
+          <Property Name="ExternalProductCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="CampaignId" />
+          </Key>
+          <Property Name="CampaignId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CampaignNumber" Type="int" Nullable="false" />
+          <Property Name="TotalPriceIncludningVat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TotalPriceExcludningVat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="VatAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="VatPercent" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PaperCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PackageId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="SubsKind" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PriceGroup" Type="varchar" MaxLength="50" />
+          <Property Name="PriceForCustomerToPay" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="CampaignUspProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignUspProductTextRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fkUspProductId" Type="int" Nullable="false" />
+          <Property Name="fkUspTextId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignUspText">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CodePortalCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fkListId" Type="int" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UsedTime" Type="datetime" />
+          <Property Name="UsedById" Type="nvarchar" MaxLength="500" />
+          <Property Name="UsedByEmail" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="CodePortalGiveAway">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fkCodeId" Type="int" Nullable="false" />
+          <Property Name="GiveAwayTo" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CodePortalList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ResourceId" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ValidFrom" Type="datetime" Nullable="false" />
+          <Property Name="ValidTo" Type="datetime" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SendTime" Type="datetime" Nullable="false" />
+          <Property Name="ToAddress" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FromAddress" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Body" Type="varchar" MaxLength="5000" Nullable="false" />
+          <Property Name="IsHtml" Type="int" Nullable="false" />
+          <Property Name="IP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Result" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogEvent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="eventId" Type="int" Nullable="false" />
+          <Property Name="cusno" Type="bigint" />
+          <Property Name="isEventSuccess" Type="bit" Nullable="false" />
+          <Property Name="fileName" Type="varchar" MaxLength="150" />
+          <Property Name="dateSaved" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="errorFileName" Type="varchar" MaxLength="150" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="exception" Type="text" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogTableInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fileName" Type="varchar" MaxLength="150" />
+          <Property Name="info" Type="ntext" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PackageRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PackageRelationItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fkPackageRelationListId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="WildcardBefore" Type="bit" Nullable="false" />
+          <Property Name="ConditionBefore" Type="nvarchar" MaxLength="50" />
+          <Property Name="WildcardAfter" Type="bit" Nullable="false" />
+          <Property Name="ConditionAfter" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PackageRelationList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fkPackageRelationId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CampaignUspProductTextRelation_CampaignUspProduct">
+          <End Role="CampaignUspProduct" Type="Self.CampaignUspProduct" Multiplicity="1" />
+          <End Role="CampaignUspProductTextRelation" Type="Self.CampaignUspProductTextRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CampaignUspProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignUspProductTextRelation">
+              <PropertyRef Name="fkUspProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CampaignUspProductTextRelation_CampaignUspText">
+          <End Role="CampaignUspText" Type="Self.CampaignUspText" Multiplicity="1" />
+          <End Role="CampaignUspProductTextRelation" Type="Self.CampaignUspProductTextRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CampaignUspText">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignUspProductTextRelation">
+              <PropertyRef Name="fkUspTextId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CodePortalGiveAway_CodePortalCode">
+          <End Role="CodePortalCode" Type="Self.CodePortalCode" Multiplicity="1" />
+          <End Role="CodePortalGiveAway" Type="Self.CodePortalGiveAway" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodePortalCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CodePortalGiveAway">
+              <PropertyRef Name="fkCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CodePortalList_CodePortalCode">
+          <End Role="CodePortalList" Type="Self.CodePortalList" Multiplicity="1" />
+          <End Role="CodePortalCode" Type="Self.CodePortalCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodePortalList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CodePortalCode">
+              <PropertyRef Name="fkListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PackageRelationItem_PackageRelationList">
+          <End Role="PackageRelationList" Type="Self.PackageRelationList" Multiplicity="1" />
+          <End Role="PackageRelationItem" Type="Self.PackageRelationItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageRelationList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PackageRelationItem">
+              <PropertyRef Name="fkPackageRelationListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PackageRelationList_PackageRelation">
+          <End Role="PackageRelation" Type="Self.PackageRelation" Multiplicity="1" />
+          <End Role="PackageRelationList" Type="Self.PackageRelationList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageRelation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PackageRelationList">
+              <PropertyRef Name="fkPackageRelationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PrenWebMiscModelStoreContainer">
+          <EntitySet Name="BusinessSubscriptionPrice" EntityType="Self.BusinessSubscriptionPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Campaign" EntityType="Self.Campaign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CampaignUspProduct" EntityType="Self.CampaignUspProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CampaignUspProductTextRelation" EntityType="Self.CampaignUspProductTextRelation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CampaignUspText" EntityType="Self.CampaignUspText" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodePortalCode" EntityType="Self.CodePortalCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodePortalGiveAway" EntityType="Self.CodePortalGiveAway" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodePortalList" EntityType="Self.CodePortalList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailLog" EntityType="Self.EmailLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogEvent" EntityType="Self.LogEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogTable" EntityType="Self.LogTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogTableInfo" EntityType="Self.LogTableInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackageRelation" EntityType="Self.PackageRelation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackageRelationItem" EntityType="Self.PackageRelationItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackageRelationList" EntityType="Self.PackageRelationList" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CampaignUspProductTextRelation_CampaignUspProduct" Association="Self.FK_CampaignUspProductTextRelation_CampaignUspProduct">
+            <End Role="CampaignUspProduct" EntitySet="CampaignUspProduct" />
+            <End Role="CampaignUspProductTextRelation" EntitySet="CampaignUspProductTextRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CampaignUspProductTextRelation_CampaignUspText" Association="Self.FK_CampaignUspProductTextRelation_CampaignUspText">
+            <End Role="CampaignUspText" EntitySet="CampaignUspText" />
+            <End Role="CampaignUspProductTextRelation" EntitySet="CampaignUspProductTextRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CodePortalGiveAway_CodePortalCode" Association="Self.FK_CodePortalGiveAway_CodePortalCode">
+            <End Role="CodePortalCode" EntitySet="CodePortalCode" />
+            <End Role="CodePortalGiveAway" EntitySet="CodePortalGiveAway" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CodePortalList_CodePortalCode" Association="Self.FK_CodePortalList_CodePortalCode">
+            <End Role="CodePortalList" EntitySet="CodePortalList" />
+            <End Role="CodePortalCode" EntitySet="CodePortalCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PackageRelationItem_PackageRelationList" Association="Self.FK_PackageRelationItem_PackageRelationList">
+            <End Role="PackageRelationList" EntitySet="PackageRelationList" />
+            <End Role="PackageRelationItem" EntitySet="PackageRelationItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PackageRelationList_PackageRelation" Association="Self.FK_PackageRelationList_PackageRelation">
+            <End Role="PackageRelation" EntitySet="PackageRelation" />
+            <End Role="PackageRelationList" EntitySet="PackageRelationList" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PrenWebMiscModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EmailLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SendTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ToAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FromAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Body" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsHtml" Type="Int32" Nullable="false" />
+          <Property Name="IP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Result" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogEvent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <Property Name="cusno" Type="Int64" />
+          <Property Name="isEventSuccess" Type="Boolean" Nullable="false" />
+          <Property Name="fileName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="dateSaved" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LogTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="errorFileName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="exception" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LogTableInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fileName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="PrenWebMiscEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmailLog" EntityType="Self.EmailLog" />
+          <EntitySet Name="LogEvent" EntityType="Self.LogEvent" />
+          <EntitySet Name="LogTable" EntityType="Self.LogTable" />
+          <EntitySet Name="LogTableInfo" EntityType="Self.LogTableInfo" />
+          <EntitySet Name="BusinessSubscriptionPrice" EntityType="PrenWebMiscModel.BusinessSubscriptionPrice" />
+          <EntitySet Name="Campaign" EntityType="PrenWebMiscModel.Campaign" />
+          <EntitySet Name="CampaignUspProduct" EntityType="PrenWebMiscModel.CampaignUspProduct" />
+          <EntitySet Name="CampaignUspProductTextRelation" EntityType="PrenWebMiscModel.CampaignUspProductTextRelation" />
+          <EntitySet Name="CampaignUspText" EntityType="PrenWebMiscModel.CampaignUspText" />
+          <AssociationSet Name="FK_CampaignUspProductTextRelation_CampaignUspProduct" Association="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspProduct">
+            <End Role="CampaignUspProduct" EntitySet="CampaignUspProduct" />
+            <End Role="CampaignUspProductTextRelation" EntitySet="CampaignUspProductTextRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CampaignUspProductTextRelation_CampaignUspText" Association="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspText">
+            <End Role="CampaignUspText" EntitySet="CampaignUspText" />
+            <End Role="CampaignUspProductTextRelation" EntitySet="CampaignUspProductTextRelation" />
+          </AssociationSet>
+          <EntitySet Name="CodePortalCode" EntityType="PrenWebMiscModel.CodePortalCode" />
+          <EntitySet Name="CodePortalList" EntityType="PrenWebMiscModel.CodePortalList" />
+          <AssociationSet Name="FK_CodePortalList_CodePortalCode" Association="PrenWebMiscModel.FK_CodePortalList_CodePortalCode">
+            <End Role="CodePortalList" EntitySet="CodePortalList" />
+            <End Role="CodePortalCode" EntitySet="CodePortalCode" />
+          </AssociationSet>
+          <EntitySet Name="PackageRelation" EntityType="PrenWebMiscModel.PackageRelation" />
+          <EntitySet Name="PackageRelationItem" EntityType="PrenWebMiscModel.PackageRelationItem" />
+          <EntitySet Name="PackageRelationList" EntityType="PrenWebMiscModel.PackageRelationList" />
+          <AssociationSet Name="FK_PackageRelationList_PackageRelation" Association="PrenWebMiscModel.FK_PackageRelationList_PackageRelation">
+            <End Role="PackageRelation" EntitySet="PackageRelation" />
+            <End Role="PackageRelationList" EntitySet="PackageRelationList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PackageRelationItem_PackageRelationList" Association="PrenWebMiscModel.FK_PackageRelationItem_PackageRelationList">
+            <End Role="PackageRelationList" EntitySet="PackageRelationList" />
+            <End Role="PackageRelationItem" EntitySet="PackageRelationItem" />
+          </AssociationSet>
+          <EntitySet Name="CodePortalGiveAway" EntityType="PrenWebMiscModel.CodePortalGiveAway" />
+          <AssociationSet Name="FK_CodePortalGiveAway_CodePortalCode" Association="PrenWebMiscModel.FK_CodePortalGiveAway_CodePortalCode">
+            <End Role="CodePortalCode" EntitySet="CodePortalCode" />
+            <End Role="CodePortalGiveAway" EntitySet="CodePortalGiveAway" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BusinessSubscriptionPrice">
+          <Key>
+            <PropertyRef Name="ExternalProductCode" />
+          </Key>
+          <Property Name="ExternalProductCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="CampaignId" />
+          </Key>
+          <Property Name="CampaignId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignNumber" Type="Int32" Nullable="false" />
+          <Property Name="TotalPriceIncludningVat" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TotalPriceExcludningVat" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="VatAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="VatPercent" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="PaperCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PackageId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SubsKind" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PriceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PriceForCustomerToPay" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="CampaignUspProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CampaignUspProductTextRelation" Relationship="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspProduct" FromRole="CampaignUspProduct" ToRole="CampaignUspProductTextRelation" />
+        </EntityType>
+        <EntityType Name="CampaignUspProductTextRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fkUspProductId" Type="Int32" Nullable="false" />
+          <Property Name="fkUspTextId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CampaignUspProduct" Relationship="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspProduct" FromRole="CampaignUspProductTextRelation" ToRole="CampaignUspProduct" />
+          <NavigationProperty Name="CampaignUspText" Relationship="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspText" FromRole="CampaignUspProductTextRelation" ToRole="CampaignUspText" />
+        </EntityType>
+        <EntityType Name="CampaignUspText">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CampaignUspProductTextRelation" Relationship="PrenWebMiscModel.FK_CampaignUspProductTextRelation_CampaignUspText" FromRole="CampaignUspText" ToRole="CampaignUspProductTextRelation" />
+        </EntityType>
+        <Association Name="FK_CampaignUspProductTextRelation_CampaignUspProduct">
+          <End Type="PrenWebMiscModel.CampaignUspProduct" Role="CampaignUspProduct" Multiplicity="1" />
+          <End Type="PrenWebMiscModel.CampaignUspProductTextRelation" Role="CampaignUspProductTextRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CampaignUspProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignUspProductTextRelation">
+              <PropertyRef Name="fkUspProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CampaignUspProductTextRelation_CampaignUspText">
+          <End Type="PrenWebMiscModel.CampaignUspText" Role="CampaignUspText" Multiplicity="1" />
+          <End Type="PrenWebMiscModel.CampaignUspProductTextRelation" Role="CampaignUspProductTextRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CampaignUspText">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignUspProductTextRelation">
+              <PropertyRef Name="fkUspTextId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CodePortalCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fkListId" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UsedTime" Type="DateTime" Precision="3" />
+          <Property Name="UsedById" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CodePortalList" Relationship="PrenWebMiscModel.FK_CodePortalList_CodePortalCode" FromRole="CodePortalCode" ToRole="CodePortalList" />
+          <Property Name="UsedByEmail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CodePortalGiveAway" Relationship="PrenWebMiscModel.FK_CodePortalGiveAway_CodePortalCode" FromRole="CodePortalCode" ToRole="CodePortalGiveAway" />
+        </EntityType>
+        <EntityType Name="CodePortalList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceId" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ValidTo" Type="DateTime" Precision="3" Nullable="false" />
+          <NavigationProperty Name="CodePortalCode" Relationship="PrenWebMiscModel.FK_CodePortalList_CodePortalCode" FromRole="CodePortalList" ToRole="CodePortalCode" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_CodePortalList_CodePortalCode">
+          <End Type="PrenWebMiscModel.CodePortalList" Role="CodePortalList" Multiplicity="1" />
+          <End Type="PrenWebMiscModel.CodePortalCode" Role="CodePortalCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodePortalList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CodePortalCode">
+              <PropertyRef Name="fkListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PackageRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PackageRelationList" Relationship="PrenWebMiscModel.FK_PackageRelationList_PackageRelation" FromRole="PackageRelation" ToRole="PackageRelationList" />
+        </EntityType>
+        <EntityType Name="PackageRelationItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fkPackageRelationListId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WildcardBefore" Type="Boolean" Nullable="false" />
+          <Property Name="ConditionBefore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WildcardAfter" Type="Boolean" Nullable="false" />
+          <Property Name="ConditionAfter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PackageRelationList" Relationship="PrenWebMiscModel.FK_PackageRelationItem_PackageRelationList" FromRole="PackageRelationItem" ToRole="PackageRelationList" />
+        </EntityType>
+        <EntityType Name="PackageRelationList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fkPackageRelationId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PackageRelation" Relationship="PrenWebMiscModel.FK_PackageRelationList_PackageRelation" FromRole="PackageRelationList" ToRole="PackageRelation" />
+          <NavigationProperty Name="PackageRelationItem" Relationship="PrenWebMiscModel.FK_PackageRelationItem_PackageRelationList" FromRole="PackageRelationList" ToRole="PackageRelationItem" />
+        </EntityType>
+        <Association Name="FK_PackageRelationList_PackageRelation">
+          <End Type="PrenWebMiscModel.PackageRelation" Role="PackageRelation" Multiplicity="1" />
+          <End Type="PrenWebMiscModel.PackageRelationList" Role="PackageRelationList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageRelation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PackageRelationList">
+              <PropertyRef Name="fkPackageRelationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PackageRelationItem_PackageRelationList">
+          <End Type="PrenWebMiscModel.PackageRelationList" Role="PackageRelationList" Multiplicity="1" />
+          <End Type="PrenWebMiscModel.PackageRelationItem" Role="PackageRelationItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageRelationList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PackageRelationItem">
+              <PropertyRef Name="fkPackageRelationListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CodePortalGiveAway">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fkCodeId" Type="Int32" Nullable="false" />
+          <Property Name="GiveAwayTo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CodePortalCode" Relationship="PrenWebMiscModel.FK_CodePortalGiveAway_CodePortalCode" FromRole="CodePortalGiveAway" ToRole="CodePortalCode" />
+        </EntityType>
+        <Association Name="FK_CodePortalGiveAway_CodePortalCode">
+          <End Type="PrenWebMiscModel.CodePortalCode" Role="CodePortalCode" Multiplicity="1" />
+          <End Type="PrenWebMiscModel.CodePortalGiveAway" Role="CodePortalGiveAway" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodePortalCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CodePortalGiveAway">
+              <PropertyRef Name="fkCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PrenWebMiscModelStoreContainer" CdmEntityContainer="PrenWebMiscEntities">
+          <EntitySetMapping Name="EmailLog">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.EmailLog">
+              <MappingFragment StoreEntitySet="EmailLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+                <ScalarProperty Name="ToAddress" ColumnName="ToAddress" />
+                <ScalarProperty Name="FromAddress" ColumnName="FromAddress" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="IsHtml" ColumnName="IsHtml" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogEvent">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.LogEvent">
+              <MappingFragment StoreEntitySet="LogEvent">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+                <ScalarProperty Name="cusno" ColumnName="cusno" />
+                <ScalarProperty Name="isEventSuccess" ColumnName="isEventSuccess" />
+                <ScalarProperty Name="fileName" ColumnName="fileName" />
+                <ScalarProperty Name="dateSaved" ColumnName="dateSaved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogTable">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.LogTable">
+              <MappingFragment StoreEntitySet="LogTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="errorFileName" ColumnName="errorFileName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="exception" ColumnName="exception" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogTableInfo">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.LogTableInfo">
+              <MappingFragment StoreEntitySet="LogTableInfo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fileName" ColumnName="fileName" />
+                <ScalarProperty Name="info" ColumnName="info" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessSubscriptionPrice">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.BusinessSubscriptionPrice">
+              <MappingFragment StoreEntitySet="BusinessSubscriptionPrice">
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ExternalProductCode" ColumnName="ExternalProductCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campaign">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.Campaign">
+              <MappingFragment StoreEntitySet="Campaign">
+                <ScalarProperty Name="PriceForCustomerToPay" ColumnName="PriceForCustomerToPay" />
+                <ScalarProperty Name="PriceGroup" ColumnName="PriceGroup" />
+                <ScalarProperty Name="SubsKind" ColumnName="SubsKind" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+                <ScalarProperty Name="ProductNumber" ColumnName="ProductNumber" />
+                <ScalarProperty Name="PaperCode" ColumnName="PaperCode" />
+                <ScalarProperty Name="VatPercent" ColumnName="VatPercent" />
+                <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+                <ScalarProperty Name="TotalPriceExcludningVat" ColumnName="TotalPriceExcludningVat" />
+                <ScalarProperty Name="TotalPriceIncludningVat" ColumnName="TotalPriceIncludningVat" />
+                <ScalarProperty Name="CampaignNumber" ColumnName="CampaignNumber" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignUspProduct">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.CampaignUspProduct">
+              <MappingFragment StoreEntitySet="CampaignUspProduct">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignUspProductTextRelation">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.CampaignUspProductTextRelation">
+              <MappingFragment StoreEntitySet="CampaignUspProductTextRelation">
+                <ScalarProperty Name="fkUspTextId" ColumnName="fkUspTextId" />
+                <ScalarProperty Name="fkUspProductId" ColumnName="fkUspProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignUspText">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.CampaignUspText">
+              <MappingFragment StoreEntitySet="CampaignUspText">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodePortalCode">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.CodePortalCode">
+              <MappingFragment StoreEntitySet="CodePortalCode">
+                <ScalarProperty Name="UsedByEmail" ColumnName="UsedByEmail" />
+                <ScalarProperty Name="UsedById" ColumnName="UsedById" />
+                <ScalarProperty Name="UsedTime" ColumnName="UsedTime" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="fkListId" ColumnName="fkListId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodePortalList">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.CodePortalList">
+              <MappingFragment StoreEntitySet="CodePortalList">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageRelation">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.PackageRelation">
+              <MappingFragment StoreEntitySet="PackageRelation">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageRelationItem">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.PackageRelationItem">
+              <MappingFragment StoreEntitySet="PackageRelationItem">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ConditionAfter" ColumnName="ConditionAfter" />
+                <ScalarProperty Name="WildcardAfter" ColumnName="WildcardAfter" />
+                <ScalarProperty Name="ConditionBefore" ColumnName="ConditionBefore" />
+                <ScalarProperty Name="WildcardBefore" ColumnName="WildcardBefore" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="fkPackageRelationListId" ColumnName="fkPackageRelationListId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageRelationList">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.PackageRelationList">
+              <MappingFragment StoreEntitySet="PackageRelationList">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="fkPackageRelationId" ColumnName="fkPackageRelationId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodePortalGiveAway">
+            <EntityTypeMapping TypeName="PrenWebMiscModel.CodePortalGiveAway">
+              <MappingFragment StoreEntitySet="CodePortalGiveAway">
+                <ScalarProperty Name="GiveAwayTo" ColumnName="GiveAwayTo" />
+                <ScalarProperty Name="fkCodeId" ColumnName="fkCodeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

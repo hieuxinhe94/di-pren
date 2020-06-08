@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GasellernaMasterPage.master.cs" Inherits="DagensIndustri.Templates.Public.MasterPages.GasellernaMasterPage" %>
+<%@ Register TagPrefix="di" TagName="header" Src="~/Templates/Public/Units/Static/Gasellerna/GasellHeader.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <di:header runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

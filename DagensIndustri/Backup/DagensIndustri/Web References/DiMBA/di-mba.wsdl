@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://educations.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://educations.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://educations.com/">
+      <s:element name="InsertContestant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nomination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="personNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="place" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="academicEducation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="academicPoints" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workYears" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="englishLevel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="linkedInUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertContestantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertContestantResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertContestantSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertContestant" />
+  </wsdl:message>
+  <wsdl:message name="InsertContestantSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertContestantResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DIMBASoap">
+    <wsdl:operation name="InsertContestant">
+      <wsdl:input message="tns:InsertContestantSoapIn" />
+      <wsdl:output message="tns:InsertContestantSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DIMBASoap" type="tns:DIMBASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertContestant">
+      <soap:operation soapAction="http://educations.com/InsertContestant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DIMBASoap12" type="tns:DIMBASoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertContestant">
+      <soap12:operation soapAction="http://educations.com/InsertContestant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DIMBA">
+    <wsdl:port name="DIMBASoap" binding="tns:DIMBASoap">
+      <soap:address location="http://dimba.utbildning.se/di-mba.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DIMBASoap12" binding="tns:DIMBASoap12">
+      <soap12:address location="http://dimba.utbildning.se/di-mba.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

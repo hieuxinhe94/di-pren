@@ -1,0 +1,30 @@
+﻿
+<% var hasActiveEvents = false;%>
+<% _.each(profileEvents, function(profileEvent){ %>
+
+<% if(profileEvent.Events.length){%>
+
+    <% hasActiveEvents = true;%>
+    <div class="event-row">
+        <strong><%= profileEvent.SubscriptionName %></strong>
+    
+        <% _.each(profileEvent.Events, function(event){ %>
+            <div>
+                <%= event.EventName %> från <%= event.StartDate.substring(0,10) %>
+                <% if(event.EndDate.indexOf("2078")){%>
+                - <%= event.EndDate.substring(0,10) %>
+                <% } %>
+            </div>
+        <% }); %>    
+    </div>
+<% } %>
+<% }); %>
+
+<% if(!hasActiveEvents){%>
+    <div class="event-row">
+        <em>Du har inga kommande uppehåll eller adressändringar</em>
+    </div>
+<% } %>
+
+
+

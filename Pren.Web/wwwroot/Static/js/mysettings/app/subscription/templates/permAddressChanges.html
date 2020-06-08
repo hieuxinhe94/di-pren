@@ -1,0 +1,35 @@
+﻿<h3>Kommande permanenta adressändringar</h3>
+
+<% if(items.length){%>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Adress</th>
+                    <th scope="col">Från och med</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% _.each(items, function(addressChange){ %>
+                <tr>
+                    <td><%= addressChange.StreetAddress %> <%= addressChange.StreetNumber %></td>
+                    <td><%= addressChange.StartDate.substring(0,10) %></td>
+                    <td>
+                        <a href="#" id="editPermBtn" title="Redigera adress">Redigera</a>
+                    </td>
+                    <td>
+                        <a href="#" id="deletePermBtn" title="Ta bort adress">Ta bort</a>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+<% } else { %>
+<em class="text--deemphasized">Du har inga kommande permanenta adressändringar</em>
+<% } %>
+
+
+

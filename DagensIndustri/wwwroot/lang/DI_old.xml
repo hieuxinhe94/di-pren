@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="english" id="en">
+    <navigation>
+      <startpage>Hem</startpage>
+    </navigation>
+    <conference>
+      <start>Hem</start>      
+      <moreprefix>Mer om</moreprefix>
+      <downloadtext>Fyll i formuläret nedan så kommer pdf-broschyren att skickas till dig via e-post.</downloadtext>
+      <downloadsuccess>PDF-broschyren har nu skickats till e-postadressen</downloadsuccess>
+      <mail>
+        <pdf>
+          <subject>PDF-broschyr för {0}</subject>
+          <body>Hej {0},[nl]PDF-bryschyren för {1} är bifogad.[nl]Mvh DI Konferens</body>
+        </pdf>
+        <confirm>
+          <subject>Bekräftelse på din anmälan till {0}</subject>
+          <bodyold>Hej {0},[nl]Här är din bekräftelse på anmälan till {1}.[nl]Dag: {2}[nl]Seminarier: {3}[nl]Pris: {4} kr inklusive moms.[nl]Mvh[nl]DI Konferens</bodyold>
+          <body>Hej {0},[nl]Här är din bekräftelse på anmälan till {1}.[nl]Dina val: {2}[nl]Mvh[nl]DI Konferens</body>
+        </confirm>
+      </mail>
+      <links>
+        <readmoreprefix>Läs mer om </readmoreprefix>
+        <readmore>Läs mer</readmore>
+        <allconf>Alla konferenser</allconf>
+        <send>Skicka</send>
+        <content>Innehåll</content>
+        <program>Program</program>
+        <apply>Anmälan</apply>
+        <map>Visa på karta</map>
+        <contact>Kontakt</contact>
+        <downloadpdf>PDF-broschyr</downloadpdf>
+        <inenglish>In English</inenglish>
+      </links>
+      <list>
+        <heading>Alla konferenser</heading>
+        <time>Tid:</time>
+        <when>När</when>
+        <place>Plats</place>
+      </list>
+      <form>
+        <pdf>
+          <name>Namn *</name>
+          <email>E-post *</email>
+          <phone>Telefon *</phone>
+        </pdf>
+        <firstname>Förnamn *</firstname>
+        <lastname>Efternamn *</lastname>
+        <title>Befattning *</title>
+        <company>Företag *</company>
+        <code>Kod</code>
+        <phone>Telefon *</phone>
+        <email>E-post *</email>
+        <invoiceaddress>Fakturaadress *</invoiceaddress>
+        <invoicerererence>Faktureferens *</invoicerererence>
+        <orgno>Organisationsnummer *</orgno>
+        <zip>Postnummer *</zip>
+        <city>Ort *</city>
+        <infochannel>Hur fick du information om konferensen? *</infochannel>
+        <infochannelchoose>-- Välj informationskanal --</infochannelchoose>
+        <full>[Fullsatt]</full>
+        <thanks>Tack för din anmälan. En bekräftelse har skickats till {0}.</thanks>
+      </form>
+      <errors>
+        <activitymandatory>Du måste göra ett val i listan.</activitymandatory>
+        <activitynotallselected>Du måste göra ett val för samtliga tidpunkter under {0}.</activitynotallselected>
+      </errors>
+    </conference>
+    <campaigns>
+      <form>
+        <firstname>Förnamn:*</firstname>
+        <lastname>Efternamn:*</lastname>
+        <company>Företag:</company>
+        <address>Adress:</address>
+        <zip>Postnummer:</zip>
+        <city>Ort:</city>
+        <phone>Telefonnummer:</phone>
+        <email>E-post:*</email>
+        <subscription>Prenumerationsuppgifter:*</subscription>
+        <acceptedcards>Vi accepterar betalning med följande kort:</acceptedcards>        
+      </form>
+      <tabs>
+        <street>Gata</street>
+        <co>C/O-adress</co>
+        <box>Stoppställe/Postbox</box>
+      </tabs>
+      <campform>
+        <invitefirstname>Ditt förnamn:*</invitefirstname>
+        <invitelastname>Ditt efternamn:*</invitelastname>
+        <firstname>Förnamn:*</firstname>
+        <lastname>Efternamn:*</lastname>
+        <company>Företag:</company>
+        <attention>Attention:</attention>
+        <streetname>Gatuadress:*</streetname>
+        <streetno>Nr:*</streetno>
+        <co>C/O:*</co>
+        <entrance>Uppgång:</entrance>
+        <stairs>Tr:</stairs>
+        <apartment>Lgh nr:</apartment>
+        <box>Postbox:</box>
+        <zip>Postnr:*</zip>
+        <city>Ort:*</city>
+        <phone>Mobiltelefon:*</phone>
+        <birthno>Personnummer (ååmmddxxxx):*</birthno>
+        <orgno>Organisationsnummer:</orgno>
+        <email>E-post:*</email>
+        <stopbox>Stoppställe eller Box:*</stopbox>
+        <stopboxno>Nr:*</stopboxno>
+        <offers>Välj erbjudande *</offers>
+      </campform>
+      <choose>
+        <offercode>--Välj erbjudandekod--</offercode>
+        <product>--Välj produkt--</product>
+        <type>--Välj kampanjtyp--</type>
+        <targetgroup>--Välj målgrupp--</targetgroup>
+      </choose>
+      <various>
+        <progress>Vänligen vänta.</progress>
+        <pay>Jag vill betala med:</pay>
+        <pul>Så behandlar vi dina personuppgifter</pul>
+        <prenterms>Prenumerationsvillkor</prenterms>
+        <comment>Skriv kommentar</comment>
+        <diimagealt>Dagens Industri</diimagealt>
+        <weekendimagealt>DI Weekend</weekendimagealt>
+        <dimensionimagealt>DI Dimension</dimensionimagealt>
+      </various>
+      <errors>
+        <offercodeexisting>Erbjudandekoden kan inte tas bort för den används av befintlig kampanj</offercodeexisting>
+        <targetgroupexisting>Målgruppen kan inte tas bort för den används av befintlig kampanj</targetgroupexisting>
+        <description>Du måste ange beskrivning</description>
+        <amount>Du måste ange belopp</amount>
+        <amountint>Belopp måste vara ett heltal</amountint>
+        <alreadyincirix_old>Vi har tyvärr inte kunnat registrera dina adressuppgifter korrekt. Vänligen kontakta kundtjänst på tel 08-573 651 00 så hjälper vi dig.</alreadyincirix_old>
+        <alreadyincirix>Vi har redan dina uppgifter registrerade i vårt system. Kontakta kundtjänst på telefonnummer 08-573 651 00 så hjälper vi dig.</alreadyincirix>
+        <alreadyincirixpayed>Vi har redan dina uppgifter registrerade i vårt system. Vi kommer att kontakta dig för att reda ut problemet.</alreadyincirixpayed>
+      </errors>
+    </campaigns>
+    <gasellerna>
+      <search>        
+        <quicksearchheading>Snabbsökning:</quicksearchheading>
+        <quicksearchtitle>Sök bland alla Gasellföretag</quicksearchtitle>
+        <inputdefaultvalue>Företag eller ort</inputdefaultvalue>
+        <optiondefaultvalue>Välj län</optiondefaultvalue>
+      </search>
+      <conference>
+        <messages>
+          <error>Just nu är det inte möjligt att anmäla sig till konferenser. Försök igen lite senare.</error>
+          <closed>Konferensen du söker finns inte eller är stängd.</closed>
+          <registerheading>Jag anmäler mig till konferensen i </registerheading>
+          <thanks>Tack för din beställning!</thanks>
+          <mail>Ett bekräftelsemail har skickats till </mail>
+          <mailerror>Något gick fel och bekräftelsemailet är inte skickat.</mailerror>
+        </messages>
+        <listheading>Välj nedan vilket arrangemang du vill veta mer om. Här kan du också anmäla dig till arrangemanget!</listheading>
+        <form>
+          <firstname>Förnamn:*</firstname>
+          <lastname>Efternamn:*</lastname>
+          <title>Befattning:*</title>
+          <company>Företag:*</company>
+          <industry>Bransch:</industry>
+          <employees>Antal anställda:</employees>
+          <gasellcompany>Gasellföretag:</gasellcompany>
+          <code>Kod:</code>
+          <coaddress>c/o:</coaddress>
+          <address>Gatuadress/Postadress:*</address>
+          <stairs>Trappor:</stairs>
+          <zipcode>Postnummer:*</zipcode>
+          <city>Ort:*</city>
+          <invoiceaddress>Fakturaadress:</invoiceaddress>
+          <invoicereference>Fakturareferens:</invoicereference>
+          <corpidnumber>Org.nr:</corpidnumber>
+          <invoicezipcode>Postnummer:</invoicezipcode>
+          <invoicecity>Ort:</invoicecity>
+          <phone>Telefon:*</phone>
+          <email>E-post:*</email>
+        </form>
+      </conference>
+    </gasellerna>
+    <vendors>
+      <defaultitemtext>Välj ort</defaultitemtext>
+      <list>
+        <headings>
+          <vendor>Återförsäljare</vendor>
+          <address>Adress</address>
+          <postalcode>Postnr</postalcode>
+          <city>Ort</city>
+          <phone>Telefon</phone>
+        </headings>
+      </list>
+      <error>Just nu går det inte att visa försäljningställen. Försök igen lite senare.</error>
+    </vendors>
+    <appendix>
+      <searchalllink>Alla bilagor</searchalllink>
+      <sizesuffix>mb</sizesuffix>
+      <error>Just nu går det inte att visa bilagor. Försök igen lite senare.</error>
+    </appendix>
+    <paper>      
+      <readpaperlink>Klicka här för att läsa tidningen</readpaperlink>
+      <readtomorrowpaperlink>Läs morgondagens tidning</readtomorrowpaperlink>
+      <tomorrowlink>Nästa utgåva om {0} timmar, {1} minuter.</tomorrowlink>
+      <archive>
+        <heading>De tio senaste utgåvorna</heading>
+        <searchheading>Sök på datum (ÅÅMMDD)</searchheading>
+        <filesize>Filens storlek &lt;strong&gt;{0} MB&lt;/strong&gt;</filesize>
+        <nomatch>
+          &lt;strong&gt;Utgåvan du söker finns inte&lt;/strong&gt;
+        </nomatch>
+      </archive>
+    </paper>
+    <download>
+      <error>Något gick fel!</error>
+      <nodownloadleft>Du har inga nedladdningar kvar</nodownloadleft>
+    </download>
+    <mail>
+      <heading>Skicka ett e-post till </heading>
+      <emailheading>Din e-postadress:*</emailheading>
+      <subjectheading>Ämne:</subjectheading>
+      <messageheading>Skriv meddelande nedan:*</messageheading>
+      <thanks>Tack för ditt meddelande.</thanks>
+      <error>Det uppstod ett fel när mailet skulle skickas. Var vänlig och försök igen.</error>
+      <gasell>
+        <heading>Tipsa en kollega</heading>
+        <recipientemailheading>Mottagarens e-postadress:*</recipientemailheading>
+        <emailheading>Din e-postadress:*</emailheading>
+        <messageheading>Skriv en hälsning nedan:</messageheading>
+        <tipthanks>Ditt tips är skickat.</tipthanks>
+        <tipmailsubject>Intressant Gasellkonferens på di.se!</tipmailsubject>
+        <tipmailbody>Hej! {0} rekommenderar denna gasell konferens:[nl][nl]{1}[nl][nl]{2}[nl][nl]--------------------------------------------------[nl]di.se är europas ledande affärstidning på internet.[nl]Besök oss på http://di.se [nl]--------------------------------------------------</tipmailbody>
+      </gasell>
+      <sendarticle>
+        <heading>Skicka artikeln till en kollega</heading>
+        <recipientemailheading>Mottagarens e-postadress:*</recipientemailheading>
+        <emailheading>Din e-postadress:*</emailheading>
+        <messageheading>Skriv en hälsning nedan:</messageheading>
+      </sendarticle>
+    </mail>
+    <articlesearch>
+      <searchwordstext>Sökord:</searchwordstext>
+      <searchresultheading>Artiklar</searchresultheading>
+      <hits>Sökresultat {0} - {1} av totalt &lt;strong&gt;{2} artiklar&lt;/strong&gt;</hits>
+      <nohits>Inga artiklar under {0} stämde med sökkriteriet '{1}'</nohits>
+      <error>Tillfälligt fel i söktjänsten för artiklar!</error>
+      <all>Hela arkivet</all>      
+      <readarticle>
+        <error>Artikeln kan inte visas pga ett tekniskt fel</error>        
+      </readarticle>
+      <title>Skicka artikel</title>
+      <mail>
+        <subject>Intressant artikel på di.se</subject>
+        <body>Hej! {0} rekommenderar den här artikeln på di.se:[nl][nl]{1}[nl][nl]{2}</body>
+        <message>Artikeln är skickad</message>
+      </mail>
+    </articlesearch>
+    <login>
+      <becomemember>Registrera</becomemember>
+      <editdetails>Mina inställningar</editdetails>
+      <email>Skriv din e-postadress:</email>
+      <error>
+        <loginfail>
+          Inloggningen misslyckades. Lösenord eller användarnamn stämde inte. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.
+        </loginfail>
+        <password>Du måste ange lösenord</password>
+        <username>Du måste ange användarnamn</username>
+      </error>      
+      <login>Logga in</login>
+      <logout>Logga ut</logout>
+      <password>Lösenord</password>
+      <rememberme>Kom ihåg mig</rememberme>
+      <forgotpassword>
+        <linktext>Glömt lösenordet?</linktext>
+        <heading1>Jag kommer ihåg mitt:</heading1>
+        <heading2>Det är:</heading2>
+        <back>« Tillbaka till inloggningen</back>
+        <btnsend>Skicka</btnsend>
+        <btnsendconfirmtext>Dina uppgifter har nu skickats till den registrerade e-postadressen!</btnsendconfirmtext>
+        <error>Just nu kan vi inte skicka ditt lösenord. Försök igen senare.</error>
+        <ddlitems>
+          <item1>Användarnamn</item1>
+          <item2>Kundnummer</item2>
+          <item3>E-post</item3>
+        </ddlitems>
+        <mail>
+          <subject>Påminnelse av dina kontouppgifter</subject>
+          <body>Du har via dagensindustri.se begärt att få ditt användarnamn och lösenord skickat till dig.[nl]Här är ditt användarnamn och lösenord:[nl]- Användarnamn: {0}[nl]- Lösenord: {1}[nl][nl]Med vänlig hälsning[nl]Dagens Industri</body>
+        </mail>        
+      </forgotpassword>      
+    </login>
+    <usersettings>
+      <changepassword>Ändra lösenord</changepassword>
+      <confirmpassword>Bekräfta lösenord</confirmpassword>
+      <email>E-postadress</email>
+      <firstname>Förnamn</firstname>
+      <lastname>Efternamn</lastname>
+      <mysettings>Mina inställningar</mysettings>
+      <newpassword>Nytt lösenord</newpassword>
+      <username>Användarnamn</username>
+      <username2>Användarnamn/E-post</username2>
+    </usersettings>
+    <sms>
+      <heading1>Skriv ett SMS med texten:</heading1>
+      <heading2>Skicka ditt SMS till nummer:</heading2>
+      <wait> Vänta vid din dator - du blir automatiskt länkad till tidningen</wait>
+      <auth>Tjänsten är inte tillgänglig för inloggande användare</auth>
+      <timeout>Mer än tre minuter har passerat. Om du skickat sms:et kan något fel uppstått. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</timeout>
+      <error>Hämtning av data misslyckades. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</error>
+      <erroripx>Ett fel uppstod. Kontakta kundtjänst. Ange nummer</erroripx>
+    </sms>
+    <mypage>
+      <username>Ditt användarnamn:</username>
+      <usernameinfobox>Välj det användarnamn som du vill använda när du loggar in på DI på nätet. Kan innehålla A-Z - 0-9</usernameinfobox>
+      <email>Din e-postadress:</email>
+      <currentpassword>Ditt gamla lösenord:</currentpassword>
+      <newpassword>Ditt nya lösenord:</newpassword>
+      <confirmnewpassword>Bekräfta nytt lösenord:</confirmnewpassword>
+      <changepasswordtext>Välj ett nytt lösenord för DI På Nätet. Det kan innehålla både A-Z och 0-9 och måste bestå av minst 6 tecken.</changepasswordtext>
+      <infobox>Den e-post adress som vi har registrerad på dig är &lt;strong&gt;{0}&lt;/strong&gt;.Vill du ha våra bekräftelser på ändringar till en annan e-postadress</infobox>
+      <infoboxlink>klickar du här</infoboxlink>
+      <holidaystops>Mina registrerade uppehåll</holidaystops>
+      <addresses>Mina tidigare adresser:</addresses>
+      <tempaddresses>Mina tillfälliga adressändringar</tempaddresses>      
+      <from>Från (YYYY-MM-DD):*</from>
+      <to>Till (YYYY-MM-DD):*</to>
+      <msg>
+        <permanentadress>Din adressändring har registrerats</permanentadress>
+        <registered>Dina uppgifter har registrerats</registered>
+      </msg>
+      <heading>
+        <address>Adress</address>
+        <from>Från</from>
+        <to>Till</to>
+      </heading>
+      <currentaddress>
+        <heading>Mina nuvarande uppgifter</heading>
+        <cusno>Kundnummer:</cusno>
+        <username>Användarnamn:</username>
+        <name>Namn:</name>
+        <attention>Attention:</attention>
+        <street>Gatunamn:</street>
+        <apartment>Våning:</apartment>
+        <co>CO:</co>
+        <countrycode>Landskod:</countrycode>
+        <zip>Postnummer:</zip>
+        <city>Ort:</city>
+        <email>E-postadress:</email>
+        <pren>Prenumerationsperiod:</pren>
+      </currentaddress>
+      <newaddressform>
+        <co>CO:</co>
+        <street>Gatuadress:</street>
+        <no>Nr:</no>
+        <stairs>Ingång:</stairs>
+        <apartment>Våning</apartment>
+        <zip>Postnummer:*</zip>
+      </newaddressform>
+      <changelinks>
+        <username>Ändra användarnamn</username>
+        <email>Ändra e-postadress</email>
+        <password>Ändra lösenord</password>
+        <tmpaddress>Tillfällig adressändring</tmpaddress>
+        <tmpbreak>Tillfälligt uppehåll</tmpbreak>
+        <permanentaddress>Permanent adressändring</permanentaddress>
+      </changelinks>
+      <buttons>
+        <username>Ändra användarnamn</username>
+        <email>Ändra e-postadress</email>
+        <password>Ändra lösenord</password>
+        <cancel>Avbryt</cancel>
+      </buttons>
+      <errors>        
+        <password1>Det gamla lösenord du angav stämmer inte</password1>
+        <password2>Det bekräfade lösenorder stämmer inte överens med ditt nya lösenord</password2>
+        <password3>Du får inte ha samma lösenord som användarnamn</password3>
+        <password4>Ditt nya lösenord måste bestå av minst 6 tecken</password4>
+        <username>Användarnamet är upptaget </username>
+        <error>Ett fel uppstod. Var vänlig och försök igen</error>
+        <nocusno>Du har inget giltigt kundnummer. Kontakta kundtjänst</nocusno>
+        <date>Fråndatum måste vara mellan {0} och {1}</date>
+        <delete>Du kan endast ta bort poster som är minst en vecka framåt i tiden</delete>
+        <noaddress>Du måste välja en adress eller skapa en ny</noaddress>
+        <less>Från måste vara mindre än till</less>
+        <existing>Vald period är redan registrerad</existing>
+        <validfrom>Den valda adressen är giltig from</validfrom>
+        <dateformat>Ogiltigt datumformat</dateformat>
+        <noconfirm>En bekräftelse kunde inte skickas eftersom du inte har registrerat någon e-postadress</noconfirm>
+      </errors>      
+    </mypage>
+    <subscription>
+      <form>
+        <substart>Prenumerationen ska gälla från och med:</substart>
+        <firstname>Förnamn:</firstname>
+        <lastnameorcompany>Efternamn alt företag:*</lastnameorcompany>
+        <attention>Attention:</attention>
+        <co>C/o:</co>
+        <box>Stoppställe eller box:*</box>
+        <boxno>Nr:*</boxno>
+        <street>Gatuadress:</street>
+        <no>Nr:</no>
+        <stairs>Uppgång:</stairs>
+        <apartment>Tr:</apartment>
+        <lgh>Lgh nr:</lgh>
+        <zip>Postnummer:*</zip>
+        <city>Ort:*</city>
+        <phonemobile>Mobiltelefon:*</phonemobile>
+        <phoneday>Telefon dagtid:*</phoneday>
+        <birthorcomp>Personnr(privatpers)/Orgnr(företag):</birthorcomp>
+        <comp>Orgnr:</comp>
+        <email>E-postadress:*</email>
+        <username>Användarnamn:*</username>
+      </form>      
+    </subscription>
+    <invoice>
+      <nothing>Du har inga obetalda fakturor</nothing>
+      <invoicelist>
+        <email>Din e-post:</email>
+        <invoiceno>Fakturanummer</invoiceno>
+        <amount>Belopp</amount>
+        <pay>Betala</pay>
+      </invoicelist>
+      <invoicedetails>
+        <invoice>Faktura</invoice>
+        <amount>Pris:</amount>
+        <period>Period:</period>
+        <receiver>Tidningsmottagare</receiver>
+        <name>Namn:</name>
+        <address>Adress:</address>
+        <co>Co:</co>
+        <zip>Postnummer:</zip>
+        <city>Ort:</city>
+        <payreceiver>Betalningsmottagare:</payreceiver>
+      </invoicedetails>
+      <error>Något gick fel! Var god kontaka kundtjänst. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</error>
+    </invoice>
+    <various>
+      <validators>
+        <format>Ej giltigt format</format>
+        <mandatory>Obligatorisk uppgift</mandatory>
+        <date>Ogiltigt datumformat</date>
+      </validators>
+      <errors>
+        <error>Ett fel uppstod. Var vänlig och försök igen</error>
+      </errors>
+      <mandatorytext>*)Obligatoriska uppgifter</mandatorytext>
+      <ettanmissing>Ettan saknas</ettanmissing>
+      <back>&amp;laquo; Tillbaka</back>
+      <close>[X] Stäng</close>
+      <downloadtodayspaper>Ladda ner dagens tidning som PDF</downloadtodayspaper>
+      <diselinktext>di.se</diselinktext>
+      <onlypren>Sidan endast tillgänglig för prenumeranter</onlypren>
+      <nocusno>Sidan är inte tillgänglig eftersom du saknar ett giltigt kundnummer. Vänligen kontakta vår kundtjänst på tel 08-573 651 00.</nocusno>      
+    </various>
+  </language>
+</languages>

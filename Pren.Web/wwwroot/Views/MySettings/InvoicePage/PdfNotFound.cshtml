@@ -1,0 +1,25 @@
+﻿@using System.Web.Optimization
+@model Pren.Web.Models.ViewModels.MySettings.InvoicePageViewModel
+
+@{
+    Layout = "~/Views/Shared/Layouts/_Root.cshtml";
+}
+
+@section PageSpecificCssIncludes{
+
+    @Styles.Render("~/bundles/css/mypage")
+}
+
+<div class="container">
+    <div class="row headerrow">
+        <div class="col-sm-12">
+            Visa faktura
+        </div>
+    </div>
+    <div class="row mypagecontainer">
+        <div class="col-sm-12">
+            Just nu kan vi inte visa din faktura. Vänligen kom tillbaka vid ett senare tillfälle.
+        </div>
+    </div>
+</div>
+

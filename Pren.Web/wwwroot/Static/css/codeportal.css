@@ -1,0 +1,8 @@
+﻿.terms-text p:first-of-type{border-top: 1px solid #D3B2A1; padding-top:15px;}
+.terms-text p{font-size: 10px;}
+.terms-text.fallback{border-bottom:1px solid #D3B2A1;padding-bottom: 3px;}
+.terms-text.fallback p{ font-size: 14px;}
+.codeportalofferblock {margin-bottom: 20px;}
+.code-presentation{padding: 10px; background-color: #fff; font-weight: bold; font-size: 20px; text-align: center; color: #C8281E;}
+.code-info{color: #C8281E; margin-bottom: 3px;}
+.code-offer-img-container{margin-bottom: 10px;}

@@ -1,0 +1,119 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.ComplaintPageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (TempData["Message"] != null)
+{
+    return;
+}
+
+<form action="@Url.Action("Send", "ComplaintPage", new { sid = @Model.SubscriptionNumber })" method="POST">
+
+    @Html.AntiForgeryToken()   
+
+    @if (Model.CurrentPage.ActivateComplaintsKayak)
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="SelectReason" class="label-heading">Vilken dag vill du reklamera? *</label>
+                    @foreach (var day in Model.DaysToReclaim)
+                    {                        
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="daystoreclaim" value="@day" />
+                                <span>
+                                    @day.ToString("dddd, d MMMM yyyy")
+                                </span>
+                            </label>
+                        </div>
+                    }
+                    
+                    <input type="hidden" name="numberofdays" value="1" />                    
+                    <input type="hidden" name="fromdate" value="@DateTime.Now" />    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="SelectReason" class="label-heading">Välj orsak</label>
+                    <select id="SelectReason" name="reason" class="form-control input-lg">
+                        @foreach (var item in Model.ReclaimItems)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fromdateinput" class="label-heading">Datum *</label>
+                    <input type="text" class="form-control input-lg dateinput" name="fromdate" id="fromdateinput" value="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="SelectDays" class="label-heading">Antal dagar</label>
+                    <select id="SelectDays" name="numberofdays" class="form-control input-lg">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="SelectReason" class="label-heading">Orsak</label>
+                    <select id="SelectReason" name="reason" class="form-control input-lg">
+                        <option>Bilaga saknas</option>
+                        <option>Blöt tidning</option>
+                        <option>Fel tidning</option>
+                        <option>Trasig tidning</option>
+                        <option>Utebliven tidning</option>
+                        <option>Annan orsak</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="label-heading">* obligatoriska fält</div>
+        </div>
+        <div class="col-sm-2 text-right">
+            <button type="submit" id="submit-form" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary">Skicka</button>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+
+        var dateHandler = new DateHandler($(".dateinput"), null, '@DateTime.Now.ToString("yyyy-MM-dd")');
+        dateHandler.init();
+
+    </script>
+}
+
+

@@ -1,0 +1,407 @@
+﻿@using System.Web.Optimization
+@using Pren.Web.Business.Payment
+@using Pren.Web.Business.Rendering
+@model Pren.Web.Models.ViewModels.CampaignPageViewModel
+@{
+    Layout = "~/Views/Shared/Layouts/_Campaign.cshtml";
+}
+
+@section PageSpecificCssIncludes
+{
+    @Styles.Render("~/bundles/css/campaign")
+}
+
+<div class="container">
+    <div class="row hidden-sm hidden-xs">
+        <div class="text-center">
+            <h1 @Html.EditAttributes(x => x.CurrentPage.Heading)>
+                @Model.CurrentPage.Heading
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container slider">
+    <div class="row">
+        <div class="slider-container">
+            @Html.PropertyFor(x => x.CurrentPage.CampaignContentArea, new { CssClass = "pren-select-container", Tag = RenderingConstants.ContentAreaTags.OneThirdWidth })
+            <div id="slider-direction">
+                <div id="slider-next"></div>
+                <div id="slider-prev"></div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+<div class="container">
+    <div class="row">
+        <div id="pren-userinfo-container">
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <h2 style="color:red">@Html.Raw(Model.ErrorMessage)</h2>
+            }
+            <div class="col-md-12">
+                <h2 class="infoheading form-header">Dina uppgifter</h2>
+            </div>
+                        
+            <form id="steps" class="init col-md-6" action="@Url.Action("PostForm", "CampaignPage")" method="POST">
+                @Html.AntiForgeryToken()
+                <input type="text" name="campno" id="campnoinput" class="hidden" value="@Model.SubscriptionForm.CampNo">
+                <input type="text" name="campid" id="campidinput" class="hidden" value="@Model.SubscriptionForm.CampId">
+                <input type="text" name="paymentmethod" id="paymentmethodinput" class="hidden" value="@Model.SubscriptionForm.PaymentMethod">
+                <input type="text" name="targetgroup" id="targetgroupinput" class="hidden" value="@Model.SubscriptionForm.TargetGroup">
+                <input type="text" name="isdigital" id="isdigitalinput" class="hidden" value="@Model.SubscriptionForm.IsDigital">
+                <input type="text" name="isstudent" id="isstudentinput" class="hidden" value="@Model.SubscriptionForm.IsStudent">
+                <input type="text" name="istrial" id="istrialinput" class="hidden" value="@Model.SubscriptionForm.IsTrial">
+                <input type="text" name="istrialfree" id="istrialfreeinput" class="hidden" value="@Model.SubscriptionForm.IsTrialFree">
+                <input type="text" name="ispaywall" id="ispaywallinput" class="hidden" value="@Model.SubscriptionForm.IsPayWall">
+                <input type="text" name="isserviceplususer" id="isserviceplususerinput" class="hidden" value="@(Model.SubscriptionForm.IsServicePlusUser ? "true" : "false")">
+                <input type="text" name="invoiceotherpayer" id="invoiceotherpayerinput" class="hidden" value="@(Model.SubscriptionForm.InvoiceOtherPayer ? "true" : "false")">
+                <input type="text" name="campaigncontentid" id="campaigncontentidinput" class="hidden" value="@(Model.SubscriptionForm.CampaignContentId)">
+
+                <div id="step-wrapper">
+                    <a class="edit-link displaynone" href="#">Ändra</a>
+
+                    <div id="stepEmail" class="step" data-event="stepEmailSubmit">
+                        <div id="email" class="form-group">
+                            <label id="notloggedinemaillabel" for="emailinput">Fyll i din e-postadress</label>
+                            <label id="loggedinemaillabel" for="emailinput" class="displaynone">Din e-postadress - <a id="logoutlink" href="@Model.LogOutUrl">Logga ut</a></label>
+                            <input type="email" class="form-control input-lg" name="email" id="emailinput" value="@Model.SubscriptionForm.Email">
+                        </div>
+                        <div id="emailexists" class="displaynone">
+                            <div class="alert alert-di-warning">
+                                Din e-postadress finns redan registrerad hos oss. Var vänlig <a id="loginlink" href="@Model.LoginUrl">logga in</a> eller ange en annan e-postadress
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stepPhone" class="step" data-event="stepPhoneSubmit">
+                        <div id="phone" class="form-group">
+                            <label for="phoneinput">Telefonnummer</label>
+                            <input type="tel" class="form-control input-lg" name="phone" id="phoneinput" value="@Model.SubscriptionForm.Phone">
+                        </div>
+                    </div>
+                    <div id="stepSsn" class="step" data-event="stepSsnSubmit">
+                        <div class="row">
+                            <div class="col-md-12"><label for="ssninput">Ditt personnummer / Org.nr</label></div>
+                            <div class="col-md-6">
+                                <div id="ssn" class="form-group">
+                                    <input type="text" class="form-control input-lg" name="ssn" id="ssninput" value="@Model.SubscriptionForm.Ssn">
+                                </div>
+                                <div id="ssnerror" class="displaynone">
+                                    <div class="alert alert-di-warning"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="btngetaddress" autocomplete="off" data-loading-text="Hämtar ..." class="btn btn-default" href="#">Hämta adressuppgifter</button>
+                                <button id="btnmanualaddress" class="hollow half button" href="#">eller skriv in manuellt</button>
+                            </div>
+                            <div class="col-md-12">
+                                <div id="notstudent" class="displaynone">
+                                    <div class="alert alert-di-warning">
+                                        Vi kan tyvärr inte verifiera att du är heltidsstudent. Verifiering görs via CSN:s register för studiestöd.<br />Om du är heltidsstudent: gå in på vår chatt på <a href='http://www.di.se/kund'>http://www.di.se/kund</a>, öppen vardagar mellan 08-18 samt helger 09-13 och meddela dina uppgifter samt bifoga ett studieintyg så hjälper vi dig.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stepAddress" class="step" data-event="stepAddressSubmit">
+                        @if (Model.CurrentPage.ExtraInfoHeading != null)
+                        {
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="extrainfo" class="form-group">
+                                        <label for="extrainfoinput">@Model.CurrentPage.ExtraInfoHeading</label>
+                                        <input type="text" class="form-control input-lg" data-mandatory="@Model.CurrentPage.ExtraInfoMandatory" name="extrainfo" id="extrainfoinput" value="@Model.SubscriptionForm.ExtraInfo">
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div id="firstname" class="form-group">
+                                    <label for="firstnameinput">Förnamn</label>
+                                    <input type="text" class="form-control input-lg" name="firstname" id="firstnameinput" value="@Model.SubscriptionForm.FirstName">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 reset-p-left">
+                                <div id="lastname" class="form-group">
+                                    <label for="lastnameinput">Efternamn</label>
+                                    <input type="text" class="form-control input-lg" name="lastname" id="lastnameinput" value="@Model.SubscriptionForm.LastName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div id="streetaddress" class="form-group">
+                                    <label for="streetaddressinput">Gatuadress</label>
+                                    <input type="text" class="form-control input-lg" name="streetaddress" id="streetaddressinput" value="@Model.SubscriptionForm.StreetAddress">
+                                </div>
+                            </div>
+                            <div class="col-xs-4 reset-p-left">
+                                <div id="streetno" class="form-group">
+                                    <label for="streetnoinput">Nr</label>
+                                    <input type="text" class="form-control input-lg" name="streetno" id="streetnoinput" value="@Model.SubscriptionForm.StreetNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div id="staircase" class="form-group">
+                                    <label for="staircaseinput">Uppgång</label>
+                                    <input type="text" class="form-control input-lg" name="staircase" id="staircaseinput" value="@Model.SubscriptionForm.StairCase">
+                                </div>
+                            </div>
+                            <div class="col-xs-3 reset-p-left">
+                                <div id="stairs" class="form-group">
+                                    <label for="stairsinput">Trappa</label>
+                                    <input type="text" class="form-control input-lg" name="stairs" id="stairsinput" value="@Model.SubscriptionForm.Stairs">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div id="zip" class="form-group">
+                                    <label for="zipinput">Postnummer</label>
+                                    <input type="text" class="form-control input-lg" name="zip" id="zipinput" value="@Model.SubscriptionForm.Zip">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 reset-p-left">
+                                <div id="city" class="form-group">
+                                    <label for="cityinput">Ort</label>
+                                    <input type="text" class="form-control input-lg" name="city" id="cityinput" value="@Model.SubscriptionForm.City" readonly="readonly">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="co" class="form-group displaynone">
+                                    <label for="coinput">C/O-adress</label>
+                                    <input type="text" class="form-control input-lg" name="co" id="coinput" value="@Model.SubscriptionForm.Co">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="company" class="form-group displaynone">
+                                    <label for="companyinput">Företagsnamn</label>
+                                    <input type="text" class="form-control input-lg" name="company" id="companyinput" value="@Model.SubscriptionForm.Company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button href="#" id="addcompany" class="half button hollow" data-textsuffix="företagsnamn" data-actionselector="#company">Lägg till företagsnamn</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button href="#" id="addco" class="half button hollow" data-textsuffix="C/O-adress" data-actionselector="#co">Lägg till C/O-adress</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="prenStartArea">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div id="prenstart" class="form-group">
+                                    <label for="prenstartinput">Prenumerationsstart</label>
+
+                                    <input type="date" class="form-control input-lg norezise" name="prenstart" id="prenstartinput" value="@Model.SubscriptionForm.PrenStart">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="submitaddress">
+                        <button class="btn btn-lg btn-primary">Kom igång med din prenumeration</button>
+                    </div>
+                </div>
+
+                <div id="pay-wrapper" class="step">
+                    <h2 class="form-header">Välj betalsätt</h2>
+                    <div id="stepPay" class="border">
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-pills" role="tablist">
+                                <li id="invoice-tab" role="presentation" data-method="@PaymentConstants.Invoice"><a href="#invoice" aria-controls="invoice" role="tab" data-toggle="tab">Faktura</a></li>
+                                <li id="card-tab" role="presentation" data-method="@PaymentConstants.Card"><a href="#card" aria-controls="card" role="tab" data-toggle="tab">Kort</a></li>
+                                <li id="autogiro-tab" role="presentation" data-method="@PaymentConstants.Autogiro"><a href="#autogiro" aria-controls="autogiro" role="tab" data-toggle="tab">Autogiro</a></li>                                
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="row displaynone" id="digitalnamearea">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="firstnamedigitalinput">Förnamn</label>
+                                            <input type="text" class="form-control input-lg" name="FirstNameDigital" id="firstnamedigitalinput" value="@Model.SubscriptionForm.FirstNameDigital">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="lastnamedigitalinput">Efternamn</label>
+                                            <input type="text" class="form-control input-lg" name="LastNameDigital" id="lastnamedigitalinput" value="@Model.SubscriptionForm.LastNameDigital">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane active" id="invoice">
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="invoice-pay-text"></div>
+                                            <p><a href="#" id="linkshowinvoiceaddress">Ange annan fakturaadress</a></p>                                            
+                                        </div>
+                                    </div>
+                                    <div id="address-digital"></div>
+                                    <div id="invoice-form" class="displaynone">
+                                        <div class="row">
+                                            <div class="col-md-12"><label for="ssninput">Organisationsnummer</label></div>
+                                            <div class="col-md-6">
+                                                <div id="ssninvoice" class="form-group">
+                                                    <input type="text" class="form-control input-lg" name="ssninvoice" id="ssninvoiceinput" value="@Model.SubscriptionForm.SsnInvoice">
+                                                </div>
+                                                <div id="ssninvoiceerror" class="displaynone">
+                                                    <div class="alert alert-di-warning"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button id="btngetinvoiceaddress" autocomplete="off" data-loading-text="Hämtar ..." class="btn btn-default" href="#">Hämta adressuppgifter</button>
+                                            </div>
+                                            <div class="col-md-12"><hr /></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div id="companyinvoice" class="form-group">
+                                                    <label for="companyinputinvoice">Företagsnamn/namn</label>
+                                                    <input type="text" class="form-control input-lg" name="companyinvoice" id="companyinputinvoice" value="@Model.SubscriptionForm.CompanyInvoice">
+                                                </div>                                                    
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div id="attentioninvoice" class="form-group">
+                                                    <label for="attentioninputinvoice">Attention</label>
+                                                    <input type="text" class="form-control input-lg" name="attentioninvoice" id="attentioninputinvoice" value="@Model.SubscriptionForm.AttentionInvoice">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="phoneinvoice" class="form-group">
+                                                    <label for="phoneinputinvoice">Telefonnummer</label>
+                                                    <input type="text" class="form-control input-lg" name="phoneinvoice" id="phoneinputinvoice" value="@Model.SubscriptionForm.PhoneInvoice">
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div id="streetaddressinvoice" class="form-group">
+                                                    <label for="streetaddressinputinvoice">Gatuadress</label>
+                                                    <input type="text" class="form-control input-lg" name="streetaddressinvoice" id="streetaddressinputinvoice" value="@Model.SubscriptionForm.StreetAddressInvoice">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div id="streetnoinvoice" class="form-group">
+                                                    <label for="streetnoinput">Nr</label>
+                                                    <input type="text" class="form-control input-lg" name="streetnoinvoice" id="streetnoinputinvoice" value="@Model.SubscriptionForm.StreetNoInvoice">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div id="zipinvoice" class="form-group">
+                                                    <label for="zipinvoiceinput">Postnummer</label>
+                                                    <input type="text" class="form-control input-lg" name="zipinvoice" id="zipinputinvoice" value="@Model.SubscriptionForm.ZipInvoice">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div id="cityinvoice" class="form-group">
+                                                    <label for="cityinvoiceinput">Ort</label>
+                                                    <input type="text" class="form-control input-lg" name="cityinvoice" id="cityinputinvoice" value="@Model.SubscriptionForm.CityInvoice" readonly="readonly">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="card">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="card-pay-text"></div>
+                                            <p><img width="196" src="~/Static/img/payment-icons@2x.png" alt="Kortmöjligheter"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="autogiro">
+                                    <div id="autogiro-pay-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="disclaimer-container">
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="termscheck">
+                                    <span> 
+                                        @Html.Raw(Model.Layout.PrenTermsText)
+                                    </span>
+                                </label>
+                            </div>
+                        </div>    
+                        <div id="submitform">                                  
+                            <button type="submit" data-loading-text="Skickar ..." class="btn btn-lg btn-primary" autocomplete="off">Skicka beställningen</button>
+                        </div>
+                    </div>
+                </div>                    
+            </form>               
+
+            <div id="summary" class="col-md-6">                    
+                <div class="progressbar-container">
+                    <div class="first step"><label>1. Välj prenumeration</label></div>
+                    <div class="second step"><label>2. Fyll i uppgifter</label></div>
+                    <div class="third step"><label>3. Betala</label></div>
+                    <div class="progressbar"><span class="progress"></span></div>
+                </div>
+
+                <!-- Shopping cart -->
+                <div class="order-table-container">
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <td>Ditt val: <span class="selected-title">Di Digitalt</span></td>
+                                <td class="right"><span class="selected-price"></span></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="no-border period-selection">
+                                <td><strong>Prenumerationsperiod:</strong></td>
+                                <td class="right">
+                                    <select id="pren-range-selector">
+                                        <option value="3">3 månader</option>
+                                        <option value="6">6 månader</option>
+                                        <option value="12">12 månader</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Du betalar</td>
+                                <td class="right"><span class="selected-price"></span></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div id="submitformmobile" class="hidden-md hidden-lg">  
+                        <button type="submit" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-lg btn-primary">Bekräfta och betala</button>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PageSpecificJavaScriptIncludes{
+    @Scripts.Render("~/bundles/js/campaign")
+}
+
+@section PageSpecificJavaScript
+{
+    @Html.Raw(Model.CurrentPage.ScriptLoad)
+    
+    <script type="text/javascript">
+        campaignHandler.init(@Model.IsMobileDevice.ToString().ToLower());
+    </script>
+}

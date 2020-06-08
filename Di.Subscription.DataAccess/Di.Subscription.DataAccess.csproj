@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F64DF6CD-842A-48F4-894F-395469F15398}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Di.Subscription.DataAccess</RootNamespace>
+    <AssemblyName>Di.Subscription.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DagensIndustri\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DagensIndustri\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\DagensIndustri\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\DagensIndustri\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressChange\IAddressChangeRepository.cs" />
+    <Compile Include="AddressChange\AddressChangeRepository.cs" />
+    <Compile Include="AddressChange\AddressChange.cs" />
+    <Compile Include="Campaign\CampaignSimple.cs" />
+    <Compile Include="Campaign\Campaign.cs" />
+    <Compile Include="Campaign\CampaignGroup.cs" />
+    <Compile Include="Campaign\CampaignRepository.cs" />
+    <Compile Include="Campaign\ICampaignRepository.cs" />
+    <Compile Include="Customer\CustomerPropertyData.cs" />
+    <Compile Include="Customer\CustomerSimple.cs" />
+    <Compile Include="Customer\Customer.cs" />
+    <Compile Include="Customer\CustomerRepository.cs" />
+    <Compile Include="Customer\ICustomerRepository.cs" />
+    <Compile Include="DataAccess\ISubscriptionDataAccess.cs" />
+    <Compile Include="DataAccess\KayakDataAccess.cs" />
+    <Compile Include="ExtraProducts\ExtraProduct.cs" />
+    <Compile Include="ExtraProducts\ExtraProductsRepository.cs" />
+    <Compile Include="ExtraProducts\IExtraProductsRepository.cs" />
+    <Compile Include="HolidayStop\HolidayStop.cs" />
+    <Compile Include="HolidayStop\HolidayStopRepository.cs" />
+    <Compile Include="HolidayStop\IHolidayStopRepository.cs" />
+    <Compile Include="Initialization\DependencyResolver.cs" />
+    <Compile Include="Invoice\IInvoiceRepository.cs" />
+    <Compile Include="Invoice\Invoice.cs" />
+    <Compile Include="Invoice\InvoiceRepository.cs" />
+    <Compile Include="IssueDate\IIssueDateRepository.cs" />
+    <Compile Include="IssueDate\IssueDateRepository.cs" />
+    <Compile Include="Package\IPackageRepository.cs" />
+    <Compile Include="Package\ProductPackage.cs" />
+    <Compile Include="Package\PackageRepository.cs" />
+    <Compile Include="Parameters\IParametersRepository.cs" />
+    <Compile Include="Parameters\Parameter.cs" />
+    <Compile Include="Parameters\ParametersRepository.cs" />
+    <Compile Include="PostName\IPostNameRepository.cs" />
+    <Compile Include="PostName\PostNameRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicationDays\IPublicationDaysRepository.cs" />
+    <Compile Include="PublicationDays\PublicationDay.cs" />
+    <Compile Include="PublicationDays\PublicationDaysRepository.cs" />
+    <Compile Include="Reclaim\IReclaimRepository.cs" />
+    <Compile Include="Reclaim\ReclaimRepository.cs" />
+    <Compile Include="Reclaim\Reclaim.cs" />
+    <Compile Include="Reclaim\ReclaimType.cs" />
+    <Compile Include="Service References\Kayak\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Subscription\ISubscriptionRepository.cs" />
+    <Compile Include="Subscription\Subscription.cs" />
+    <Compile Include="Subscription\SubscriptionRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\Kayak\Di.Subscription.DataAccess.Kayak.IdentificationResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Kayak\Di.Subscription.DataAccess.Kayak.SalsIdentificationResultRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Kayak\Di.Subscription.DataAccess.Kayak.SalsUpdateResultRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Kayak\Di.Subscription.DataAccess.Kayak.UpdateResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Kayak\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Kayak\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Kayak\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Kayak\KayakWebservice1.wsdl" />
+    <None Include="Service References\Kayak\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Di.Common\Di.Common.csproj">
+      <Project>{49d851c3-b18d-41ad-9ee9-bd366c5870a5}</Project>
+      <Name>Di.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Kayak\KayakWebservice1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

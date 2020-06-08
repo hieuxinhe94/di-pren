@@ -1,0 +1,145 @@
+﻿@model Pren.Web.Models.ViewModels.MySettings.SubscriptionSleepPageViewModel
+
+@{ Layout = "~/Views/Shared/Layouts/_MyPage.cshtml"; }
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
+@{ Html.RenderPartial("~/Views/MySettings/Shared/_Message.cshtml", TempData["Message"], new ViewDataDictionary()); }
+
+@if (Model.FutureSubsSleeps.Count > 0)
+{
+    <div id="futuresleeps" class="w-margin-top">
+        <div class="heading">Framtida uppehåll</div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Från och med</th>
+                    <th>Till och med</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var subscriptionSleep in Model.FutureSubsSleeps)
+                {
+                    <tr>
+                        <td>@subscriptionSleep.StartDate.ToString("yyyy-MM-dd")</td>
+                        <td>@(subscriptionSleep.EndDate == Model.DateNotSet ? "Tillsvidare" : subscriptionSleep.EndDate.ToString("yyyy-MM-dd")) </td>
+                        <td>
+                            <a data-toggle="collapse" href="#@subscriptionSleep.StartDate.ToString("yyyyMMdd")@subscriptionSleep.EndDate.ToString("yyyyMMdd")" aria-expanded="false">Ändra</a> 
+                        </td>                        
+                        <td>
+                            @if (!subscriptionSleep.IsOngoing)
+                            {
+                                @Html.ActionLink("Ta bort", "Delete", "SubscriptionSleepPage",
+                                    new
+                                    {
+                                        sid = @Model.SubscriptionNumber,
+                                        startDate = subscriptionSleep.StartDate,
+                                        endDate = subscriptionSleep.EndDate
+                                    },
+                                    new
+                                    {
+                                        @class = "delete",
+                                        data_confirm = "Är du säker på att du vill ta bort uppehållet?"
+                                    })
+                            }
+
+                        </td>
+                    </tr>
+                    
+                    <tr class="collapse" id="@subscriptionSleep.StartDate.ToString("yyyyMMdd")@subscriptionSleep.EndDate.ToString("yyyyMMdd")">
+                        <td colspan="4">
+                            <form id="subssleep-form-edit" action="@Url.Action("Edit", "SubscriptionSleepPage", new { sid = @Model.SubscriptionNumber })" method="POST">
+                                <input type="hidden" name="startDateOrg" value="@subscriptionSleep.StartDate.ToString("yyyy-MM-dd")" />
+                                <input type="hidden" name="endDateOrg" value="@subscriptionSleep.EndDate.ToString("yyyy-MM-dd")" />
+                                <input type="hidden" name="subscriptionSleepId" value="@subscriptionSleep.Id" />
+                                <input type="hidden" name="dateMinAddrChange" value="@Model.SubscriptionSleepForm.DateMinAddrChange" />
+                                <input type="hidden" name="ongoing" value="@(subscriptionSleep.IsOngoing ? "true" : "false")" />
+
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="fromdate" class="label-heading">Från och med *</label>
+                                            <input type="text" class="form-control input-lg dateinput" @(subscriptionSleep.IsOngoing ? "disabled" : string.Empty) name="fromdate" value="@subscriptionSleep.StartDate.ToString("yyyy-MM-dd")">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="todate" class="label-heading">Till och med *</label>
+                                            <input type="text" class="form-control input-lg dateinput" name="todate" value="@subscriptionSleep.EndDate.ToString("yyyy-MM-dd")">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <button type="submit" id="submit-edit-form" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary">Spara</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </td>                                         
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+<button class="btn btn-primary" id="show-address-form" title="Nytt uppehåll" data-targetevent="show" data-targetselector="#subssleep-form">Nytt uppehåll</button>   
+
+<form id="subssleep-form" class="w-margin-top displaynone" action="@Url.Action("Save", "SubscriptionSleepPage", new { sid = @Model.SubscriptionNumber })" method="POST">
+
+    <div class="heading">Nytt uppehåll</div>
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="DateMinAddrChange" value="@Model.SubscriptionSleepForm.DateMinAddrChange" />
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="fromdateinput" class="label-heading">Från och med *</label>
+                <input type="text" class="form-control input-lg dateinput" name="fromdate" id="fromdateinput" value="@(Model.SubscriptionSleepForm.FromDate != DateTime.MinValue ? Model.SubscriptionSleepForm.FromDate.ToString("yyyy-MM-dd") : string.Empty) ">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="todateinput" class="label-heading">Till och med *</label>
+                <input type="text" class="form-control input-lg dateinput" name="todate" id="todateinput" value="@(Model.SubscriptionSleepForm.ToDate != DateTime.MinValue ? Model.SubscriptionSleepForm.ToDate.ToString("yyyy-MM-dd") : string.Empty)">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>Du har digital tillgång till tidningen under din uppehållsperiod.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" id="submit-form" autocomplete="off" data-loading-text="Skickar ..." class="btn btn-primary">Spara</button>
+        </div>
+    </div>
+</form>
+
+@section PageSpecificJavaScript
+{
+    <script type="text/javascript">
+
+    var dateHandler = new DateHandler($(".dateinput"), '@Model.SubscriptionSleepForm.DateMinAddrChange.ToString("yyyy-MM-dd")', '@Model.SubscriptionSleepForm.DateMaxAddrChange.ToString("yyyy-MM-dd")');
+        dateHandler.init();
+
+        $("#show-address-form").display({
+            event: "click",
+            callback: function() { $("#show-address-form").hide(); }
+        });
+
+        var scroller = new Scroller({
+            scrollOnLoad: true,
+            scrollToThis: $(".message")
+        });
+
+    </script>
+}
